@@ -45,6 +45,8 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ## Workflow
 
+- **Create new feature-branch from DEVELOP branch**
+
 - **Adding a New Feature**
   - Create Component
   - Define Route
@@ -59,9 +61,9 @@ It correctly bundles React in production mode and optimizes the build for the be
 - **Request a Review** from at least one team member.
 
 - **All CI status checks should be green**
+
 - **Review approval should have been submitted before merging**
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
-
