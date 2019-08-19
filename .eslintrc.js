@@ -5,7 +5,7 @@ module.exports = {
     jest: true,
   },
   extends: [
-    'airbnb',
+    'prettier'
   ],
   globals: {
     Atomics: 'readonly',
@@ -20,8 +20,10 @@ module.exports = {
   },
   plugins: [
     'react',
+    'prettier'
   ],
   rules: {
+    "prettier/prettier": ["error"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
   },
 };
