@@ -46,27 +46,85 @@ It correctly bundles React in production mode and optimizes the build for the be
 ## Workflow
 
 - **Create new ```feature-branch``` from ```develop``` branch that describes your work.**
+
+  ```bash
+    git checkout -b project-setup
+  ```
+
 Example:
-![alt text](https://res.cloudinary.com/elbon/image/upload/v1566291009/branch-naming.png)
+![Create a New Branch](https://res.cloudinary.com/elbon/image/upload/v1566291009/branch-naming.png)
 
 - **Adding a New Feature**
   - Create Component
+
+    ```js
+      const Home = () => <h1>Welcome to BravoFE</h1>;
+    ```
+
   - Define Route
+
+    ```js
+      <Route exact path="/" component={Home} />
+    ```
+
   - Create Action
+
+    ```js
+    export const GET_HOME = 'GET_HOME';
+    
+    export const getHome = user => {
+      return { type: GET_HOME, payload: user };
+    };
+    ```
+
   - Create Reducer
-  - Add Reducer to Route Reducer
+
+    ```js
+      const homeReducer = (state = initialState, action) => {
+        switch(action.type) {
+        case GET_HOME:
+          return { ...state, home: action.payload }
+        default:
+          return state;
+        }
+      };
+    ```
+
+  - Add Reducer to root reducer
+
+    ```js
+      const rootReducer = combineReducers({
+        home: homeReducer,
+      });
+    ```
+
   - Create Test Suite for Feature
+
+    ```js
+    describe('Home', () => {
+      it('snapshot renders', () => {
+        const component = renderer.create(<Home />);
+        const tree = component.toJSON();
+        expect(tree).toMatchSnapshot();
+      });
+    });
+    ```
 
 - **Create Pull Request**
   - The PR title should concisely explain the change or addition.
   Example:
-  ![alt text](https://res.cloudinary.com/elbon/image/upload/v1566290222/PR%20Title.png)
+  ![Create a new PR](https://res.cloudinary.com/elbon/image/upload/v1566290222/PR%20Title.png)
 
   - The PR description should clearly state what the PR is about in detail.
 
 - **Request a Review** from at least one team member.
   Example:
-  ![alt text](https://res.cloudinary.com/elbon/image/upload/v1566290612/Description%20and%20reviewer.png)
+  ![Request team member to review PR](https://res.cloudinary.com/elbon/image/upload/v1566290612/Description%20and%20reviewer.png)
+
+- **Resolve Requested Changes**
+  Example:
+  ![Resolve Changes](https://res.cloudinary.com/elbon/image/upload/v1566295161/resolve-conversation.png)
+
 
 - **All CI status checks should be green**
 
