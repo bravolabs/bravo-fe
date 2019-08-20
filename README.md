@@ -64,6 +64,32 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 - **Review approval should have been submitted before merging**
 
+## Structure and Naming
+
+```
+  src
+  |
+  ├── actions
+  |   ├── user.js
+  |   └── home.js
+  |
+  ├── components
+  |   ├── Home
+  |   |   ├── index.js
+  |   |   ├── home.styles.js
+  |   |   └── home.test.js
+  |   |
+  |   └── User
+  |       ├── index.js
+  |       ├── user.styles.js
+  |       └── user.test.js
+  |
+  ├── reducers
+  |   ├── index.js
+  |   └── userReducer.js
+
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
