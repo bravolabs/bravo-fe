@@ -43,6 +43,31 @@ Launches the test runner in the interactive watch mode.
 Builds the app for production to the `build` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
+## Structure and Naming
+
+```
+  src
+  |
+  ├── actions
+  |   ├── user.js
+  |   └── home.js
+  |
+  ├── components
+  |   ├── Home
+  |   |   ├── index.js
+  |   |   ├── home.styles.js
+  |   |   └── home.test.js
+  |   |
+  |   └── User
+  |       ├── index.js
+  |       ├── user.styles.js
+  |       └── user.test.js
+  |
+  ├── reducers
+  |   ├── index.js
+  |   └── userReducer.js
+
+```
 ## Workflow
 
 - **Create new ```feature-branch``` from ```develop``` branch that describes your work.**
