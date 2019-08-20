@@ -1,14 +1,10 @@
 import React from 'react';
 
-import { Route, Switch } from 'react-router-dom';
-import Home from './components/Home';
+import AppRouter from './routes/AppRouter';
 
 const App = () => (
   <div>
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route render={() => <h3>Route does not exist</h3>} />
-    </Switch>
+    <AppRouter />
   </div>
 );
 
