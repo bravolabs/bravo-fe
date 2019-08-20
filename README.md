@@ -45,7 +45,9 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ## Workflow
 
-- **Create new feature-branch from DEVELOP branch**
+- **Create new ```feature-branch``` from ```develop``` branch that describes your work.**
+Example:
+![alt text](https://res.cloudinary.com/elbon/image/upload/v1566291009/branch-naming.png)
 
 - **Adding a New Feature**
   - Create Component
@@ -56,9 +58,15 @@ It correctly bundles React in production mode and optimizes the build for the be
   - Create Test Suite for Feature
 
 - **Create Pull Request**
-  - The PR title should concisely explain the change or addition and the description should clearly state what the PR is about in detail.
+  - The PR title should concisely explain the change or addition.
+  Example:
+  ![alt text](https://res.cloudinary.com/elbon/image/upload/v1566290222/PR%20Title.png)
+
+  - The PR description should clearly state what the PR is about in detail.
 
 - **Request a Review** from at least one team member.
+  Example:
+  ![alt text](https://res.cloudinary.com/elbon/image/upload/v1566290612/Description%20and%20reviewer.png)
 
 - **All CI status checks should be green**
 
