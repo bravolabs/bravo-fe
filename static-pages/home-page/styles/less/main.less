@@ -10,6 +10,11 @@
         margin: 120px auto;
     }
 
+    @media @phone {
+        width: 350px;
+        margin: 70px auto;
+    }
+
     .caption {
         display: flex;
         flex-direction: column;
@@ -21,6 +26,10 @@
         @media @tablet {
             margin-bottom: 50px;
         }
+
+        @media @phone {
+            margin-bottom: 30px;
+        }
         
         .title {
             font-weight: bold;
@@ -31,6 +40,12 @@
             @media @tablet {
                 font-size: 34px;
                 line-height: 16px;
+            }
+
+            @media @phone {
+                width: 340px;
+                font-size: 22px;
+                line-height: 24px;
             }
         }
 
@@ -45,6 +60,12 @@
             @media @tablet {
                 font-size: 18px;
                 width: 400px;
+                margin-bottom: 5px;
+            }
+
+            @media @phone {
+                font-size: 18px;
+                width: 300px;
             }
         }
     }
@@ -53,6 +74,12 @@
         display: flex;
         justify-content: space-between;
         margin-left: 10px;
+
+        @media @phone {
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding: auto;
+        }
 
         .feature-card {
             display: flex;
@@ -68,6 +95,14 @@
                 width: 150px;
                 height: 160px;
                 padding-left: 15px;
+            }
+
+            @media @phone {
+                align-items: center;
+                text-align: center;
+                width: 180px;
+                height: 160px;
+                border: none;
             }
 
             .icon {
