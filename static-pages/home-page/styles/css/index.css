@@ -142,6 +142,11 @@ nav {
   padding: 15px;
   border-bottom: 0.5px solid #C4C4C4;
 }
+@media (max-width: 500px) {
+  nav {
+    width: 100%;
+  }
+}
 nav .logo-container {
   display: flex;
 }
@@ -158,6 +163,12 @@ nav .logo-container .nav-text {
   height: 405px;
   margin: 140px auto;
 }
+@media (max-width: 800px) {
+  .main {
+    width: 600px;
+    margin: 120px auto;
+  }
+}
 .main .caption {
   display: flex;
   flex-direction: column;
@@ -166,11 +177,22 @@ nav .logo-container .nav-text {
   height: 160px;
   margin-bottom: 100px;
 }
+@media (max-width: 800px) {
+  .main .caption {
+    margin-bottom: 50px;
+  }
+}
 .main .caption .title {
   font-weight: bold;
   margin-bottom: 10px;
   font-size: 48px;
   line-height: 22px;
+}
+@media (max-width: 800px) {
+  .main .caption .title {
+    font-size: 34px;
+    line-height: 16px;
+  }
 }
 .main .caption .text {
   text-align: center;
@@ -179,6 +201,12 @@ nav .logo-container .nav-text {
   line-height: 24px;
   font-weight: 300;
   color: #414A53;
+}
+@media (max-width: 800px) {
+  .main .caption .text {
+    font-size: 18px;
+    width: 400px;
+  }
 }
 .main .cards {
   display: flex;
@@ -192,11 +220,25 @@ nav .logo-container .nav-text {
   width: 200px;
   height: 160px;
   padding-left: 25px;
-  border-left: 4px solid #6A6A6A;
+  border-left: 3px solid #6A6A6A;
+}
+@media (max-width: 800px) {
+  .main .cards .feature-card {
+    justify-content: center;
+    width: 150px;
+    height: 160px;
+    padding-left: 15px;
+  }
 }
 .main .cards .feature-card .icon {
   width: 56px;
   height: 56px;
+}
+@media (max-width: 800px) {
+  .main .cards .feature-card .icon {
+    width: 44px;
+    height: 44px;
+  }
 }
 .main .cards .feature-card .title {
   font-weight: bold;
@@ -204,10 +246,24 @@ nav .logo-container .nav-text {
   font-size: 20px;
   line-height: 24px;
 }
+@media (max-width: 800px) {
+  .main .cards .feature-card .title {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
 .main .cards .feature-card .text {
   font-weight: 500;
   width: fit-content;
   font-size: 18px;
   line-height: 24px;
   color: #6A6A6A;
+}
+@media (max-width: 800px) {
+  .main .cards .feature-card .text {
+    width: 180px;
+    font-size: 14px;
+    line-height: 20px;
+  }
 }

@@ -5,6 +5,11 @@
     height: 405px;
     margin: 140px auto;
 
+    @media @tablet {
+        width: 600px;
+        margin: 120px auto;
+    }
+
     .caption {
         display: flex;
         flex-direction: column;
@@ -12,12 +17,21 @@
         justify-content: space-between;
         height: 160px;
         margin-bottom: 100px;
+
+        @media @tablet {
+            margin-bottom: 50px;
+        }
         
         .title {
             font-weight: bold;
             margin-bottom: 10px;
             font-size: 48px;
             line-height: 22px;
+
+            @media @tablet {
+                font-size: 34px;
+                line-height: 16px;
+            }
         }
 
         .text {
@@ -27,6 +41,11 @@
             line-height: 24px;
             font-weight: 300;
             color: @midnight-black;
+
+            @media @tablet {
+                font-size: 18px;
+                width: 400px;
+            }
         }
     }
 
@@ -42,11 +61,23 @@
             width: 200px;
             height: 160px;
             padding-left: 25px;
-            border-left: 4px solid @dark-gray;
+            border-left: 3px solid @dark-gray;
+
+            @media @tablet {
+                justify-content: center;
+                width: 150px;
+                height: 160px;
+                padding-left: 15px;
+            }
 
             .icon {
                 width: 56px;
                 height: 56px;
+
+                @media @tablet {
+                    width: 44px;
+                    height: 44px;
+                }
             }
             
             .title {
@@ -54,6 +85,12 @@
                 margin: 5px;
                 font-size: 20px;
                 line-height: 24px;
+
+                @media @tablet {
+                    margin: 10px 0;
+                    font-size: 16px;
+                    line-height: 20px;
+                }
             }
 
             .text {
@@ -62,6 +99,12 @@
                 font-size: 18px;
                 line-height: 24px;
                 color: @dark-gray;
+
+                @media @tablet {
+                    width: 180px;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
             }
         }
     }
