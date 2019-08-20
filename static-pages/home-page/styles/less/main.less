@@ -1,0 +1,68 @@
+@import 'variables';
+
+.main {
+    width: 900px;
+    height: 405px;
+    margin: 140px auto;
+
+    .caption {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 160px;
+        margin-bottom: 100px;
+        
+        .title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 48px;
+            line-height: 22px;
+        }
+
+        .text {
+            text-align: center;
+            width: 530px;
+            font-size: 20px;
+            line-height: 24px;
+            font-weight: 300;
+            color: @midnight-black;
+        }
+    }
+
+    .cards {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 10px;
+
+        .feature-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            width: 200px;
+            height: 160px;
+            padding-left: 25px;
+            border-left: 4px solid @dark-gray;
+
+            .icon {
+                width: 56px;
+                height: 56px;
+            }
+            
+            .title {
+                font-weight: bold;
+                margin: 5px;
+                font-size: 20px;
+                line-height: 24px;
+            }
+
+            .text {
+                font-weight: 500;
+                width: fit-content;
+                font-size: 18px;
+                line-height: 24px;
+                color: @dark-gray;
+            }
+        }
+    }
+}

@@ -1,0 +1,213 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html {
+  font-family: "Lato", sans-serif;
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+.container {
+  margin: auto;
+  max-width: 1440px;
+  max-height: 1000px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 0.5px solid #C4C4C4;
+}
+nav .logo-container {
+  display: flex;
+}
+nav .logo-container .nav-text {
+  font-weight: 600;
+  margin-left: 8px;
+  font-size: 32px;
+  line-height: 38px;
+  display: flex;
+  align-items: center;
+}
+.main {
+  width: 900px;
+  height: 405px;
+  margin: 140px auto;
+}
+.main .caption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 160px;
+  margin-bottom: 100px;
+}
+.main .caption .title {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 48px;
+  line-height: 22px;
+}
+.main .caption .text {
+  text-align: center;
+  width: 530px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 300;
+  color: #414A53;
+}
+.main .cards {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+.main .cards .feature-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 200px;
+  height: 160px;
+  padding-left: 25px;
+  border-left: 4px solid #6A6A6A;
+}
+.main .cards .feature-card .icon {
+  width: 56px;
+  height: 56px;
+}
+.main .cards .feature-card .title {
+  font-weight: bold;
+  margin: 5px;
+  font-size: 20px;
+  line-height: 24px;
+}
+.main .cards .feature-card .text {
+  font-weight: 500;
+  width: fit-content;
+  font-size: 18px;
+  line-height: 24px;
+  color: #6A6A6A;
+}
