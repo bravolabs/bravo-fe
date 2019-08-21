@@ -54,14 +54,14 @@ It correctly bundles React in production mode and optimizes the build for the be
   |
   ├── components
   |   ├── Home
-  |   |   ├── index.js
+  |   |   ├── home.spec.js
   |   |   ├── home.styles.js
-  |   |   └── home.test.js
+  |   |   └── index.js
   |   |
   |   └── User
-  |       ├── index.js
+  |       ├── user.spec.js
   |       ├── user.styles.js
-  |       └── user.test.js
+  |       └── index.js
   |
   ├── reducers
   |   ├── index.js
@@ -156,7 +156,7 @@ Example:
   - Create Test Suite for Feature
 
     ```js
-    // src/Home/home.test.js
+    // src/Home/home.spec.js
     import Home from './index.js';
 
     describe('Home', () => {
