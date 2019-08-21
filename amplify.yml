@@ -4,7 +4,7 @@ frontend:
     preBuild:
       commands:
         - npm ci
-        - npm test
+        - npm test --watchAll=false
     build:
       commands:
         - npm run build
