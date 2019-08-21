@@ -1,7 +1,7 @@
 [build]
   base    = ""
   publish = "/build"
-  command = "yarn build --type=UMD_DEV && cd fixtures/dom/ && yarn && yarn prestart && yarn build"
+  command = "npm run testCI && npm run build"
 
 [[redirects]]
   from = "/*"

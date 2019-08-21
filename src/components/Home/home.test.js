@@ -9,4 +9,9 @@ describe('Home', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+  it('fails', () => {
+    const x = 1
+    const y = 2
+    expect(1).toEqual(2);
+  });
 });
