@@ -144,11 +144,19 @@ nav {
 }
 @media (max-width: 500px) {
   nav {
+    height: 30px;
     padding: 10px;
   }
 }
 nav .logo-container {
   display: flex;
+}
+@media (max-width: 500px) {
+  nav .logo-container .logo {
+    margin: auto 0;
+    width: 30px;
+    height: 31.5px;
+  }
 }
 nav .logo-container .nav-text {
   font-weight: 600;
@@ -157,6 +165,22 @@ nav .logo-container .nav-text {
   line-height: 38px;
   display: flex;
   align-items: center;
+}
+@media (max-width: 500px) {
+  nav .logo-container .nav-text {
+    font-size: 22px;
+  }
+}
+@media (max-width: 500px) {
+  nav a {
+    margin: auto 0;
+  }
+}
+@media (max-width: 500px) {
+  nav a .nav-slack-btn {
+    width: 129px;
+    height: 30px;
+  }
 }
 .main {
   width: 900px;
@@ -242,7 +266,8 @@ nav .logo-container .nav-text {
   .main .cards {
     flex-direction: column;
     justify-content: space-evenly;
-    padding: auto;
+    margin: auto;
+    width: fit-content;
   }
 }
 .main .cards .feature-card {
@@ -269,6 +294,7 @@ nav .logo-container .nav-text {
     width: 180px;
     height: 160px;
     border: none;
+    padding-right: 15px;
   }
 }
 .main .cards .feature-card .icon {
@@ -292,6 +318,11 @@ nav .logo-container .nav-text {
     margin: 10px 0;
     font-size: 16px;
     line-height: 20px;
+  }
+}
+@media (max-width: 800px) {
+  .main .cards .feature-card .title {
+    margin: 10px 0 5px 0;
   }
 }
 .main .cards .feature-card .text {

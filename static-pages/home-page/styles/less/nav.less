@@ -5,11 +5,20 @@ nav {
     border-bottom: 0.5px solid @light-gray;
 
     @media @phone {
+        height: 30px;
         padding: 10px;
     }
 
     .logo-container {
         display: flex;
+
+        .logo {
+            @media @phone {
+                margin: auto 0;
+                width: 30px;
+                height: 31.5px;
+            }
+        }
 
         .nav-text {
             font-weight: 600;
@@ -18,6 +27,23 @@ nav {
             line-height: 38px;
             display: flex;
             align-items: center;
+
+            @media @phone {
+                font-size: 22px;
+            }
+        }
+    }
+
+    a {
+        @media @phone {
+            margin: auto 0;
+        }
+
+        .nav-slack-btn {
+            @media @phone {
+                width: 129px;
+                height: 30px;
+            }
         }
     }
 }
