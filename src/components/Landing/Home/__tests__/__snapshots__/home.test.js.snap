@@ -1,123 +1,121 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home Component Should render home component 1`] = `
-<div>
-  <div
-    class="sc-bdVaJa kxiCan"
+<div
+  class="sc-bdVaJa kxiCan"
+>
+  <nav
+    class="sc-VigVT kzsZlb"
   >
-    <nav
-      class="sc-VigVT kzsZlb"
+    <div
+      class="sc-jTzLTM eoQMeB"
     >
-      <div
-        class="sc-jTzLTM eoQMeB"
+      <img
+        class="sc-fjdhpX nsimD"
+        src="bravo-logo.png"
+      />
+      <span
+        class="sc-jzJRlG dHkEnb"
       >
-        <img
-          class="sc-fjdhpX nsimD"
-          src="bravo-logo.png"
-        />
-        <span
-          class="sc-jzJRlG dHkEnb"
-        >
-          Bravo
-        </span>
-      </div>
+        Bravo
+      </span>
+    </div>
+    <a
+      href="https://slack.com/oauth/authorize?scope=identity.basic,identity.email,identity.team,identity.avatar&client_id=711954789234.734180204582"
+    >
+      <img
+        alt="Sign in with Slack"
+        height="40"
+        src="https://platform.slack-edge.com/img/sign_in_with_slack.png"
+        srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x, https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x"
+        width="172"
+      />
+    </a>
+  </nav>
+  <div
+    class="sc-bwzfXH jZeGHR"
+  >
+    <div
+      class="sc-htpNat jWhSrG"
+    >
+      <span
+        class="sc-bxivhb MyuFa"
+      >
+        when the job is done, say bravo
+      </span>
+      <span
+        class="sc-ifAKCX bsCEmw"
+      >
+        bravo enables team members to easily acknowledge each other with one slack command
+      </span>
       <a
-        href="https://slack.com/oauth/authorize?scope=identity.basic,identity.email,identity.team,identity.avatar&client_id=711954789234.734180204582"
+        href="https://slack.com/oauth/authorize?client_id=711954789234.734180204582&scope=commands,chat:write:bot,chat:write:user,im:write,im:read,im:history,users:read,channels:read"
       >
         <img
-          alt="Sign in with Slack"
+          alt="Add to Slack"
           height="40"
-          src="https://platform.slack-edge.com/img/sign_in_with_slack.png"
-          srcset="https://platform.slack-edge.com/img/sign_in_with_slack.png 1x, https://platform.slack-edge.com/img/sign_in_with_slack@2x.png 2x"
-          width="172"
+          src="https://platform.slack-edge.com/img/add_to_slack.png"
+          srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x"
+          width="139"
         />
       </a>
-    </nav>
+    </div>
     <div
-      class="sc-bwzfXH jZeGHR"
+      class="sc-bZQynM ktJREs"
     >
       <div
-        class="sc-htpNat jWhSrG"
+        class="sc-gzVnrw gQetWj"
       >
+        <img
+          class="sc-iwsKbI hHToOU"
+          src="clap-icon.png"
+        />
         <span
-          class="sc-bxivhb MyuFa"
+          class="sc-gZMcBi kBJdBl"
         >
-          when the job is done, say bravo
+          bravo slack bot
         </span>
         <span
-          class="sc-ifAKCX bsCEmw"
+          class="sc-gqjmRU fTEWBa"
         >
-          bravo enables team members to easily acknowledge each other with one slack command
+          install our slack integration in few simple clicks
         </span>
-        <a
-          href="https://slack.com/oauth/authorize?client_id=711954789234.734180204582&scope=commands,chat:write:bot,chat:write:user,im:write,im:read,im:history,users:read,channels:read"
-        >
-          <img
-            alt="Add to Slack"
-            height="40"
-            src="https://platform.slack-edge.com/img/add_to_slack.png"
-            srcset="https://platform.slack-edge.com/img/add_to_slack.png 1x, https://platform.slack-edge.com/img/add_to_slack@2x.png 2x"
-            width="139"
-          />
-        </a>
       </div>
       <div
-        class="sc-bZQynM ktJREs"
+        class="sc-gzVnrw gQetWj"
       >
-        <div
-          class="sc-gzVnrw gQetWj"
+        <img
+          class="sc-iwsKbI hHToOU"
+          src="gift-icon.png"
+        />
+        <span
+          class="sc-gZMcBi kBJdBl"
         >
-          <img
-            class="sc-iwsKbI hHToOU"
-            src="clap-icon.png"
-          />
-          <span
-            class="sc-gZMcBi kBJdBl"
-          >
-            bravo slack bot
-          </span>
-          <span
-            class="sc-gqjmRU fTEWBa"
-          >
-            install our slack integration in few simple clicks
-          </span>
-        </div>
-        <div
-          class="sc-gzVnrw gQetWj"
+          give a bravo
+        </span>
+        <span
+          class="sc-gqjmRU fTEWBa"
         >
-          <img
-            class="sc-iwsKbI hHToOU"
-            src="gift-icon.png"
-          />
-          <span
-            class="sc-gZMcBi kBJdBl"
-          >
-            give a bravo
-          </span>
-          <span
-            class="sc-gqjmRU fTEWBa"
-          >
-            select receiver, write your text, send
-          </span>
-        </div>
-        <div
-          class="sc-gzVnrw gQetWj"
+          select receiver, write your text, send
+        </span>
+      </div>
+      <div
+        class="sc-gzVnrw gQetWj"
+      >
+        <img
+          class="sc-iwsKbI hHToOU"
+          src="message-icon.png"
+        />
+        <span
+          class="sc-gZMcBi kBJdBl"
         >
-          <img
-            class="sc-iwsKbI hHToOU"
-            src="message-icon.png"
-          />
-          <span
-            class="sc-gZMcBi kBJdBl"
-          >
-            receive a bravo
-          </span>
-          <span
-            class="sc-gqjmRU fTEWBa"
-          >
-            get notification when someone sends you a bravo
-          </span>
-        </div>
+          receive a bravo
+        </span>
+        <span
+          class="sc-gqjmRU fTEWBa"
+        >
+          get notification when someone sends you a bravo
+        </span>
       </div>
     </div>
   </div>
