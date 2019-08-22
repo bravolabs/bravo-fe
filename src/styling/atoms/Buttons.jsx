@@ -1,18 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const FillButton = styled.button`
+export const BaseButton = styled.button`
   border: none;
   text-decoration: none;
   background: none;
-  background: ${props => (props.background ? props.background : 'white')};
-  ${props => (props.disabled ? `background-color: ${props.disabledColor || '#EBECF0'};` : null)};
   font-size: ${props => (props.fontSize ? props.fontSize : '1.6rem')};
   color: ${props => (props.color ? props.color : 'black')};
   font-weight: ${props => (props.fontWeight ? props.fontWeight : '300')};
   padding: 1em 1.25em;
-  box-shadow: ${props => (props.shadow ? props.shadow : '0px 2px 2px rgba(0, 0, 0, 0.1)')};
   border-radius: ${props => (props.radius ? props.radius : '4px')};
+  ${props => (props.shadow ? `box-shadow: ${props.shadow};` : null)};
 
   &:hover {
     ${props => (props.hoverBackground ? `background-color: ${props.hoverBackground};` : null)};
@@ -29,4 +27,10 @@ export const FillButton = styled.button`
     ${props => (props.focusBorder ? `border: ${props.focusBorder};` : null)};
     ${props => (props.focusOutline ? `outline: ${props.focusOutline};` : null)};
   }
+`;
+
+export const FillButton = styled(BaseButton)`
+  background: ${props => (props.background ? props.background : 'white')};
+  ${props =>
+    props.disabled ? `background-color: ${props.disabledBackground || '#EBECF0'};` : null};
 `;
