@@ -22,6 +22,18 @@ export const MenuItem = styled.button`
   justify-content: flex-start;
   align-content: center;
 
+  &:hover {
+    ${props => (props.hoverColor ? `color: ${props.hoverColor};` : null)};
+    ${props => (props.hoverBackground ? `background: ${props.hoverBackground};` : null)};
+    ${props => (props.hoverBorderColor ? `border-color: ${props.hoverBorderColor};` : null)};
+  }
+
+  &:focus {
+    ${props => (props.focusColor ? `color: ${props.focusColor};` : null)};
+    ${props => (props.focusBackground ? `background: ${props.focusBackground};` : null)};
+    ${props => (props.focusBorderColor ? `border-color: ${props.focusBorderColor};` : null)};
+  }
+
   & > * {
     margin-right: 8px;
   }
