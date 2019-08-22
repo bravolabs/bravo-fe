@@ -29,6 +29,7 @@ export const MenuItem = styled.button`
   }
 
   &:focus {
+    outline: none;
     ${props => (props.focusColor ? `color: ${props.focusColor};` : null)};
     ${props => (props.focusBackground ? `background: ${props.focusBackground};` : null)};
     ${props => (props.focusBorderColor ? `border-color: ${props.focusBorderColor};` : null)};
