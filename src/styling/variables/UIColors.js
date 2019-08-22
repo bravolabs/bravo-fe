@@ -8,6 +8,7 @@ const Colors = {
   White: '#FFFFFF',
   Darkener: 'rgba(0, 0, 0, 0.2)',
   Lightener: 'rgba(255, 255, 255, 0.2)',
+  Disabled: '#EBECF0',
 };
 
 export default Colors;
