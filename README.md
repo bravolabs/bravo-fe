@@ -168,7 +168,7 @@ Example:
   describe('Home Component', () => {
     it('Should render home component', () => {
       const { container } = rtl.render(<Home />);
-      expect(container).toMatchSnapshot();
+      expect(container).toBeTruthy();
     });
   });
   ```
