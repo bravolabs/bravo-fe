@@ -20,10 +20,10 @@ export const SignInWithSlack = () => {
 
 export const AddToSlack = () => {
   const clientId = process.env.REACT_APP_CLIENT_ID;
-  const scope = 'incoming-webhook,commands,bot';
+  const scope = 'commands';
 
   return (
-    <a href={`https://slack.com/oauth/authorize?scope=${scope}&client_id=${clientId}`}>
+    <a href="https://slack.com/oauth/authorize?client_id=711954789234.734180204582&scope=commands,chat:write:bot,chat:write:user,im:write,im:read,im:history,users:read,channels:read">
       <img
         alt="Add to Slack"
         height="40"

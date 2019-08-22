@@ -1,18 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import qs from 'querystring';
 
 import { Container, Main, Intro, Caption, IntroText } from './home.styles';
 
-import Cards from './Cards';
-import Nav from './Nav';
-import { AddToSlack } from './SlackButton';
+import Cards from '../Cards';
+import Nav from '../Nav';
+import { AddToSlack } from '../SlackButton';
+import Success from '../Success/index';
 
 const Home = props => {
   const { location } = props;
   // Parse slack temporary code in URL
   const parsed = qs.parse(location.search);
   const { '?code': code } = parsed;
+  const [addBotSuccess, setAddBotSuccess] = useState(false);
 
   useEffect(() => {
     const reqBody = {
@@ -30,11 +32,16 @@ const Home = props => {
           },
         })
         .then(res => {
-          // res contains access token from slack
-          console.log(res);
+          /* 
+            @ res.data - contains access token from slack 
+                  - contains 'bot' if Add to Slack was Clicked
+                  - contains 'user' if Log in with Slack was clicked
+          */
+          // set to true to display success message
+          setAddBotSuccess(true);
         });
     }
-  }, [code, location.search]);
+  }, [code]);
 
   return (
     <Container>
@@ -45,7 +52,7 @@ const Home = props => {
           <IntroText>
             bravo enables team members to easily acknowledge each other with one slack command
           </IntroText>
-          <AddToSlack />
+          {addBotSuccess ? <Success /> : <AddToSlack />}
         </Intro>
         <Cards />
       </Main>

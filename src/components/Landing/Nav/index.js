@@ -9,7 +9,7 @@ const Nav = () => {
     <NavContainer>
       <LogoContainer>
         <Logo src={logoImg} />
-        <NavText>bravo</NavText>
+        <NavText>Bravo</NavText>
       </LogoContainer>
       <SignInWithSlack />
     </NavContainer>
