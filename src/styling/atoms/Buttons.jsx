@@ -52,3 +52,5 @@ export const OutlineButton = styled(BaseButton)`
     ${props => (props.focusBorderWidth ? `border-width: ${props.focusBorderWidth};` : null)};
   }
 `;
+
+export const GhostButton = styled(BaseButton);
