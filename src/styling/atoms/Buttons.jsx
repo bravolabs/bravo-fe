@@ -11,6 +11,7 @@ export const BaseButton = styled.button`
   padding: 1em 1.25em;
   border-radius: ${props => (props.radius ? props.radius : '4px')};
   ${props => (props.shadow ? `box-shadow: ${props.shadow};` : null)};
+  ${props => (props.disabled ? `color: ${props.disabledColor || '#B0B7C3'};` : null)};
 
   &:hover {
     ${props => (props.hoverBackground ? `background-color: ${props.hoverBackground};` : null)};
@@ -31,6 +32,23 @@ export const BaseButton = styled.button`
 
 export const FillButton = styled(BaseButton)`
   background: ${props => (props.background ? props.background : 'white')};
-  ${props =>
-    props.disabled ? `background-color: ${props.disabledBackground || '#EBECF0'};` : null};
+  ${props => (props.disabled ? `background: ${props.disabledBackground || '#EBECF0'};` : null)};
+`;
+
+export const OutlineButton = styled(BaseButton)`
+  border-width: ${props => (props.borderWidth ? props.borderWidth : '1px')};
+  border-color: ${props => (props.borderColor ? props.borderColor : 'black')};
+  border-style: ${props => (props.borderStyle ? props.borderStyle : 'solid')};
+  ${props => (props.disabled ? `border-color: ${props.disabledBorderColor || '#EBECF0'};` : null)};
+  ${props => (props.disabled ? `border-width: ${props.disabledBorderWidth || '1px'};` : null)};
+
+  &:hover {
+    ${props => (props.hoverBorderColor ? `border-color: ${props.hoverBorderColor};` : null)};
+    ${props => (props.hoverBorderWidth ? `border-width: ${props.hoverBorderWidth};` : null)};
+  }
+
+  &:focus {
+    ${props => (props.focusBorderColor ? `border-color: ${props.focusBorderColor};` : null)};
+    ${props => (props.focusBorderWidth ? `border-width: ${props.focusBorderWidth};` : null)};
+  }
 `;
