@@ -2,9 +2,8 @@ import React from 'react';
 
 const SlackButton = () => {
   const clientId = process.env.REACT_APP_CLIENT_ID;
-  const redirectURI = process.env.REACT_APP_REDIRECT_URI;
   const scope = 'identity.basic,identity.email,identity.team,identity.avatar';
-  const url = `https://slack.com/oauth/authorize?scope=${scope}&client_id=${clientId}&redirect_uri=${redirectURI}`;
+  const url = `https://slack.com/oauth/authorize?scope=${scope}&client_id=${clientId}`;
 
   return (
     <a href={url}>
