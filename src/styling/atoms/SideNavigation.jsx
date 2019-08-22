@@ -21,6 +21,7 @@ export const Item = styled.button`
   justify-content: center;
   align-items: center;
   background: ${props => (props.itemBackground ? props.itemBackground : '48px')};
+  border-radius: ${props => (props.radius ? props.radius : '4px')};
   ${props => (props.shadow ? `box-shadow: ${props.shadow};` : null)};
 
   &:hover {
