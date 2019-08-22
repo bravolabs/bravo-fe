@@ -1,72 +1,54 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import axios from 'axios';
+import qs from 'querystring';
 
-// import styles
-import {
-  Container,
-  Nav,
-  LogoContainer,
-  Logo,
-  NavText,
-  Main,
-  Intro,
-  Caption,
-  IntroText,
-  Cards,
-  Card,
-  Icon,
-  Title,
-  CardText,
-  Footer,
-} from './home.styles';
+import { Container, Main, Intro, Caption, IntroText } from './home.styles';
 
-// import utils
-import logoImg from './utils/bravo-logo.png';
-import clapIcon from './utils/clap-icon.png';
-import giftIcon from './utils/gift-icon.png';
-import messageIcon from './utils/message-icon.png';
+import SlackButton from './SlackButton';
+import Cards from './Cards';
+import Nav from './Nav';
 
-// still have to make slack button a separate component
-const Home = () => (
-  <Container>
-    <Nav>
-      <LogoContainer>
-        <Logo src={logoImg} />
-        <NavText>bravo</NavText>
-      </LogoContainer>
-      <a href="https://slack.com/oauth/authorize?scope=identity.basic,identity.email,identity.team,identity.avatar&client_id=733322040912.733329316565">
-        <img src="https://platform.slack-edge.com/img/sign_in_with_slack.png" />
-      </a>
-    </Nav>
-    <Main>
-      <Intro>
-        <Caption>when the job is done, say bravo</Caption>
-        <IntroText>
-          bravo enables team members to easily acknowledge each other with one slack command
-        </IntroText>
-        <a href="https://slack.com/oauth/authorize?scope=identity.basic,identity.email,identity.team,identity.avatar&client_id=733322040912.733329316565">
-          <img src="https://platform.slack-edge.com/img/sign_in_with_slack.png" />
-        </a>
-      </Intro>
-      <Cards>
-        <Card>
-          <Icon src={clapIcon} />
-          <Title>bravo slack bot</Title>
-          <CardText>install our slack integration in few simple clicks</CardText>
-        </Card>
-        <Card>
-          <Icon src={giftIcon} />
-          <Title>give a bravo</Title>
-          <CardText>select receiver, write your text, send</CardText>
-        </Card>
-        <Card>
-          <Icon src={messageIcon} />
-          <Title>receive a bravo</Title>
-          <CardText>get notification when someone sends you a bravo</CardText>
-        </Card>
-      </Cards>
-    </Main>
-    <Footer></Footer>
-  </Container>
-);
+const Home = props => {
+  const { location } = props;
+  // Parse slack temporary code in URL
+  const parsed = qs.parse(location.search);
+  const { '?code': code } = parsed;
 
+  useEffect(() => {
+    const reqBody = {
+      client_id: process.env.REACT_APP_CLIENT_ID,
+      client_secret: process.env.REACT_APP_CLIENT_SECRET,
+      code,
+    };
+
+    // Get slack access token
+    if (code) {
+      axios
+        .post('https://slack.com/api/oauth.access', qs.stringify(reqBody), {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        })
+        .then(res => {
+          // res contains access token from slack
+        });
+    }
+  }, [code, location.search]);
+
+  return (
+    <Container>
+      <Nav />
+      <Main>
+        <Intro>
+          <Caption>when the job is done, say bravo</Caption>
+          <IntroText>
+            bravo enables team members to easily acknowledge each other with one slack command
+          </IntroText>
+          <SlackButton />
+        </Intro>
+        <Cards />
+      </Main>
+    </Container>
+  );
+};
 export default Home;
