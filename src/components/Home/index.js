@@ -4,9 +4,9 @@ import qs from 'querystring';
 
 import { Container, Main, Intro, Caption, IntroText } from './home.styles';
 
-import SlackButton from './SlackButton';
 import Cards from './Cards';
 import Nav from './Nav';
+import { AddToSlack } from './SlackButton';
 
 const Home = props => {
   const { location } = props;
@@ -31,6 +31,7 @@ const Home = props => {
         })
         .then(res => {
           // res contains access token from slack
+          console.log(res);
         });
     }
   }, [code, location.search]);
@@ -44,7 +45,7 @@ const Home = props => {
           <IntroText>
             bravo enables team members to easily acknowledge each other with one slack command
           </IntroText>
-          <SlackButton />
+          <AddToSlack />
         </Intro>
         <Cards />
       </Main>
