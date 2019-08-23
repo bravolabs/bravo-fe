@@ -1,13 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import qs from 'querystring';
+import styled from 'styled-components';
 
-import { Container, Main, Intro, Caption, IntroText } from './home.styles';
-
+import { Container, Main, Intro } from './home.styles';
+import { PageTitle, ExtraInfo } from '../../styling/atoms/Fonts';
 import Cards from '../Cards';
 import Nav from '../Nav';
 import { AddToSlack } from '../SlackButton';
-import Success from '../Success/index';
+// import Success from '../Success/index';
+
+const StyledPageTitle = styled(PageTitle)`
+  margin: 0 auto;
+`;
+
+const StyledExtraInfo = styled(ExtraInfo)`
+  text-align: center;
+  margin: 20px auto 30px auto;
+  width: 530px;
+  height: 45px;
+`;
 
 const Home = props => {
   const {
@@ -51,11 +63,12 @@ const Home = props => {
       <Nav />
       <Main>
         <Intro>
-          <Caption>when the job is done, say bravo</Caption>
-          <IntroText>
+          <StyledPageTitle fontWeight="bold">when the job is done, say bravo</StyledPageTitle>
+          <StyledExtraInfo>
             bravo enables team members to easily acknowledge each other with one slack command
-          </IntroText>
-          {addBotSuccess ? <Success /> : <AddToSlack />}
+          </StyledExtraInfo>
+          {/* {addBotSuccess ? <Success /> : <AddToSlack />} */}
+          <AddToSlack />
         </Intro>
         <Cards />
       </Main>

@@ -10,16 +10,16 @@ export const Container = styled.div`
 
 export const Main = styled.div`
   width: 900px;
-  height: 405px;
-  margin: 140px auto;
+  height: 450px;
+  margin: 60px auto;
+  justify-content: space-between;
 `;
 
 export const Intro = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 160px;
+  height: 200px;
   margin-bottom: 100px;
 `;
 
