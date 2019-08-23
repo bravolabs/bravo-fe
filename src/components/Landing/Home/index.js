@@ -10,9 +10,11 @@ import { AddToSlack } from '../SlackButton';
 import Success from '../Success/index';
 
 const Home = props => {
-  const { location } = props;
+  const {
+    location: { search },
+  } = props;
   // Parse slack temporary code in URL
-  const parsed = qs.parse(location.search);
+  const parsed = qs.parse(search);
   const { '?code': code } = parsed;
   const [addBotSuccess, setAddBotSuccess] = useState(false);
 
@@ -38,6 +40,7 @@ const Home = props => {
                   - contains 'user' if Log in with Slack was clicked
           */
           // set to true to display success message
+          console.log(res);
           setAddBotSuccess(true);
         });
     }
