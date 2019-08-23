@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import Home from '../components/Landing/Home';
+import Home from '../components/Home';
 
 const AppRouter = () => (
   <div>
