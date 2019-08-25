@@ -155,18 +155,23 @@ Example:
 
   - Create Test Suite for Feature
 
-    ```js
-    // src/Home/home.test.js
-    import Home from './index.js';
+  ```js
+  // src/Home/home.test.js
+  import React from 'react';
+  import * as rtl from '@testing-library/react';
 
-    describe('Home', () => {
-      it('snapshot renders', () => {
-        const component = renderer.create(<Home />);
-        const tree = component.toJSON();
-        expect(tree).toMatchSnapshot();
-      });
+  import '@testing-library/jest-dom/extend-expect';
+
+  import Home from '../index';
+
+  afterEach(rtl.cleanup);
+  describe('Home Component', () => {
+    it('Should render home component', () => {
+      const { container } = rtl.render(<Home />);
+      expect(container).toBeTruthy();
     });
-    ```
+  });
+  ```
 
 - **Create Pull Request**
 
