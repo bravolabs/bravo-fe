@@ -7,7 +7,7 @@ const AppRouter = () => (
   <div>
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route render={() => <h3>Hey, This Route does not exist</h3>} />
+      <Route render={() => <h3>Heyo, This Route does not exist</h3>} />
     </Switch>
   </div>
 );
