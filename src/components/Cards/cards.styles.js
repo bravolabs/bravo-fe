@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { Card } from '../../styling/atoms/Card';
+import colors from '../../styling/variables/UIColors';
 
 export const CardsContainer = styled.div`
   display: flex;
@@ -49,4 +51,27 @@ export const CardText = styled.span`
   font-size: 16px;
   line-height: 24px;
   color: #6a6a6a;
+`;
+
+export const StyledCard = styled(Card)`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-left: ${props => `8px solid ${props.borderColor}`};
+`;
+
+export const DisplayCardContainer = styled(Card)`
+  margin: 0 auto;
+  margin-top: 182px;
+  width: 800px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 8px solid ${colors.brand};
+
+  section {
+    margin: 15px 0;
+  }
 `;

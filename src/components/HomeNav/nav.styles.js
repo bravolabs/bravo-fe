@@ -10,7 +10,10 @@ export const LogoContainer = styled.div`
   display: flex;
 `;
 
-export const Logo = styled.img``;
+export const Logo = styled.img`
+  width: 48px;
+  height: 48px;
+`;
 
 export const NavText = styled.span`
   display: flex;

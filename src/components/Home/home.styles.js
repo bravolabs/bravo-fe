@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { PageTitle, BodyText } from '../../styling/atoms/Fonts';
 
 export const Container = styled.div`
   margin: auto;
@@ -39,4 +40,13 @@ export const IntroText = styled.span`
   color: #414a53;
 `;
 
-export const Footer = styled.div``;
+export const StyledPageTitle = styled(PageTitle)`
+  margin: 0 auto;
+`;
+
+export const StyledExtraInfo = styled(BodyText)`
+  text-align: center;
+  margin: 20px auto 30px auto;
+  width: 530px;
+  height: 45px;
+`;

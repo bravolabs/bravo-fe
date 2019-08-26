@@ -7,6 +7,6 @@ afterEach(rtl.cleanup);
 describe('Home Nav Component', () => {
   it('render Home Nav Bar', () => {
     const { getByText } = rtl.render(<Nav />);
-    getByText('Bravo');
+    getByText('bravo');
   });
 });

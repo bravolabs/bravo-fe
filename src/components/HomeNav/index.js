@@ -1,10 +1,9 @@
 import React from 'react';
 
-import { SignInWithSlack } from '../SlackButton';
 import { NavContainer, LogoContainer, Logo, NavText } from './nav.styles';
 import logoImg from '../../assets/bravo-logo.png';
 
-const Nav = () => {
+const HomeNav = () => {
   return (
     <NavContainer>
       <LogoContainer>
@@ -15,4 +14,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default HomeNav;

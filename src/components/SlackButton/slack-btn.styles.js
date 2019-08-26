@@ -1,26 +1,47 @@
 import styled from 'styled-components';
+import { BaseButton } from '../../styling/atoms/Buttons';
 
 export const ButtonLink = styled.a`
-    text-decoration: none;
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const SlackLogo = styled.img`
-    margin: 4px;
+  margin: 4px;
 `;
 
 export const LogoContainer = styled.div`
-    margin: auto 2px auto 5px;
-    width: 32px;
-    height: 32px;
-    background: #FFFFFF;
-    border-radius: 4px;
+  margin: auto 2px auto 5px;
+  width: 32px;
+  height: 32px;
+  background: #ffffff;
+  border-radius: 4px;
 `;
 
 export const ButtonText = styled.div`
-    text-decoration: none; 
-    margin: auto 5px;
+  text-decoration: none;
+  margin: auto 5px;
+  font-size: 1.5rem;
+  span {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export const Arrow = styled.img`
-    margin: auto;
+  margin: auto;
+`;
+
+export const StyledBaseButton = styled(BaseButton)`
+  display: flex;
+  width: 200px;
+  height: 48px;
+  font-size: 18px;
+  background: #4265ed;
+  color: white;
 `;
