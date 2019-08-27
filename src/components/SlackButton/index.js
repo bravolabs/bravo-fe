@@ -13,7 +13,7 @@ import arrow from '../../assets/arrow.png';
 
 export const AddToSlack = () => {
   const clientId = process.env.REACT_APP_CLIENT_ID;
-  const redirectURI = process.env.REACT_APP_REDIRECT_URI;
+  const redirectURI = `${document.location.origin}/slack`;
   const scope = 'incoming-webhook,commands';
 
   return (
