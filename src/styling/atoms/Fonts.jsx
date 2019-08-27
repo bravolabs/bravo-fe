@@ -1,8 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 import FontColors from '../variables/FontColors';
 import FontSizes from '../variables/FontSizes';
-
 
 export const PageTitle = styled.h1`
   font-size: ${FontSizes.Title};

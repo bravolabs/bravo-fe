@@ -1,14 +1,14 @@
-const Colors = {
-  Brand: '#4265ED',
-  Success: '#48D136',
-  Warning: '#FFA50A',
-  Error: '#FF513A',
-  Light: '#FAFCFD',
-  LightBorder: '#F1F2F6',
-  White: '#FFFFFF',
-  Darkener: 'rgba(0, 0, 0, 0.2)',
-  Lightener: 'rgba(255, 255, 255, 0.2)',
-  Disabled: '#EBECF0',
+const colors = {
+  brand: '#4265ED',
+  success: '#48D136',
+  warning: '#FFA50A',
+  error: '#FF513A',
+  light: '#FAFCFD',
+  lightBorder: '#F1F2F6',
+  white: '#FFFFFF',
+  darkener: 'rgba(0, 0, 0, 0.2)',
+  lightener: 'rgba(255, 255, 255, 0.2)',
+  disabled: '#EBECF0',
 };
 
-export default Colors;
+export default colors;
