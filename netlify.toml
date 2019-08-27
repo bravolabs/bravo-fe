@@ -8,8 +8,12 @@
 # will inherit these settings.
 [context.deploy-preview.environment]
   REACT_APP_CLIENT_ID = "711954789234.738124914208"
+# Not so secret after all 
+  REACT_APP_CLIENT_SECRET = "a6b2dcbfeff77561afde34eea60908cd"
 
 # Branch deploy context: All deploys that are not from a pull/merge request
 # or from the production branch will inherit these settings.
 [context.branch-deploy.environment]
   REACT_APP_CLIENT_ID = "711954789234.738124914208"
+# Not so secret after all 
+  REACT_APP_CLIENT_SECRET = "a6b2dcbfeff77561afde34eea60908cd"
