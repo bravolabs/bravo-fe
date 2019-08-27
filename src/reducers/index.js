@@ -1,10 +1,9 @@
 import { combineReducers } from 'redux';
 
-import reducer from './reducer';
+import slack from './slackReducer';
 
 const rootReducer = combineReducers({
-  /* Reducers */
-  reducer,
+  slack,
 });
 
 export default rootReducer;

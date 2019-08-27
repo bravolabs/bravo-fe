@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 export const BaseButton = styled.button`
@@ -8,7 +7,8 @@ export const BaseButton = styled.button`
   font-size: ${props => (props.fontSize ? props.fontSize : '1.6rem')};
   color: ${props => (props.color ? props.color : 'black')};
   font-weight: ${props => (props.fontWeight ? props.fontWeight : '300')};
-  padding: 1em 1.25em;
+  /* padding: 1em 1.25em; */
+  padding: ${props => (props.padding ? props.padding : '1em 1.25em')};
   border-radius: ${props => (props.radius ? props.radius : '4px')};
   ${props => (props.shadow ? `box-shadow: ${props.shadow};` : null)};
   ${props => (props.disabled ? `color: ${props.disabledColor || '#B0B7C3'};` : null)};
