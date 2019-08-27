@@ -7,13 +7,13 @@
 # Deploy Preview context: All deploys generated from a pull/merge request
 # will inherit these settings.
 [context.deploy-preview.environment]
-  REACT_APP_CLIENT_ID = "711954789234.738124914208"
+  REACT_APP_CLIENT_ID = process.env.REACT_APP_STAGE_CLIENT_ID
 # Not so secret after all 
-  REACT_APP_CLIENT_SECRET = "a6b2dcbfeff77561afde34eea60908cd"
+  REACT_APP_CLIENT_SECRET = process.env.REACT_APP_STAGE_CLIENT_SECRET
 
 # Branch deploy context: All deploys that are not from a pull/merge request
 # or from the production branch will inherit these settings.
 [context.branch-deploy.environment]
-  REACT_APP_CLIENT_ID = "711954789234.738124914208"
+  REACT_APP_CLIENT_ID = process.env.REACT_APP_STAGE_CLIENT_ID
 # Not so secret after all 
-  REACT_APP_CLIENT_SECRET = "a6b2dcbfeff77561afde34eea60908cd"
+  REACT_APP_CLIENT_SECRET = process.env.REACT_APP_STAGE_CLIENT_SECRET
