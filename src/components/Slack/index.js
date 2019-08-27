@@ -14,13 +14,14 @@ const Slack = props => {
     getSlackToken,
     slack,
   } = props;
+  const redirectURI = `${document.location.origin}/slack`;
   // Parse slack temporary code in URL
   const parsed = qs.parse(search);
   const { '?code': code } = parsed;
 
   useEffect(() => {
-    getSlackToken(code);
-  }, [getSlackToken, code]);
+    getSlackToken(code, redirectURI);
+  }, [getSlackToken, code, redirectURI]);
 
   return (
     <React.Fragment>
