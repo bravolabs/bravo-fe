@@ -2,8 +2,8 @@ import React from 'react';
 
 import MenuButton from './MenuButton';
 import { MenuContainer } from './sideNavMenu.styles';
-import teamIcon from '../../assets/team-icon.png';
-import confettiIcon from '../../assets/confetti-icon.png';
+import teamIcon from '../../assets/team-icon.svg';
+import confettiIcon from '../../assets/confetti-icon.svg';
 
 const SideNavMenu = () => {
     return (
