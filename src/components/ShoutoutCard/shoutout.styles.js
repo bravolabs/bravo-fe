@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Card } from '../../styling/atoms/Card';
 import { BodyText } from '../../styling/atoms/Fonts';
 
-export const ShoutoutCard = styled(Card)`
+export const ShoutoutCardContainer = styled(Card)`
     width: 1000px;
     height: 20rem;
     padding: 4rem;
