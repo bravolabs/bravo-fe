@@ -5,7 +5,7 @@ const User = ({ img, alt, name }) => {
   return (
     <>
       <ShoutoutUserAvatar src={img} alt={alt} />
-      <Username>{name}</Username>
+      <Username fontWeight='1000'>{name}</Username>
     </>
   );
 };
