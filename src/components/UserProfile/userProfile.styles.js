@@ -1,12 +1,13 @@
 import styled from 'styled-components';
-import { ComponentTitle } from '../../styling/atoms/Fonts';
 
-export const UserProfileContainer = styled(ComponentTitle)`
-    text-align: center;
-    margin: 50px auto;
-    padding: 20px;
-    width: 800px;
-    height: 300px;
-    border-radius: 8px;
-    border: 1px solid;
+export const ProfileHeader = styled.div`
+    width: max-width;
+    height: 33.33vh;
+    border: 1px solid green;
+`;
+
+export const ProfileBody = styled.div`
+    margin-top: 40px;
+    width: max-width;
+    height: max-content;
 `;
