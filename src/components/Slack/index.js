@@ -20,7 +20,9 @@ const Slack = props => {
   const { '?code': code } = parsed;
 
   useEffect(() => {
-    getSlackToken(code, redirectURI);
+    if (code) {
+      getSlackToken(code, redirectURI);
+    }
   }, [getSlackToken, code, redirectURI]);
 
   return (
