@@ -7,7 +7,7 @@ const HomeNav = () => {
   return (
     <NavContainer>
       <LogoContainer>
-        <Logo src={logoImg} />
+        <Logo src={logoImg} alt="Bravo logo" />
         <NavText>bravo</NavText>
       </LogoContainer>
     </NavContainer>
