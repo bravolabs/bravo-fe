@@ -6,7 +6,7 @@ import UserProfile from '../../components/UserProfile';
 const UserProfileView = () => {
   return (
       <>
-        <SideNav />
+        <SideNav menu='true' />
         <UserProfile />
       </>
     );
