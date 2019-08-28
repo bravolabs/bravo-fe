@@ -5,17 +5,17 @@ import User from '../User';
 import confetti from '../../assets/confetti.png';
 import placeholder from '../../assets/placeholder.png';
 
-const ShoutoutCard = () => {
+const ShoutoutCard = ({ praiseGiver, praiseTaker, time, praiseText }) => {
   return (
         <ShoutoutCardContainer>
             <AvatarsContainer>
-                <User img={placeholder} name={'Aaron Thompson'} />
+                <User img={placeholder} name={praiseGiver} />
                 <Emoji src={confetti} />
-                <User img={placeholder} name={'Noble Obioma'} />
-                <Time>2 hours ago</Time>
+                <User img={placeholder} name={praiseTaker} />
+                <Time>{time}</Time>
             </AvatarsContainer>
             <ShoutoutText>
-              Huge shoutout to Noble for his work on the Technical research! I was blow away by how detailed oriented the whole thing was. 
+               {praiseText}
             </ShoutoutText>  
         </ShoutoutCardContainer>
     );
