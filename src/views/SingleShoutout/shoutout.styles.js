@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Card } from '../../styling/atoms/Card';
+import { BodyText } from '../../styling/atoms/Fonts';
 
 export const ShoutoutCard = styled(Card)`
     width: 1000px;
@@ -35,10 +36,9 @@ export const Time = styled.div`
     color: rgba(0, 0, 0, 0.652);
 `;
 
-export const ShoutoutText = styled.div`
+export const ShoutoutText = styled(BodyText)`
     margin-top: 1.5rem;
     width: 800px;
     height: 8rem;
-    font-size: 1.6rem;
     line-height: 2.2rem;
 `;
