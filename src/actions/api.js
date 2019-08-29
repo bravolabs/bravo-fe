@@ -31,3 +31,10 @@ export const get = (path, auth) => dispatch => {
     return reqHandler(req);
   }
 };
+
+export const post = (path, data, auth) => dispatch => {
+  if (!auth) {
+    const req = axios.post(urlConstruct(path), data);
+    return reqHandler(req);
+  }
+};
