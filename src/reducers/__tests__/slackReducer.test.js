@@ -1,4 +1,3 @@
-import React from 'react';
 import { cleanup } from '@testing-library/react';
 import slackReducer from '../slackReducer';
 import { FETCH_START, FETCH_SUCCESS, FETCH_ERROR } from '../../actions/slack';
