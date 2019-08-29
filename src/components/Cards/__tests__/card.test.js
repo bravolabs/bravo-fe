@@ -14,6 +14,6 @@ describe('Cards Component', () => {
         text="install our slack integration in few simple clicks"
       />
     );
-    getByText(/bravo slack bot/i);
+    getByText('bravo slack bot');
   });
 });
