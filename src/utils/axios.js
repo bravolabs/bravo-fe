@@ -9,11 +9,11 @@ export const Axios = () => {
   });
 };
 
-export const axiosWithAut = () => {
+export const axiosWithAuth = () => {
   return axios.create({
     headers: {
       'Content-Type': 'application/json',
-      Authorization: localStorage.getItem('token') || '',
+      Authorization: localStorage.getItem('token') || 'a',
     },
     baseURL: process.env.REACT_APP_API_HOST,
   });

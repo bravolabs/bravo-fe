@@ -1,5 +1,5 @@
 import * as types from './types';
-import axios from 'axios';
+import { Axios, axiosWithAuth } from '../utils/axios';
 
 const baseURL = process.env.REACT_APP_API_HOST;
 
@@ -29,7 +29,10 @@ export const setError = error => {
 export const get = (path, auth) => dispatch => {
   dispatch({ type: types.API_FETCHING });
   if (!auth) {
-    const req = axios.get(urlConstruct(path));
+    const req = Axios.get(path);
+    return reqHandler(req);
+  } else {
+    const req = axiosWithAuth.get(path);
     return reqHandler(req);
   }
 };
@@ -37,7 +40,10 @@ export const get = (path, auth) => dispatch => {
 export const post = (path, data, auth) => dispatch => {
   dispatch({ type: types.API_POSTING });
   if (!auth) {
-    const req = axios.post(urlConstruct(path), data);
+    const req = Axios.post(path, data);
+    return reqHandler(req);
+  } else {
+    const req = axiosWithAuth.post(path, data);
     return reqHandler(req);
   }
 };
