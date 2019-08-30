@@ -7,19 +7,25 @@ import { SideNavContainer } from './sidenav.styles';
 import Avatar from '../Avatar';
 import SideNavMenu from '../SideNavMenu';
 
-const SideNav = ({ menu }) => {
+const SideNav = props => {
+  const { user } = props;
+  console.log(user);
   return (
     <SideNavContainer>
       <Link to="/">
         <img src={bravoWhite} alt="Bravo" />
       </Link>
-      { menu === 'true' && <SideNavMenu /> }
-      <Avatar src={bravoWhite} alt="user-avatar" />
+      { user && <SideNavMenu /> }
+      <Link to="/user">
+        <Avatar src={user ? user.avatar : bravoWhite} alt="user-avatar" />
+      </Link>
     </SideNavContainer>
   );
 };
 
 export default connect(
-  state => state,
+  state => ({
+    user: state.slack.user,
+  }),
   null
 )(SideNav);

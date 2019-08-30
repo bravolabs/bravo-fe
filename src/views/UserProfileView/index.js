@@ -1,15 +1,23 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import SideNav from '../../components/SideNav';
 import UserProfile from '../../components/UserProfile';
 
-const UserProfileView = () => {
+const UserProfileView = props => {
+  const { user } = props;
+
   return (
       <>
-        <SideNav menu='true' />
-        <UserProfile />
+        <SideNav />
+        <UserProfile user={user} />
       </>
     );
 };
 
-export default UserProfileView;
+export default connect(
+  state => ({
+    user: state.slack.user,
+  }),
+  null
+)(UserProfileView);
