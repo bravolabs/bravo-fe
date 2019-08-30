@@ -1,8 +1,5 @@
-import * as types from './types';
-import { post } from './api';
+export const SET_USER = 'SET_USER';
 
-export const login = (accessToken, userId) => dispatch => {
-  return dispatch(post('/api/auths', { accessToken, userId })).then(res => {
-    localStorage.setItem('token', res.data.token);
-  });
+export const loggedIn = user => {
+  return { type: SET_USER, payload: user };
 };
