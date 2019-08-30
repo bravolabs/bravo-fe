@@ -212,11 +212,6 @@ Example:
     import { setUser } from '../user';
 
     const mockStore = configureMockStore([thunk]);
-    const homeSuccess = {
-      ok: true,
-      access_token: 'sample token',
-      },
-    };
 
     describe('Home Action Creator', () => {
       let store;
