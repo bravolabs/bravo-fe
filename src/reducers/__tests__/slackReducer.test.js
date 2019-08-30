@@ -1,9 +1,12 @@
 import { cleanup } from '@testing-library/react';
 import slackReducer from '../slackReducer';
-import { FETCH_START, FETCH_SUCCESS, FETCH_ERROR } from '../../actions/slack';
+import { FETCH_START, FETCH_SUCCESS, FETCH_ERROR, INSTALL_SUCCESS } from '../../actions/slack';
+import { SET_USER } from '../../actions/auth';
 
 const initialState = {
-  loading: false,
+  isLoading: false,
+  installSuccess: false,
+  isLoggedIn: false,
   user: null,
   error: '',
 };
@@ -17,7 +20,7 @@ describe('Slack Reducer', () => {
   it('Should Toggle Loading state', () => {
     expect(slackReducer(initialState, { type: FETCH_START })).toEqual({
       ...initialState,
-      loading: true,
+      isLoading: true,
     });
   });
 
@@ -26,8 +29,21 @@ describe('Slack Reducer', () => {
       name: 'Example name',
       avatar: 'avatar.png',
     };
-    expect(slackReducer(initialState, { type: FETCH_SUCCESS, payload: user })).toEqual({
+    expect(slackReducer(initialState, { type: INSTALL_SUCCESS, payload: user })).toEqual({
       ...initialState,
+      installSuccess: true,
+      user,
+    });
+  });
+
+  it('Should set user and loggedIn to state', () => {
+    const user = {
+      name: 'Example name',
+      avatar: 'avatar.png',
+    };
+    expect(slackReducer(initialState, { type: SET_USER, payload: user })).toEqual({
+      ...initialState,
+      isLoggedIn: true,
       user,
     });
   });
