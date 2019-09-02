@@ -1,12 +1,12 @@
 import React from 'react';
-import { ShoutoutUserAvatar, Username } from './user.styles';
+import { ShoutoutUserAvatar, Username, UserContainer } from './user.styles';
 
-const User = ({ img, alt, name }) => {
+const User = ({ img, alt, name, size }) => {
   return (
-    <>
-      <ShoutoutUserAvatar src={img} alt={alt} />
-      <Username fontWeight='1000'>{name}</Username>
-    </>
+    <UserContainer size={size ? size : null}>
+      <ShoutoutUserAvatar src={img} alt={alt} size={size ? size : null} />
+      <Username fontWeight='1000' size={size ? size : null}>{name}</Username>
+    </UserContainer>
   );
 };
 
