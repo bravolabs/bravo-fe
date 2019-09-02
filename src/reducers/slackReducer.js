@@ -13,26 +13,27 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case FETCH_START:
       return {
-        ...initialState,
+        ...state,
+        isLoading: true,
       };
     case INSTALL_SUCCESS:
       return {
         ...state,
-        loading: false,
+        isLoading: false,
         installSuccess: true,
         user: action.payload,
       };
     case SET_USER:
       return {
         ...state,
-        loading: false,
+        isLoading: false,
         isLoggedIn: true,
         user: action.payload,
       };
     case FETCH_ERROR:
       return {
         ...state,
-        loading: false,
+        isLoading: false,
         installSuccess: false,
         error: action.payload,
       };

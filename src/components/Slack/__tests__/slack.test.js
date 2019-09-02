@@ -7,21 +7,25 @@ import Slack from '../index';
 
 afterEach(cleanup);
 describe('Add to Slack Component', () => {
-  it('Should Render a bare screen when code is not given', () => {
+  it('Should not render if state is not provided', () => {
     const { container } = renderWithRedux(<Slack location={{ search: '' }} />);
-    expect(container.children.length).toBe(1);
+    expect(container.children.length).toBe(0);
   });
 
   it('Should render Loading screen', () => {
     const reducer = {
       slack: {
-        loading: true,
+        isLoading: true,
       },
     };
     const store = createStore(() => reducer);
-    const { container, getByText } = renderWithRedux(<Slack location={{ search: '' }} />, {
-      store,
-    });
+    const { container, getByText } = renderWithRedux(
+      <Slack location={{ search: 'state=test' }} />,
+      {
+        store,
+      }
+    );
+
     const loadScreen = container.firstChild;
     getByText('Loading your Profile');
     expect(container.children.length).toBe(2);
@@ -31,7 +35,7 @@ describe('Add to Slack Component', () => {
   it('Should Render Success screen', () => {
     const reducer = {
       slack: {
-        loading: false,
+        installSuccess: true,
         user: {
           name: 'name example',
           avatar: 'user-avatar.jpg',
@@ -41,7 +45,7 @@ describe('Add to Slack Component', () => {
     };
     const store = createStore(() => reducer);
     const { container, getByText, getByAltText } = renderWithRedux(
-      <Slack location={{ search: '' }} />,
+      <Slack location={{ search: 'state=test' }} />,
       {
         store,
       }
@@ -56,14 +60,14 @@ describe('Add to Slack Component', () => {
   it('Should render error screen with error message', () => {
     const reducer = {
       slack: {
-        loading: false,
+        isLoading: false,
         user: null,
         error: 'Invalid_Code',
       },
     };
     const store = createStore(() => reducer);
     const { container, getByText, getByAltText } = renderWithRedux(
-      <Slack location={{ search: '' }} />,
+      <Slack location={{ search: 'state=test' }} />,
       {
         store,
       }
