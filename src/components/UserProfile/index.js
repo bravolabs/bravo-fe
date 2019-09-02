@@ -1,8 +1,10 @@
 import React from 'react';
 
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
-import { ProfileHeader, ProfileBody } from './userProfile.styles';
+import User from '../../components/User';
+import { ProfileHeader, ProfileBody, ShoutoutsButton } from './userProfile.styles';
 import placeholder from '../../assets/placeholder.png';
+
 
 const shoutoutMargin = '20px auto 15px 200px';
 
@@ -10,7 +12,13 @@ const UserProfile = ({ user }) => {
   return (
       <>
         <ProfileHeader>
-
+          <User 
+            size='user-profile' 
+            img={user ? user.avatar : placeholder} 
+            alt={placeholder} 
+            name={user ? user.name : 'Aaron Thompson'} 
+          />
+          <ShoutoutsButton>Shoutouts</ShoutoutsButton>
         </ProfileHeader>
         <ProfileBody>
             <ShoutoutCard 
