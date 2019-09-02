@@ -3,8 +3,10 @@ import { BaseButton } from '../../styling/atoms/Buttons';
 
 export const ButtonLink = styled.a`
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
   &:hover {
     cursor: pointer;
+    transform: scale(1.05);
   }
 `;
 
