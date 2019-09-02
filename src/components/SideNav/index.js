@@ -16,7 +16,7 @@ const SideNav = props => {
         <img src={bravoWhite} alt="Bravo" />
       </Link>
       { slack.isLoggedIn && <SideNavMenu /> }
-      <Link to="/user">
+      <Link to={slack.isLoggedIn && "/user"}>
         <Avatar src={slack.user ? slack.user.avatar : bravoWhite} alt="user-avatar" />
       </Link>
     </SideNavContainer>
