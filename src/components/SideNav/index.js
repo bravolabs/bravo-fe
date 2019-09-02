@@ -8,16 +8,16 @@ import Avatar from '../Avatar';
 import SideNavMenu from '../SideNavMenu';
 
 const SideNav = props => {
-  const { user } = props;
-  console.log(user);
+  const { slack } = props;
+  console.log(slack);
   return (
     <SideNavContainer>
       <Link to="/">
         <img src={bravoWhite} alt="Bravo" />
       </Link>
-      { user && <SideNavMenu /> }
+      { slack.isLoggedIn && <SideNavMenu /> }
       <Link to="/user">
-        <Avatar src={user ? user.avatar : bravoWhite} alt="user-avatar" />
+        <Avatar src={slack.user ? slack.user.avatar : bravoWhite} alt="user-avatar" />
       </Link>
     </SideNavContainer>
   );
@@ -25,7 +25,7 @@ const SideNav = props => {
 
 export default connect(
   state => ({
-    user: state.slack.user,
+    slack: state.slack,
   }),
   null
 )(SideNav);
