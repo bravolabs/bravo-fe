@@ -9,7 +9,6 @@ import SideNavMenu from '../SideNavMenu';
 
 const SideNav = props => {
   const { slack } = props;
-  console.log(slack);
   return (
     <SideNavContainer>
       <Link to="/">
