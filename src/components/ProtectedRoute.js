@@ -11,6 +11,7 @@ const ProtectedRoute = ({ component: Component, ...props }) => {
         if (token) {
           return <Component />;
         } else {
+          localStorage.setItem('target-route', props.location.pathname);
           return (
             <Redirect
               to={{
