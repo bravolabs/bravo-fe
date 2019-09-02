@@ -153,25 +153,97 @@ Example:
     export default rootReducer;
     ```
 
-  - Create Test Suite for Feature
+  - Create Test Suite for Component
 
-  ```js
-  // src/Home/home.test.js
-  import React from 'react';
-  import * as rtl from '@testing-library/react';
+    ```js
+    // src/Components/Home/__tests__/home.test.js
+    import React from 'react';
+    import * as rtl from '@testing-library/react';
 
-  import '@testing-library/jest-dom/extend-expect';
+    import '@testing-library/jest-dom/extend-expect';
 
-  import Home from '../index';
+    import Home from '../index';
 
-  afterEach(rtl.cleanup);
-  describe('Home Component', () => {
-    it('Should render home component', () => {
-      const { container } = rtl.render(<Home />);
-      expect(container).toBeTruthy();
+    afterEach(rtl.cleanup);
+    describe('Home Component', () => {
+      it('Should render home component', () => {
+        const { container } = rtl.render(<Home />);
+        expect(container).toBeTruthy();
+      });
     });
-  });
-  ```
+    ```
+
+  - Create Test Suite for Reducer
+
+    ```js
+    // src/reducers/__tests__/home.test.js
+    import { cleanup } from '@testing-library/react';
+    import userReducer from '../userReducer';
+    import { FETCH_START } from '../../actions/user';
+
+    const initialState = {
+      loading: false,
+      user: null,
+      error: '',
+    };
+
+    afterEach(cleanup);
+    describe('User Reducer', () => {
+      it('Should return initial State', () => {
+        expect(userReducer(undefined, {})).toEqual(initialState);
+      });
+
+      it('Should Toggle Loading state', () => {
+        expect(userReducer(initialState, { type: FETCH_START })).toEqual({
+          ...initialState,
+          loading: true,
+        });
+      });
+    });
+    ```
+
+  - Create Test Suite for Action
+
+    ```js
+    // actions/__tests__/user.test.js
+    import configureMockStore from 'redux-mock-store';
+    import thunk from 'redux-thunk';
+    import nock from 'nock';
+    import { setUser } from '../user';
+
+    const mockStore = configureMockStore([thunk]);
+
+    describe('Home Action Creator', () => {
+      let store;
+      beforeEach(() => {
+        store = mockStore({});
+      });
+      afterEach(() => {
+        nock.cleanAll();
+      });
+
+      it('Should return FETCH_SUCCESS Action with payload', () => {
+        nock('https://home.com/api')
+          .post('/user')
+          .reply(200, {
+            user: 'Sample User',
+          });
+        const expectedActions = [
+          {
+            type: 'SET_USER_START',
+          },
+          {
+            type: 'SET_USER_ERROR',
+            payload: 'Sample User',
+          },
+        ];
+        store = mockStore({});
+        return store.dispatch(setUser()).then(() => {
+          expect(store.getActions()).toEqual(expectedActions);
+        });
+      });
+    });
+    ```
 
 - **Create Pull Request**
 
