@@ -10,11 +10,12 @@ import DisplayCard from '../Cards/DisplayCard';
 import SideNav from '../SideNav';
 
 const Slack = ({ history, location, appInstall, signInWithSlack, slack }) => {
-  const goToLocation = location.state ? location.state.from : '/shoutout';
+  const targetRoute = localStorage.getItem('target-route');
+  const goToLocation = targetRoute ? targetRoute : '/';
   const redirectURI = `${document.location.origin}/slack`;
   // get code and state('addAppToSlack' or 'resumeSignIn') from slack on URL
   const { code, state } = qs.parse(location.search);
-
+  //debugger;
   useEffect(() => {
     if (state === 'addAppToSlack') {
       appInstall(code, redirectURI);
@@ -23,6 +24,7 @@ const Slack = ({ history, location, appInstall, signInWithSlack, slack }) => {
       signInWithSlack(code, redirectURI).then(res => {
         if (res) {
           history.push(goToLocation);
+          localStorage.removeItem('target-route');
         }
       });
     }
