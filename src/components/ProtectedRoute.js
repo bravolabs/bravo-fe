@@ -14,7 +14,7 @@ const ProtectedRoute = ({ component: Component, ...props }) => {
           return (
             <Redirect
               to={{
-                pathname: '/',
+                pathname: '/slack-signin',
                 state: { from: props.location },
               }}
             />
