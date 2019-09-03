@@ -32,7 +32,6 @@ export const TeamHead = styled.div`
   padding-right: 7rem;
   padding-left: 6rem;
   margin-bottom: 1.6rem;
-  border: 1px solid #f1f2f6;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -42,12 +41,7 @@ export const HeadText = styled.span`
   color: #7d8597;
   padding: 0;
   margin: auto;
-  &:first-of-type {
-    margin-right: 0;
-  }
-  &:last-of-type {
-    margin-left: 0;
-  }
+  ${props => (props.marginLeft ? 'margin-left: 0' : 'margin-right: 0')};
   font-weight: 600;
   font-size: 1.8rem;
   line-height: 2.2rem;
