@@ -46,10 +46,10 @@ const Shoutout = props => {
   const timeString = moment(created_at).fromNow();
   return (
     <ShoutoutCard
-      praiseGiver={giver.name}
-      praiseTaker={receiver.name}
-      time={timeString}
-      praiseText={message}
+      praiseGiver={giver.name || ''}
+      praiseTaker={receiver.name || ''}
+      time={timeString || ''}
+      praiseText={message || ''}
     />
   );
 };
