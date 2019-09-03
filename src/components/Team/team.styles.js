@@ -37,3 +37,18 @@ export const TeamHead = styled.div`
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 `;
+
+export const HeadText = styled.span`
+  color: #7d8597;
+  padding: 0;
+  margin: auto;
+  &:first-of-type {
+    margin-right: 0;
+  }
+  &:last-of-type {
+    margin-left: 0;
+  }
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+`;
