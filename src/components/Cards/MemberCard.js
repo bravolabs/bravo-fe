@@ -1,4 +1,10 @@
 import { MemberCardContainer } from './cards.styles';
-const MemberCard = ({ id, name, avatar }) => <MemberCardContainer></MemberCardContainer>;
+import User from '../User';
+
+const MemberCard = ({ id, name, avatar }) => (
+  <MemberCardContainer>
+    <User img={avatar} alt={name} name={name} />
+  </MemberCardContainer>
+);
 
 export default MemberCard;
