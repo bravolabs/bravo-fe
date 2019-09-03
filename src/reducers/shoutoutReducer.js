@@ -1,4 +1,4 @@
-import { types } from '../actions/shoutouts/types';
+import { types } from '../actions/shoutouts';
 
 const initialState = {
   singleShoutout: null,
