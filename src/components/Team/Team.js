@@ -1,10 +1,13 @@
 import React from 'react';
-import { TeamContainer, Title, TeamHead } from './team.styles';
+import { TeamContainer, Title, TeamHead, HeadText } from './team.styles';
 
 const Team = () => (
   <TeamContainer>
     <Title>Team</Title>
-    <TeamHead></TeamHead>
+    <TeamHead>
+      <HeadText>Name</HeadText>
+      <HeadText>Actions</HeadText>
+    </TeamHead>
   </TeamContainer>
 );
 
