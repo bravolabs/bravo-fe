@@ -27,13 +27,19 @@ const View = props => {
       getUser(props.shoutouts.singleShoutout.receiverSlackId);
     }
   }, [props.shoutouts.singleShoutout, props.users]);
+
+  let shoutout = {
+    ...props.shoutouts.singleShoutout,
+    giver: props.users[props.shoutouts.singleShoutout.giverSlackId] || { name: '...' },
+    receiver: props.users[props.shoutouts.singleShoutout.receiverSlackId] || { name: '...' },
+  };
   return (
     <>
       <SideNav />
-      <Shoutout />
+      <Shoutout shoutout={shoutout} />
     </>
-  )
-}
+  );
+};
 
 const Shoutout = props => {
   const { giver, receiver, message, created_at } = props.shoutout;
