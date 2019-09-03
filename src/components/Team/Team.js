@@ -1,6 +1,10 @@
 import React from 'react';
-import { TeamContainer } from './team.styles';
+import { TeamContainer, Title } from './team.styles';
 
-const Team = () => <TeamContainer></TeamContainer>;
+const Team = () => (
+  <TeamContainer>
+    <Title>Team</Title>
+  </TeamContainer>
+);
 
 export default Team;
