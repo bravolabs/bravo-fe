@@ -1,0 +1,5 @@
+export const types = {
+  ADD_USER_INFO: 'ADD_USER_INFO',
+  FETCHING_USER: 'FETCHING_USER',
+  USER_ERROR: 'USER_ERROR',
+};
