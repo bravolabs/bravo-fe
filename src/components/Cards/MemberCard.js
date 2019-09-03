@@ -7,7 +7,12 @@ const MemberCard = ({ id, name, avatar }) => (
   <MemberCardContainer>
     <User img={avatar || placeholder} alt={name} name={name} />
     <MemberCardAction>···</MemberCardAction>
-    <ViewProfile>👀 View profile</ViewProfile>
+    <ViewProfile>
+      <span role="img" aria-label="eyes icon">
+        👀
+      </span>{' '}
+      View profile
+    </ViewProfile>
   </MemberCardContainer>
 );
 
