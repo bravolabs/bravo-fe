@@ -1,5 +1,10 @@
 import React from 'react';
+import SideNav from '../../components/SideNav';
 
-const Team = () => <></>;
+const Team = () => (
+  <>
+    <SideNav />
+  </>
+);
 
 export default Team;
