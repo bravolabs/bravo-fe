@@ -58,7 +58,7 @@ export const MemberCardContainer = styled(Card)`
   display: flex;
   max-width: 1000px;
   height: 6.4rem;
-  padding: 0 8rem 0 2.4rem;
+  padding: auto 8rem auto 2.4rem;
   margin-bottom: 1.2rem;
   border: 1px solid #f1f2f6;
   box-sizing: border-box;
