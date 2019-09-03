@@ -8,12 +8,12 @@ import SideNav from '../index';
 afterEach(cleanup);
 describe('Side Nav Component', () => {
   it('Should render components in side nav properly', () => {
-    const { getByRole, getByAltText } = renderWithRedux(<SideNav />);
-    const logoLink = getByRole('link');
+    const { getAllByRole, getByAltText } = renderWithRedux(<SideNav />);
+    const links = getAllByRole('link');
     const logo = getByAltText('Bravo');
     const avatar = getByAltText('user-avatar');
-    expect(logoLink).toHaveAttribute('href', '/');
-    expect(logoLink).toContainElement(logo);
+    expect(links[0]).toHaveAttribute('href', '/');
+    expect(links[0]).toContainElement(logo);
     expect(logo).toHaveAttribute('src', 'bravo-white.svg');
     expect(avatar).toHaveAttribute('src', 'bravo-white.svg');
   });

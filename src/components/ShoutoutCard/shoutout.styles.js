@@ -6,7 +6,7 @@ export const ShoutoutCardContainer = styled(Card)`
   width: 1000px;
   height: 20rem;
   padding: 4rem;
-  margin: 18rem auto;
+  margin: ${props => (props.margin ? props.margin : '18rem auto')};
   border: 1px solid #f1f2f6;
   box-sizing: border-box;
   box-shadow: 0px 2px 2px #f2f3f7;

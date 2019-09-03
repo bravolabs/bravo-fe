@@ -5,23 +5,26 @@ import { connect } from 'react-redux';
 import bravoWhite from '../../assets/bravo-white.svg';
 import { SideNavContainer } from './sidenav.styles';
 import Avatar from '../Avatar';
+import SideNavMenu from '../SideNavMenu';
 
 const SideNav = props => {
-  const { user } = props;
-
+  const { slack } = props;
   return (
     <SideNavContainer>
       <Link to="/">
         <img src={bravoWhite} alt="Bravo" />
       </Link>
-      <Avatar src={user ? user.avatar : bravoWhite} alt="user-avatar" />
+      { slack.isLoggedIn && <SideNavMenu /> }
+      <Link to={slack.isLoggedIn && "/user"}>
+        <Avatar src={slack.user ? slack.user.avatar : bravoWhite} alt="user-avatar" />
+      </Link>
     </SideNavContainer>
   );
 };
 
 export default connect(
   state => ({
-    user: state.slack.user,
+    slack: state.slack,
   }),
   null
 )(SideNav);

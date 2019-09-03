@@ -5,11 +5,13 @@ import User from '../User';
 import confetti from '../../assets/confetti.png';
 import placeholder from '../../assets/placeholder.png';
 
-const ShoutoutCard = ({ praiseGiver, praiseTaker, time, praiseText }) => {
+const ShoutoutCard = props => {
+  const { margin, praiseGiver, profilePic, praiseTaker, time, praiseText } = props;
+
   return (
-        <ShoutoutCardContainer>
+        <ShoutoutCardContainer margin={margin}>
             <AvatarsContainer>
-                <User img={placeholder} name={praiseGiver} />
+                <User img={profilePic} name={praiseGiver} />
                 <Emoji src={confetti} />
                 <User img={placeholder} name={praiseTaker} />
                 <Time>{time}</Time>
