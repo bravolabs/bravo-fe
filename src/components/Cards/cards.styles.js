@@ -65,3 +65,17 @@ export const MemberCardContainer = styled(Card)`
   box-shadow: 0px 2px 2px #f2f3f7;
   border-radius: 8px;
 `;
+
+export const MemberCardAction = styled(BaseButton)`
+  color: #7d8597;
+  outline: none;
+  padding: 0;
+  margin: auto;
+  margin-right: 0;
+  &:hover {
+    color: #4265ed;
+  }
+  &:focus {
+    color: #4265ed;
+  }
+`;
