@@ -22,3 +22,18 @@ export const Title = styled(PageTitle)`
   color: #000;
   margin-bottom: 4rem;
 `;
+
+export const TeamHead = styled.div`
+  display: flex;
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  padding: 0;
+  padding-right: 7rem;
+  padding-left: 6rem;
+  margin-bottom: 1.6rem;
+  border: 1px solid #f1f2f6;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+`;
