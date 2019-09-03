@@ -56,9 +56,12 @@ export const DisplayCardContainer = styled(Card)`
 
 export const MemberCardContainer = styled(Card)`
   display: flex;
+  justify-items: center;
   max-width: 1000px;
   height: 6.4rem;
-  padding: auto 8rem auto 2.4rem;
+  padding: 0;
+  padding-right: 8rem;
+  padding-left: 2.4rem;
   margin-bottom: 1.2rem;
   border: 1px solid #f1f2f6;
   box-sizing: border-box;
@@ -72,6 +75,8 @@ export const MemberCardAction = styled(BaseButton)`
   padding: 0;
   margin: auto;
   margin-right: 0;
+  font-size: 3.4rem;
+  font-weight: bolder;
   &:hover {
     color: #4265ed;
   }
