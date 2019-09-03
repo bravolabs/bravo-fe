@@ -47,7 +47,9 @@ const Shoutout = props => {
   return (
     <ShoutoutCard
       praiseGiver={giver.name || ''}
+      giverAvatar={giver.avatar || ''}
       praiseTaker={receiver.name || ''}
+      receiverAvatar={receiver.avatar || ''}
       time={timeString || ''}
       praiseText={message || ''}
     />
