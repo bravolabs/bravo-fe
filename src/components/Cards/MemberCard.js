@@ -1,3 +1,4 @@
+import React from 'react';
 import { MemberCardContainer, MemberCardAction } from './cards.styles';
 import User from '../User';
 import placeholder from '../../assets/placeholder.png';
