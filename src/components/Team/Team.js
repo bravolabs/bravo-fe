@@ -49,7 +49,7 @@ const Team = () => (
   <TeamContainer>
     <Title>Team</Title>
     <TeamHead>
-      <HeadText>Name</HeadText>
+      <HeadText marginLeft={true}>Name</HeadText>
       <HeadText>Actions</HeadText>
     </TeamHead>
     <MemberCards members={members} />
