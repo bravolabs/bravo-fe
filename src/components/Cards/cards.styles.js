@@ -56,6 +56,7 @@ export const DisplayCardContainer = styled(Card)`
 
 export const MemberCardContainer = styled(Card)`
   display: flex;
+  position: relative;
   justify-items: center;
   max-width: 1000px;
   height: 6.4rem;
