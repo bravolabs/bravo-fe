@@ -70,6 +70,15 @@ export const MemberCardContainer = styled(Card)`
   border-radius: 8px;
 `;
 
+export const MemberCardsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+`;
+
 export const MemberCardAction = styled(BaseButton)`
   color: #7d8597;
   outline: none;
