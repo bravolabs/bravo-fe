@@ -84,3 +84,18 @@ export const MemberCardAction = styled(BaseButton)`
     color: #4265ed;
   }
 `;
+
+export const ViewProfile = styled(BaseButton)`
+  display: none;
+  position: absolute;
+  left: 936px;
+  top: 1.2rem;
+  width: 160px;
+  height: 4rem;
+  background: #ffffff;
+  border: 1px solid #f1f2f6;
+  box-sizing: border-box;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  padding: auto 12px;
+  color: #7d8597;
+`;
