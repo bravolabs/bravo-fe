@@ -1,20 +1,23 @@
 import React from 'react';
+import moment from 'moment';
 
 import SideNav from '../../components/SideNav';
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
 
-const Shoutout = () => {
+const Shoutout = props => {
+  const { giver, receiver, message, created_at } = props.shoutout;
+  const timeString = moment(created_at).fromNow();
   return (
-      <>
-        <SideNav />
-        <ShoutoutCard 
-          praiseGiver='Aaron Thompson' 
-          praiseTaker='Noble Obioma' 
-          time='2 hours ago' 
-          praiseText='Huge shoutout to Noble for his work on the Technical research! I was blow away by how detailed oriented the whole thing was.' 
-        />
-      </>
-    );
+    <>
+      <SideNav />
+      <ShoutoutCard
+        praiseGiver={giver.name}
+        praiseTaker={receiver.name}
+        time={timeString}
+        praiseText={message}
+      />
+    </>
+  );
 };
 
 export default Shoutout;
