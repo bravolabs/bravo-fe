@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Card } from '../../styling/atoms/Card';
+import { BaseButton } from '../../styling/atoms/Buttons';
 import colors from '../../styling/variables/UIColors';
 
 export const CardsContainer = styled.div`
