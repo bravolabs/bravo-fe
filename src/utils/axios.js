@@ -8,3 +8,13 @@ export const Axios = () => {
     baseURL: process.env.REACT_APP_API_HOST,
   });
 };
+
+export const axiosWithAuth = () => {
+  return axios.create({
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: localStorage.getItem('token') || '',
+    },
+    baseURL: process.env.REACT_APP_API_HOST,
+  });
+};
