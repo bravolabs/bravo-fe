@@ -4,7 +4,8 @@ import User from '../User';
 import placeholder from '../../assets/placeholder.png';
 const handleActionClick = id => {
   const target = document.querySelector(`#${id}`);
-  if (target.style.display === 'none') {
+  const val = target.style.display;
+  if (val === 'none' || val === '') {
     target.style.display = 'block';
   } else {
     target.style.display = 'none';
