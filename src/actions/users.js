@@ -22,7 +22,7 @@ export const setError = error => {
 
 export const getUserInfo = id => dispatch => {
   dispatch({ type: types.FETCHING_USER });
-  return axiosWithAuth
+  return axiosWithAuth()
     .get('/api/users/' + id)
     .then(res => {
       dispatch(addUser(res.data));

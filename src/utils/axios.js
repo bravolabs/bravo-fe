@@ -1,4 +1,5 @@
 import axios from 'axios';
+import localstorage from './localstorage';
 
 export const Axios = () => {
   return axios.create({
@@ -13,7 +14,7 @@ export const axiosWithAuth = () => {
   return axios.create({
     headers: {
       'Content-Type': 'application/json',
-      Authorization: localStorage.getItem('token') || '',
+      Authorization: localstorage.get().token || '',
     },
     baseURL: process.env.REACT_APP_API_HOST,
   });

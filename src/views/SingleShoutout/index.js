@@ -7,36 +7,41 @@ import { getSingleShoutout } from '../../actions/shoutouts';
 import SideNav from '../../components/SideNav';
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
 
-const getUser = async (id, users) => {
-  if (users[id]) {
-    return users[id];
-  } else {
-    const res = await getUserInfo(id);
-    return res.data;
-  }
-};
 
 const View = props => {
+
+  const getUser = async (id, users) => {
+    if (props.users[id]) {
+      return props.users[id];
+    } else {
+      const res = await props.getUserInfo(id);
+      return res.data;
+    }
+  };
+
   useEffect(() => {
-    getSingleShoutout(props.match.params.id);
-  }, [props.match]);
+    props.getSingleShoutout(props.match.params.id);
+  }, []);
 
   useEffect(() => {
     if (props.shoutouts.singleShoutout) {
+      debugger;
       getUser(props.shoutouts.singleShoutout.giverSlackId);
       getUser(props.shoutouts.singleShoutout.receiverSlackId);
     }
   }, [props.shoutouts.singleShoutout, props.users]);
-
-  let shoutout = {
-    ...props.shoutouts.singleShoutout,
-    giver: props.users[props.shoutouts.singleShoutout.giverSlackId] || { name: '...' },
-    receiver: props.users[props.shoutouts.singleShoutout.receiverSlackId] || { name: '...' },
-  };
+  let shoutout = null;
+  try {
+    shoutout = {
+      ...props.shoutouts.singleShoutout,
+      giver: props.users[props.shoutouts.singleShoutout.giverSlackId] || { name: '...' },
+      receiver: props.users[props.shoutouts.singleShoutout.receiverSlackId] || { name: '...' },
+    };
+  } catch (error) {}
   return (
     <>
       <SideNav />
-      <Shoutout shoutout={shoutout} />
+      {shoutout ? <Shoutout shoutout={shoutout} /> : null}
     </>
   );
 };

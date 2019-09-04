@@ -22,7 +22,7 @@ export const setError = error => {
 
 export const getSingleShoutout = id => dispatch => {
   dispatch({ type: types.FETCHING_SHOUTOUT });
-  return axiosWithAuth
+  return axiosWithAuth()
     .get('/api/shoutouts/' + id)
     .then(res => {
       dispatch(setSingleShoutout(res.data));
