@@ -7,11 +7,14 @@ import { fetchTeamInfo } from '../../actions/team';
 import Loader from '../Loader';
 import DisplayCard from '../Cards/DisplayCard';
 import bravoParty from '../../assets/bravo-party.svg';
+import localstorage from '../../utils/localstorage';
+
+const { org_id } = localstorage.get() || '';
 
 const Team = ({ team, fetchTeamInfo }) => {
   useEffect(() => {
     if (team && !team.members) {
-      fetchTeamInfo('QHUESBNDGE');
+      fetchTeamInfo(org_id);
     }
   }, []);
   return (
