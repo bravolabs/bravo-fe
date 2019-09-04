@@ -25,7 +25,7 @@ export const getSingleShoutout = id => dispatch => {
   return axiosWithAuth()
     .get('/api/shoutouts/' + id)
     .then(res => {
-      dispatch(setSingleShoutout(res.data));
+      dispatch(setSingleShoutout(res.data.data));
     })
     .catch(err => {
       dispatch(setError(err.message));

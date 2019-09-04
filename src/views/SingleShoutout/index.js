@@ -14,8 +14,7 @@ const View = props => {
     if (props.users[id]) {
       return props.users[id];
     } else {
-      const res = await props.getUserInfo(id);
-      return res.data;
+      return props.getUserInfo(id);
     }
   };
 
@@ -25,11 +24,10 @@ const View = props => {
 
   useEffect(() => {
     if (props.shoutouts.singleShoutout) {
-      debugger;
       getUser(props.shoutouts.singleShoutout.giverSlackId);
       getUser(props.shoutouts.singleShoutout.receiverSlackId);
     }
-  }, [props.shoutouts.singleShoutout, props.users]);
+  }, [props.shoutouts.singleShoutout]);
   let shoutout = null;
   try {
     shoutout = {
