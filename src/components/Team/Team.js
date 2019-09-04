@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { TeamContainer, Title, TeamHead, HeadText } from './team.styles';
 import MemberCards from '../Cards/MemberCards';
+import { fetchTeamInfo } from '../../actions/team';
 
 const members = [
   {
@@ -59,5 +60,5 @@ const Team = () => (
 
 export default connect(
   state => state,
-  {}
+  { fetchTeamInfo }
 )(Team);
