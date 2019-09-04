@@ -1,7 +1,7 @@
 import axios from 'axios';
 import localstorage from '../utils/localstorage';
 
-const { token } = localstorage.get();
+const { token } = localstorage.get() || '';
 
 export const Axios = () => {
   return axios.create({
