@@ -1,9 +1,6 @@
 import axios from 'axios';
-import localstorage from '../utils/localstorage';
 
-const { token } = localstorage.get() || '';
-
-export const Axios = () => {
+export const Axios = (token = null) => {
   return axios.create({
     headers: {
       'Content-Type': 'application/json',
