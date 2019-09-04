@@ -20,6 +20,12 @@ export default (state = initialState, action) => {
         isFetchingTeam: false,
         team: action.payload,
       };
+    case TEAM_FETCH_FAIL:
+      return {
+        ...state,
+        isFetchingTeam: false,
+        fetchingTeamError: action.payload,
+      };
     default:
       return state;
   }
