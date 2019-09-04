@@ -10,6 +10,11 @@ export const fetchTeamInfo = organization => async dispatch => {
     const { data } = await Axios().post(`/api/organizations/${organization}/users`);
 
     dispatch({ type: TEAM_FETCH_SUCCESS, payload: data.data || data });
-    return true;
-  } catch (error) {}
+  } catch (error) {
+    if (error.response) {
+      dispatch({ type: TEAM_FETCH_FAIL, payload: error.response.data.message });
+      return;
+    }
+    dispatch({ type: TEAM_FETCH_FAIL, payload: error.message });
+  }
 };
