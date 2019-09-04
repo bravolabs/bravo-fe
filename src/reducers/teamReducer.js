@@ -5,3 +5,16 @@ const initialState = {
   team: null,
   fetchingTeamError: '',
 };
+
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case FETCHING_TEAM:
+      return {
+        ...state,
+        isFetchingTeam: true,
+        fetchingTeamError: '',
+      };
+    default:
+      return state;
+  }
+};
