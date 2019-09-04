@@ -2,7 +2,7 @@ import { FETCHING_TEAM, TEAM_FETCH_SUCCESS, TEAM_FETCH_FAIL } from '../actions/t
 
 const initialState = {
   isFetchingTeam: false,
-  team: null,
+  members: null,
   errorMessage: '',
 };
 
@@ -13,12 +13,13 @@ export default (state = initialState, action) => {
         ...state,
         isFetchingTeam: true,
         errorMessage: '',
+        members: null,
       };
     case TEAM_FETCH_SUCCESS:
       return {
         ...state,
         isFetchingTeam: false,
-        team: action.payload,
+        members: action.payload,
       };
     case TEAM_FETCH_FAIL:
       return {
