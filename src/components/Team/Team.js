@@ -59,6 +59,6 @@ const Team = () => (
 );
 
 export default connect(
-  state => state,
+  state => ({ team: state.team }),
   { fetchTeamInfo }
 )(Team);
