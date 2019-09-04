@@ -8,7 +8,7 @@ import Loader from '../Loader';
 import DisplayCard from '../Cards/DisplayCard';
 import bravoParty from '../../assets/bravo-party.svg';
 
-const Team = ({ team }) => (
+const Team = ({ team, fetchTeamInfo }) => (
   <React.Fragment>
     {team.isFetchingTeam && <DisplayCard header={<Loader />} text="Loading your Team..." />}
     {team.members && (
