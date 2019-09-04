@@ -53,14 +53,16 @@ const members = [
 const Team = ({ team }) => (
   <React.Fragment>
     {team.isFetchingTeam && <DisplayCard header={<Loader />} text="Loading your Team..." />}
-    <TeamContainer>
-      <Title>Team</Title>
-      <TeamHead>
-        <HeadText marginLeft={true}>Name</HeadText>
-        <HeadText>Actions</HeadText>
-      </TeamHead>
-      <MemberCards members={members} />
-    </TeamContainer>
+    {team.members && (
+      <TeamContainer>
+        <Title>Team</Title>
+        <TeamHead>
+          <HeadText marginLeft={true}>Name</HeadText>
+          <HeadText>Actions</HeadText>
+        </TeamHead>
+        <MemberCards members={team.members} />
+      </TeamContainer>
+    )}
   </React.Fragment>
 );
 
