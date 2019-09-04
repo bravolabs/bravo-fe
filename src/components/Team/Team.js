@@ -47,7 +47,7 @@ const members = [
   },
 ];
 
-const Team = () => (
+const Team = ({ team }) => (
   <TeamContainer>
     <Title>Team</Title>
     <TeamHead>
