@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { TeamContainer, Title, TeamHead, HeadText } from './team.styles';
 import MemberCards from '../Cards/MemberCards';
 
@@ -56,4 +57,7 @@ const Team = () => (
   </TeamContainer>
 );
 
-export default Team;
+export default connect(
+  state => state,
+  {}
+)(Team);
