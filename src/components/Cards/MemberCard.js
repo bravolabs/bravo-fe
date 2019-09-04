@@ -11,10 +11,19 @@ const handleActionClick = id => {
     target.style.display = 'none';
   }
 };
+
+const handleFocusOut = id => {
+  document.querySelector(`#${id}`).style.display = 'none';
+};
+
 const MemberCard = ({ id, name, avatar }) => (
   <MemberCardContainer>
     <User img={avatar || placeholder} alt={name} name={name} />
-    <MemberCardAction onClick={() => handleActionClick(`profile-${id}`)}>···</MemberCardAction>
+    <MemberCardAction
+      onClick={() => handleActionClick(`profile-${id}`)}
+      onBlur={() => handleFocusOut(`profile-${id}`)}>
+      ···
+    </MemberCardAction>
     <ViewProfile id={`profile-${id}`}>
       <span role="img" aria-label="eyes icon">
         👀
