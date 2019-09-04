@@ -8,5 +8,8 @@ export const fetchTeamInfo = organization => async dispatch => {
   dispatch({ type: FETCHING_TEAM });
   try {
     const { data } = await Axios().post(`/api/organizations/${organization}/users`);
+
+    dispatch({ type: TEAM_FETCH_SUCCESS, payload: data.data || data });
+    return true;
   } catch (error) {}
 };
