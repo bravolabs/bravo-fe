@@ -6,6 +6,7 @@ import { fetchTeamInfo } from '../../actions/team';
 
 import Loader from '../Loader';
 import DisplayCard from '../Cards/DisplayCard';
+import bravoParty from '../../assets/bravo-party.svg';
 
 const members = [
   {
@@ -62,6 +63,9 @@ const Team = ({ team }) => (
         </TeamHead>
         <MemberCards members={team.members} />
       </TeamContainer>
+    )}
+    {team.errorMessage && (
+      <DisplayCard header={<img src={bravoParty} alt="bravo party" />} text={team.errorMessage} />
     )}
   </React.Fragment>
 );
