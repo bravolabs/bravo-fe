@@ -16,7 +16,7 @@ const AppRouter = () => (
     <Route path="/slack" component={Slack} />
     <ProtectedRoute path="/shoutout/:id" component={Shoutout} />
     <ProtectedRoute path="/team" component={Team} />
-    <Route exact path="/user" component={UserProfileView} />
+    <ProtectedRoute path="/user" component={UserProfileView} />
     <Route render={() => <Redirect to="/" />} />
   </Switch>
 );
