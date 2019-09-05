@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import Dashboard from '../views/Dashboard';
 import localstorage from '../utils/localstorage';
 
 const ProtectedRoute = ({ component: Component, ...props }) => {
@@ -9,7 +10,11 @@ const ProtectedRoute = ({ component: Component, ...props }) => {
       {...props}
       render={() => {
         if (token) {
-          return <Component />;
+          return (
+            <Dashboard>
+              <Component />
+            </Dashboard>
+          );
         } else {
           return (
             <Redirect
