@@ -8,12 +8,14 @@ import ProtectedRoute from '../components/ProtectedRoute';
 
 import Shoutout from '../views/SingleShoutout';
 import UserProfileView from '../views/UserProfileView';
+import Team from '../components/Team/Team';
 
 const AppRouter = () => (
   <Switch>
     <Route exact path="/" component={Home} />
     <Route path="/slack" component={Slack} />
     <ProtectedRoute path="/shoutout/:id" component={Shoutout} />
+    <ProtectedRoute path="/team" component={Team} />
     <Route exact path="/user" component={UserProfileView} />
     <Route render={() => <Redirect to="/" />} />
   </Switch>
