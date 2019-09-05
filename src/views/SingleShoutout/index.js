@@ -4,12 +4,9 @@ import { connect } from 'react-redux';
 
 import { getUserInfo } from '../../actions/users';
 import { getSingleShoutout } from '../../actions/shoutouts';
-import SideNav from '../../components/SideNav';
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
 
-
 const View = props => {
-
   const getUser = async (id, users) => {
     if (props.users[id]) {
       return props.users[id];
@@ -36,12 +33,7 @@ const View = props => {
       receiver: props.users[props.shoutouts.singleShoutout.receiverSlackId] || { name: '...' },
     };
   } catch (error) {}
-  return (
-    <>
-      <SideNav />
-      {shoutout ? <Shoutout shoutout={shoutout} /> : null}
-    </>
-  );
+  return shoutout ? <Shoutout shoutout={shoutout} /> : null;
 };
 
 const Shoutout = props => {
