@@ -25,7 +25,7 @@ export const getUserInfo = id => dispatch => {
   return axiosWithAuth()
     .get('/api/users/' + id)
     .then(res => {
-      dispatch(addUser(res.data));
+      dispatch(addUser({ [res.data.data.slack_mem_id]: res.data.data }));
     })
     .catch(err => {
       dispatch(setError(err.message));
