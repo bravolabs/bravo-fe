@@ -8,11 +8,11 @@ const ProtectedRoute = ({ component: Component, ...props }) => {
   return (
     <Route
       {...props}
-      render={() => {
+      render={props => {
         if (token) {
           return (
             <Dashboard>
-              <Component />
+              <Component {...props} />
             </Dashboard>
           );
         } else {
