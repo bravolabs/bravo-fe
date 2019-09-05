@@ -20,14 +20,13 @@ export const setError = error => {
   };
 };
 
-export const getUserInfo = id => dispatch => {
+export const getUserInfo = id => async dispatch => {
   dispatch({ type: types.FETCHING_USER });
-  return axiosWithAuth()
-    .get('/api/users/' + id)
-    .then(res => {
-      dispatch(addUser({ [res.data.data.slack_mem_id]: res.data.data }));
-    })
-    .catch(err => {
-      dispatch(setError(err.message));
-    });
+  try {
+    const res = await axiosWithAuth().get('/api/users/' + id);
+    dispatch(addUser({ [id]: res.data.data }));
+    return res;
+  } catch (err) {
+    dispatch(setError(err.message));
+  }
 };

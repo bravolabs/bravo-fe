@@ -20,14 +20,12 @@ export const setError = error => {
   };
 };
 
-export const getSingleShoutout = id => dispatch => {
+export const getSingleShoutout = id => async dispatch => {
   dispatch({ type: types.FETCHING_SHOUTOUT });
-  return axiosWithAuth()
-    .get('/api/shoutouts/' + id)
-    .then(res => {
-      dispatch(setSingleShoutout(res.data.data));
-    })
-    .catch(err => {
-      dispatch(setError(err.message));
-    });
+  try {
+    const res = await axiosWithAuth().get('/api/shoutouts/' + id)
+    dispatch(setSingleShoutout(res.data.data));
+  } catch (err) {
+    dispatch(setError(err.message));
+  }
 };
