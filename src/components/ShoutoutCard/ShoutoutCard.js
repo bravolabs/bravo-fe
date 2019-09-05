@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { ShoutoutCardContainer, Emoji, AvatarsContainer, Time, ShoutoutText } from './shoutout.styles';
 import User from '../User';
 import confetti from '../../assets/confetti.png';
