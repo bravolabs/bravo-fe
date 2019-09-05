@@ -8,7 +8,7 @@ import ProtectedRoute from '../components/ProtectedRoute';
 
 import Shoutout from '../views/SingleShoutout';
 import UserProfileView from '../views/UserProfileView';
-import Team from '../components/Team/Team';
+import Team from '../components/Team';
 
 const AppRouter = () => (
   <Switch>
