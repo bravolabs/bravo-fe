@@ -31,4 +31,6 @@ export const getSingleShoutout = id => async dispatch => {
   }
 };
 
-export const getProfileShoutouts = () => async dispatch => {};
+export const getProfileShoutouts = () => async dispatch => {
+  dispatch({ type: type.FETCHING_SHOUTOUT });
+};
