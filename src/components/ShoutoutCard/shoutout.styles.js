@@ -3,13 +3,16 @@ import { Card } from '../../styling/atoms/Card';
 import { BodyText } from '../../styling/atoms/Fonts';
 
 export const ShoutoutCardContainer = styled(Card)`
-    width: 1000px;
-    height: 20rem;
-    padding: 4rem;
-    margin: ${props => (props.margin ? props.margin : '18rem auto')};
+    max-width: 1000px;
+    width: 80%;
+    min-height: 200px;
+    padding: 40px;
+    margin-left: 180px;
+    margin-top: 120px;
     border: 1px solid #F1F2F6;
     box-sizing: border-box;
     box-shadow: 0px 2px 2px #F2F3F7;
+    background-color: white;
     border-radius: 8px;
 `;
 
