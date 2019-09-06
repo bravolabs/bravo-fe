@@ -118,7 +118,7 @@ describe('Slack Action Creator', () => {
       });
     });
 
-    it('Should return FETCH_ERROR Action with error message', () => {
+    it('Should return FETCH_ERROR Action with error message from API', () => {
       nock('https://slack.com/api')
         .post('/oauth.access')
         .reply(200, slackResSuccess);
@@ -129,12 +129,14 @@ describe('Slack Action Creator', () => {
         },
         {
           type: 'FETCH_ERROR',
-          payload: 'Request failed with status code 500',
+          payload: 'Workspace not found. Please contact your workspace admin to install Bravo',
         },
       ];
       nock(api)
         .post('/api/auths')
-        .reply(500);
+        .reply(404, {
+          message: 'Workspace not found. Please contact your workspace admin to install Bravo',
+        });
       store = mockStore({});
       return store.dispatch(signInWithSlack()).then(() => {
         expect(store.getActions()).toEqual(expectedActions);

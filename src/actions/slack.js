@@ -37,6 +37,10 @@ export const signInWithSlack = (code, redirectURI) => async dispatch => {
     localstorage.set(data);
     return true;
   } catch (error) {
-    dispatch({ type: FETCH_ERROR, payload: error.message });
+    if (error.response) {
+      dispatch({ type: FETCH_ERROR, payload: error.response.data.message });
+    } else {
+      dispatch({ type: FETCH_ERROR, payload: error.message });
+    }
   }
 };
