@@ -13,7 +13,7 @@ const SideNav = props => {
   return (
     <SideNavContainer>
       <Link to="/">
-        <Logo color="#3551BE" svgWidth="40px" svgHeight="40px" />
+        <Logo fillColor="#FFFF" svgWidth="40px" svgHeight="40px" />
       </Link>
       { slack.isLoggedIn && <SideNavMenu /> }
       <Link to={slack.isLoggedIn && "/user"}>
