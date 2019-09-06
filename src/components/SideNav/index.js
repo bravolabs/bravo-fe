@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import bravoWhite from '../../assets/bravo-white.svg';
-import Logo from '../../styling/atoms/SVGs/Logo';
 import { SideNavContainer } from './sidenav.styles';
 import Avatar from '../Avatar';
 import SideNavMenu from '../SideNavMenu';
@@ -13,7 +12,7 @@ const SideNav = props => {
   return (
     <SideNavContainer>
       <Link to="/">
-        <Logo fillColor="#FFFF" svgWidth="40px" svgHeight="40px" />
+        <img src={bravoWhite} alt="Bravo" />
       </Link>
       { slack.isLoggedIn && <SideNavMenu /> }
       <Link to={slack.isLoggedIn && "/user"}>
