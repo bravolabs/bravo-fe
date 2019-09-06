@@ -7,9 +7,9 @@ const ProtectedRoute = ({ component: Component, ...props }) => {
   return (
     <Route
       {...props}
-      render={() => {
+      render={props => {
         if (token) {
-          return <Component />;
+          return <Component {...props} />;
         } else {
           // Push the target route to local storage, to be accessed upon successful auth
           localStorage.setItem('target-route', props.location.pathname);

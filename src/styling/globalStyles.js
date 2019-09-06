@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import Colors from './variables/UIColors';
 
 const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/
@@ -328,6 +329,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Lato', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: ${Colors.light}
   }
 `;
 
