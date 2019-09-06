@@ -1,4 +1,5 @@
 import { axiosWithAuth } from '../utils/axios';
+import localstorage from '../utils/localstorage';
 
 export const types = {
   SET_SINGLE_SHOUTOUT: 'SET_SINGLE_SHOUTOUT',
@@ -33,4 +34,11 @@ export const getSingleShoutout = id => async dispatch => {
 
 export const getProfileShoutouts = () => async dispatch => {
   dispatch({ type: type.FETCHING_SHOUTOUT });
+  try {
+    const { data } = await Axios(localstorage.get().token).get(
+      `/api/users/${localStorage.get().id}/shoutouts`
+    );
+
+    dispatch({ type: type.SET_PROFILE_SHOUTOUTS, payload: data.data || data });
+  } catch (error) {}
 };
