@@ -2,6 +2,7 @@ import { types } from '../actions/shoutouts';
 
 const initialState = {
   singleShoutout: null,
+  profileShoutouts: null,
   fetching: false,
   error: null,
 };
