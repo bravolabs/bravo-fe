@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const PathSVG = styled.svg`
+const PathSVG = styled.svg`
   ${props => (props.svgHeight ? `height: ${props.svgHeight};` : null)}
   ${props => (props.svgWidth ? `width: ${props.svgWidth};` : null)}
     g {
@@ -10,3 +10,5 @@ export const PathSVG = styled.svg`
     stroke-width: ${props => (props.strokeWidth ? props.strokeWidth : '12px')};
   }
 `;
+
+export default PathSVG;
