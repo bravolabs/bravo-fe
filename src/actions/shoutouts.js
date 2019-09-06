@@ -30,3 +30,5 @@ export const getSingleShoutout = id => async dispatch => {
     dispatch(setError(err.message));
   }
 };
+
+export const getProfileShoutouts = () => async dispatch => {};
