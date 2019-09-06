@@ -11,6 +11,7 @@ const ProtectedRoute = ({ component: Component, ...props }) => {
         if (token) {
           return <Component />;
         } else {
+          // Push the target route to local storage, to be accessed upon successful auth
           localStorage.setItem('target-route', props.location.pathname);
           return (
             <Redirect

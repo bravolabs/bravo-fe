@@ -10,6 +10,7 @@ import DisplayCard from '../Cards/DisplayCard';
 import SideNav from '../SideNav';
 
 const Slack = ({ history, location, appInstall, signInWithSlack, slack }) => {
+  // Get the original target route the user was trying to access if it exists
   const targetRoute = localStorage.getItem('target-route');
   const goToLocation = targetRoute ? targetRoute : '/';
   const redirectURI = `${document.location.origin}/slack`;
@@ -23,6 +24,7 @@ const Slack = ({ history, location, appInstall, signInWithSlack, slack }) => {
     if (state === 'resumeSignIn') {
       signInWithSlack(code, redirectURI).then(res => {
         if (res) {
+          // Redirect back to original target route and clean up
           history.push(goToLocation);
           localStorage.removeItem('target-route');
         }
