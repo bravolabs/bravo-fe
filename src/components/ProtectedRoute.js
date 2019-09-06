@@ -11,10 +11,12 @@ const ProtectedRoute = ({ component: Component, ...props }) => {
         if (token) {
           return <Component {...props} />;
         } else {
+          // Push the target route to local storage, to be accessed upon successful auth
+          localStorage.setItem('target-route', props.location.pathname);
           return (
             <Redirect
               to={{
-                pathname: '/',
+                pathname: '/slack-signin',
                 state: { from: props.location },
               }}
             />
