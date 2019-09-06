@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-const ShapeSVG = styled.svg`
+const SVG = styled.svg`
   ${props => (props.svgHeight ? `height: ${props.svgHeight};` : null)}
   ${props => (props.svgWidth ? `width: ${props.svgWidth};` : null)}
-    g {
+  g {
     fill: ${props => props.fillColor || 'none'};
     stroke: ${props => props.strokeColor || 'none'};
     stroke-miterlimit: ${props => props.mitter || '10'};
@@ -11,4 +11,4 @@ const ShapeSVG = styled.svg`
   }
 `;
 
-export default ShapeSVG;
+export default SVG;
