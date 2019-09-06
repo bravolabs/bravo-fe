@@ -40,5 +40,11 @@ export const getProfileShoutouts = () => async dispatch => {
     );
 
     dispatch({ type: type.SET_PROFILE_SHOUTOUTS, payload: data.data || data });
-  } catch (error) {}
+  } catch (error) {
+    if (error.response) {
+      dispatch({ type: type.SHOUTOUT_ERROR, payload: error.response.data.message });
+      return;
+    }
+    dispatch({ type: type.SHOUTOUT_ERROR, payload: error.message });
+  }
 };
