@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ShapeSVG = styled.svg`
+const ShapeSVG = styled.svg`
   ${props => (props.svgHeight ? `height: ${props.svgHeight};` : null)}
   ${props => (props.svgWidth ? `width: ${props.svgWidth};` : null)}
     g {
@@ -10,3 +10,5 @@ export const ShapeSVG = styled.svg`
     stroke-width: ${props => (props.strokeWidth ? props.strokeWidth : '0px')};
   }
 `;
+
+export default ShapeSVG;
