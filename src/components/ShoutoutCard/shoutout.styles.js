@@ -7,8 +7,7 @@ export const ShoutoutCardContainer = styled(Card)`
   width: 80%;
   min-height: 200px;
   padding: 40px;
-  margin-left: 180px;
-  margin-top: 120px;
+  margin-bottom: 3.2rem;
   border: 1px solid #f1f2f6;
   box-sizing: border-box;
   box-shadow: 0px 2px 2px #f2f3f7;
