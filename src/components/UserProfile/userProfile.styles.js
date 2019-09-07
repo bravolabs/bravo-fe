@@ -25,6 +25,7 @@ export const ShoutoutsButton = styled.div`
 
 export const ProfileBody = styled.div`
   margin-top: 40px;
+  margin-left: 200px;
   width: max-width;
   height: max-content;
 `;
