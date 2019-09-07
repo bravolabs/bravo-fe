@@ -22,7 +22,9 @@ const Slack = ({ history, location, appInstall, signInWithSlack, slack }) => {
     if (state === 'resumeSignIn') {
       signInWithSlack(code, redirectURI).then(res => {
         if (res) {
+          // Redirect back to original target route and clean up
           history.push(goToLocation);
+          localStorage.removeItem('target-route');
         }
       });
     }
