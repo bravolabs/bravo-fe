@@ -6,6 +6,7 @@ export const ProfileHeader = styled.div`
   width: max-width;
   height: 30vh;
   margin-left: 80px;
+  padding-left: 120px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
 `;
 
