@@ -4,10 +4,8 @@ import { getProfileShoutouts } from '../../actions/shoutouts';
 
 import UserProfile from '../../components/UserProfile';
 
-const UserProfileView = props => {
-  const { user } = props;
-
-  return <UserProfile user={user} />;
+const UserProfileView = ({ user, shoutouts }) => {
+  return <UserProfile user={user} shoutouts={shoutouts} />;
 };
 
 export default connect(
