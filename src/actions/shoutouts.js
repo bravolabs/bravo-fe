@@ -1,4 +1,4 @@
-import { axiosWithAuth } from '../utils/axios';
+import { axiosWithAuth, Axios } from '../utils/axios';
 import localstorage from '../utils/localstorage';
 
 export const types = {
