@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { getProfileShoutouts } from '../../actions/shoutouts';
 
 import UserProfile from '../../components/UserProfile';
 
@@ -13,5 +14,5 @@ export default connect(
   state => ({
     user: state.slack.user,
   }),
-  null
+  { getProfileShoutouts }
 )(UserProfileView);
