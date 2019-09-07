@@ -15,7 +15,6 @@ export const ShoutoutsButton = styled.div`
   text-align: center;
   align-items: center;
   bottom: 0px;
-  margin-left: 160px;
   width: 180px;
   height: 4rem;
   font-size: 24px;
