@@ -33,18 +33,18 @@ export const getSingleShoutout = id => async dispatch => {
 };
 
 export const getProfileShoutouts = () => async dispatch => {
-  dispatch({ type: type.FETCHING_SHOUTOUT });
+  dispatch({ type: types.FETCHING_SHOUTOUT });
   try {
     const { data } = await Axios(localstorage.get().token).get(
       `/api/users/${localStorage.get().id}/shoutouts`
     );
 
-    dispatch({ type: type.SET_PROFILE_SHOUTOUTS, payload: data.data || data });
+    dispatch({ type: types.SET_PROFILE_SHOUTOUTS, payload: data.data || data });
   } catch (error) {
     if (error.response) {
-      dispatch({ type: type.SHOUTOUT_ERROR, payload: error.response.data.message });
+      dispatch({ type: types.SHOUTOUT_ERROR, payload: error.response.data.message });
       return;
     }
-    dispatch({ type: type.SHOUTOUT_ERROR, payload: error.message });
+    dispatch({ type: types.SHOUTOUT_ERROR, payload: error.message });
   }
 };
