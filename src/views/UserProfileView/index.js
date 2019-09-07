@@ -13,6 +13,7 @@ const UserProfileView = props => {
 export default connect(
   state => ({
     user: state.slack.user,
+    shoutouts: state.shoutouts.profileShoutouts,
   }),
   { getProfileShoutouts }
 )(UserProfileView);
