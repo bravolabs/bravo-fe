@@ -257,8 +257,8 @@ Example:
     </svg>
     ```
   
-  - Remove any unnecessary attributes
-    Here I've removed all fill, width and height attributes. We'll be setting those later with CSS
+  - Remove any unnecessary attributes  
+    Here I've removed all fill, width and height attributes. We'll be setting those later with CSS  
 
     ```html
     <svg viewBox="0 0 21 5" xmlns="http://www.w3.org/2000/svg">
@@ -268,8 +268,8 @@ Example:
     </svg>
     ```
 
-  - Create component
-    Wrap all paths in a 'g' tag and spread props in so that styles import properly. Use the SVG component in `styling/atoms/SVG.jsx`
+  - Create component  
+    Wrap all paths in a 'g' tag and spread props in so that styles import properly. Use the SVG component in `styling/atoms/SVG.jsx`  
     ```js
     import React from 'react';
     import SVG from '../SVG';
@@ -286,16 +286,16 @@ Example:
     }
     ```
 
-  - Component Usage
-    Colors, mitter limits and stroke can be set in props.
+  - Component Usage  
+    Colors, mitter limits and stroke can be set in props.  
     
-    Props:
-      `fillColor="<fill color here>"`
-      `strokeColor="<stroke color here>"`
-      `strokeWidth="<stroke width here>"`
-      `mitter="<mitter limit here>"`
+    Props:  
+      `fillColor="<fill color here>"`  
+      `strokeColor="<stroke color here>"`  
+      `strokeWidth="<stroke width here>"`  
+      `mitter="<mitter limit here>"`  
 
-    Here's an example with the Logo SVG:
+    Here's an example with the Logo SVG:  
     ```js
       <Logo fillColor="#4265ED" />
     ```
