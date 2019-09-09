@@ -29,6 +29,17 @@ const Tooltip = props => {
         return `50%`;
     }
   })();
+
+  const tooltipY = (() => {
+    switch (face) {
+      case 'up':
+        return '0%';
+      case 'down':
+        return '100%';
+      default:
+        return `50%`;
+    }
+  })();
 };
 
 export default Tooltip;
