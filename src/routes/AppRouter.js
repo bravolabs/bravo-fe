@@ -9,7 +9,7 @@ const AppRouter = () => (
   <Switch>
     <Route exact path="/" component={Home} />
     <Route exact path="/slack-signin" component={SignInRedirect} />
-    <Route path="/" component={DashboardRouter} />
+    <Route component={DashboardRouter} />
   </Switch>
 );
 
