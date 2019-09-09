@@ -40,6 +40,21 @@ const Tooltip = props => {
         return `50%`;
     }
   })();
+
+  const tooltipTransform = (() => {
+    switch (face) {
+      case 'left':
+        return 'translateX(-100%) translateY(-50%)';
+      case 'right':
+        return 'translateY(-50%)';
+      case 'up':
+        return 'translateX(-50%) translateY(-100%)';
+      case 'down':
+        return 'translateX(-50%)';
+      default:
+        return `translateX(-50%)`;
+    }
+  })();
 };
 
 export default Tooltip;
