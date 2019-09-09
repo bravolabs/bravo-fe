@@ -6,6 +6,7 @@ import Home from '../components/Home';
 import Slack from '../components/Slack';
 import Welcome from '../components/Welcome';
 import ProtectedRoute from '../components/ProtectedRoute';
+import SignInRedirect from '../components/SignInRedirect';
 
 import Shoutout from '../views/SingleShoutout';
 import UserProfileView from '../views/UserProfileView';
