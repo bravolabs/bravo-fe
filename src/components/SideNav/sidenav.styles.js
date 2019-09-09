@@ -3,7 +3,7 @@ import colors from '../../styling/variables/UIColors';
 
 export const SideNavContainer = styled.div`
   background-color: ${colors.brand};
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 80px;

@@ -10,6 +10,7 @@ import SignInRedirect from '../components/SignInRedirect';
 
 import Shoutout from '../views/SingleShoutout';
 import UserProfileView from '../views/UserProfileView';
+import Team from '../components/Team';
 
 const AppRouter = () => (
   <Switch>
@@ -18,7 +19,8 @@ const AppRouter = () => (
     <Route path="/slack-signin" component={SignInRedirect} />
     <ProtectedRoute path="/welcome" component={Welcome} />
     <ProtectedRoute path="/shoutout/:id" component={Shoutout} />
-    <Route exact path="/user" component={UserProfileView} />
+    <ProtectedRoute path="/team" component={Team} />
+    <ProtectedRoute path="/profile" component={UserProfileView} />
     <Route render={() => <Redirect to="/" />} />
   </Switch>
 );
