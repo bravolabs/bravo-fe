@@ -5,10 +5,10 @@ import FontColors from '../../styling/variables/FontColors';
 import ShapeStyles from '../../styling/variables/ShapeStyles';
 
 export const OverflowMenu = props => {
-  const { x, y } 
+  const { x, y, transform } = props;
   return (
-    <MenuContainer shadow={ShapeStyles.elevation} x={x} y={y} >
-      { props.children }
+    <MenuContainer shadow={ShapeStyles.elevation} x={x} y={y} transform={transform}>
+      {props.children}
     </MenuContainer>
   );
 };
