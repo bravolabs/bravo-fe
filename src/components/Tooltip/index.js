@@ -57,4 +57,15 @@ const Tooltip = props => {
   })();
 };
 
+const TooltipLeft = props => {
+  const { color, text } = props;
+  return (
+    <TooltipContainer
+      borderColor={`transparent ${color} transparent transparent`}
+      arrowY="50%"
+      transform="translateX(-100%) translateY(-50%)"
+    />
+  );
+};
+
 export default Tooltip;
