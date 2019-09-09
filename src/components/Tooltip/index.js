@@ -1,6 +1,7 @@
 import React from 'react';
 import { TooltipWrapper, Tooltip as TooltipContainer } from '../../styling/atoms/Tooltip';
 import { UIItem } from '../../styling/atoms/Fonts';
+import ShapeStyles from '../../styling/variables/ShapeStyles';
 
 const Tooltip = props => {
   let { face, bgColor, color, text } = props;
@@ -32,6 +33,7 @@ const TooltipLeft = props => {
   const { bgColor, color, text } = props;
   return (
     <TooltipContainer
+      shadow={ShapeStyles.elevation.elevate}
       y="50%"
       transform="translateX(-100%) translateY(-50%)"
       background={bgColor}
@@ -49,6 +51,7 @@ const TooltipRight = props => {
   const { bgColor, color, text } = props;
   return (
     <TooltipContainer
+      shadow={ShapeStyles.elevation.elevate}
       x="100%"
       y="50%"
       transform="translateY(-50%)"
@@ -66,6 +69,7 @@ const TooltipUp = props => {
   const { bgColor, color, text } = props;
   return (
     <TooltipContainer
+      shadow={ShapeStyles.elevation.elevate}
       x="50%"
       y="0%"
       transform="translateX(-100%) translateY(-100%)"
@@ -84,6 +88,7 @@ const TooltipDown = props => {
   const { bgColor, color, text } = props;
   return (
     <TooltipContainer
+      shadow={ShapeStyles.elevation.elevate}
       x="50%"
       y="100%"
       transform="translateX(-50%)"

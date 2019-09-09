@@ -12,7 +12,7 @@ const SideNav = props => {
   const { slack } = props;
   return (
     <SideNavContainer>
-      <TooltipDark text="testing" face="down">
+      <TooltipDark text="testing" face="up">
         <Link to="/">
           <img src={bravoWhite} alt="Bravo" />
         </Link>
