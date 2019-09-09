@@ -4,6 +4,24 @@ import { TooltipWrapper, Tooltip as TooltipContainer } from '../../styling/atoms
 const Tooltip = props => {
   const { face, bgColor, color, text } = props;
   face = face || 'down';
+  const tooltip = (() => {
+    switch(face) {
+      case 'left':
+        return TooltipLeft;
+      case 'right':
+        return TooltipRight;
+      case 'up':
+        return TooltipUp;
+      case 'down':
+        return TooltipDown;
+      default:
+        return TooltipRight;
+    }
+  })();
+
+  return (
+    <tooltip bgColor={bgColor} color={color} text={text} />
+  )
 };
 
 const TooltipLeft = props => {
