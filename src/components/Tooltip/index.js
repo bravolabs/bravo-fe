@@ -1,11 +1,12 @@
 import React from 'react';
 import { TooltipWrapper, Tooltip as TooltipContainer } from '../../styling/atoms/Tooltip';
+import { UIItem } from '../../styling/atoms/Fonts';
 
 const Tooltip = props => {
   const { face, bgColor, color, text } = props;
   face = face || 'down';
   const tooltip = (() => {
-    switch(face) {
+    switch (face) {
       case 'left':
         return TooltipLeft;
       case 'right':
@@ -19,9 +20,7 @@ const Tooltip = props => {
     }
   })();
 
-  return (
-    <tooltip bgColor={bgColor} color={color} text={text} />
-  )
+  return <tooltip bgColor={bgColor} color={color} text={text} />;
 };
 
 const TooltipLeft = props => {
@@ -35,8 +34,9 @@ const TooltipLeft = props => {
       borderColor={`transparent transparent transparent ${bgColor}`}
       arrowY="50%"
       arrowX="100%"
-      arrowTransform="translateX(-50%)"
-    />
+      arrowTransform="translateX(-50%)">
+      <UIItem color={color}>{text}</UIItem>
+    </TooltipContainer>
   );
 };
 
@@ -51,8 +51,9 @@ const TooltipRight = props => {
       color={color}
       borderColor={`transparent ${bgColor} transparent transparent`}
       arrowY="50%"
-      arrowTransform="translateX(-100%) translateY(-50%)"
-    />
+      arrowTransform="translateX(-100%) translateY(-50%)">
+      <UIItem color={color}>{text}</UIItem>
+    </TooltipContainer>
   );
 };
 
@@ -68,8 +69,9 @@ const TooltipUp = props => {
       borderColor={`${bgColor} transparent transparent transparent`}
       arrowX="50%"
       arrowY="100%"
-      arrowTransform="translateX(-50%)"
-    />
+      arrowTransform="translateX(-50%)">
+      <UIItem color={color}>{text}</UIItem>
+    </TooltipContainer>
   );
 };
 
@@ -84,8 +86,9 @@ const TooltipDown = props => {
       color={color}
       borderColor={`transparent transparent ${bgColor} transparent`}
       arrowX="50%"
-      arrowTransform="translateX(-50%) translateY(-100%)"
-    />
+      arrowTransform="translateX(-50%) translateY(-100%)">
+      <UIItem color={color}>{text}</UIItem>
+    </TooltipContainer>
   );
 };
 
