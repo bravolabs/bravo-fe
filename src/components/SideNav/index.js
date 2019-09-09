@@ -6,17 +6,14 @@ import bravoWhite from '../../assets/bravo-white.svg';
 import { SideNavContainer } from './sidenav.styles';
 import Avatar from '../Avatar';
 import SideNavMenu from '../SideNavMenu';
-import TooltipLight from '../Tooltip/Light';
 
 const SideNav = props => {
   const { slack } = props;
   return (
     <SideNavContainer>
-      <TooltipLight text="testing" face="down">
-        <Link to="/">
-          <img src={bravoWhite} alt="Bravo" />
-        </Link>
-      </TooltipLight>
+      <Link to="/">
+        <img src={bravoWhite} alt="Bravo" />
+      </Link>
       {/* { slack.isLoggedIn && <SideNavMenu /> } */}
       <Link to={slack.isLoggedIn && "/user"}>
         <Avatar src={slack.user ? slack.user.avatar : bravoWhite} alt="user-avatar" />
