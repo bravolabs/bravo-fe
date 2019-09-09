@@ -16,6 +16,7 @@ export const Tooltip = styled.span`
   text-align: center;
   padding: 8px;
   border-radius: ${props => (props.radius ? props.radius : '2px')};
+  ${props => (props.shadow ? `box-shadow: ${props.shadow};` : null)};
 
   position: absolute;
   z-index: 1;
