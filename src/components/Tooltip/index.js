@@ -4,8 +4,8 @@ import { UIItem } from '../../styling/atoms/Fonts';
 
 const Tooltip = props => {
   let { face, bgColor, color, text } = props;
-  face = face || 'down';
-  const tooltip = (() => {
+  face = face || 'right';
+  const FacedTooltip = (() => {
     switch (face) {
       case 'left':
         return TooltipLeft;
@@ -23,7 +23,7 @@ const Tooltip = props => {
   return (
     <TooltipWrapper>
       {props.children}
-      <tooltip bgColor={bgColor} color={color} text={text} />
+      <FacedTooltip bgColor={bgColor} color={color} text={text} />
     </TooltipWrapper>
   );
 };
