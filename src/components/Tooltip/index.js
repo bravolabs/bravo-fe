@@ -1,2 +1,6 @@
 import React from 'react';
-import { TooltipWrapper, Tooltip } from '../../styling/atoms/Tooltip';
+import { TooltipWrapper, Tooltip as TooltipContainer } from '../../styling/atoms/Tooltip';
+
+const Tooltip = props => {};
+
+export default Tooltip;
