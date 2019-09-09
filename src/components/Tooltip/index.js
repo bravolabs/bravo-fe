@@ -4,8 +4,9 @@ import { UIItem } from '../../styling/atoms/Fonts';
 import ShapeStyles from '../../styling/variables/ShapeStyles';
 
 const Tooltip = props => {
-  let { face, bgColor, color, text } = props;
+  let { face, bgColor, color, text, margin } = props;
   face = face || 'right';
+  margin = margin || 0;
   const FacedTooltip = (() => {
     switch (face) {
       case 'left':
@@ -24,18 +25,18 @@ const Tooltip = props => {
   return (
     <TooltipWrapper>
       {props.children}
-      <FacedTooltip bgColor={bgColor} color={color} text={text} />
+      <FacedTooltip bgColor={bgColor} color={color} text={text} margin={margin} />
     </TooltipWrapper>
   );
 };
 
 const TooltipLeft = props => {
-  const { bgColor, color, text } = props;
+  const { bgColor, color, text, margin } = props;
   return (
     <TooltipContainer
       shadow={ShapeStyles.elevation.elevate}
       y="50%"
-      transform="translateX(-100%) translateY(-50%)"
+      transform={`translateX(-100%) translateY(-50%) translateX(${-(8 + margin)}px)`}
       background={bgColor}
       color={color}
       borderColor={`transparent transparent transparent ${bgColor}`}
