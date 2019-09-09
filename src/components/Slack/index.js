@@ -7,7 +7,6 @@ import { appInstall, signInWithSlack } from '../../actions/slack';
 import bravoParty from '../../assets/bravo-party.svg';
 import Loader from '../Loader';
 import DisplayCard from '../Cards/DisplayCard';
-import SideNav from '../SideNav';
 
 const Slack = ({ history, location, appInstall, signInWithSlack, slack }) => {
   // Get the original target route the user was trying to access if it exists
@@ -34,7 +33,6 @@ const Slack = ({ history, location, appInstall, signInWithSlack, slack }) => {
 
   return state ? (
     <React.Fragment>
-      <SideNav />
       {slack.isLoading && <DisplayCard header={<Loader />} text="Loading your Profile" />}
       {slack.installSuccess && (
         <DisplayCard
