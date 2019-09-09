@@ -1,10 +1,11 @@
 import React from 'react';
 import SideNav from '../../components/SideNav';
+import MainContent from '../../components/MainContent';
 
 const Dashboard = ({ children }) => (
   <>
     <SideNav />
-    {children}
+    <MainContent>{children}</MainContent>
   </>
 );
 
