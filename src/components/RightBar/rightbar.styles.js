@@ -8,7 +8,7 @@ export const RightBarContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 324px;
+  width: 374px;
   height: 100vh;
   padding: 140px 30px 0px 30px;
   background: #f9fbfd;
