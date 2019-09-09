@@ -19,7 +19,7 @@ export const Tooltip = styled.span`
   ${props => (props.shadow ? `box-shadow: ${props.shadow};` : null)};
 
   position: absolute;
-  z-index: 1;
+  z-index: 100;
   left: ${props => (props.x ? props.x : 0)};
   top: ${props => (props.y ? props.y : 0)};
   transform: ${props => (props.transform ? props.transform : 'none')};
@@ -28,6 +28,7 @@ export const Tooltip = styled.span`
 
   /* Tooltip arrow */
   &::after {
+    z-index: 101;
     content: '';
     position: absolute;
     left: ${props => (props.arrowX ? props.arrowX : 0)};
