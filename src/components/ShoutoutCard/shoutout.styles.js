@@ -4,7 +4,7 @@ import { BodyText } from '../../styling/atoms/Fonts';
 
 export const ShoutoutCardContainer = styled(Card)`
   max-width: 700px;
-  width: 80%;
+  width: 100%;
   min-height: 200px;
   padding: 40px;
   margin-bottom: 3.2rem;
