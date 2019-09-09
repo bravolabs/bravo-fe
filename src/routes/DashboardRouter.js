@@ -1,6 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
+import styled from 'styled-components';
+
+import SideNav from '../components/SideNav';
 
 import Slack from '../components/Slack';
 import Welcome from '../components/Welcome';
@@ -12,6 +15,7 @@ import Team from '../components/Team';
 
 const DashboardRouter = () => (
   <Switch>
+    <SideNav />
     <Route path="/slack" component={Slack} />
     <ProtectedRoute path="/welcome" component={Welcome} />
     <ProtectedRoute path="/shoutout/:id" component={Shoutout} />
