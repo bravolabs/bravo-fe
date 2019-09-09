@@ -49,13 +49,13 @@ const TooltipLeft = props => {
 };
 
 const TooltipRight = props => {
-  const { bgColor, color, text } = props;
+  const { bgColor, color, text, margin } = props;
   return (
     <TooltipContainer
       shadow={ShapeStyles.elevation.elevate}
       x="100%"
       y="50%"
-      transform="translateY(-50%)"
+      transform={`translateY(-50%) translateX(${8 + margin}px)`}
       background={bgColor}
       color={color}
       borderColor={`transparent ${bgColor} transparent transparent`}
