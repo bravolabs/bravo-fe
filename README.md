@@ -245,6 +245,62 @@ Example:
     });
     ```
 
+- **Creating SVG Components**
+
+  - Get raw SVG
+
+    ```html
+    <svg width="21" height="5" viewBox="0 0 21 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="2.5" cy="2.5" r="2.5" fill="#7D8597"/>
+      <circle cx="10.5" cy="2.5" r="2.5" fill="#7D8597"/>
+      <circle cx="18.5" cy="2.5" r="2.5" fill="#7D8597"/>
+    </svg>
+    ```
+  
+  - Remove any unnecessary attributes
+    Here I've removed all fill, width and height attributes. We'll be setting those later with CSS
+
+    ```html
+    <svg viewBox="0 0 21 5" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="2.5" cy="2.5" r="2.5" />
+      <circle cx="10.5" cy="2.5" r="2.5" />
+      <circle cx="18.5" cy="2.5" r="2.5" />
+    </svg>
+    ```
+
+  - Create component
+    Wrap all paths in a 'g' tag and spread props in so that styles import properly. Use the SVG component in `styling/atoms/SVG.jsx`
+    ```js
+    import React from 'react';
+    import SVG from '../SVG';
+    function Ellipses(props) {
+      return (
+        <SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 5" {...props}>
+          <g>
+            <circle cx="2.5" cy="2.5" r="2.5" />
+            <circle cx="10.5" cy="2.5" r="2.5" />
+            <circle cx="18.5" cy="2.5" r="2.5" />
+          </g>
+        </SVG>
+      );
+    }
+    ```
+
+  - Component Usage
+    Colors, mitter limits and stroke can be set in props.
+    
+    Props:
+      `fillColor="<fill color here>"`
+      `strokeColor="<stroke color here>"`
+      `strokeWidth="<stroke width here>"`
+      `mitter="<mitter limit here>"`
+
+    Here's an example with the Logo SVG:
+    ```js
+      <Logo fillColor="#4265ED" />
+    ```
+
+
 - **Create Pull Request**
 
   - The PR title should concisely explain the change or addition.
