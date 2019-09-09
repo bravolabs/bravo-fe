@@ -20,7 +20,12 @@ const Tooltip = props => {
     }
   })();
 
-  return <tooltip bgColor={bgColor} color={color} text={text} />;
+  return (
+    <TooltipWrapper>
+      {props.children}
+      <tooltip bgColor={bgColor} color={color} text={text} />
+    </TooltipWrapper>
+  );
 };
 
 const TooltipLeft = props => {
