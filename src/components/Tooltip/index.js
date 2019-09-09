@@ -4,7 +4,7 @@ import { TooltipWrapper, Tooltip as TooltipContainer } from '../../styling/atoms
 const Tooltip = props => {
   const { face, position, color, text } = props;
   face = face || 'down';
-  const borderColor = (() => {
+  const arrowBorderColor = (() => {
     switch (face) {
       case 'left':
         return `transparent ${color} transparent transparent`;
@@ -19,7 +19,7 @@ const Tooltip = props => {
     }
   })();
 
-  const tooltipX = (() => {
+  const arrowX = (() => {
     switch (face) {
       case 'left':
         return '0%';
@@ -30,7 +30,7 @@ const Tooltip = props => {
     }
   })();
 
-  const tooltipY = (() => {
+  const arrowY = (() => {
     switch (face) {
       case 'up':
         return '0%';
@@ -41,7 +41,7 @@ const Tooltip = props => {
     }
   })();
 
-  const tooltipTransform = (() => {
+  const arrowTransform = (() => {
     switch (face) {
       case 'left':
         return 'translateX(-100%) translateY(-50%)';
