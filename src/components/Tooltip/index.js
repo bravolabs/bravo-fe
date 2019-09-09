@@ -3,7 +3,7 @@ import { TooltipWrapper, Tooltip as TooltipContainer } from '../../styling/atoms
 import { UIItem } from '../../styling/atoms/Fonts';
 
 const Tooltip = props => {
-  const { face, bgColor, color, text } = props;
+  let { face, bgColor, color, text } = props;
   face = face || 'down';
   const tooltip = (() => {
     switch (face) {
