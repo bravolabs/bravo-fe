@@ -41,7 +41,7 @@ const TooltipLeft = props => {
       borderColor={`transparent transparent transparent ${bgColor}`}
       arrowY="50%"
       arrowX="100%"
-      arrowTransform="translateX(-50%)">
+      arrowTransform="translateY(-50%)">
       <UIItem color={color}>{text}</UIItem>
     </TooltipContainer>
   );
