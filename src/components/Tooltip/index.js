@@ -3,7 +3,7 @@ import { TooltipWrapper, Tooltip as TooltipContainer } from '../../styling/atoms
 
 const Tooltip = props => {
   const { face, position, color, text } = props;
-
+  face = face || 'down';
   const borderColor = (() => {
     switch (face) {
       case 'left':
