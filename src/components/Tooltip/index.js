@@ -72,7 +72,7 @@ const TooltipUp = props => {
       shadow={ShapeStyles.elevation.elevate}
       x="50%"
       y="0%"
-      transform="translateX(-100%) translateY(-100%)"
+      transform="translateX(-50%) translateY(-100%)"
       background={bgColor}
       color={color}
       borderColor={`${bgColor} transparent transparent transparent`}
