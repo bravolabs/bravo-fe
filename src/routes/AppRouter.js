@@ -2,11 +2,6 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
 
-<<<<<<< HEAD
-=======
-
-import SignInRedirect from '../components/SignInRedirect';
->>>>>>> 074172ed91f0a6684b838af773419f21099bf1ac
 import Home from '../components/Home';
 import Slack from '../components/Slack';
 import Welcome from '../components/Welcome';
