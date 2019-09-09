@@ -89,4 +89,21 @@ const TooltipRight = props => {
   );
 };
 
+const TooltipUp = props => {
+  const { bgColor, color, text } = props;
+  return (
+    <TooltipContainer
+      x="50%"
+      y="0%"
+      transform="translateX(-100%) translateY(-100%)"
+      background={bgColor}
+      color={color}
+      borderColor={`${bgColor} transparent transparent transparent`}
+      arrowX="50%"
+      arrowY="100%"
+      arrowTransform="translateX(-50%)"
+    />
+  );
+};
+
 export default Tooltip;
