@@ -6,6 +6,8 @@ import SideNav from '../../components/SideNav';
 const ContentContainer = styled.section`
   margin-left: 120px;
   flex-grow: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
 `;
 
 const PageContainer = styled.section`
