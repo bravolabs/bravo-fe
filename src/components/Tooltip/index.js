@@ -2,7 +2,7 @@ import React from 'react';
 import { TooltipWrapper, Tooltip as TooltipContainer } from '../../styling/atoms/Tooltip';
 
 const Tooltip = props => {
-  const { face, position, color, text } = props;
+  const { face, bgColor, color, text } = props;
   face = face || 'down';
   const arrowBorderColor = (() => {
     switch (face) {
@@ -58,12 +58,17 @@ const Tooltip = props => {
 };
 
 const TooltipLeft = props => {
-  const { color, text } = props;
+  const { bgColor, color, text } = props;
   return (
     <TooltipContainer
-      borderColor={`transparent ${color} transparent transparent`}
-      arrowY="50%"
+      x="100%"
+      y="50%"
       transform="translateX(-100%) translateY(-50%)"
+      background={bgColor}
+      color={color}
+      borderColor={`transparent ${bgColor} transparent transparent`}
+      arrowY="50%"
+      arrowTransform="translateX(-100%) translateY(-50%)"
     />
   );
 };
