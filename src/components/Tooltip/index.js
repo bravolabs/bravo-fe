@@ -18,6 +18,17 @@ const Tooltip = props => {
         return `${color} transparent transparent transparent`;
     }
   })();
+
+  const tooltipX = (() => {
+    switch (face) {
+      case 'left':
+        return '0%';
+      case 'right':
+        return '100%';
+      default:
+        return `50%`;
+    }
+  })();
 };
 
 export default Tooltip;
