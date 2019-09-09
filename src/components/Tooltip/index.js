@@ -61,22 +61,6 @@ const TooltipLeft = props => {
   const { bgColor, color, text } = props;
   return (
     <TooltipContainer
-      x="100%"
-      y="50%"
-      transform="translateY(-50%)"
-      background={bgColor}
-      color={color}
-      borderColor={`transparent ${bgColor} transparent transparent`}
-      arrowY="50%"
-      arrowTransform="translateX(-100%) translateY(-50%)"
-    />
-  );
-};
-
-const TooltipRight = props => {
-  const { bgColor, color, text } = props;
-  return (
-    <TooltipContainer
       y="50%"
       transform="translateX(-100%) translateY(-50%)"
       background={bgColor}
@@ -85,6 +69,22 @@ const TooltipRight = props => {
       arrowY="50%"
       arrowX="100%"
       arrowTransform="translateX(-50%)"
+    />
+  );
+};
+
+const TooltipRight = props => {
+  const { bgColor, color, text } = props;
+  return (
+    <TooltipContainer
+      x="100%"
+      y="50%"
+      transform="translateY(-50%)"
+      background={bgColor}
+      color={color}
+      borderColor={`transparent ${bgColor} transparent transparent`}
+      arrowY="50%"
+      arrowTransform="translateX(-100%) translateY(-50%)"
     />
   );
 };
