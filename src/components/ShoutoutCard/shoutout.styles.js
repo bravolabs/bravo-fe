@@ -40,7 +40,7 @@ export const Time = styled.div`
 
 export const ShoutoutText = styled(BodyText)`
   margin-top: 1.5rem;
-  width: 800px;
+  width: 100%;
   height: 8rem;
   line-height: 2.2rem;
 `;
