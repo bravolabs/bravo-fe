@@ -11,7 +11,7 @@ export const MenuContainer = styled.div`
 `;
 
 export const MenuItem = styled.button`
-  border: none;
+  border: ${props => (props.border ? props.border : 'none')};;
   background: none;
   padding: 16px 12px;
   color: ${props => (props.color ? props.color : 'black')};
