@@ -18,10 +18,10 @@ const PageContainer = styled.section`
 `;
 
 const Dashboard = ({ children }) => (
-  <>
+  <PageContainer>
     <SideNav />
-    {children}
-  </>
+    <ContentContainer>{children}</ContentContainer>
+  </PageContainer>
 );
 
 export default Dashboard;
