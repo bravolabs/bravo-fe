@@ -13,4 +13,14 @@ export const OverflowMenu = props => {
   );
 };
 
-export const OverflowItem = props => {};
+export const OverflowItem = props => {
+  return (
+    <MenuItem
+      border={`1px solid ${UIColors.lightBorder}`}
+      color={FontColors.Light}
+      focusBorderColor={UIColors.brand}
+      hoverColor={UIColors.brand}>
+      {props.children}
+    </MenuItem>
+  );
+};
