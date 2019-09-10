@@ -85,7 +85,7 @@ export const MemberCardAction = styled(BaseButton)`
   padding: 0;
   margin: auto;
   margin-right: 0;
-  font-size: 3.4rem;
+  font-size: 1.6rem;
   font-weight: bolder;
   &:hover {
     color: #4265ed;
