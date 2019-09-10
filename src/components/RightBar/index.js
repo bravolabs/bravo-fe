@@ -1,5 +1,5 @@
 import React from 'react';
-import { RightBarContainer, RightBarCard, TextContent, MediumCard } from './rightbar.styles';
+import { RightBarContainer, RightBarCard, TextContent } from './rightbar.styles';
 import getStarted from '../../assets/get-started.svg';
 import ShapeStyles from '../../styling/variables/ShapeStyles';
 import { BodyText } from '../../styling/atoms/Fonts';
@@ -8,26 +8,29 @@ import group from '../../assets/group.svg';
 import shoutout from '../../assets/shoutout.svg';
 import howto from '../../assets/howto.svg';
 
-const description = {
-  whatIsBravo: {
+const descriptions = [
+  {
     image: group,
+    title: 'What is Bravo?',
     text: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni omnis delectus
     nemo, maxime molestiae dolorem numquam mollitia, voluptate ea, accusamus excepturi
     deleniti ratione sapiente! Laudantium, aperiam doloribus. Odit, aut.`,
   },
-  whatAreShoutouts: {
+  {
     image: shoutout,
+    title: 'What are shoutouts?',
     text: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni omnis delectus
     nemo, maxime molestiae dolorem numquam mollitia, voluptate ea, accusamus excepturi
     deleniti ratione sapiente! Laudantium, aperiam doloribus. Odit, aut.`,
   },
-  howToGetBravos: {
+  {
     image: howto,
+    title: 'How do I get more Bravos?',
     text: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni omnis delectus
     nemo, maxime molestiae dolorem numquam mollitia, voluptate ea, accusamus excepturi
     deleniti ratione sapiente! Laudantium, aperiam doloribus. Odit, aut.`,
   },
-};
+];
 
 const RightBar = () => (
   <RightBarContainer>
@@ -44,9 +47,9 @@ const RightBar = () => (
 
     <section>
       <BodyText>Learn about Bravo</BodyText>
-      <MiniRightCard text="What is Bravo?" description={description.whatIsBravo} />
-      <MiniRightCard text="What are shoutouts?" description={description.whatAreShoutouts} />
-      <MiniRightCard text="How do I get more Bravos?" description={description.howToGetBravos} />
+      {descriptions.map(item => (
+        <MiniRightCard {...item} />
+      ))}
     </section>
   </RightBarContainer>
 );
