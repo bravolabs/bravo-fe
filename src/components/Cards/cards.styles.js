@@ -94,6 +94,16 @@ export const MemberCardAction = styled(BaseButton)`
   &:focus {
     color: #4265ed;
   }
+  a {
+    color: inherit;
+    text-decoration: none;
+    &:link {
+      color: inherit;
+    }
+    &:visited {
+      color: inherit;
+    }
+  }
 `;
 
 export const ViewProfile = styled(BaseButton)`
