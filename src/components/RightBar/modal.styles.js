@@ -8,13 +8,20 @@ export const ModalContainer = styled.div`
 `;
 export const Imagecontainer = styled.div`
   width: 100%;
-  height: 50%;
+  height: 60%;
   display: flex;
   justify-content: center;
+  align-items: center;
 
   img {
     width: 300px;
   }
 `;
 
-export const TextContainer = styled.div``;
+export const TextContainer = styled.div`
+  height: 40%;
+  width: 100%;
+  background-color: lightgray;
+  padding: 20px;
+  line-height: 2;
+`;

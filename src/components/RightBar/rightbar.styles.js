@@ -60,6 +60,8 @@ export const MediumCard = styled(Card)`
 
   input {
     margin-right: 9px;
+    background: transparent;
+    border: 0;
   }
 
   &:hover {

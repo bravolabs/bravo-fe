@@ -1,31 +1,44 @@
 import React, { useState } from 'react';
-import Popup from 'reactjs-popup';
+import Modal from 'react-modal';
 import ShapeStyles from '../../styling/variables/ShapeStyles';
 import { MediumCard } from './rightbar.styles';
 import { ModalContainer, Imagecontainer, TextContainer } from './modal.styles';
+import { ComponentTitle, BodyText } from '../../styling/atoms/Fonts';
 
-const MiniRightCard = ({ text, description }) => {
+Modal.setAppElement('#root');
+Modal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.6)';
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    padding: 0,
+  },
+};
+
+const MiniRightCard = ({ image, text, title }) => {
   const [isOpen, setModal] = useState(false);
   const toggleModal = () => setModal(!isOpen);
   return (
     <>
       <MediumCard onClick={toggleModal} shadow={ShapeStyles.elevation.elevate}>
         <input type="checkbox" checked />
-        <p>{text}</p>
+        <p>{title}</p>
       </MediumCard>
-      <Popup open={isOpen} closeOnDocumentClick onClose={toggleModal}>
+      <Modal isOpen={isOpen} onRequestClose={toggleModal} style={customStyles} contentLabel={title}>
         <ModalContainer>
-          {/* <a className="close" onClick={toggleModal}>
-            &times;
-          </a> */}
           <Imagecontainer>
-            <img src={description.image} alt={text} />
+            <img src={image} alt={title} />
           </Imagecontainer>
           <TextContainer>
-            <p>{description.text}</p>
+            <ComponentTitle>{title}</ComponentTitle>
+            <BodyText>{text}</BodyText>
           </TextContainer>
         </ModalContainer>
-      </Popup>
+      </Modal>
     </>
   );
 };
