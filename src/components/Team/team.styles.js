@@ -26,7 +26,7 @@ export const Title = styled(PageTitle)`
 export const TeamHead = styled.div`
   display: flex;
   position: relative;
-  max-width: 900px;
+  max-width: 800px;
   width: 100%;
   padding: 0;
   padding-right: 7rem;
