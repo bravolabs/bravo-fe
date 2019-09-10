@@ -24,12 +24,6 @@ const MemberCard = ({ id, name, avatar }) => (
       onBlur={() => handleFocusOut(`profile-${id}`)}>
       View Profile
     </MemberCardAction>
-    <ViewProfile id={`profile-${id}`}>
-      <span role="img" aria-label="eyes icon">
-        👀
-      </span>{' '}
-      View profile
-    </ViewProfile>
   </MemberCardContainer>
 );
 
