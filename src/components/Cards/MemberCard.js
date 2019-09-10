@@ -12,16 +12,10 @@ const handleActionClick = id => {
   }
 };
 
-const handleFocusOut = id => {
-  document.querySelector(`#${id}`).style.display = 'none';
-};
-
 const MemberCard = ({ id, name, avatar }) => (
   <MemberCardContainer>
     <User img={avatar || placeholder} alt={name} name={name} />
-    <MemberCardAction
-      onClick={() => handleActionClick(`profile-${id}`)}
-      onBlur={() => handleFocusOut(`profile-${id}`)}>
+    <MemberCardAction onClick={() => handleActionClick(`profile-${id}`)}>
       View Profile
     </MemberCardAction>
   </MemberCardContainer>
