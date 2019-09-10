@@ -17,17 +17,18 @@ const Team = ({ team, user, fetchTeamInfo }) => {
       fetchTeamInfo(org_id);
     }
   }, []);
+  const members = (team.members && team.members.filter(member => member.id !== user.id)) || null;
   return (
     <React.Fragment>
       {team.isFetchingTeam && <DisplayCard header={<Loader />} text="Loading your Team..." />}
-      {team.members && (
+      {members && (
         <TeamContainer>
           <Title>Team</Title>
           <TeamHead>
             <HeadText marginLeft={true}>Name</HeadText>
             <HeadText>Actions</HeadText>
           </TeamHead>
-          <MemberCards members={team.members} />
+          <MemberCards members={members} />
         </TeamContainer>
       )}
       {team.errorMessage && (
