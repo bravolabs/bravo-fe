@@ -11,7 +11,7 @@ import localstorage from '../../utils/localstorage';
 
 const { org_id } = localstorage.get() || '';
 
-const Team = ({ team, fetchTeamInfo }) => {
+const Team = ({ team, user, fetchTeamInfo }) => {
   useEffect(() => {
     if (team && !team.members) {
       fetchTeamInfo(org_id);
