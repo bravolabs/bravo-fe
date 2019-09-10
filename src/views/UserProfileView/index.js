@@ -22,7 +22,7 @@ const UserProfileView = ({
       getProfileShoutouts();
     }
   }, []);
-  return <UserProfile user={user} shoutouts={shoutouts} />;
+  return <UserProfile user={userInfo || user} shoutouts={userShoutouts || shoutouts} />;
 };
 
 export default connect(
