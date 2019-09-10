@@ -6,6 +6,7 @@ import User from '../../components/User';
 import { ProfileHeader, ProfileBody, ShoutoutsButton } from './userProfile.styles';
 import Loader from '../Loader';
 import DisplayCard from '../Cards/DisplayCard';
+import bravoParty from '../../assets/bravo-party.svg';
 import placeholder from '../../assets/placeholder.png';
 
 const shoutoutMargin = '20px auto 15px 200px';
@@ -37,7 +38,9 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
               key={shoutout.id}
             />
           ))}
-        {message && <DisplayCard header={<img src={``} alt="bravo party" />} text={message} />}
+        {message && (
+          <DisplayCard header={<img src={bravoParty} alt="bravo party" />} text={message} />
+        )}
       </ProfileBody>
     </>
   );
