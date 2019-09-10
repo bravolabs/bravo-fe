@@ -15,9 +15,7 @@ const handleActionClick = id => {
 const MemberCard = ({ id, name, avatar }) => (
   <MemberCardContainer>
     <User img={avatar || placeholder} alt={name} name={name} />
-    <MemberCardAction onClick={() => handleActionClick(`profile-${id}`)}>
-      View Profile
-    </MemberCardAction>
+    <MemberCardAction>View Profile</MemberCardAction>
   </MemberCardContainer>
 );
 
