@@ -28,14 +28,6 @@ const UserProfile = ({ user, shoutouts }) => {
           time="2 hours ago"
           praiseText="Huge shoutout to Noble for his work on the Technical research! I was blow away by how detailed oriented the whole thing was."
         />
-        <ShoutoutCard
-          margin={shoutoutMargin}
-          praiseGiver={user ? user.name : 'Aaron Thompson'}
-          profilePic={user ? user.avatar : placeholder}
-          praiseTaker="Noble Obioma"
-          time="2 hours ago"
-          praiseText="Huge shoutout to Noble for his work on the Technical research! I was blow away by how detailed oriented the whole thing was."
-        />
       </ProfileBody>
     </>
   );
