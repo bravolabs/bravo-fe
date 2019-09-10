@@ -4,7 +4,7 @@ export const MainContentContainer = styled.div`
   position: relative;
   top: 0px;
   left: 90px;
-  right: 374px;
+  right: 400px;
   display: flex;
   flex-direction: column;
   background: #f9fbfd;
