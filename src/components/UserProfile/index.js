@@ -9,7 +9,7 @@ import placeholder from '../../assets/placeholder.png';
 
 const shoutoutMargin = '20px auto 15px 200px';
 
-const UserProfile = ({ user, shoutouts, fetching }) => {
+const UserProfile = ({ user, shoutouts, fetching, message }) => {
   return (
     <>
       <ProfileHeader>
