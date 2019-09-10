@@ -41,7 +41,7 @@ export const StyledCard = styled(Card)`
 export const DisplayCardContainer = styled(Card)`
   margin: 0 auto;
   margin-top: 182px;
-  width: 800px;
+  max-width: 800px;
   height: 200px;
   display: flex;
   flex-direction: column;
