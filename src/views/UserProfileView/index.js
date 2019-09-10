@@ -4,7 +4,14 @@ import { getProfileShoutouts } from '../../actions/shoutouts';
 
 import UserProfile from '../../components/UserProfile';
 
-const UserProfileView = ({ user, shoutouts, userShoutouts, members, getProfileShoutouts }) => {
+const UserProfileView = ({
+  user,
+  shoutouts,
+  userShoutouts,
+  members,
+  getProfileShoutouts,
+  match,
+}) => {
   useEffect(() => {
     if (!shoutouts) {
       getProfileShoutouts();
