@@ -3,12 +3,11 @@ import { Card } from '../../styling/atoms/Card';
 import { BodyText } from '../../styling/atoms/Fonts';
 
 export const ShoutoutCardContainer = styled(Card)`
-  max-width: 1000px;
-  width: 80%;
+  max-width: 900px;
+  width: 100%;
   min-height: 200px;
   padding: 40px;
-  margin-left: 180px;
-  margin-top: 120px;
+  margin-bottom: 3.2rem;
   border: 1px solid #f1f2f6;
   box-sizing: border-box;
   box-shadow: 0px 2px 2px #f2f3f7;
@@ -41,7 +40,7 @@ export const Time = styled.div`
 
 export const ShoutoutText = styled(BodyText)`
   margin-top: 1.5rem;
-  width: 800px;
+  width: 100%;
   height: 8rem;
   line-height: 2.2rem;
 `;
