@@ -1,5 +1,4 @@
 import { axiosWithAuth } from '../utils/axios';
-import localstorage from '../utils/localstorage';
 
 export const FETCHING_TEAM = 'FETCHING_TEAM';
 export const TEAM_FETCH_SUCCESS = 'TEAM_FETCH_SUCCESS';
