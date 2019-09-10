@@ -31,6 +31,7 @@ const UserProfile = ({ user, shoutouts }) => {
               receiverAvatar={shoutout.receiverAvatar}
               praiseText={shoutout.message}
               time={moment(shoutout.created_at).fromNow()}
+              key={shoutout.id}
             />
           ))}
       </ProfileBody>
