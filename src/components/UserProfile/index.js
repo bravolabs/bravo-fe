@@ -4,6 +4,7 @@ import moment from 'moment';
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
 import User from '../../components/User';
 import { ProfileHeader, ProfileBody, ShoutoutsButton } from './userProfile.styles';
+import Loader from '../Loader';
 import placeholder from '../../assets/placeholder.png';
 
 const shoutoutMargin = '20px auto 15px 200px';
@@ -21,6 +22,7 @@ const UserProfile = ({ user, shoutouts, fetching }) => {
         <ShoutoutsButton>Shoutouts</ShoutoutsButton>
       </ProfileHeader>
       <ProfileBody>
+        {fetching && <Loader />}
         {shoutouts &&
           shoutouts.map(shoutout => (
             <ShoutoutCard
