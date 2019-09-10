@@ -12,7 +12,7 @@ import SideNav from '../SideNav';
 const Slack = ({ history, location, appInstall, signInWithSlack, slack }) => {
   // Get the original target route the user was trying to access if it exists
   const targetRoute = localStorage.getItem('target-route');
-  const goToLocation = targetRoute ? targetRoute : '/welcome';
+  const goToLocation = targetRoute ? targetRoute : '/profile';
   const redirectURI = `${document.location.origin}/slack`;
   // get code and state('addAppToSlack' or 'resumeSignIn') from slack on URL
   const { code, state } = qs.parse(location.search);
