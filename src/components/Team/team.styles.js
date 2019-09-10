@@ -9,7 +9,6 @@ export const TeamContainer = styled.div`
   padding: 0;
   margin: 0;
   margin-top: 6rem;
-  margin-left: 20rem;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
