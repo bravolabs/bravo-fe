@@ -5,6 +5,7 @@ import { Redirect } from 'react-router-dom';
 import Home from '../components/Home';
 import Slack from '../components/Slack';
 import ProtectedRoute from '../components/ProtectedRoute';
+import SignInRedirect from '../components/SignInRedirect';
 
 import Shoutout from '../views/SingleShoutout';
 import UserProfileView from '../views/UserProfileView';
@@ -14,6 +15,7 @@ const AppRouter = () => (
   <Switch>
     <Route exact path="/" component={Home} />
     <Route path="/slack" component={Slack} />
+    <Route path="/slack-signin" component={SignInRedirect} />
     <ProtectedRoute path="/shoutouts/:id" component={Shoutout} />
     <ProtectedRoute path="/team" component={Team} />
     <ProtectedRoute path="/profile" component={UserProfileView} />
