@@ -33,7 +33,7 @@ export const getSingleShoutout = id => async dispatch => {
   }
 };
 
-export const getProfileShoutouts = () => async dispatch => {
+export const getProfileShoutouts = (userId = null) => async dispatch => {
   dispatch({ type: types.FETCHING_SHOUTOUT });
   try {
     const { data } = await Axios(localstorage.get().token).get(
