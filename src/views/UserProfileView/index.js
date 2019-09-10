@@ -16,7 +16,9 @@ const UserProfileView = ({
   const userInfo = (userId && members.filter(member => member.id === userId)) || null;
 
   useEffect(() => {
-    if (!shoutouts) {
+    if (userId && !userShoutouts) {
+      getProfileShoutouts(userId);
+    } else if (!shoutouts) {
       getProfileShoutouts();
     }
   }, []);
