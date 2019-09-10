@@ -38,6 +38,6 @@ const Team = ({ team, fetchTeamInfo }) => {
 };
 
 export default connect(
-  state => ({ team: state.team }),
+  state => ({ team: state.team, user: state.slack.user }),
   { fetchTeamInfo }
 )(Team);
