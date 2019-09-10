@@ -8,7 +8,7 @@ import placeholder from '../../assets/placeholder.png';
 
 const shoutoutMargin = '20px auto 15px 200px';
 
-const UserProfile = ({ user, shoutouts }) => {
+const UserProfile = ({ user, shoutouts, fetching }) => {
   return (
     <>
       <ProfileHeader>
