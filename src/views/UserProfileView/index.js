@@ -17,6 +17,7 @@ export default connect(
   state => ({
     user: state.slack.user,
     shoutouts: state.shoutouts.profileShoutouts,
+    members: state.team.members,
   }),
   { getProfileShoutouts }
 )(UserProfileView);
