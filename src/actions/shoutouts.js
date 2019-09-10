@@ -35,9 +35,7 @@ export const getSingleShoutout = id => async dispatch => {
 export const getProfileShoutouts = () => async dispatch => {
   dispatch({ type: types.FETCHING_SHOUTOUT });
   try {
-    const { data } = await Axios(localstorage.get().token).get(
-      `/api/users/${localstorage.get().id}/shoutouts`
-    );
+    const { data } = await axiosWithAuth().get(`/api/users/${localstorage.get().id}/shoutouts`);
 
     dispatch({ type: types.SET_PROFILE_SHOUTOUTS, payload: data.data || data });
   } catch (error) {
