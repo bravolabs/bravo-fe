@@ -9,7 +9,7 @@ export const RightBarContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 374px;
+  width: 400px;
   height: 100vh;
   padding: 140px 30px 0px 30px;
   background: #f9fbfd;
