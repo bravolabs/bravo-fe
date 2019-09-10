@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
 import User from '../../components/User';
@@ -29,7 +30,7 @@ const UserProfile = ({ user, shoutouts }) => {
               praiseTaker={shoutout.receiverName}
               receiverAvatar={shoutout.receiverAvatar}
               praiseText={shoutout.message}
-              time={shoutout.created_at}
+              time={moment(shoutout.created_at).fromNow()}
             />
           ))}
       </ProfileBody>
