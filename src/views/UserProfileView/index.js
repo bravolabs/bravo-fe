@@ -13,7 +13,7 @@ const UserProfileView = ({
   match,
 }) => {
   const userId = match.params.id || null;
-  const userInfo = (userId && members.filter(member => member.id === userId)) || null;
+  const userInfo = userId ? members.filter(member => member.id === parseInt(userId, 10)) : null;
 
   useEffect(() => {
     if (userId && !userShoutouts) {
@@ -22,7 +22,12 @@ const UserProfileView = ({
       getProfileShoutouts();
     }
   }, []);
-  return <UserProfile user={userInfo || user} shoutouts={userShoutouts || shoutouts} />;
+  return (
+    <UserProfile
+      user={(userInfo && userInfo[0]) || user}
+      shoutouts={userShoutouts || (!userId && shoutouts)}
+    />
+  );
 };
 
 export default connect(
