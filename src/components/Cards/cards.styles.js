@@ -42,6 +42,7 @@ export const DisplayCardContainer = styled(Card)`
   margin: 0;
   margin-top: 182px;
   max-width: 800px;
+  width: 80%;
   height: 200px;
   display: flex;
   flex-direction: column;
