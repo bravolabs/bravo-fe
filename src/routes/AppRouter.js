@@ -17,6 +17,7 @@ const AppRouter = () => (
     <ProtectedRoute path="/shoutouts/:id" component={Shoutout} />
     <ProtectedRoute path="/team" component={Team} />
     <ProtectedRoute path="/profile" component={UserProfileView} />
+    <ProtectedRoute path="/members/:id" component={UserProfileView} />
     <Route render={() => <Redirect to="/" />} />
   </Switch>
 );
