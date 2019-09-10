@@ -1,45 +1,41 @@
 import React from 'react';
+import moment from 'moment';
 
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
 import User from '../../components/User';
 import { ProfileHeader, ProfileBody, ShoutoutsButton } from './userProfile.styles';
 import placeholder from '../../assets/placeholder.png';
 
-
 const shoutoutMargin = '20px auto 15px 200px';
 
-const UserProfile = ({ user }) => {
+const UserProfile = ({ user, shoutouts }) => {
   return (
-      <>
-        <ProfileHeader>
-          <User 
-            size='user-profile' 
-            img={user ? user.avatar : placeholder} 
-            alt={placeholder} 
-            name={user ? user.name : 'Aaron Thompson'} 
-          />
-          <ShoutoutsButton>Shoutouts</ShoutoutsButton>
-        </ProfileHeader>
-        <ProfileBody>
-            <ShoutoutCard 
-                margin={shoutoutMargin}
-                praiseGiver={user ? user.name : 'Aaron Thompson'} 
-                profilePic={user ? user.avatar : placeholder}
-                praiseTaker='Noble Obioma' 
-                time='2 hours ago' 
-                praiseText='Huge shoutout to Noble for his work on the Technical research! I was blow away by how detailed oriented the whole thing was.' 
+    <>
+      <ProfileHeader>
+        <User
+          size="user-profile"
+          img={user ? user.avatar : placeholder}
+          alt={placeholder}
+          name={user ? user.name : 'Aaron Thompson'}
+        />
+        <ShoutoutsButton>Shoutouts</ShoutoutsButton>
+      </ProfileHeader>
+      <ProfileBody>
+        {shoutouts &&
+          shoutouts.map(shoutout => (
+            <ShoutoutCard
+              margin={shoutoutMargin}
+              praiseGiver={shoutout.giverName}
+              giverAvatar={shoutout.giverAvatar}
+              praiseTaker={shoutout.receiverName}
+              receiverAvatar={shoutout.receiverAvatar}
+              praiseText={shoutout.message}
+              time={moment(shoutout.created_at).fromNow()}
             />
-            <ShoutoutCard 
-                margin={shoutoutMargin}
-                praiseGiver={user ? user.name : 'Aaron Thompson'} 
-                profilePic={user ? user.avatar : placeholder} 
-                praiseTaker='Noble Obioma' 
-                time='2 hours ago' 
-                praiseText='Huge shoutout to Noble for his work on the Technical research! I was blow away by how detailed oriented the whole thing was.' 
-            />
-        </ProfileBody>
-      </>
-    );
+          ))}
+      </ProfileBody>
+    </>
+  );
 };
 
 export default UserProfile;

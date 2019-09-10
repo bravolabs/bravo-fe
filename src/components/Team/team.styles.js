@@ -4,7 +4,7 @@ import { PageTitle } from '../../styling/atoms/Fonts';
 export const TeamContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 1000px;
+  max-width: 900px;
   width: 100%;
   padding: 0;
   margin: 0;
@@ -26,7 +26,7 @@ export const Title = styled(PageTitle)`
 export const TeamHead = styled.div`
   display: flex;
   position: relative;
-  max-width: 1000px;
+  max-width: 900px;
   width: 100%;
   padding: 0;
   padding-right: 7rem;
