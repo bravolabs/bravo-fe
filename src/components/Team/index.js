@@ -27,7 +27,7 @@ const Team = ({ team, user, fetchTeamInfo }) => {
             <HeadText marginLeft={true}>Name</HeadText>
             <HeadText>Actions</HeadText>
           </TeamHead>
-          <MemberCards members={team.members} userId={user.id} />
+          <MemberCards members={team.members} />
         </TeamContainer>
       )}
       {team.errorMessage && (
