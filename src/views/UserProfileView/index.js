@@ -12,6 +12,7 @@ const UserProfileView = ({
   getProfileShoutouts,
   match,
   fetching,
+  message,
 }) => {
   const userId = match.params.id || null;
   const userInfo = userId ? members.filter(member => member.id === parseInt(userId, 10)) : null;
@@ -28,6 +29,7 @@ const UserProfileView = ({
       user={(userInfo && userInfo[0]) || user}
       shoutouts={userShoutouts || (!userId && shoutouts)}
       fetching={fetching}
+      message={message}
     />
   );
 };
@@ -38,6 +40,7 @@ export default connect(
     shoutouts: state.shoutouts.profileShoutouts,
     userShoutouts: state.shoutouts.userShoutouts,
     fetching: state.shoutouts.fetching,
+    message: state.shoutouts.error,
     members: state.team.members,
   }),
   { getProfileShoutouts }
