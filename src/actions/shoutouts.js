@@ -40,7 +40,9 @@ export const getProfileShoutouts = (userId = null) => async dispatch => {
       `/api/users/${userId || localstorage.get().id}/shoutouts`
     );
 
-    dispatch({ type: types.SET_PROFILE_SHOUTOUTS, payload: data.data || data });
+    userId
+      ? dispatch({ type: types.SET_USER_SHOUTOUTS, payload: data.data || data })
+      : dispatch({ type: types.SET_PROFILE_SHOUTOUTS, payload: data.data || data });
   } catch (error) {
     if (error.response) {
       dispatch({ type: types.SHOUTOUT_ERROR, payload: error.response.data.message });
