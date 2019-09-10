@@ -22,7 +22,7 @@ const MemberCard = ({ id, name, avatar }) => (
     <MemberCardAction
       onClick={() => handleActionClick(`profile-${id}`)}
       onBlur={() => handleFocusOut(`profile-${id}`)}>
-      ···
+      View Profile
     </MemberCardAction>
     <ViewProfile id={`profile-${id}`}>
       <span role="img" aria-label="eyes icon">
