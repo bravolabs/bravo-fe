@@ -3,7 +3,7 @@ import { ComponentTitle } from '../../styling/atoms/Fonts';
 
 export const UserContainer = styled.div`
   display: flex;
-  margin: ${props => (props.size === 'user-profile' ? '30px auto auto 0' : 'none')};
+  margin: ${props => (props.size === 'user-profile' ? '10px auto auto 0' : 'none')};
 `;
 
 export const ShoutoutUserAvatar = styled.img`
