@@ -28,7 +28,7 @@ export const TeamHead = styled.div`
   max-width: 900px;
   width: 100%;
   padding: 0;
-  padding-right: 7rem;
+  padding-right: 9rem;
   padding-left: 6rem;
   margin-bottom: 1.6rem;
   box-sizing: border-box;
