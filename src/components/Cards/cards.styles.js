@@ -106,6 +106,16 @@ export const MemberCardAction = styled(BaseButton)`
   }
 `;
 
+export const MemberCardValue = styled.p`
+  color: #7d8597;
+  outline: none;
+  padding: 0;
+  margin: auto;
+  margin-right: 0;
+  font-size: 1.6rem;
+  font-weight: bolder;
+`;
+
 export const ViewProfile = styled(BaseButton)`
   display: none;
   position: absolute;
