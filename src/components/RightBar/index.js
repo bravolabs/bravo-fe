@@ -12,23 +12,17 @@ const descriptions = [
   {
     image: group,
     title: 'What is Bravo?',
-    text: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni omnis delectus
-    nemo, maxime molestiae dolorem numquam mollitia, voluptate ea, accusamus excepturi
-    deleniti ratione sapiente! Laudantium, aperiam doloribus. Odit, aut.`,
+    text: `Never let the acknowledgement of your good work get lost in the shuffle again.`,
   },
   {
     image: shoutout,
     title: 'What are shoutouts?',
-    text: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni omnis delectus
-    nemo, maxime molestiae dolorem numquam mollitia, voluptate ea, accusamus excepturi
-    deleniti ratione sapiente! Laudantium, aperiam doloribus. Odit, aut.`,
+    text: `Shoutouts are acknowledgements you send to or receive from a collegue  `,
   },
   {
     image: howto,
     title: 'How do I get more Bravos?',
-    text: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni omnis delectus
-    nemo, maxime molestiae dolorem numquam mollitia, voluptate ea, accusamus excepturi
-    deleniti ratione sapiente! Laudantium, aperiam doloribus. Odit, aut.`,
+    text: `Anyone in your organization or slack workspace can give you a Bravo.`,
   },
 ];
 
