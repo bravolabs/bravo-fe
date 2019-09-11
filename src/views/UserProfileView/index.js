@@ -18,16 +18,16 @@ const UserProfileView = ({
   const userInfo = userId ? members.filter(member => member.id === parseInt(userId, 10)) : null;
 
   useEffect(() => {
-    if (userId && !userShoutouts) {
+    if (userId) {
       getProfileShoutouts(userId);
-    } else if (!shoutouts) {
+    } else if (!userId && !shoutouts) {
       getProfileShoutouts();
     }
-  }, []);
+  }, [userId, getProfileShoutouts, shoutouts]);
   return (
     <UserProfile
       user={(userInfo && userInfo[0]) || user}
-      shoutouts={userShoutouts || (!userId && shoutouts)}
+      shoutouts={userShoutouts || shoutouts}
       fetching={fetching}
       message={message}
     />
