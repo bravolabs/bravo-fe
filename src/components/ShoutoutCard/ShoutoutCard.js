@@ -29,6 +29,11 @@ const ShoutoutCard = props => {
       document.querySelector(`#view-${id}`).style.display = 'flex';
     }
   };
+  const removeViewAction = () => {
+    if (id) {
+      document.querySelector(`#view-${id}`).style.display = 'none';
+    }
+  };
 
   return (
     <ShoutoutCardContainer margin={margin} onMouseEnter={addViewAction} onClick={addViewAction}>
