@@ -1,5 +1,4 @@
-import { Axios } from '../utils/axios';
-import localstorage from '../utils/localstorage';
+import { axiosWithAuth } from '../utils/axios';
 
 export const FETCHING_TEAM = 'FETCHING_TEAM';
 export const TEAM_FETCH_SUCCESS = 'TEAM_FETCH_SUCCESS';
@@ -8,9 +7,7 @@ export const TEAM_FETCH_FAIL = 'TEAM_FETCH_FAIL';
 export const fetchTeamInfo = organization => async dispatch => {
   dispatch({ type: FETCHING_TEAM });
   try {
-    const { data } = await Axios(localstorage.get().token).get(
-      `/api/organizations/${organization}/users`
-    );
+    const { data } = await axiosWithAuth().get(`/api/organizations/${organization}/users`);
 
     dispatch({ type: TEAM_FETCH_SUCCESS, payload: data.data || data });
   } catch (error) {
