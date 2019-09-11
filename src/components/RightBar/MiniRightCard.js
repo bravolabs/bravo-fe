@@ -5,7 +5,6 @@ import { MediumCard } from './rightbar.styles';
 import { ModalContainer, Imagecontainer, TextContainer } from './modal.styles';
 import { ComponentTitle, BodyText } from '../../styling/atoms/Fonts';
 
-Modal.setAppElement('#root');
 Modal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.6)';
 const customStyles = {
   content: {
@@ -28,7 +27,12 @@ const MiniRightCard = ({ image, text, title }) => {
         <input type="checkbox" checked />
         <p>{title}</p>
       </MediumCard>
-      <Modal isOpen={isOpen} onRequestClose={toggleModal} style={customStyles} contentLabel={title}>
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={toggleModal}
+        style={customStyles}
+        contentLabel={title}
+        ariaHideApp={false}>
         <ModalContainer>
           <Imagecontainer>
             <img src={image} alt={title} />
