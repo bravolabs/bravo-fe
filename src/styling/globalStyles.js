@@ -331,6 +331,9 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     background-color: ${Colors.light}
   }
+  #root {
+    background: #F9FBFD;
+  }
 `;
 
 export default GlobalStyle;
