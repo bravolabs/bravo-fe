@@ -8,6 +8,8 @@ import ShoutoutCard from '../ShoutoutCard/ShoutoutCard';
 import DisplayCard from '../Cards/DisplayCard';
 import bravoParty from '../../assets/bravo-party.svg';
 
+const shoutoutMargin = '20px auto 15px 200px';
+
 const Shoutouts = ({ shoutouts, fetching, message, getProfileShoutouts }) => {
   useEffect(() => {
     if (!shoutouts) {
@@ -23,6 +25,7 @@ const Shoutouts = ({ shoutouts, fetching, message, getProfileShoutouts }) => {
         {shoutouts &&
           shoutouts.map(shoutout => (
             <ShoutoutCard
+              margin={shoutoutMargin}
               praiseGiver={shoutout.giverName}
               giverAvatar={shoutout.giverAvatar}
               praiseTaker={shoutout.receiverName}
