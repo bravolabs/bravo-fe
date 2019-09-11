@@ -9,25 +9,25 @@ import DisplayCard from '../Cards/DisplayCard';
 import bravoParty from '../../assets/bravo-party.svg';
 import localstorage from '../../utils/localstorage';
 
-const { org_id } = localstorage.get() || '';
-
 const Team = ({ team, fetchTeamInfo }) => {
   useEffect(() => {
     if (team && !team.members) {
-      fetchTeamInfo(org_id);
+      fetchTeamInfo();
     }
   }, []);
+  const members =
+    (team.members && team.members.filter(member => member.id !== localstorage.get().id)) || null;
   return (
     <React.Fragment>
       {team.isFetchingTeam && <DisplayCard header={<Loader />} text="Loading your Team..." />}
-      {team.members && (
+      {members && (
         <TeamContainer>
           <Title>Team</Title>
           <TeamHead>
             <HeadText marginLeft={true}>Name</HeadText>
             <HeadText>Actions</HeadText>
           </TeamHead>
-          <MemberCards members={team.members} />
+          <MemberCards members={members} />
         </TeamContainer>
       )}
       {team.errorMessage && (
