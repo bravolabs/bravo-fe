@@ -7,8 +7,9 @@ import { fetchTeamInfo } from '../../actions/team';
 import Loader from '../Loader';
 import DisplayCard from '../Cards/DisplayCard';
 import bravoParty from '../../assets/bravo-party.svg';
+import localstorage from '../../utils/localstorage';
 
-const Team = ({ team, user, fetchTeamInfo }) => {
+const Team = ({ team, fetchTeamInfo }) => {
   useEffect(() => {
     if (team && !team.members) {
       fetchTeamInfo();
@@ -36,6 +37,6 @@ const Team = ({ team, user, fetchTeamInfo }) => {
 };
 
 export default connect(
-  state => ({ team: state.team, user: state.slack.user }),
+  state => ({ team: state.team }),
   { fetchTeamInfo }
 )(Team);

@@ -1,8 +1,9 @@
 import { FETCHING_TEAM, TEAM_FETCH_SUCCESS, TEAM_FETCH_FAIL } from '../actions/team';
+import localstorage from '../utils/localstorage';
 
 const initialState = {
   isFetchingTeam: false,
-  members: null,
+  members: localstorage.get().members || null,
   errorMessage: '',
 };
 
