@@ -27,6 +27,8 @@ export const AddToSlack = () => {
         im:write,
         im:read,
         im:history,users:read,
+        reactions:write,
+        reactions:read,
         channels:read
         users.profile:read&
         redirect_uri=${redirectURI}&
