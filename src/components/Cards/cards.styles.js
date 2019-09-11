@@ -71,6 +71,20 @@ export const MemberCardContainer = styled(Card)`
   border-radius: 8px;
 `;
 
+export const Position = styled.div`
+  margin: 12px 23px 0 1px;
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  box-shadow: 0px 1.87781px 6.25935px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  p {
+    text-align: center;
+    margin-top: 12px;
+    font-weight: 500;
+  }
+`;
+
 export const MemberCardsContainer = styled.div`
   display: flex;
   flex-direction: column;
