@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { ShoutoutsContainer, Title, CardContainer } from './shoutouts.styles';
 import { getProfileShoutouts } from '../../actions/shoutouts';
+import Loader from '../Loader';
 
 const Shoutouts = ({ shoutouts, fetching, message, getProfileShoutouts }) => {
   useEffect(() => {
@@ -13,7 +14,7 @@ const Shoutouts = ({ shoutouts, fetching, message, getProfileShoutouts }) => {
   return (
     <ShoutoutsContainer>
       <Title>Shoutouts</Title>
-      <CardContainer></CardContainer>
+      <CardContainer>{fetching && <Loader />}</CardContainer>
     </ShoutoutsContainer>
   );
 };
