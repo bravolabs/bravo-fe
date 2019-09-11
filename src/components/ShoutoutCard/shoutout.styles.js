@@ -14,6 +14,7 @@ export const ShoutoutCardContainer = styled(Card)`
   box-shadow: 0px 2px 2px #f2f3f7;
   background-color: white;
   border-radius: 8px;
+  cursor: pointer;
 `;
 
 export const ViewContainer = styled.div`
