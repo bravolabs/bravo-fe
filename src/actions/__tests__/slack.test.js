@@ -13,6 +13,7 @@ const slackResSuccess = {
   team_id: 'KNINNFAN8',
   enterprise_id: null,
   user: { id: 'JVDJCDEDN' },
+  bot: { bot_access_token: 'sample_bot_token' },
   incoming_webhook: {
     channel: '#general',
     channel_id: 'CMK9N836H',
