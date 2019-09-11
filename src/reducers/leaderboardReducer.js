@@ -7,8 +7,8 @@ import {
 const initialState = {
   isFetching: false,
   leaderboard: [],
-  success: '',
-  error: '',
+  success: false,
+  error: false,
   message: '',
 };
 
@@ -19,9 +19,19 @@ export default (state = initialState, action) => {
         ...state,
         isFetching: true,
         leaderboard: [],
-        success: '',
-        error: '',
-        message: 'fetching',
+        success: false,
+        error: false,
+        message: 'Fetching..',
       };
+    case LEADERBOARD_FETCH_SUCCESS:
+      return {
+        ...state,
+        isFetching: false,
+        leaderboard: action.payload,
+        success: true,
+        error: false,
+        message: action.message,
+      };
+    
   }
 };
