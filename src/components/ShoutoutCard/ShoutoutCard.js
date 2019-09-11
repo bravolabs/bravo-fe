@@ -36,7 +36,12 @@ const ShoutoutCard = props => {
   };
 
   return (
-    <ShoutoutCardContainer margin={margin} onMouseEnter={addViewAction} onClick={addViewAction}>
+    <ShoutoutCardContainer
+      margin={margin}
+      onMouseEnter={addViewAction}
+      onClick={addViewAction}
+      onBlur={removeViewAction}
+      onMouseLeave={removeViewAction}>
       <AvatarsContainer>
         <User img={giverAvatar || placeholder} name={praiseGiver} />
         <Emoji src={confetti} />
