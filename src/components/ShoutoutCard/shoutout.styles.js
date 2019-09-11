@@ -47,6 +47,19 @@ export const ViewButton = styled.button`
     background: #4265ed;
     color: #ffffff;
   }
+  a {
+    color: inherit;
+    text-decoration: none;
+    &:link {
+      color: inherit;
+    }
+    &:visited {
+      color: inherit;
+    }
+    &:active {
+      color: inherit;
+    }
+  }
 `;
 
 export const AvatarsContainer = styled.div`
