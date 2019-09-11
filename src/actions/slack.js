@@ -33,7 +33,7 @@ export const signInWithSlack = (code, redirectURI) => async dispatch => {
     const { access_token: accessToken, user } = await slackOAuth(code, redirectURI);
     const { data } = await Axios().post('/api/auths', { accessToken, userId: user.id });
     const { id, name, avatar } = data;
-    dispatch(loggedIn({ name, avatar }));
+    dispatch(loggedIn({ id, name, avatar }));
     localstorage.set(data);
     return true;
   } catch (error) {
