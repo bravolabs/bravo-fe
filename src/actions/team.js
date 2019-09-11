@@ -11,7 +11,11 @@ export const fetchTeamInfo = () => async dispatch => {
     const { data } = await axiosWithAuth().get(
       `/api/organizations/${localstorage.get().org_id}/users`
     );
-
+    const localStore = localstorage.get();
+    localstorage.set({
+      ...localStore,
+      members: data.data || data,
+    });
     dispatch({ type: TEAM_FETCH_SUCCESS, payload: data.data || data });
   } catch (error) {
     if (error.response) {
