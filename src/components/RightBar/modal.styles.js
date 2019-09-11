@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const ModalContainer = styled.div`
-  width: 550px;
-  height: 485px;
+  width: 500px;
+  height: 450px;
   display: flex;
   flex-direction: column;
 `;
@@ -14,7 +14,7 @@ export const Imagecontainer = styled.div`
   align-items: center;
 
   img {
-    width: 300px;
+    width: 250px;
   }
 `;
 
