@@ -22,4 +22,10 @@ export const Title = styled(PageTitle)`
   margin-bottom: 4rem;
 `;
 
-export const CardContainer = styled.div``;
+export const CardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  max-width: 900px;
+  width: 100%;
+`;
