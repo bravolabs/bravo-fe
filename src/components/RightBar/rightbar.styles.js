@@ -43,6 +43,8 @@ export const RightBarCard = styled(Card)`
 export const TextContent = styled.div`
   height: 100px;
   padding: 10px;
+  background: #ffffff;
+  border-radius: 0px 0px 8px 8px;
 
   p {
     line-height: 1.8;
@@ -57,6 +59,7 @@ export const MediumCard = styled(Card)`
   align-items: center;
   margin: 10px 0;
   transition: 0.3s ease-in-out;
+  background: #ffffff;
 
   input {
     margin-right: 9px;
