@@ -5,6 +5,7 @@ import {
   AvatarsContainer,
   Time,
   ShoutoutText,
+  ViewContainer,
 } from './shoutout.styles';
 import User from '../User';
 import confetti from '../../assets/confetti.png';
@@ -31,6 +32,7 @@ const ShoutoutCard = props => {
         <Time>{time}</Time>
       </AvatarsContainer>
       <ShoutoutText>{praiseText}</ShoutoutText>
+      {id && <ViewContainer></ViewContainer>}
     </ShoutoutCardContainer>
   );
 };
