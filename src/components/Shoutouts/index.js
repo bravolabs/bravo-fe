@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import moment from 'moment';
 import { ShoutoutsContainer, Title, CardContainer } from './shoutouts.styles';
 import { getProfileShoutouts } from '../../actions/shoutouts';
 import Loader from '../Loader';
@@ -26,7 +27,7 @@ const Shoutouts = ({ shoutouts, fetching, message, getProfileShoutouts }) => {
               praiseTaker={shoutout.receiverName}
               receiverAvatar={shoutout.receiverAvatar}
               praiseText={shoutout.message}
-              time={shoutout.created_at}
+              time={moment(shoutout.created_at).fromNow()}
               key={shoutout.id}
             />
           ))}
