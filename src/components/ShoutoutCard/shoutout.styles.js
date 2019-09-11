@@ -31,7 +31,19 @@ export const ViewContainer = styled.div`
   filter: blur(4px);
 `;
 
-export const ViewButton = styled.button``;
+export const ViewButton = styled.button`
+  background: #ffffff;
+  color: #4265ed;
+  border: 1px solid #4265ed;
+  outline: none;
+  padding: 5px;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+`;
 
 export const AvatarsContainer = styled.div`
   display: flex;
