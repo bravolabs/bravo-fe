@@ -28,6 +28,7 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
         {shoutouts &&
           shoutouts.map(shoutout => (
             <ShoutoutCard
+              id={shoutout.id}
               margin={shoutoutMargin}
               praiseGiver={shoutout.giverName}
               giverAvatar={shoutout.giverAvatar}
