@@ -1,4 +1,8 @@
 import React from 'react';
-import { ShoutoutsContainer } from './shoutouts.styles';
+import { ShoutoutsContainer, Title } from './shoutouts.styles';
 
-const Shoutouts = ({ ...props }) => <ShoutoutsContainer></ShoutoutsContainer>;
+const Shoutouts = ({ ...props }) => (
+  <ShoutoutsContainer>
+    <Title>Shoutouts</Title>
+  </ShoutoutsContainer>
+);
