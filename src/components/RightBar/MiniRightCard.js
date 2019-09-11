@@ -23,7 +23,7 @@ const MiniRightCard = ({ image, text, title }) => {
   const toggleModal = () => setModal(!isOpen);
   return (
     <>
-      <MediumCard onClick={toggleModal} shadow={ShapeStyles.elevation.elevate}>
+      <MediumCard onClick={toggleModal} shadow={ShapeStyles.elevation.normal}>
         <input type="checkbox" checked />
         <p>{title}</p>
       </MediumCard>

@@ -28,7 +28,7 @@ const descriptions = [
 
 const RightBar = () => (
   <RightBarContainer>
-    <RightBarCard shadow={ShapeStyles.elevation.elevate}>
+    <RightBarCard shadow={ShapeStyles.elevation.normal}>
       <header>
         <img src={getStarted} alt="get started" />
       </header>
