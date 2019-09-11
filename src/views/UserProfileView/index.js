@@ -15,7 +15,8 @@ const UserProfileView = ({
   message,
 }) => {
   const userId = match.params.id || null;
-  const userInfo = userId ? members.filter(member => member.id === parseInt(userId, 10)) : null;
+  const userInfo =
+    userId && members ? members.filter(member => member.id === parseInt(userId, 10)) : null;
 
   useEffect(() => {
     if (userId) {
