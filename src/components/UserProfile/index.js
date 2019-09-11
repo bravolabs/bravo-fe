@@ -19,7 +19,7 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
           size="user-profile"
           img={user ? user.avatar : placeholder}
           alt={user.name}
-          name={user ? user.name : 'Aaron Thompson'}
+          name={user ? user.name : null}
         />
         <ShoutoutsButton>Shoutouts</ShoutoutsButton>
       </ProfileHeader>
