@@ -4,8 +4,8 @@ import LeaderboardCard from './LeaderboardCard';
 
 const MemberCards = ({ leaders }) => (
   <MemberCardsContainer>
-    {leaders.map(leader => (
-      <LeaderboardCard {...leader} key={leader.id} />
+    {leaders.map((leader, index) => (
+      <LeaderboardCard {...leader} index={index} key={index} />
     ))}
   </MemberCardsContainer>
 );
