@@ -2,10 +2,11 @@ import styled from 'styled-components';
 import colors from '../../styling/variables/UIColors';
 
 export const Ring = styled.div`
-  display: inline-block;
+  display: flex;
   position: relative;
   width: 64px;
   height: 64px;
+  margin: 0px auto;
 
   & div {
     box-sizing: border-box;

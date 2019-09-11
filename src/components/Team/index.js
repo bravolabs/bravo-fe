@@ -11,23 +11,24 @@ import localstorage from '../../utils/localstorage';
 
 const { org_id } = localstorage.get() || '';
 
-const Team = ({ team, fetchTeamInfo }) => {
+const Team = ({ team, user, fetchTeamInfo }) => {
   useEffect(() => {
     if (team && !team.members) {
       fetchTeamInfo(org_id);
     }
   }, []);
+  const members = (team.members && team.members.filter(member => member.id !== user.id)) || null;
   return (
     <React.Fragment>
       {team.isFetchingTeam && <DisplayCard header={<Loader />} text="Loading your Team..." />}
-      {team.members && (
+      {members && (
         <TeamContainer>
           <Title>Team</Title>
           <TeamHead>
             <HeadText marginLeft={true}>Name</HeadText>
             <HeadText>Actions</HeadText>
           </TeamHead>
-          <MemberCards members={team.members} />
+          <MemberCards members={members} />
         </TeamContainer>
       )}
       {team.errorMessage && (
@@ -38,6 +39,6 @@ const Team = ({ team, fetchTeamInfo }) => {
 };
 
 export default connect(
-  state => ({ team: state.team }),
+  state => ({ team: state.team, user: state.slack.user }),
   { fetchTeamInfo }
 )(Team);
