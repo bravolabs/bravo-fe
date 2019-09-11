@@ -21,3 +21,5 @@ export const Title = styled(PageTitle)`
   color: #000;
   margin-bottom: 4rem;
 `;
+
+export const CardContainer = styled.div``;
