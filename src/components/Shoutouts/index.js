@@ -5,6 +5,7 @@ import { ShoutoutsContainer, Title, CardContainer } from './shoutouts.styles';
 import { getProfileShoutouts } from '../../actions/shoutouts';
 import Loader from '../Loader';
 import ShoutoutCard from '../ShoutoutCard/ShoutoutCard';
+import DisplayCard from '../Cards/DisplayCard';
 
 const Shoutouts = ({ shoutouts, fetching, message, getProfileShoutouts }) => {
   useEffect(() => {
@@ -31,6 +32,7 @@ const Shoutouts = ({ shoutouts, fetching, message, getProfileShoutouts }) => {
               key={shoutout.id}
             />
           ))}
+        {message && <DisplayCard header={<img src={``} alt="bravo party" />} text={message} />}
       </CardContainer>
     </ShoutoutsContainer>
   );
