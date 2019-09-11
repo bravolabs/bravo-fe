@@ -107,13 +107,14 @@ export const MemberCardAction = styled(BaseButton)`
 `;
 
 export const MemberCardValue = styled.p`
-  color: #7d8597;
+  color: #000;
   outline: none;
   padding: 0;
   margin: auto;
   margin-right: 0;
   font-size: 1.6rem;
-  font-weight: bolder;
+  font-weight: 500;
+  line-height: 19px;
 `;
 
 export const ViewProfile = styled(BaseButton)`
