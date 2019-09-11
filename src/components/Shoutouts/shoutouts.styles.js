@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { PageTitle } from '../../styling/atoms/Fonts';
 
 export const ShoutoutsContainer = styled.div`
   display: flex;
@@ -12,3 +13,5 @@ export const ShoutoutsContainer = styled.div`
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 `;
+
+export const Title = styled(PageTitle)``;
