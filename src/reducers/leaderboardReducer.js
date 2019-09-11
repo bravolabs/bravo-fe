@@ -32,6 +32,16 @@ export default (state = initialState, action) => {
         error: false,
         message: action.message,
       };
-    
+    case LEADERBOARD_FETCH_FAIL:
+      return {
+        ...state,
+        isFetching: false,
+        leaderboard: [],
+        success: false,
+        error: true,
+        message: action.message,
+      };
+    default:
+      return state;
   }
 };
