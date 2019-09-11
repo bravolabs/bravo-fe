@@ -24,6 +24,12 @@ const ShoutoutCard = props => {
     praiseText,
   } = props;
 
+  const addViewAction = () => {
+    if (id) {
+      document.querySelector(`#view-${id}`).style.display = 'flex';
+    }
+  };
+
   return (
     <ShoutoutCardContainer margin={margin}>
       <AvatarsContainer>
