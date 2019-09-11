@@ -21,10 +21,10 @@ const UserProfileView = ({
   useEffect(() => {
     if (userId) {
       getProfileShoutouts(userId);
-    } else if (!userId && !shoutouts) {
+    } else {
       getProfileShoutouts();
     }
-  }, [userId, getProfileShoutouts, shoutouts]);
+  }, [userId, getProfileShoutouts]);
   return (
     <UserProfile
       user={(userInfo && userInfo[0]) || user}

@@ -9,15 +9,14 @@ import DisplayCard from '../Cards/DisplayCard';
 import bravoParty from '../../assets/bravo-party.svg';
 import localstorage from '../../utils/localstorage';
 
-const { org_id } = localstorage.get() || '';
-
-const Team = ({ team, user, fetchTeamInfo }) => {
+const Team = ({ team, fetchTeamInfo }) => {
   useEffect(() => {
     if (team && !team.members) {
-      fetchTeamInfo(org_id);
+      fetchTeamInfo();
     }
   }, []);
-  const members = (team.members && team.members.filter(member => member.id !== user.id)) || null;
+  const members =
+    (team.members && team.members.filter(member => member.id !== localstorage.get().id)) || null;
   return (
     <React.Fragment>
       {team.isFetchingTeam && <DisplayCard header={<Loader />} text="Loading your Team..." />}
@@ -39,6 +38,6 @@ const Team = ({ team, user, fetchTeamInfo }) => {
 };
 
 export default connect(
-  state => ({ team: state.team, user: state.slack.user }),
+  state => ({ team: state.team }),
   { fetchTeamInfo }
 )(Team);
