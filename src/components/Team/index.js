@@ -15,7 +15,8 @@ const Team = ({ team, fetchTeamInfo }) => {
       fetchTeamInfo();
     }
   }, []);
-  const members = (team.members && team.members.filter(member => member.id !== user.id)) || null;
+  const members =
+    (team.members && team.members.filter(member => member.id !== localstorage.get().id)) || null;
   return (
     <React.Fragment>
       {team.isFetchingTeam && <DisplayCard header={<Loader />} text="Loading your Team..." />}
