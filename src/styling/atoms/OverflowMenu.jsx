@@ -8,10 +8,11 @@ export const MenuContainer = styled.div`
   position: absolute;
   left: ${props => (props.x ? props.x : 0)};
   top: ${props => (props.y ? props.y : 0)};
+  ${props => (props.transform ? `tranform: ${props.transform};` : null)};
 `;
 
 export const MenuItem = styled.button`
-  border: none;
+  border: ${props => (props.border ? props.border : 'none')};;
   background: none;
   padding: 16px 12px;
   color: ${props => (props.color ? props.color : 'black')};
