@@ -1,11 +1,11 @@
 import React from 'react';
 import { MemberCardsContainer } from './cards.styles';
-import MemberCard from './MemberCard';
+import LeaderboardCard from './LeaderboardCard';
 
-const MemberCards = ({ members }) => (
+const MemberCards = ({ leaders }) => (
   <MemberCardsContainer>
-    {members.map(member => (
-      <MemberCard {...member} key={member.id} />
+    {leaders.map(leader => (
+      <LeaderboardCard {...leader} key={leader.id} />
     ))}
   </MemberCardsContainer>
 );

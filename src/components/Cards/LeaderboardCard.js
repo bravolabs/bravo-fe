@@ -4,11 +4,11 @@ import { MemberCardContainer, MemberCardAction } from './cards.styles';
 import User from '../User';
 import placeholder from '../../assets/placeholder.png';
 
-const MemberCard = ({ id, name, avatar }) => (
+const MemberCard = ({ id, name, avatar, total }) => (
   <MemberCardContainer>
     <User img={avatar || placeholder} alt={name} name={name} />
     <MemberCardAction>
-      <Link to={`/members/${id}`}>View Profile</Link>
+      <Link to={`/members/${id}`}>{total}</Link>
     </MemberCardAction>
   </MemberCardContainer>
 );
