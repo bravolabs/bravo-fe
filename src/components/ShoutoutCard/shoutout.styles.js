@@ -3,6 +3,7 @@ import { Card } from '../../styling/atoms/Card';
 import { BodyText } from '../../styling/atoms/Fonts';
 
 export const ShoutoutCardContainer = styled(Card)`
+  position: relative;
   max-width: 900px;
   width: 100%;
   min-height: 200px;
@@ -14,18 +15,6 @@ export const ShoutoutCardContainer = styled(Card)`
   background-color: white;
   border-radius: 8px;
   cursor: pointer;
-  &:active {
-    filter: blur(4px);
-    -webkit-filter: blur(4px);
-    -moz-filter: blur(4px);
-    -o-filter: blur(4px);
-  }
-  &:active {
-    filter: blur(4px);
-    -webkit-filter: blur(4px);
-    -moz-filter: blur(4px);
-    -o-filter: blur(4px);
-  }
 `;
 
 export const ViewContainer = styled.div`
@@ -39,6 +28,7 @@ export const ViewContainer = styled.div`
   left: 0px;
   border-radius: inherit;
   z-index: 99;
+  background: rgba(255, 255, 255, 0.8);
 `;
 
 export const ViewButton = styled.button`
