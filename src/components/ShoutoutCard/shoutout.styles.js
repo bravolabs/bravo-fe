@@ -31,6 +31,8 @@ export const ViewContainer = styled.div`
   filter: blur(4px);
 `;
 
+export const ViewButton = styled.button``;
+
 export const AvatarsContainer = styled.div`
   display: flex;
   width: 100%;
