@@ -23,7 +23,6 @@ const Shoutouts = ({ shoutouts, fetching, message, getProfileShoutouts }) => {
         {shoutouts &&
           shoutouts.map(shoutout => (
             <ShoutoutCard
-              margin={shoutoutMargin}
               praiseGiver={shoutout.giverName}
               giverAvatar={shoutout.giverAvatar}
               praiseTaker={shoutout.receiverName}
