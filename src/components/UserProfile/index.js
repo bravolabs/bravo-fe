@@ -16,7 +16,7 @@ const UserProfile = ({ user, shoutouts }) => {
           size="user-profile"
           img={user ? user.avatar : placeholder}
           alt={placeholder}
-          name={user ? user.name : 'Aaron Thompson'}
+          name={user && user.name}
         />
         <ShoutoutsButton>Shoutouts</ShoutoutsButton>
       </ProfileHeader>
@@ -24,6 +24,7 @@ const UserProfile = ({ user, shoutouts }) => {
         {shoutouts &&
           shoutouts.map(shoutout => (
             <ShoutoutCard
+              key={shoutout.id}
               margin={shoutoutMargin}
               praiseGiver={shoutout.giverName}
               giverAvatar={shoutout.giverAvatar}
