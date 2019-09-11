@@ -6,12 +6,12 @@ import teamIcon from '../../assets/team-icon.svg';
 import confettiIcon from '../../assets/confetti-icon.svg';
 
 const SideNavMenu = () => {
-    return (
-        <MenuContainer>
-            <MenuButton img={teamIcon} path='/team' />
-            <MenuButton img={confettiIcon} path='/confetti' />
-        </MenuContainer>
-    );
-  };
+  return (
+    <MenuContainer>
+      <MenuButton img={teamIcon} path="/team" />
+      <MenuButton img={confettiIcon} path="/shoutouts" />
+    </MenuContainer>
+  );
+};
 
 export default SideNavMenu;
