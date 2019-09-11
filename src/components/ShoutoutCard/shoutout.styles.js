@@ -16,7 +16,19 @@ export const ShoutoutCardContainer = styled(Card)`
   border-radius: 8px;
 `;
 
-export const ViewContainer = styled.div``;
+export const ViewContainer = styled.div`
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  border-radius: inherit;
+  z-index: 99;
+  filter: blur(4px);
+`;
 
 export const AvatarsContainer = styled.div`
   display: flex;
