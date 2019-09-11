@@ -14,4 +14,10 @@ export const ShoutoutsContainer = styled.div`
   -moz-box-sizing: border-box;
 `;
 
-export const Title = styled(PageTitle)``;
+export const Title = styled(PageTitle)`
+  font-size: 3.2rem;
+  font-weight: 600;
+  line-height: 3.8rem;
+  color: #000;
+  margin-bottom: 4rem;
+`;
