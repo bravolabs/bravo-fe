@@ -35,7 +35,16 @@ const Slack = ({ history, location, appInstall, signInWithSlack, slack }) => {
   return state ? (
     <React.Fragment>
       <SideNav />
-      {slack.isLoading && <DisplayCard header={<Loader />} text="Loading your Profile" />}
+      {slack.isLoading && (
+        <DisplayCard
+          header={<Loader />}
+          text={
+            state === 'addAppToSlack'
+              ? 'Installing Bravo in Slack Workspace...'
+              : 'When the work is done, say bravo...'
+          }
+        />
+      )}
       {slack.installSuccess && (
         <DisplayCard
           header={<img src={bravoParty} alt="bravo party" />}
