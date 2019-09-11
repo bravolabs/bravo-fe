@@ -3,7 +3,7 @@ import localstorage from '../utils/localstorage';
 
 const initialState = {
   isFetchingTeam: false,
-  members: localstorage.get().members || null,
+  members: (localstorage.get() && localstorage.get().members) || null,
   errorMessage: '',
 };
 
