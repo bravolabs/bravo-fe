@@ -9,7 +9,7 @@ const UserProfileView = ({ user, shoutouts, getProfileShoutouts }) => {
     if (!shoutouts) {
       getProfileShoutouts();
     }
-  }, []);
+  }, [getProfileShoutouts, shoutouts]);
   return <UserProfile user={user} shoutouts={shoutouts} />;
 };
 
