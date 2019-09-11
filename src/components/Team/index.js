@@ -14,7 +14,7 @@ const Team = ({ team, fetchTeamInfo }) => {
     if (team && !team.members) {
       fetchTeamInfo();
     }
-  }, [team, fetchTeamInfo]);
+  }, [team, team.members, fetchTeamInfo]);
   const members =
     (team.members && team.members.filter(member => member.id !== localstorage.get().id)) || null;
   return (
