@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   ShoutoutCardContainer,
   Emoji,
@@ -51,7 +52,9 @@ const ShoutoutCard = props => {
       <ShoutoutText>{praiseText}</ShoutoutText>
       {id && (
         <ViewContainer id={`view-${id}`}>
-          <ViewButton>View shoutout</ViewButton>
+          <ViewButton>
+            <Link to={`/shoutouts/${id}`}>View shoutout</Link>
+          </ViewButton>
         </ViewContainer>
       )}
     </ShoutoutCardContainer>
