@@ -43,6 +43,10 @@ export const ViewButton = styled.button`
   font-weight: 600;
   font-size: 16px;
   line-height: 19px;
+  &:hover {
+    background: #4265ed;
+    color: #ffffff;
+  }
 `;
 
 export const AvatarsContainer = styled.div`
