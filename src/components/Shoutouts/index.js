@@ -8,3 +8,12 @@ const Shoutouts = ({ ...props }) => (
     <CardContainer></CardContainer>
   </ShoutoutsContainer>
 );
+
+export default connect(
+  state => ({
+    shoutouts: state.shoutouts.profileShoutouts,
+    fetching: state.shoutouts.fetching,
+    message: state.shoutouts.error,
+  }),
+  {}
+)(Shoutouts);
