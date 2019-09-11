@@ -25,7 +25,7 @@ export const Title = styled(PageTitle)`
 export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
+  margin-top: 10px;
   max-width: 900px;
   width: 100%;
 `;
