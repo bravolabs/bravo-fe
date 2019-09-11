@@ -34,7 +34,7 @@ const ShoutoutCard = props => {
       </AvatarsContainer>
       <ShoutoutText>{praiseText}</ShoutoutText>
       {id && (
-        <ViewContainer>
+        <ViewContainer id={`view-${id}`}>
           <ViewButton>View shoutout</ViewButton>
         </ViewContainer>
       )}
