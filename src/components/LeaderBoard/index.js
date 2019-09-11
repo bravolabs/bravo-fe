@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-// import {  } from './leaderboard.styles';
+import { LeaderBoardContainer, Title } from './leaderboard.styles';
 import LeaderboardCards from '../Cards/LeaderboardCards';
 import { fetchLeaderBoard } from '../../actions/leaderboard';
 
@@ -15,10 +15,23 @@ const LeaderBoard = ({ leaderboard, fetchLeaderBoard }) => {
       fetchLeaderBoard();
     }
   }, []);
+  const leaders = leaderboard.leaderboard || null;
   return (
-    <div>
-      <h1>Hello LeaderBoard</h1>
-    </div>
+    <React.Fragment>
+      {leaderboard.isFetching && <DisplayCard header={<Loader />} text="Loading your Team..." />}
+      {leaderboard && (
+        <LeaderBoardContainer>
+          <Title>Leaderboard</Title>
+          <LeaderboardCards leaders={leaders} />
+        </LeaderBoardContainer>
+      )}
+      {leaderboard.message && (
+        <DisplayCard
+          header={<img src={bravoParty} alt="bravo party" />}
+          text={leaderboard.message}
+        />
+      )}
+    </React.Fragment>
   );
 };
 
