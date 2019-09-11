@@ -10,6 +10,7 @@ import SignInRedirect from '../components/SignInRedirect';
 import Shoutout from '../views/SingleShoutout';
 import UserProfileView from '../views/UserProfileView';
 import Team from '../components/Team';
+import LeaderBoardView from '../views/LeaderBoard';
 
 const AppRouter = () => (
   <Switch>
@@ -20,6 +21,7 @@ const AppRouter = () => (
     <ProtectedRoute path="/team" component={Team} />
     <ProtectedRoute path="/profile" component={UserProfileView} />
     <ProtectedRoute path="/members/:id" component={UserProfileView} />
+    <ProtectedRoute path="/leaderboard" component={LeaderBoardView} />
     <Route render={() => <Redirect to="/" />} />
   </Switch>
 );
