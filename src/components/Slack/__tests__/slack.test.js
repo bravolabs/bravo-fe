@@ -27,7 +27,7 @@ describe('Add to Slack Component', () => {
     );
 
     const loadScreen = container.firstChild;
-    getByText('Loading your Profile');
+    getByText('When the work is done, say bravo...');
     expect(container.children.length).toBe(2);
     expect(loadScreen).toBeVisible();
   });

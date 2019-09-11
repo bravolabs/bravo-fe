@@ -26,7 +26,6 @@ export default (state = initialState, action) => {
     case SET_USER:
       return {
         ...state,
-        isLoading: false,
         isLoggedIn: true,
         user: action.payload,
       };
