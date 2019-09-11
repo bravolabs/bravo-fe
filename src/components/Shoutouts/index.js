@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { ShoutoutsContainer, Title, CardContainer } from './shoutouts.styles';
 import { getProfileShoutouts } from '../../actions/shoutouts';
 import Loader from '../Loader';
+import ShoutoutCard from '../ShoutoutCard/ShoutoutCard';
 
 const Shoutouts = ({ shoutouts, fetching, message, getProfileShoutouts }) => {
   useEffect(() => {
@@ -14,7 +15,22 @@ const Shoutouts = ({ shoutouts, fetching, message, getProfileShoutouts }) => {
   return (
     <ShoutoutsContainer>
       <Title>Shoutouts</Title>
-      <CardContainer>{fetching && <Loader />}</CardContainer>
+      <CardContainer>
+        {fetching && <Loader />}
+        {shoutouts &&
+          shoutouts.map(shoutout => (
+            <ShoutoutCard
+              margin={shoutoutMargin}
+              praiseGiver={shoutout.giverName}
+              giverAvatar={shoutout.giverAvatar}
+              praiseTaker={shoutout.receiverName}
+              receiverAvatar={shoutout.receiverAvatar}
+              praiseText={shoutout.message}
+              time={shoutout.created_at}
+              key={shoutout.id}
+            />
+          ))}
+      </CardContainer>
     </ShoutoutsContainer>
   );
 };
