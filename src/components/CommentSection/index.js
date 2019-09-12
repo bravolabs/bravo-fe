@@ -1,9 +1,10 @@
 import React from 'react';
-import { SectionContainer } from './commentsection.styles';
+import { SectionContainer, Title } from './commentsection.styles';
 import CommentCard from '../Cards/CommentCard';
 
 const CommentSection = ({ comments }) => (
   <SectionContainer>
+    <Title>Comments</Title>
     {comments &&
       comments.map(comment => (
         <CommentCard
