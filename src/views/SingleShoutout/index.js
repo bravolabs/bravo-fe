@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import moment from 'moment';
 import { connect } from 'react-redux';
 
@@ -13,17 +13,18 @@ import bravoParty from '../../assets/bravo-party.svg';
 const View = ({ shoutout, comments, getSingleShoutout, getComments, match, fetching, error }) => {
   const id = match.params.id || null;
 
+  const getInfo = useCallback(
+    async id => {
+      await getSingleShoutout(id);
+      await getComments(id);
+    },
+    [getSingleShoutout, getComments]
+  );
   useEffect(() => {
     if (id) {
-      getSingleShoutout(id);
+      getInfo(id);
     }
-  }, [getSingleShoutout, id]);
-
-  useEffect(() => {
-    if (id) {
-      getComments(id);
-    }
-  }, [getComments, id]);
+  }, [id, getInfo]);
 
   return (
     <>
