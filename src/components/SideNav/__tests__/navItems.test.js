@@ -31,4 +31,11 @@ describe('Nav Item Component', () => {
     const item = container.firstChild;
     expect(item).toHaveAttribute('href', '/');
   });
+
+  it('Active indicatior to be hidden on Inital', () => {
+    const { container } = renderWithRedux(<NavItem />);
+    const item = container.firstChild.firstChild;
+    expect(item).not.toBeVisible();
+  });
+
 });
