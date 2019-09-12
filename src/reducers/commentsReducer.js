@@ -22,5 +22,14 @@ export default (state = initialState, action) => {
         comments: null,
         fetching: true,
       };
+    case types.COMMENTS_ERROR:
+      return {
+        ...state,
+        error: action.payload,
+        comments: null,
+        fetching: false,
+      };
+    default:
+      return state;
   }
 };
