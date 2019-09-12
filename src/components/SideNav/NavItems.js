@@ -10,8 +10,8 @@ const NavItems = () => {
   return (
     <NavItemsContainer>
       <NavItem icon={homeIcon} link="/profile" />
-      <NavItem icon={shoutoutIcon} />
-      <NavItem icon={leaderboardIcon} />
+      <NavItem icon={shoutoutIcon} link="/shoutouts" />
+      <NavItem icon={leaderboardIcon} link="/leaderboard" />
       <NavItem icon={teamIcon} link="/team" />
     </NavItemsContainer>
   );
