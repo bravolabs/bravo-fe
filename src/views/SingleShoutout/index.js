@@ -6,6 +6,7 @@ import { getSingleShoutout } from '../../actions/shoutouts';
 import { getComments } from '../../actions/comments';
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
 import CommentSection from '../../components/CommentSection';
+import Loader from '../../components/Loader';
 
 const View = ({ shoutout, comments, getSingleShoutout, getComments, match, fetching, error }) => {
   const id = match.params.id || null;
@@ -24,6 +25,7 @@ const View = ({ shoutout, comments, getSingleShoutout, getComments, match, fetch
 
   return (
     <>
+      {fetching && <Loader />}
       {shoutout && (
         <ShoutoutCard
           id={shoutout.id}
