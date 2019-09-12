@@ -329,7 +329,11 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Lato', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: ${Colors.light}
+    background-color: ${Colors.light};
+
+    @media(max-width: 850px) {
+      padding: 0 10px;
+    }
   }
 `;
 
