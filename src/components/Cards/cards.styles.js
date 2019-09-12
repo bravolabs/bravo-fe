@@ -156,4 +156,8 @@ export const CommentTime = styled.div`
   color: rgba(0, 0, 0, 0.652);
 `;
 
-export const CommentText = styled(BodyText)``;
+export const CommentText = styled(BodyText)`
+  margin-top: 1.5rem;
+  width: 100%;
+  line-height: 2.2rem;
+`;
