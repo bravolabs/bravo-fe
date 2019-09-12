@@ -32,7 +32,7 @@ describe('Nav Item Component', () => {
     expect(item).toHaveAttribute('href', '/');
   });
 
-  it('Active indicatior to be hidden on Inital', () => {
+  it('Active indicatior to be hidden on inital render', () => {
     const { container } = renderWithRedux(<NavItem />);
     const item = container.firstChild.firstChild;
     expect(item).not.toBeVisible();
@@ -42,5 +42,12 @@ describe('Nav Item Component', () => {
     const { container } = renderWithRedux(<NavItem />);
     const item = fireEvent.mouseOver(container.firstChild);
     expect(item).toBe(true);
+  });
+});
+
+describe('Nav Items Component', () => {
+  it('Should Render NavItems', () => {
+    const { container } = renderWithRedux(<NavItems />);
+    expect(container.firstChild.children).toHaveLength(4);
   });
 });
