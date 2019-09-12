@@ -3,6 +3,7 @@ import { Card } from '../../styling/atoms/Card';
 import { BodyText } from '../../styling/atoms/Fonts';
 
 export const ShoutoutCardContainer = styled(Card)`
+  position: relative;
   max-width: 900px;
   width: 100%;
   min-height: 200px;
@@ -13,6 +14,52 @@ export const ShoutoutCardContainer = styled(Card)`
   box-shadow: 0px 2px 2px #f2f3f7;
   background-color: white;
   border-radius: 8px;
+  cursor: pointer;
+`;
+
+export const ViewContainer = styled.div`
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  border-radius: inherit;
+  z-index: 99;
+  background: rgba(255, 255, 255, 0.8);
+`;
+
+export const ViewButton = styled.button`
+  background: #ffffff;
+  color: #4265ed;
+  border: 1px solid #4265ed;
+  outline: none;
+  padding: 5px;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  &:hover {
+    background: #4265ed;
+    color: #ffffff;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    &:link {
+      color: inherit;
+    }
+    &:visited {
+      color: inherit;
+    }
+    &:active {
+      color: inherit;
+    }
+  }
 `;
 
 export const AvatarsContainer = styled.div`

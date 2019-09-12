@@ -148,3 +148,5 @@ export const ViewProfile = styled(BaseButton)`
   padding-left: 12px;
   color: #7d8597;
 `;
+
+export const CommentCardContainer = styled(Card)``;

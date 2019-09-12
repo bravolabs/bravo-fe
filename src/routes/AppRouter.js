@@ -6,6 +6,7 @@ import Home from '../components/Home';
 import Slack from '../components/Slack';
 import ProtectedRoute from '../components/ProtectedRoute';
 import SignInRedirect from '../components/SignInRedirect';
+import Shoutouts from '../components/Shoutouts';
 import Shoutout from '../views/SingleShoutout';
 import UserProfileView from '../views/UserProfileView';
 import Team from '../components/Team';
@@ -17,6 +18,7 @@ const AppRouter = () => (
     <Route exact path="/" component={Home} />
     <Route path="/slack" component={Slack} />
     <Route path="/slack-signin" component={SignInRedirect} />
+    <ProtectedRoute exact path="/shoutouts" component={Shoutouts} />
     <ProtectedRoute path="/shoutouts/:id" component={Shoutout} />
     <ProtectedRoute path="/team" component={Team} />
     <ProtectedRoute path="/profile" component={UserProfileView} />
