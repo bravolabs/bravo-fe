@@ -1,7 +1,19 @@
+import { types } from '../actions/comments';
+
 const initialState = {
   comments: null,
   fetching: false,
   error: '',
 };
 
-export default (state = initialState, action) => {};
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case types.SET_COMMENTS:
+      return {
+        ...state,
+        comments: action.payload,
+        fetching: false,
+        error: '',
+      };
+  }
+};
