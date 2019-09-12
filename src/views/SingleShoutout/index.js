@@ -25,6 +25,12 @@ const View = ({ shoutout, comments, getSingleShoutout, getComments, match }) => 
   }, [getSingleShoutout, id]);
 
   useEffect(() => {
+    if (id) {
+      getComments(id);
+    }
+  }, [getComments, id]);
+
+  useEffect(() => {
     if (props.shoutouts.singleShoutout) {
       getUser(props.shoutouts.singleShoutout.giverSlackId);
       getUser(props.shoutouts.singleShoutout.receiverSlackId);
