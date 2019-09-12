@@ -43,7 +43,7 @@ const View = ({ shoutout, comments, getSingleShoutout, getComments, match, fetch
         )}
         {error && <DisplayCard header={<img src={bravoParty} alt="bravo party" />} text={error} />}
       </ShoutoutsContainer>
-      {comments && comments.length && <CommentSection comments={comments} />}
+      {comments && comments.length > 0 && <CommentSection comments={comments} />}
     </>
   );
 };
