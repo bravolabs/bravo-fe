@@ -153,25 +153,153 @@ Example:
     export default rootReducer;
     ```
 
-  - Create Test Suite for Feature
+  - Create Test Suite for Component
 
-  ```js
-  // src/Home/home.test.js
-  import React from 'react';
-  import * as rtl from '@testing-library/react';
+    ```js
+    // src/Components/Home/__tests__/home.test.js
+    import React from 'react';
+    import * as rtl from '@testing-library/react';
 
-  import '@testing-library/jest-dom/extend-expect';
+    import '@testing-library/jest-dom/extend-expect';
 
-  import Home from '../index';
+    import Home from '../index';
 
-  afterEach(rtl.cleanup);
-  describe('Home Component', () => {
-    it('Should render home component', () => {
-      const { container } = rtl.render(<Home />);
-      expect(container).toBeTruthy();
+    afterEach(rtl.cleanup);
+    describe('Home Component', () => {
+      it('Should render home component', () => {
+        const { container } = rtl.render(<Home />);
+        expect(container).toBeTruthy();
+      });
     });
-  });
-  ```
+    ```
+
+  - Create Test Suite for Reducer
+
+    ```js
+    // src/reducers/__tests__/home.test.js
+    import { cleanup } from '@testing-library/react';
+    import userReducer from '../userReducer';
+    import { FETCH_START } from '../../actions/user';
+
+    const initialState = {
+      loading: false,
+      user: null,
+      error: '',
+    };
+
+    afterEach(cleanup);
+    describe('User Reducer', () => {
+      it('Should return initial State', () => {
+        expect(userReducer(undefined, {})).toEqual(initialState);
+      });
+
+      it('Should Toggle Loading state', () => {
+        expect(userReducer(initialState, { type: FETCH_START })).toEqual({
+          ...initialState,
+          loading: true,
+        });
+      });
+    });
+    ```
+
+  - Create Test Suite for Action
+
+    ```js
+    // actions/__tests__/user.test.js
+    import configureMockStore from 'redux-mock-store';
+    import thunk from 'redux-thunk';
+    import nock from 'nock';
+    import { setUser } from '../user';
+
+    const mockStore = configureMockStore([thunk]);
+
+    describe('Home Action Creator', () => {
+      let store;
+      beforeEach(() => {
+        store = mockStore({});
+      });
+      afterEach(() => {
+        nock.cleanAll();
+      });
+
+      it('Should return FETCH_SUCCESS Action with payload', () => {
+        nock('https://home.com/api')
+          .post('/user')
+          .reply(200, {
+            user: 'Sample User',
+          });
+        const expectedActions = [
+          {
+            type: 'SET_USER_START',
+          },
+          {
+            type: 'SET_USER_ERROR',
+            payload: 'Sample User',
+          },
+        ];
+        store = mockStore({});
+        return store.dispatch(setUser()).then(() => {
+          expect(store.getActions()).toEqual(expectedActions);
+        });
+      });
+    });
+    ```
+
+- **Creating SVG Components**
+
+  - Get raw SVG
+
+    ```html
+    <svg width="21" height="5" viewBox="0 0 21 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="2.5" cy="2.5" r="2.5" fill="#7D8597"/>
+      <circle cx="10.5" cy="2.5" r="2.5" fill="#7D8597"/>
+      <circle cx="18.5" cy="2.5" r="2.5" fill="#7D8597"/>
+    </svg>
+    ```
+  
+  - Remove any unnecessary attributes  
+    Here I've removed all fill, width and height attributes. We'll be setting those later with CSS  
+
+    ```html
+    <svg viewBox="0 0 21 5" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="2.5" cy="2.5" r="2.5" />
+      <circle cx="10.5" cy="2.5" r="2.5" />
+      <circle cx="18.5" cy="2.5" r="2.5" />
+    </svg>
+    ```
+
+  - Create component  
+    Wrap all paths in a 'g' tag and spread props in so that styles import properly. Use the SVG component in `styling/atoms/SVG.jsx`  
+    ```js
+    import React from 'react';
+    import SVG from '../SVG';
+    function Ellipses(props) {
+      return (
+        <SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 5" {...props}>
+          <g>
+            <circle cx="2.5" cy="2.5" r="2.5" />
+            <circle cx="10.5" cy="2.5" r="2.5" />
+            <circle cx="18.5" cy="2.5" r="2.5" />
+          </g>
+        </SVG>
+      );
+    }
+    ```
+
+  - Component Usage  
+    Colors, mitter limits and stroke can be set in props.  
+    
+    Props:  
+      `fillColor="<fill color here>"`  
+      `strokeColor="<stroke color here>"`  
+      `strokeWidth="<stroke width here>"`  
+      `mitter="<mitter limit here>"`  
+
+    Here's an example with the Logo SVG:  
+    ```js
+      <Logo fillColor="#4265ED" />
+    ```
+
 
 - **Create Pull Request**
 

@@ -1,46 +1,47 @@
-import axios from 'axios';
-import qs from 'querystring';
 import { Axios } from '../utils/axios';
+import slackOAuth from '../utils/slackOAuth';
+import { loggedIn } from './auth';
+import localstorage from '../utils/localstorage';
 
 export const FETCH_START = 'FETCH_START';
-export const FETCH_SUCCESS = 'FETCH_SUCCESS';
+export const INSTALL_SUCCESS = 'INSTALL_SUCCESS';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const FETCH_ERROR = 'FETCH_ERROR';
 
-export const getSlackToken = (code, redirectURI) => async dispatch => {
-  const reqBody = {
-    client_id: process.env.REACT_APP_CLIENT_ID,
-    client_secret: process.env.REACT_APP_CLIENT_SECRET,
-    redirect_uri: redirectURI,
-    code,
-  };
+export const appInstall = (code, redirectURI) => async dispatch => {
   dispatch({ type: FETCH_START });
   try {
-    const { data: slackRes } = await axios.post(
-      'https://slack.com/api/oauth.access',
-      qs.stringify(reqBody),
-      {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-      }
-    );
-    if ('error' in slackRes) {
-      throw new Error(slackRes.error);
-    }
-
+    const slackToken = await slackOAuth(code, redirectURI);
     const info = {
-      orgId: slackRes.team_id,
-      orgName: slackRes.team_name,
-      channelName: slackRes.incoming_webhook.channel,
-      channelId: slackRes.incoming_webhook.channel_id,
-      accessToken: slackRes.access_token,
-      userId: slackRes.user_id,
+      orgId: slackToken.team_id,
+      orgName: slackToken.team_name,
+      channelName: slackToken.incoming_webhook.channel,
+      channelId: slackToken.incoming_webhook.channel_id,
+      accessToken: slackToken.access_token,
+      botAccessToken: slackToken.bot.bot_access_token,
+      userId: slackToken.user_id,
     };
-
     const res = await Axios().post('/slack/install', info);
-
-    dispatch({ type: FETCH_SUCCESS, payload: res.data });
+    dispatch({ type: INSTALL_SUCCESS, payload: res.data });
   } catch (error) {
     dispatch({ type: FETCH_ERROR, payload: error.message });
+  }
+};
+
+export const signInWithSlack = (code, redirectURI) => async dispatch => {
+  dispatch({ type: FETCH_START });
+  try {
+    const { access_token: accessToken, user } = await slackOAuth(code, redirectURI);
+    const { data } = await Axios().post('/api/auths', { accessToken, userId: user.id });
+    const { id, name, avatar } = data;
+    dispatch(loggedIn({ name, avatar }));
+    localstorage.set(data);
+    return true;
+  } catch (error) {
+    if (error.response) {
+      dispatch({ type: FETCH_ERROR, payload: error.response.data.message });
+    } else {
+      dispatch({ type: FETCH_ERROR, payload: error.message });
+    }
   }
 };
