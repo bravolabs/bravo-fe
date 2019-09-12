@@ -7,7 +7,7 @@ import { getComments } from '../../actions/comments';
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
 import CommentSection from '../../components/CommentSection';
 
-const View = ({ shoutout, comments, getSingleShoutout, getComments, match }) => {
+const View = ({ shoutout, comments, getSingleShoutout, getComments, match, fetching, error }) => {
   const id = match.params.id || null;
 
   useEffect(() => {
@@ -43,6 +43,8 @@ const View = ({ shoutout, comments, getSingleShoutout, getComments, match }) => 
 export default connect(
   state => ({
     shoutout: state.shoutouts.singleShoutout,
+    fetching: state.shoutouts.fetching,
+    error: state.shoutouts.error,
     comments: state.comments.comments,
   }),
   { getSingleShoutout, getComments }
