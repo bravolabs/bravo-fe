@@ -38,4 +38,9 @@ describe('Nav Item Component', () => {
     expect(item).not.toBeVisible();
   });
 
+  it('Active indicatior to be visible hover over icon', () => {
+    const { container } = renderWithRedux(<NavItem />);
+    const item = fireEvent.mouseOver(container.firstChild);
+    expect(item).toBe(true);
+  });
 });
