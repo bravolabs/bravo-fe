@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { PageTitle } from '../../styling/atoms/Fonts';
 
 export const SectionContainer = styled.div`
   display: flex;
@@ -8,4 +9,12 @@ export const SectionContainer = styled.div`
   padding: 0;
   padding-left: 4rem;
   margin: 0;
+`;
+
+export const Title = styled(PageTitle)`
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 3.8rem;
+  color: #506174;
+  margin-bottom: 1rem;
 `;
