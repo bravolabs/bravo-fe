@@ -4,6 +4,7 @@ import localstorage from '../utils/localstorage';
 export const types = {
   SET_SINGLE_SHOUTOUT: 'SET_SINGLE_SHOUTOUT',
   SET_PROFILE_SHOUTOUTS: 'SET_PROFILE_SHOUTOUTS',
+  SET_USER_SHOUTOUTS: 'SET_USER_SHOUTOUTS',
   FETCHING_SHOUTOUT: 'FETCHING_SHOUTOUT',
   SHOUTOUT_ERROR: 'SHOUTOUT_ERROR',
 };
@@ -32,12 +33,16 @@ export const getSingleShoutout = id => async dispatch => {
   }
 };
 
-export const getProfileShoutouts = () => async dispatch => {
+export const getProfileShoutouts = (userId = null) => async dispatch => {
   dispatch({ type: types.FETCHING_SHOUTOUT });
   try {
-    const { data } = await axiosWithAuth().get(`/api/users/${localstorage.get().id}/shoutouts`);
+    const { data } = await axiosWithAuth().get(
+      `/api/users/${userId || localstorage.get().id}/shoutouts`
+    );
 
-    dispatch({ type: types.SET_PROFILE_SHOUTOUTS, payload: data.data || data });
+    userId
+      ? dispatch({ type: types.SET_USER_SHOUTOUTS, payload: data.data || data })
+      : dispatch({ type: types.SET_PROFILE_SHOUTOUTS, payload: data.data || data });
   } catch (error) {
     if (error.response) {
       dispatch({ type: types.SHOUTOUT_ERROR, payload: error.response.data.message });

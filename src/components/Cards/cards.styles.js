@@ -39,9 +39,10 @@ export const StyledCard = styled(Card)`
 `;
 
 export const DisplayCardContainer = styled(Card)`
-  margin: 0 auto;
+  margin: 0;
   margin-top: 182px;
-  width: 800px;
+  max-width: 800px;
+  width: 80%;
   height: 200px;
   display: flex;
   flex-direction: column;
@@ -58,7 +59,7 @@ export const MemberCardContainer = styled(Card)`
   display: flex;
   position: relative;
   justify-items: center;
-  max-width: 1000px;
+  max-width: 900px;
   height: 6.4rem;
   padding: 0;
   padding-right: 8rem;
@@ -73,7 +74,7 @@ export const MemberCardContainer = styled(Card)`
 export const MemberCardsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 1000px;
+  max-width: 900px;
   width: 100%;
   padding: 0;
   margin: 0;
@@ -85,13 +86,23 @@ export const MemberCardAction = styled(BaseButton)`
   padding: 0;
   margin: auto;
   margin-right: 0;
-  font-size: 3.4rem;
+  font-size: 1.6rem;
   font-weight: bolder;
   &:hover {
     color: #4265ed;
   }
   &:focus {
     color: #4265ed;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+    &:link {
+      color: inherit;
+    }
+    &:visited {
+      color: inherit;
+    }
   }
 `;
 

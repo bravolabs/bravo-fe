@@ -20,6 +20,7 @@ const AppRouter = () => (
     <ProtectedRoute path="/team" component={Team} />
     <ProtectedRoute path="/profile" component={UserProfileView} />
     <Route path="/logout" render={() => localstorage.clear()} />
+    <ProtectedRoute path="/members/:id" component={UserProfileView} />
     <Route render={() => <Redirect to="/" />} />
   </Switch>
 );
