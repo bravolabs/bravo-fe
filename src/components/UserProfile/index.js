@@ -36,7 +36,6 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
               receiverAvatar={shoutout.receiverAvatar}
               praiseText={shoutout.message}
               time={moment(shoutout.created_at).fromNow()}
-              key={shoutout.id}
             />
           ))}
         {message && (
