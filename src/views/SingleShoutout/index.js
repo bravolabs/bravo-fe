@@ -4,10 +4,11 @@ import { connect } from 'react-redux';
 
 import { getUserInfo } from '../../actions/users';
 import { getSingleShoutout } from '../../actions/shoutouts';
+import { getComments } from '../../actions/comments';
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
 import CommentSection from '../../components/CommentSection';
 
-const View = ({ shoutout, comments, getSingleShoutout }) => {
+const View = ({ shoutout, comments, getSingleShoutout, getComments }) => {
   const getUser = async (id, users) => {
     if (props.users[id]) {
       return props.users[id];
@@ -61,5 +62,5 @@ export default connect(
     shoutout: state.shoutouts.singleShoutout,
     comments: state.comments.comments,
   }),
-  { getUserInfo, getSingleShoutout }
+  { getUserInfo, getSingleShoutout, getComments }
 )(View);
