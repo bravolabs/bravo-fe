@@ -8,7 +8,7 @@ import { getComments } from '../../actions/comments';
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
 import CommentSection from '../../components/CommentSection';
 
-const View = ({ shoutout, comments, getSingleShoutout, getComments }) => {
+const View = ({ shoutout, comments, getSingleShoutout, getComments, match }) => {
   const getUser = async (id, users) => {
     if (props.users[id]) {
       return props.users[id];
