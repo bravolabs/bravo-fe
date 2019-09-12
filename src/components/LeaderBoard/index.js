@@ -7,25 +7,23 @@ import { fetchLeaderBoard } from '../../actions/leaderboard';
 import Loader from '../Loader';
 import DisplayCard from '../Cards/DisplayCard';
 import bravoParty from '../../assets/bravo-party.svg';
-import localstorage from '../../utils/localstorage';
 
-const LeaderBoard = ({ leaderboard, fetchLeaderBoard }) => {
+const LeaderBoard = ({ leaderboard, fetchLeaderBoard, fetching }) => {
   useEffect(() => {
-    if (leaderboard && !leaderboard.leaderboard) {
-      fetchLeaderBoard();
-    }
-  }, []);
+    fetchLeaderBoard();
+  }, [fetchLeaderBoard]);
   const leaders = leaderboard.leaderboard || null;
   return (
     <React.Fragment>
-      {leaderboard.isFetching && <DisplayCard header={<Loader />} text="Loading your Team..." />}
-      {leaderboard && (
-        <LeaderBoardContainer>
-          <Title>Leaderboard</Title>
-          <LeaderboardCards leaders={leaders} />
-        </LeaderBoardContainer>
-      )}
-      {leaderboard.message && (
+      <LeaderBoardContainer>
+        <Title>Leaderboard</Title>
+        {fetching && <Loader />}
+        {fetching.length === 0 && (
+          <DisplayCard header={<Loader />} text="Leader board is empty..." />
+        )}
+        {leaders && <LeaderboardCards leaders={leaders} />}
+      </LeaderBoardContainer>
+      {leaderboard.error && (
         <DisplayCard
           header={<img src={bravoParty} alt="bravo party" />}
           text={leaderboard.message}
@@ -38,6 +36,7 @@ const LeaderBoard = ({ leaderboard, fetchLeaderBoard }) => {
 const mapStateToProps = state => {
   return {
     leaderboard: state.leaderboard,
+    fetching: state.leaderboard.isFetching,
   };
 };
 
