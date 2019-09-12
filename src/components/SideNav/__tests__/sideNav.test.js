@@ -32,4 +32,19 @@ describe('Side Nav Component', () => {
     const avatar = getByAltText('user-avatar');
     expect(avatar).toHaveAttribute('src', 'useravatar.jpg');
   });
+
+  it('Should have logout button instead of avatar when user is authenticated', () => {
+    const reducer = {
+      slack: {
+        isLoggedIn: true,
+      },
+    };
+    const store = createStore(() => reducer);
+    const { getByText, getAllByRole } = renderWithRedux(<SideNav />, {
+      store,
+    });
+    getByText('Logout');
+    const links = getAllByRole('link');
+    expect(links[5]).toHaveAttribute('href', '/logout');
+  });
 });
