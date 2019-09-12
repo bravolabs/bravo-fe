@@ -24,7 +24,7 @@ const MiniRightCard = ({ image, text, title }) => {
   return (
     <>
       <MediumCard onClick={toggleModal} shadow={ShapeStyles.elevation.elevate}>
-        <input type="checkbox" checked />
+        <input type="checkbox" checked readOnly />
         <p>{title}</p>
       </MediumCard>
       <Modal
