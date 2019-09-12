@@ -10,7 +10,7 @@ import Shoutouts from '../components/Shoutouts';
 import Shoutout from '../views/SingleShoutout';
 import UserProfileView from '../views/UserProfileView';
 import Team from '../components/Team';
-import LeaderBoardView from '../views/LeaderBoard';
+import LeaderBoard from '../components/LeaderBoard';
 import localstorage from '../utils/localstorage';
 
 const AppRouter = () => (
@@ -24,7 +24,7 @@ const AppRouter = () => (
     <ProtectedRoute path="/profile" component={UserProfileView} />
     <Route path="/logout" render={() => localstorage.clear()} />
     <ProtectedRoute path="/members/:id" component={UserProfileView} />
-    <ProtectedRoute path="/leaderboard" component={LeaderBoardView} />
+    <ProtectedRoute path="/leaderboard" component={LeaderBoard} />
     <Route render={() => <Redirect to="/" />} />
   </Switch>
 );
