@@ -7,7 +7,6 @@ import Avatar from './Avatar';
 import NavItems from './NavItems';
 import logoutIcon from '../../assets/logout-icon.svg';
 import NavItem from './NavItem';
-import localstorage from '../../utils/localstorage';
 
 const SideNav = props => {
   const { slack } = props;
@@ -18,9 +17,7 @@ const SideNav = props => {
       </Link>
       {slack.isLoggedIn && <NavItems />}
       {slack.installSuccess && <Avatar src={slack.user.avatar} alt="user-avatar" />}
-      {slack.isLoggedIn && (
-        <NavItem icon={logoutIcon} label="Logout" link="/logout" fn={() => localstorage.clear()} />
-      )}
+      {slack.isLoggedIn && <NavItem icon={logoutIcon} label="Logout" link="/logout" />}
     </SideNavContainer>
   );
 };
