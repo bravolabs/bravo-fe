@@ -7,6 +7,7 @@ import { getComments } from '../../actions/comments';
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
 import CommentSection from '../../components/CommentSection';
 import Loader from '../../components/Loader';
+import DisplayCard from '../../components/Cards/DisplayCard';
 
 const View = ({ shoutout, comments, getSingleShoutout, getComments, match, fetching, error }) => {
   const id = match.params.id || null;
@@ -37,6 +38,7 @@ const View = ({ shoutout, comments, getSingleShoutout, getComments, match, fetch
           time={moment(shoutout.created_at).fromNow()}
         />
       )}
+      {error && <DisplayCard header={<img src={bravoParty} alt="bravo party" />} text={error} />}
       {comments && <CommentSection comments={comments} />}
     </>
   );
