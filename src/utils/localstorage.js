@@ -31,7 +31,7 @@ export default {
   },
 
   clear: function() {
-    localStorage.removeItem(KEY);
+    localStorage.clear();
     window.location.href = '/';
   },
 };
