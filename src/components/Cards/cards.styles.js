@@ -137,3 +137,5 @@ export const CommentCardContainer = styled(Card)`
   background-color: white;
   border-radius: 8px;
 `;
+
+export const CommentHeader = styled.div``;
