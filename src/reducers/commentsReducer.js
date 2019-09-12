@@ -3,3 +3,5 @@ const initialState = {
   fetching: false,
   error: '',
 };
+
+export default (state = initialState, action) => {};
