@@ -143,3 +143,5 @@ export const CommentHeader = styled.div`
   width: 100%;
   height: 4rem;
 `;
+
+export const CommentTime = styled.div``;
