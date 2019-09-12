@@ -8,6 +8,7 @@ import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
 import CommentSection from '../../components/CommentSection';
 import Loader from '../../components/Loader';
 import DisplayCard from '../../components/Cards/DisplayCard';
+import bravoParty from '../../assets/bravo-party.svg';
 
 const View = ({ shoutout, comments, getSingleShoutout, getComments, match, fetching, error }) => {
   const id = match.params.id || null;
