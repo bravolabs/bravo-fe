@@ -47,24 +47,6 @@ const View = ({ shoutout, comments, getSingleShoutout, getComments, match }) => 
   return shoutout ? <Shoutout shoutout={shoutout} /> : null;
 };
 
-const Shoutout = props => {
-  const { giver, receiver, message, created_at } = props.shoutout;
-  const timeString = moment(created_at).fromNow();
-  return (
-    <>
-      <ShoutoutCard
-        praiseGiver={giver.name || ''}
-        giverAvatar={giver.avatar || ''}
-        praiseTaker={receiver.name || ''}
-        receiverAvatar={receiver.avatar || ''}
-        time={timeString || ''}
-        praiseText={message || ''}
-      />
-      <CommentSection />
-    </>
-  );
-};
-
 export default connect(
   state => ({
     users: state.users.users,
