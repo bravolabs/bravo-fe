@@ -26,4 +26,9 @@ describe('Nav Item Component', () => {
     expect(icon).toHaveAttribute('alt', attr.link);
   });
 
+  it('Should Render Nav item and default link if empty', () => {
+    const { container } = renderWithRedux(<NavItem />);
+    const item = container.firstChild;
+    expect(item).toHaveAttribute('href', '/');
+  });
 });
