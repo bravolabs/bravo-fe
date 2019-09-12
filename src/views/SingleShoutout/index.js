@@ -36,6 +36,23 @@ const View = ({ shoutout, comments, getSingleShoutout, getComments, match }) => 
       getUser(props.shoutouts.singleShoutout.receiverSlackId);
     }
   }, [props.shoutouts.singleShoutout]);
+
+  return (
+    <>
+      {shoutout && (
+        <ShoutoutCard
+          id={shoutout.id}
+          praiseGiver={shoutout.giverName}
+          giverAvatar={shoutout.giverAvatar}
+          praiseTaker={shoutout.receiverName}
+          receiverAvatar={shoutout.receiverAvatar}
+          praiseText={shoutout.message}
+          time={moment(shoutout.created_at).fromNow()}
+        />
+      )}
+      {comments && <CommentSection comments={comments} />}
+    </>
+  );
   let shoutout = null;
   try {
     shoutout = {
@@ -44,7 +61,6 @@ const View = ({ shoutout, comments, getSingleShoutout, getComments, match }) => 
       receiver: props.users[props.shoutouts.singleShoutout.receiverSlackId] || { name: '...' },
     };
   } catch (error) {}
-  return shoutout ? <Shoutout shoutout={shoutout} /> : null;
 };
 
 export default connect(
