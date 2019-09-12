@@ -1,7 +1,6 @@
 import React from 'react';
-
 import { NavContainer, LogoContainer, Logo, NavText, HomeNavContainer } from './homeNav.styles';
-import logoImg from '../../assets/bravo-logo.png';
+import logoImg from '../../assets/bravo-logo.svg';
 import { SignInWithSlack } from '../SlackButton';
 
 const HomeNav = () => {
