@@ -31,7 +31,6 @@ const View = ({ shoutout, comments, getSingleShoutout, getComments, match, fetch
       {fetching && <Loader />}
       {shoutout && (
         <ShoutoutCard
-          id={shoutout.id}
           praiseGiver={shoutout.giverName}
           giverAvatar={shoutout.giverAvatar}
           praiseTaker={shoutout.receiverName}
