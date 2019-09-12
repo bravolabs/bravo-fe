@@ -1,5 +1,3 @@
-import React from 'react';
-
 const clientId = process.env.REACT_APP_CLIENT_ID;
 const redirectURI = `${document.location.origin}/slack`;
 const scope = 'identity.basic,identity.email,identity.team,identity.avatar';
@@ -13,6 +11,5 @@ const SignInRedirect = props => {
     state=resumeSignIn`;
   return null;
 };
-
 
 export default SignInRedirect;
