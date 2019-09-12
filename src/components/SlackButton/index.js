@@ -38,7 +38,7 @@ export const AddToSlack = () => {
           <SlackLogo src={slackLogo} />
         </LogoContainer>
         <ButtonText>
-          Join with <span>Slack</span>
+          Add to <span>Slack</span>
         </ButtonText>
         <Arrow src={arrow} />
       </StyledBaseButton>
