@@ -144,4 +144,13 @@ export const CommentHeader = styled.div`
   height: 4rem;
 `;
 
-export const CommentTime = styled.div``;
+export const CommentTime = styled.div`
+  margin: auto;
+  margin-right: 0;
+  width: 80px;
+  height: 2rem;
+  font-weight: 300;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  color: rgba(0, 0, 0, 0.652);
+`;
