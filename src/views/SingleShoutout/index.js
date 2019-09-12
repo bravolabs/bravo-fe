@@ -7,7 +7,7 @@ import { getSingleShoutout } from '../../actions/shoutouts';
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
 import CommentSection from '../../components/CommentSection';
 
-const View = props => {
+const View = ({ shoutout, comments, getSingleShoutout }) => {
   const getUser = async (id, users) => {
     if (props.users[id]) {
       return props.users[id];
@@ -58,7 +58,8 @@ const Shoutout = props => {
 export default connect(
   state => ({
     users: state.users.users,
-    shoutouts: state.shoutouts,
+    shoutout: state.shoutouts.singleShoutout,
+    comments: state.comments.comments,
   }),
   { getUserInfo, getSingleShoutout }
 )(View);
