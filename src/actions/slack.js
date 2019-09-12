@@ -18,6 +18,7 @@ export const appInstall = (code, redirectURI) => async dispatch => {
       channelName: slackToken.incoming_webhook.channel,
       channelId: slackToken.incoming_webhook.channel_id,
       accessToken: slackToken.access_token,
+      botAccessToken: slackToken.bot.bot_access_token,
       userId: slackToken.user_id,
     };
     const res = await Axios().post('/slack/install', info);

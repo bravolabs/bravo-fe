@@ -1,5 +1,5 @@
 import React from 'react';
-import { AvatarContainer } from './avatar.styles';
+import { AvatarContainer } from './sidenav.styles';
 
 const Avatar = ({ src, alt }) => {
   return (

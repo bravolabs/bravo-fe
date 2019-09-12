@@ -15,7 +15,7 @@ const clientId = process.env.REACT_APP_CLIENT_ID;
 const redirectURI = `${document.location.origin}/slack`;
 
 export const AddToSlack = () => {
-  const scope = 'incoming-webhook,commands';
+  const scope = 'incoming-webhook,commands,bot';
 
   return (
     <ButtonLink
