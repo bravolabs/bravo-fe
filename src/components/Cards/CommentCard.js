@@ -1,8 +1,10 @@
 import React from 'react';
-import { CommentCardContainer } from './cards.styles';
+import { CommentCardContainer, CommentHeader } from './cards.styles';
 
 const CommentCard = ({ name, avatar, text, timestamp }) => (
-  <CommentCardContainer></CommentCardContainer>
+  <CommentCardContainer>
+    <CommentHeader></CommentHeader>
+  </CommentCardContainer>
 );
 
 export default CommentCard;
