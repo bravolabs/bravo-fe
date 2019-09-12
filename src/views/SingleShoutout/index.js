@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getSingleShoutout } from '../../actions/shoutouts';
 import { getComments } from '../../actions/comments';
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
+import { ShoutoutsContainer } from '../../components/Shoutouts/shoutouts.styles';
 import CommentSection from '../../components/CommentSection';
 import Loader from '../../components/Loader';
 import DisplayCard from '../../components/Cards/DisplayCard';
@@ -28,18 +29,20 @@ const View = ({ shoutout, comments, getSingleShoutout, getComments, match, fetch
 
   return (
     <>
-      {fetching && <Loader />}
-      {shoutout && (
-        <ShoutoutCard
-          praiseGiver={shoutout.giverName}
-          giverAvatar={shoutout.giverAvatar}
-          praiseTaker={shoutout.receiverName}
-          receiverAvatar={shoutout.receiverAvatar}
-          praiseText={shoutout.message}
-          time={moment(shoutout.created_at).fromNow()}
-        />
-      )}
-      {error && <DisplayCard header={<img src={bravoParty} alt="bravo party" />} text={error} />}
+      <ShoutoutsContainer>
+        {fetching && <Loader />}
+        {shoutout && (
+          <ShoutoutCard
+            praiseGiver={shoutout.giverName}
+            giverAvatar={shoutout.giverAvatar}
+            praiseTaker={shoutout.receiverName}
+            receiverAvatar={shoutout.receiverAvatar}
+            praiseText={shoutout.message}
+            time={moment(shoutout.created_at).fromNow()}
+          />
+        )}
+        {error && <DisplayCard header={<img src={bravoParty} alt="bravo party" />} text={error} />}
+      </ShoutoutsContainer>
       {comments && comments.length && <CommentSection comments={comments} />}
     </>
   );
