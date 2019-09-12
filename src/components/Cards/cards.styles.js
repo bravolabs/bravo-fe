@@ -148,10 +148,11 @@ export const CommentHeader = styled.div`
 export const CommentTime = styled.div`
   margin: auto;
   margin-right: 0;
-  width: 80px;
+  width: 100px;
   height: 2rem;
   font-weight: 300;
   font-size: 1.4rem;
+  text-align: right;
   line-height: 1.6rem;
   color: rgba(0, 0, 0, 0.652);
 `;
