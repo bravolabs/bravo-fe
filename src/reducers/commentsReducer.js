@@ -15,5 +15,12 @@ export default (state = initialState, action) => {
         fetching: false,
         error: '',
       };
+    case types.FETCHING_COMMENTS:
+      return {
+        ...state,
+        error: '',
+        comments: null,
+        fetching: true,
+      };
   }
 };
