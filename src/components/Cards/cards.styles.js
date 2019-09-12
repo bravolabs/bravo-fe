@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Card } from '../../styling/atoms/Card';
 import { BaseButton } from '../../styling/atoms/Buttons';
 import colors from '../../styling/variables/UIColors';
+import { BodyText } from '../../styling/atoms/Fonts';
 
 export const CardsContainer = styled.div`
   display: flex;
@@ -154,3 +155,5 @@ export const CommentTime = styled.div`
   line-height: 1.6rem;
   color: rgba(0, 0, 0, 0.652);
 `;
+
+export const CommentText = styled(BodyText)``;
