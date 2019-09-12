@@ -5,7 +5,7 @@ import LeaderboardCard from './LeaderboardCard';
 const MemberCards = ({ leaders }) => (
   <MemberCardsContainer>
     {leaders.map((leader, index) => (
-      <LeaderboardCard {...leader} index={index} key={index} />
+      <LeaderboardCard {...leader} index={index} key={leader.slack_mem_id} />
     ))}
   </MemberCardsContainer>
 );
