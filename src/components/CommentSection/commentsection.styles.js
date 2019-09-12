@@ -12,7 +12,7 @@ export const SectionContainer = styled.div`
 `;
 
 export const Title = styled(PageTitle)`
-  font-size: 3rem;
+  font-size: 2.4rem;
   font-weight: 600;
   line-height: 3.8rem;
   color: #506174;
