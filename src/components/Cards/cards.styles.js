@@ -21,7 +21,6 @@ export const Icon = styled.img`
 
 export const Title = styled.span`
   margin: 10px 0;
-  width: 165px;
   height: 20px;
   font-weight: bold;
   font-size: 20px;
@@ -29,7 +28,6 @@ export const Title = styled.span`
 `;
 
 export const CardText = styled.span`
-  width: 214px;
   height: 46px;
   font-weight: normal;
   font-size: 16px;

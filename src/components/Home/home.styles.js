@@ -16,7 +16,7 @@ export const Intro = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 250px;
+  height: 255px;
   margin-bottom: 50px;
 `;
 
@@ -41,7 +41,12 @@ export const StyledPageTitle = styled(PageTitle)`
 `;
 
 export const StyledExtraInfo = styled(BodyText)`
+  width: 400px;
   text-align: center;
-  margin: 20px auto 30px auto;
-  height: 45px;
+  margin: 15px auto 40px auto;
+  line-height: 1.5;
+
+  @media (max-width: 800px) {
+    width: 100%;
+  }
 `;

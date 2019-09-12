@@ -9,8 +9,12 @@ export const HomeNavContainer = styled.nav`
   margin: auto;
   display: flex;
   justify-content: space-between;
-  padding: 15px;
+  padding: 25px 0;
   background-color: ${colors.light};
+
+  @media (max-width: 850px) {
+    padding: 15px;
+  }
 `;
 
 export const NavContainer = styled.nav`
@@ -39,7 +43,7 @@ export const NavText = styled.span`
   line-height: 38px;
   margin-left: 8px;
 
-  @media (max-width: 350px) {
+  @media (max-width: 380px) {
     display: none;
   }
 `;
