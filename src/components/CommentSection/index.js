@@ -8,13 +8,13 @@ const CommentSection = ({ comments }) => (
       name="James Erozonachi"
       avatar={null}
       text="Yoo Mehh... Killed it!"
-      timestamp="1568301444428"
+      timestamp={1568301444428}
     />
     <CommentCard
       name="Code Maker"
       avatar={null}
       text="Well deserved!.."
-      timestamp="1568301444428"
+      timestamp={1568301444428}
     />
   </SectionContainer>
 );
