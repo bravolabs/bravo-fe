@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-
 import bravoWhite from '../../assets/bravo-white.svg';
 import { SideNavContainer } from './sidenav.styles';
-import Avatar from '../Avatar';
-import SideNavMenu from '../SideNavMenu';
+import Avatar from './Avatar';
+import NavItems from './NavItems';
+import logoutIcon from '../../assets/logout-icon.svg';
+import NavItem from './NavItem';
+import localstorage from '../../utils/localstorage';
 
 const SideNav = props => {
   const { slack } = props;
@@ -14,10 +16,11 @@ const SideNav = props => {
       <Link to="/">
         <img src={bravoWhite} alt="Bravo" />
       </Link>
-      {slack.isLoggedIn && <SideNavMenu />}
-      <Link to={(slack.isLoggedIn && '/profile') || '/'}>
-        <Avatar src={slack.user ? slack.user.avatar : bravoWhite} alt="user-avatar" />
-      </Link>
+      {slack.isLoggedIn && <NavItems />}
+      {slack.installSuccess && <Avatar src={slack.user.avatar} alt="user-avatar" />}
+      {slack.isLoggedIn && (
+        <NavItem icon={logoutIcon} label="Logout" link="/logout" fn={() => localstorage.clear()} />
+      )}
     </SideNavContainer>
   );
 };
