@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getUserInfo } from '../../actions/users';
 import { getSingleShoutout } from '../../actions/shoutouts';
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
+import CommentSection from '../../components/CommentSection';
 
 const View = props => {
   const getUser = async (id, users) => {
@@ -40,14 +41,17 @@ const Shoutout = props => {
   const { giver, receiver, message, created_at } = props.shoutout;
   const timeString = moment(created_at).fromNow();
   return (
-    <ShoutoutCard
-      praiseGiver={giver.name || ''}
-      giverAvatar={giver.avatar || ''}
-      praiseTaker={receiver.name || ''}
-      receiverAvatar={receiver.avatar || ''}
-      time={timeString || ''}
-      praiseText={message || ''}
-    />
+    <>
+      <ShoutoutCard
+        praiseGiver={giver.name || ''}
+        giverAvatar={giver.avatar || ''}
+        praiseTaker={receiver.name || ''}
+        receiverAvatar={receiver.avatar || ''}
+        time={timeString || ''}
+        praiseText={message || ''}
+      />
+      <CommentSection />
+    </>
   );
 };
 
