@@ -124,4 +124,16 @@ export const ViewProfile = styled(BaseButton)`
   color: #7d8597;
 `;
 
-export const CommentCardContainer = styled(Card)``;
+export const CommentCardContainer = styled(Card)`
+  position: relative;
+  max-width: 720px;
+  width: 80%;
+  min-height: 125px;
+  padding: 24px;
+  margin-bottom: 1.6rem;
+  border: 1px solid #f1f2f6;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 2px #f2f3f7;
+  background-color: white;
+  border-radius: 8px;
+`;
