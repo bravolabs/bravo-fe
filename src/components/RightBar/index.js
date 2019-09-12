@@ -42,7 +42,7 @@ const RightBar = () => (
     <section>
       <BodyText>Learn about Bravo</BodyText>
       {descriptions.map(item => (
-        <MiniRightCard {...item} key={item.title} />
+        <MiniRightCard key={item.title} {...item} />
       ))}
     </section>
   </RightBarContainer>

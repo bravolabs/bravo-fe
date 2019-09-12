@@ -19,7 +19,7 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
           size="user-profile"
           img={user ? user.avatar : placeholder}
           alt={placeholder}
-          name={user ? user.name : 'Aaron Thompson'}
+          name={user && user.name}
         />
         <ShoutoutsButton>Shoutouts</ShoutoutsButton>
       </ProfileHeader>
@@ -28,6 +28,7 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
         {shoutouts &&
           shoutouts.map(shoutout => (
             <ShoutoutCard
+              key={shoutout.id}
               margin={shoutoutMargin}
               praiseGiver={shoutout.giverName}
               giverAvatar={shoutout.giverAvatar}
@@ -35,7 +36,6 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
               receiverAvatar={shoutout.receiverAvatar}
               praiseText={shoutout.message}
               time={moment(shoutout.created_at).fromNow()}
-              key={shoutout.id}
             />
           ))}
         {message && (

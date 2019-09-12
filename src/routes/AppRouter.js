@@ -6,11 +6,11 @@ import Home from '../components/Home';
 import Slack from '../components/Slack';
 import ProtectedRoute from '../components/ProtectedRoute';
 import SignInRedirect from '../components/SignInRedirect';
-
 import Shoutout from '../views/SingleShoutout';
 import UserProfileView from '../views/UserProfileView';
 import Team from '../components/Team';
 import LeaderBoardView from '../views/LeaderBoard';
+import localstorage from '../utils/localstorage';
 
 const AppRouter = () => (
   <Switch>
@@ -20,6 +20,7 @@ const AppRouter = () => (
     <ProtectedRoute path="/shoutouts/:id" component={Shoutout} />
     <ProtectedRoute path="/team" component={Team} />
     <ProtectedRoute path="/profile" component={UserProfileView} />
+    <Route path="/logout" render={() => localstorage.clear()} />
     <ProtectedRoute path="/members/:id" component={UserProfileView} />
     <ProtectedRoute path="/leaderboard" component={LeaderBoardView} />
     <Route render={() => <Redirect to="/" />} />
