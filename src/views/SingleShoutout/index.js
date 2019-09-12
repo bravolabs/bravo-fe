@@ -9,6 +9,7 @@ import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
 import CommentSection from '../../components/CommentSection';
 
 const View = ({ shoutout, comments, getSingleShoutout, getComments, match }) => {
+  const id = match.params.id || null;
   const getUser = async (id, users) => {
     if (props.users[id]) {
       return props.users[id];
@@ -18,8 +19,10 @@ const View = ({ shoutout, comments, getSingleShoutout, getComments, match }) => 
   };
 
   useEffect(() => {
-    props.getSingleShoutout(props.match.params.id);
-  }, []);
+    if (id) {
+      getSingleShoutout(id);
+    }
+  }, [getSingleShoutout, id]);
 
   useEffect(() => {
     if (props.shoutouts.singleShoutout) {
