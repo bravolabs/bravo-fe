@@ -7,7 +7,7 @@ const StyledAvatar = styled(SVG)`
   }
 
   .cls-2 {
-    opacity: 0.84;
+    fill: #000;
   }
 
   .cls-3 {
@@ -40,8 +40,8 @@ export default function DefaultAvatar(props) {
           x2="62.39"
           y2="78.92"
           gradientUnits="userSpaceOnUse">
-          <stop offset="0" stop-color="#ff7e67" />
-          <stop offset="1" stop-color="#ffd895" />
+          <stop offset="0" stopColor="var(--color-stop-1)" />
+          <stop offset="1" stopColor="var(--color-stop-2)" />
         </linearGradient>
         <linearGradient
           id="linear-gradient-2"
@@ -50,8 +50,8 @@ export default function DefaultAvatar(props) {
           x2="43.2"
           y2="59.16"
           gradientUnits="userSpaceOnUse">
-          <stop offset="0" stop-color="#ff7e67" />
-          <stop offset="1" stop-color="#ffce6b" />
+          <stop offset="0" stopColor="var(--color-stop-3)" />
+          <stop offset="1" stopColor="var(--color-stop-4)" />
         </linearGradient>
         <linearGradient
           id="linear-gradient-3"
@@ -60,8 +60,8 @@ export default function DefaultAvatar(props) {
           x2="42.91"
           y2="44.47"
           gradientUnits="userSpaceOnUse">
-          <stop offset="0" stop-color="#d46453" />
-          <stop offset="1" stop-color="#b84960" />
+          <stop offset="0" stopColor="var(--color-stop-5)" />
+          <stop offset="1" stopColor="var(--color-stop-6)" />
         </linearGradient>
       </defs>
       <g>
