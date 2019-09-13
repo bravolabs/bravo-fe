@@ -3,7 +3,7 @@ import { ButtonContainer, Slice } from './hamburger.styles';
 
 const HamburgerButton = props => {
   return (
-    <ButtonContainer>
+    <ButtonContainer className='open'>
       <Slice />
       <Slice />
       <Slice />

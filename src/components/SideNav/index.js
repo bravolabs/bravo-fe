@@ -12,7 +12,7 @@ import MobileAvatar from './MobileAvatar';
 const SideNav = props => {
   const { slack } = props;
   return (
-    <SideNavContainer className="open">
+    <SideNavContainer>
       <Link to="/">
         <img src={bravoWhite} alt="Bravo" />
       </Link>
