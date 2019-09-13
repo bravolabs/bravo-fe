@@ -115,6 +115,8 @@ export const NavIcon = styled(NavLink)`
 
     div {
       left: 0;
+      background-color: ${colors.brand};
+      border-radius: 0;
     }
 
     i {
