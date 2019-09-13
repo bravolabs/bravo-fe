@@ -21,6 +21,12 @@ const UserProfileView = ({
     userId && members ? members.filter(member => member.id === parseInt(userId, 10)) : null;
 
   useEffect(() => {
+    if (userId && !members) {
+      fetchTeamInfo();
+    }
+  }, [fetchTeamInfo, members, userId]);
+
+  useEffect(() => {
     if (userId) {
       getProfileShoutouts(userId);
     } else {
