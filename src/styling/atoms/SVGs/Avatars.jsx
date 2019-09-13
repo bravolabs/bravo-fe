@@ -3,7 +3,7 @@ import SVG from '../SVG';
 
 export default function DefaultAvatar(props) {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 82.63 84.83">
+    <SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.63 84.83" {...props}></SVG>
   <defs>
     <style>
       .cls-1 {
@@ -71,6 +71,6 @@ export default function DefaultAvatar(props) {
       </g>
     </g>
   </g>
-</svg>
+</SVG>
   )
 }
