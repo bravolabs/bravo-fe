@@ -21,6 +21,10 @@ export const SideNavContainer = styled.div`
     background: none;
     padding: 0;
   }
+
+  @media (max-width: ${Breakpoints.medium}px) {
+    display: none;
+  }
 `;
 
 export const NavItemsContainer = styled.nav`
