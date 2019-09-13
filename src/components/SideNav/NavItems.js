@@ -9,10 +9,10 @@ import shoutoutIcon from '../../assets/shoutout-icon.svg';
 const NavItems = () => {
   return (
     <NavItemsContainer>
-      <NavItem icon={homeIcon} link="/profile" />
-      <NavItem icon={shoutoutIcon} link="/shoutouts" />
-      <NavItem icon={leaderboardIcon} link="/leaderboard" />
-      <NavItem icon={teamIcon} link="/team" />
+      <NavItem icon={homeIcon} link="/profile" label="Home" />
+      <NavItem icon={shoutoutIcon} link="/shoutouts" label="Shoutouts" />
+      <NavItem icon={leaderboardIcon} link="/leaderboard" label="Leaderboard" />
+      <NavItem icon={teamIcon} link="/team" label="Team" />
     </NavItemsContainer>
   );
 };
