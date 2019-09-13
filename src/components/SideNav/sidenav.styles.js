@@ -158,7 +158,7 @@ export const MobileAvatarContainer = styled.header`
   justify-content: flex-start;
   align-items: center;
 
-  > img {
+  > .avatar {
     border-radius: 50%;
     width: 80%;
     max-width: 142px;
