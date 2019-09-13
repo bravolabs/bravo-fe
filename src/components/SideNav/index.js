@@ -11,7 +11,7 @@ import NavItem from './NavItem';
 const SideNav = props => {
   const { slack } = props;
   return (
-    <SideNavContainer>
+    <SideNavContainer className="open">
       <Link to="/">
         <img src={bravoWhite} alt="Bravo" />
       </Link>
