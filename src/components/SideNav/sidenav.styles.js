@@ -154,10 +154,16 @@ export const MobileAvatarContainer = styled.header`
   align-items: center;
   width: 100%;
 
-  img {
+  > img {
     border-radius: 50%;
     width: 90%;
     max-width: 96px;
+    margin-bottom: 16px;
+    box-shadow: ${ShapeStyles.elevation.hover};
+  }
+
+  > h3 {
+    margin-bottom: 8px;
   }
 
   @media (max-width: ${Breakpoints.medium}px) {
