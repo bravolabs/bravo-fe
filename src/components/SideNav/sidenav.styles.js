@@ -143,3 +143,7 @@ export const AvatarContainer = styled.div`
     width: 100%;
   }
 `;
+
+export const MobileAvatarContainer = styled.header`
+
+`;
