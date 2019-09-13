@@ -5,7 +5,7 @@ import bravoWhite from '../../assets/bravo-white.svg';
 import { SideNavContainer } from './sidenav.styles';
 import Avatar from './Avatar';
 import NavItems from './NavItems';
-import logoutIcon from '../../assets/logout-icon.svg';
+import logoutIcon from '../../assets/logout.png';
 import NavItem from './NavItem';
 
 const SideNav = props => {
