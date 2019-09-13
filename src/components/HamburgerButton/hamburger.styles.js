@@ -14,7 +14,6 @@ export const ButtonContainer = styled.button`
 
   &.open {
     span {
-      z-index: 1001;
       background-color: ${UIColors.brand};
     }
     span:nth-child(1) {

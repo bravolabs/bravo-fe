@@ -8,7 +8,7 @@ const TopBar = props => {
   return (
     <TopBarContainer>
       <ItemContainer>
-        <HamburgerButton />
+        <HamburgerButton active />
         <Logo fillColor={UIColors.light} svgWidth="3.2rem" svgHeigth="3.2rem" />
       </ItemContainer>
     </TopBarContainer>
