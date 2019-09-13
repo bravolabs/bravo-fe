@@ -28,6 +28,7 @@ export const SideNavContainer = styled.div`
     width: 100%;
     background-color: ${colors.white};
     justify-content: flex-start;
+    align-items: stretch;
     transition: transform 200ms ease-in-out;
     transform: translateX(-100%);
 
@@ -152,12 +153,11 @@ export const MobileAvatarContainer = styled.header`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
 
   > img {
     border-radius: 50%;
-    width: 90%;
-    max-width: 96px;
+    width: 80%;
+    max-width: 142px;
     margin-bottom: 16px;
     box-shadow: ${ShapeStyles.elevation.hover};
   }
