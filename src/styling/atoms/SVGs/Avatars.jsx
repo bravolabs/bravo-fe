@@ -29,6 +29,8 @@ const calculateColors = (base, index) => {
         .set('hsl.s', '*0.44')
         .set('hsl.l', '*0.715')
         .hex();
+    default:
+      return base;
   }
 };
 
@@ -37,16 +39,16 @@ const StyledAvatar = styled.svg`
   ${props => (props.svgWidth ? `width: ${props.svgWidth};` : null)}
 
   #linear-gradient {
-    --color-stop-1: #fff;
-    --color-stop-2: #fff;
+    --color-stop-1: ${props => calculateColors(props.color, 1)};
+    --color-stop-2: ${props => calculateColors(props.color, 2)};
   }
   #linear-gradient-2 {
-    --color-stop-1: #fff;
-    --color-stop-2: #fff;
+    --color-stop-1: ${props => calculateColors(props.color, 3)};
+    --color-stop-2: ${props => calculateColors(props.color, 4)};
   }
   #linear-gradient-3 {
-    --color-stop-1: #fff;
-    --color-stop-2: #fff;
+    --color-stop-1: ${props => calculateColors(props.color, 5)};
+    --color-stop-2: ${props => calculateColors(props.color, 6)};
   }
   .cls-1 {
     fill: url(#linear-gradient);
