@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getProfileShoutouts } from '../../actions/shoutouts';
+import { fetchTeamInfo } from '../../actions/team';
 
 import UserProfile from '../../components/UserProfile';
 
@@ -10,6 +11,7 @@ const UserProfileView = ({
   userShoutouts,
   members,
   getProfileShoutouts,
+  fetchTeamInfo,
   match,
   fetching,
   message,
@@ -44,5 +46,5 @@ export default connect(
     message: state.shoutouts.error,
     members: state.team.members,
   }),
-  { getProfileShoutouts }
+  { getProfileShoutouts, fetchTeamInfo }
 )(UserProfileView);
