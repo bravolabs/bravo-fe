@@ -23,7 +23,12 @@ export const SideNavContainer = styled.div`
   }
 
   @media (max-width: ${Breakpoints.medium}px) {
-    display: none;
+    transition: transform 200ms ease-in-out;
+    transform: translateX(-100%);
+
+    &.open {
+      transform: translateX(0%);
+    }
   }
 `;
 
