@@ -97,12 +97,6 @@ export const NavIcon = styled(NavLink)`
     }
   }
 
-  span {
-    display: none;
-    font-size: 1.5rem;
-    color: white;
-  }
-
   @media (max-width: ${Breakpoints.medium}px) {
     &:first-child {
       border-top: 2px solid ${colors.lightBorder};
@@ -117,10 +111,6 @@ export const NavIcon = styled(NavLink)`
 
     div {
       left: 0;
-    }
-
-    span {
-      display: initial;
     }
 
     i {
