@@ -145,5 +145,14 @@ export const AvatarContainer = styled.div`
 `;
 
 export const MobileAvatarContainer = styled.header`
+  display: none;
+  margin-top: 40px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
 
+  @media (max-width: ${Breakpoints.medium}px) {
+    display: flex;
+  }
 `;
