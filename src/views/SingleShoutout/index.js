@@ -1,59 +1,60 @@
-import React, { useEffect, useCallback } from 'react';
+import React, { useEffect } from 'react';
 import moment from 'moment';
 import { connect } from 'react-redux';
 
+import { getUserInfo } from '../../actions/users';
 import { getSingleShoutout } from '../../actions/shoutouts';
-import { getComments } from '../../actions/comments';
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
-import { ShoutoutsContainer } from '../../components/Shoutouts/shoutouts.styles';
-import CommentSection from '../../components/CommentSection';
-import Loader from '../../components/Loader';
-import DisplayCard from '../../components/Cards/DisplayCard';
-import bravoParty from '../../assets/bravo-party.svg';
 
-const View = ({ shoutout, comments, getSingleShoutout, getComments, match, fetching, error }) => {
-  const id = match.params.id || null;
-
-  const getInfo = useCallback(
-    async id => {
-      await getSingleShoutout(id);
-      await getComments(id);
-    },
-    [getSingleShoutout, getComments]
-  );
-  useEffect(() => {
-    if (id) {
-      getInfo(id);
+const View = props => {
+  const getUser = async (id, users) => {
+    if (props.users[id]) {
+      return props.users[id];
+    } else {
+      return props.getUserInfo(id);
     }
-  }, [id, getInfo]);
+  };
 
+  useEffect(() => {
+    props.getSingleShoutout(props.match.params.id);
+  }, []);
+
+  useEffect(() => {
+    if (props.shoutouts.singleShoutout) {
+      getUser(props.shoutouts.singleShoutout.giverSlackId);
+      getUser(props.shoutouts.singleShoutout.receiverSlackId);
+    }
+  }, [props.shoutouts.singleShoutout]);
+  let shoutout = null;
+  try {
+    shoutout = {
+      ...props.shoutouts.singleShoutout,
+      giver: props.users[props.shoutouts.singleShoutout.giverSlackId] || { name: '...' },
+      receiver: props.users[props.shoutouts.singleShoutout.receiverSlackId] || { name: '...' },
+    };
+  } catch (error) {}
+  return shoutout ? <Shoutout shoutout={shoutout} /> : null;
+};
+
+const Shoutout = props => {
+  const { giver, receiver, message, created_at } = props.shoutout;
+  const timeString = moment(created_at).fromNow();
   return (
-    <>
-      <ShoutoutsContainer>
-        {fetching && <Loader />}
-        {shoutout && (
-          <ShoutoutCard
-            praiseGiver={shoutout.giverName}
-            giverAvatar={shoutout.giverAvatar}
-            praiseTaker={shoutout.receiverName}
-            receiverAvatar={shoutout.receiverAvatar}
-            praiseText={shoutout.message}
-            time={moment(shoutout.created_at).fromNow()}
-          />
-        )}
-        {error && <DisplayCard header={<img src={bravoParty} alt="bravo party" />} text={error} />}
-      </ShoutoutsContainer>
-      {comments && comments.length > 0 && <CommentSection comments={comments} />}
-    </>
+    <ShoutoutCard
+      praiseGiver={giver.name || ''}
+      giverAvatar={giver.avatar || ''}
+      praiseTaker={receiver.name || ''}
+      receiverAvatar={receiver.avatar || ''}
+      time={timeString || ''}
+      praiseText={message || ''}
+    />
   );
 };
 
 export default connect(
   state => ({
-    shoutout: state.shoutouts.singleShoutout,
-    fetching: state.shoutouts.fetching,
-    error: state.shoutouts.error,
-    comments: state.comments.comments,
+    users: state.users.users,
+    shoutouts: state.shoutouts,
   }),
-  { getSingleShoutout, getComments }
+  { getUserInfo, getSingleShoutout }
 )(View);
