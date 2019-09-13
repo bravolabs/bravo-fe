@@ -148,10 +148,17 @@ export const AvatarContainer = styled.div`
 export const MobileAvatarContainer = styled.header`
   display: none;
   margin-top: 40px;
+  margin-bottom: 42px;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   width: 100%;
+
+  img {
+    border-radius: 50%;
+    width: 90%;
+    max-width: 96px;
+  }
 
   @media (max-width: ${Breakpoints.medium}px) {
     display: flex;
