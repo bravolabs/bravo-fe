@@ -1,20 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import bravoWhite from '../../assets/bravo-white.svg';
+import Logo from '../../styling/atoms/SVGs/Logo';
 import { SideNavContainer } from './sidenav.styles';
 import Avatar from './Avatar';
 import NavItems from './NavItems';
 import logoutIcon from '../../assets/logout-icon.svg';
 import NavItem from './NavItem';
 import MobileAvatar from './MobileAvatar';
+import UIColors from '../../styling/variables/UIColors';
 
 const SideNav = props => {
   const { slack } = props;
   return (
     <SideNavContainer>
       <Link to="/">
-        <img src={bravoWhite} alt="Bravo" />
+        <Logo fillColor={UIColors.light} svgWidth="48px" svgHeight="48px" />
       </Link>
       {slack.user && (
         <MobileAvatar
