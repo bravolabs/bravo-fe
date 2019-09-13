@@ -9,6 +9,7 @@ const MobileAvatar = ({ src, alt, name, link }) => {
     <Link to={link}>
       <MobileAvatarContainer>
         <Avatar svgWidth='96px' svgHeight='96px' color="#D182DB" />
+        <Avatar svgWidth='96px' svgHeight='96px' color="#FF7B65" />
         <img src={src} alt={alt} />
         <ComponentTitle>{name}</ComponentTitle>
         <ExtraInfo>View Profile</ExtraInfo>

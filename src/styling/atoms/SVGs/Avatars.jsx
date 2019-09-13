@@ -38,20 +38,20 @@ const StyledAvatar = styled.svg`
   ${props => (props.svgHeight ? `height: ${props.svgHeight};` : null)}
   ${props => (props.svgWidth ? `width: ${props.svgWidth};` : null)}
 
-  #linear-gradient {
+  #${props => props.color.replace('#', '')}-linear-gradient {
     --color-stop-1: ${props => calculateColors(props.color, 1)};
     --color-stop-2: ${props => calculateColors(props.color, 2)};
   }
-  #linear-gradient-2 {
+  #${props => props.color.replace('#', '')}-linear-gradient-2 {
     --color-stop-1: ${props => calculateColors(props.color, 3)};
     --color-stop-2: ${props => calculateColors(props.color, 4)};
   }
-  #linear-gradient-3 {
+  #${props => props.color.replace('#', '')}-linear-gradient-3 {
     --color-stop-1: ${props => calculateColors(props.color, 5)};
     --color-stop-2: ${props => calculateColors(props.color, 6)};
   }
   .cls-1 {
-    fill: url(#linear-gradient);
+    fill: url(#${props => props.color.replace('#', '')}-linear-gradient);
   }
 
   .cls-2 {
@@ -64,12 +64,12 @@ const StyledAvatar = styled.svg`
 
   .cls-4 {
     opacity: 0.37;
-    fill: url(#linear-gradient-2);
+    fill: url(#${props => props.color.replace('#', '')}-linear-gradient-2);
   }
 
   .cls-5 {
     opacity: 0.81;
-    fill: url(#linear-gradient-3);
+    fill: url(#${props => props.color.replace('#', '')}-linear-gradient-3);
   }
 
   .cls-6 {
@@ -82,7 +82,7 @@ export default function DefaultAvatar(props) {
     <StyledAvatar xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.63 84.83" {...props}>
       <defs>
         <linearGradient
-          id="linear-gradient"
+          id={`${props.color.replace('#', '')}-linear-gradient`}
           x1="20.24"
           y1="5.91"
           x2="62.39"
@@ -92,7 +92,7 @@ export default function DefaultAvatar(props) {
           <stop offset="1" stopColor="var(--color-stop-2)" />
         </linearGradient>
         <linearGradient
-          id="linear-gradient-2"
+          id={`${props.color.replace('#', '')}-linear-gradient-2`}
           x1="43.2"
           y1="68.44"
           x2="43.2"
@@ -102,7 +102,7 @@ export default function DefaultAvatar(props) {
           <stop offset="1" stopColor="var(--color-stop-2)" />
         </linearGradient>
         <linearGradient
-          id="linear-gradient-3"
+          id={`${props.color.replace('#', '')}-linear-gradient-3`}
           x1="42.91"
           y1="65.02"
           x2="42.91"
