@@ -25,7 +25,7 @@ export const SideNavContainer = styled.div`
   @media (max-width: ${Breakpoints.medium}px) {
     max-width: 304px;
     width: 100%;
-    background-color: ${colors.light};
+    background-color: ${colors.white};
     justify-content: flex-start;
     transition: transform 200ms ease-in-out;
     transform: translateX(-100%);
