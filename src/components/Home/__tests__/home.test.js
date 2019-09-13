@@ -12,9 +12,9 @@ describe('Home Component', () => {
     getByAltText('Bravo logo');
     getByText('when the job is done, say bravo');
     getByText('bravo enables team members to easily acknowledge each other with one slack command');
-    getByText('bravo slack bot');
-    getByText('give a bravo');
-    getByText('receive a bravo');
+    getByText('install bravo');
+    getByText('send a shoutout');
+    getByText('receive a shoutout');
     expect(container.firstChild).toBeTruthy();
   });
 

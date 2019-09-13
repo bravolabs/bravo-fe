@@ -322,15 +322,21 @@ const GlobalStyle = createGlobalStyle`
   *, html {
     box-sizing: border-box;
     font-size: 62.5%;
-    font-weight: 500px;
+    font-family: 'Lato', sans-serif;
   }
   
   body {
-    font-family: 'Lato', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: ${Colors.light};
     height: 100%;
+
+    @media(max-width: 980px) {
+      padding: 0 10px;
+    }
+  }
+  #root {
+    background: #F9FBFD;
   }
 `;
 

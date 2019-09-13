@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavItemsContainer } from './sidenav.styles';
 import NavItem from './NavItem';
-import homeIcon from '../../assets/home-icon.svg';
-import teamIcon from '../../assets/team-icon.svg';
-import leaderboardIcon from '../../assets/leaderboard-icon.svg';
-import shoutoutIcon from '../../assets/shoutout-icon.svg';
+import homeIcon from '../../assets/home.png';
+import teamIcon from '../../assets/team.png';
+import leaderboardIcon from '../../assets/trophy.png';
+import shoutoutIcon from '../../assets/confetti.png';
 
 const NavItems = () => {
   return (
