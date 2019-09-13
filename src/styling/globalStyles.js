@@ -332,6 +332,9 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${Colors.light};
     height: 100%;
   }
+  #root {
+    background: #F9FBFD;
+  }
 `;
 
 export default GlobalStyle;

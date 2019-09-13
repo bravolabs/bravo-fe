@@ -71,6 +71,20 @@ export const MemberCardContainer = styled(Card)`
   border-radius: 8px;
 `;
 
+export const Position = styled.div`
+  margin: 12px 23px 0 1px;
+  width: 40px;
+  height: 40px;
+  background: #ffffff;
+  box-shadow: 0px 1.87781px 6.25935px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  p {
+    text-align: center;
+    margin-top: 12px;
+    font-weight: 500;
+  }
+`;
+
 export const MemberCardsContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -104,6 +118,17 @@ export const MemberCardAction = styled(BaseButton)`
       color: inherit;
     }
   }
+`;
+
+export const MemberCardValue = styled.p`
+  color: #000;
+  outline: none;
+  padding: 0;
+  margin: auto;
+  margin-right: 0;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 19px;
 `;
 
 export const ViewProfile = styled(BaseButton)`
