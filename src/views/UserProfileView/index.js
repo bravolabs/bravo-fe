@@ -35,7 +35,7 @@ const UserProfileView = ({
   }, [userId, getProfileShoutouts]);
   return (
     <UserProfile
-      user={(userInfo && userInfo[0]) || user}
+      user={(userInfo && userInfo[0]) || (!userId && user)}
       shoutouts={userShoutouts || shoutouts}
       fetching={fetching}
       message={message}
