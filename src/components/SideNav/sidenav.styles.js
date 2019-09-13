@@ -17,7 +17,7 @@ export const SideNavContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
-  z-index: 999;
+  z-index: 400;
   button {
     background: none;
     padding: 0;
@@ -34,6 +34,10 @@ export const SideNavContainer = styled.div`
 
     &.open {
       transform: translateX(0%);
+    }
+
+    > a > svg {
+      display: none;
     }
   }
 `;

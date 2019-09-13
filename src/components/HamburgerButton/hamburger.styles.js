@@ -8,6 +8,8 @@ export const ButtonContainer = styled.button`
   align-items: stretch;
   border: none;
   background: none;
+  /* position: relative; */
+  z-index: 600;
   padding: 0;
   width: 2.4rem;
   height: 1.6rem;
@@ -33,6 +35,7 @@ export const ButtonContainer = styled.button`
 `;
 
 export const Slice = styled.span`
+  z-index: 999;
   transform: translateY(0rem) rotate(0deg) scale(1);
   opacity: 1;
   transition: all 200ms ease-in-out;
