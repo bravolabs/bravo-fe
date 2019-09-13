@@ -5,7 +5,13 @@ import colors from '../../styling/variables/UIColors';
 
 export const CardsContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+
+  @media (max-width: 850px) {
+    margin: 10px 0;
+  }
 `;
 
 export const Icon = styled.img`
@@ -15,7 +21,6 @@ export const Icon = styled.img`
 
 export const Title = styled.span`
   margin: 10px 0;
-  width: 165px;
   height: 20px;
   font-weight: bold;
   font-size: 20px;
@@ -23,7 +28,6 @@ export const Title = styled.span`
 `;
 
 export const CardText = styled.span`
-  width: 214px;
   height: 46px;
   font-weight: normal;
   font-size: 16px;
@@ -32,10 +36,19 @@ export const CardText = styled.span`
 `;
 
 export const StyledCard = styled(Card)`
+  background-color: white;
+  padding: 10px;
+  width: 246px;
+  height: 182px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   border-left: ${props => `8px solid ${props.borderColor}`};
+
+  @media (max-width: 850px) {
+    margin: 10px 0;
+    width: 350px;
+  }
 `;
 
 export const DisplayCardContainer = styled(Card)`

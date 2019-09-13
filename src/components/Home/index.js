@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { Container, Main, Intro, StyledPageTitle, StyledExtraInfo } from './home.styles';
 import { AddToSlack } from '../SlackButton';
 import HomeCards from '../Cards/HomeCards';
-import HomeNav from '../HomeNav';
+import HomeNav from './HomeNav';
 
 const Home = ({ slack }) => {
   return (
