@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from '../UnstyledLink';
 import { ExtraInfo, ComponentTitle } from '../../styling/atoms/Fonts';
 import { MobileAvatarContainer } from './sidenav.styles';
 
