@@ -12,5 +12,7 @@ export const TopBarContainer = styled.nav`
     left: 0;
     width: 100vw;
     height: 4.8rem;
+    background-color: ${UIColors.brand};
+    z-index: 99;
   }
 `;
