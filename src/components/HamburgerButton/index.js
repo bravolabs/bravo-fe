@@ -1,9 +1,9 @@
 import React from 'react';
 import { ButtonContainer, Slice } from './hamburger.styles';
 
-const HamburgerButton = props => {
+const HamburgerButton = ({ active, click }) => {
   return (
-    <ButtonContainer className='open'>
+    <ButtonContainer className={active && 'open'} onClick={click}>
       <Slice />
       <Slice />
       <Slice />
