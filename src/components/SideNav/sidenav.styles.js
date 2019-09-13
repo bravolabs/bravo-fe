@@ -98,16 +98,35 @@ export const NavIcon = styled(NavLink)`
   }
 
   span {
-    margin-top: 5px;
+    display: none;
     font-size: 1.5rem;
     color: white;
   }
 
   @media (max-width: ${Breakpoints.medium}px) {
+    box-sizing: border-box;
     justify-content: flex-start;
+    flex-direction: row;
     height: 54px;
     margin: 0;
     padding: 0 32px;
+
+    div {
+      left: 0;
+    }
+
+    span {
+      display: initial;
+    }
+
+    i {
+      padding: 0;
+      margin-right: 16px;
+      width: 28px;
+      height: 28px;
+      background-color: none;
+      box-shadow: none;
+    }
   }
 `;
 
