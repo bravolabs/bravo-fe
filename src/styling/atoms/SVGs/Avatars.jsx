@@ -8,8 +8,26 @@ const calculateColors = (base, index) => {
       return base;
     case 2:
       return chroma(base)
-        .set('hsl.h', '+30')
+        .set('hsl.h', '+28')
         .set('hsl.l', '*1.1')
+        .hex();
+    case 3:
+      return base;
+    case 4:
+      return chroma(base)
+        .set('hsl.h', '+31')
+        .set('hsl.l', '*1.02')
+        .hex();
+    case 5:
+      return chroma(base)
+        .set('hsl.s', '*0.6')
+        .set('hsl.l', '*0.85')
+        .hex();
+    case 6:
+      return chroma(base)
+        .set('hsl.h', '-20')
+        .set('hsl.s', '*0.44')
+        .set('hsl.l', '*0.715')
         .hex();
   }
 };
