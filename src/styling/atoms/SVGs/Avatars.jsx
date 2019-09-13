@@ -2,6 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import chroma from 'chroma-js';
 
+const calculateColors = (base, index) => {
+  
+}
+
 const StyledAvatar = styled.svg`
   ${props => (props.svgHeight ? `height: ${props.svgHeight};` : null)}
   ${props => (props.svgWidth ? `width: ${props.svgWidth};` : null)}
