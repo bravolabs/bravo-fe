@@ -102,6 +102,13 @@ export const NavIcon = styled(NavLink)`
     font-size: 1.5rem;
     color: white;
   }
+
+  @media (max-width: ${Breakpoints.medium}px) {
+    justify-content: flex-start;
+    height: 54px;
+    margin: 0;
+    padding: 0 32px;
+  }
 `;
 
 export const AvatarContainer = styled.div`
