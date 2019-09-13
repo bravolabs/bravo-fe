@@ -104,12 +104,16 @@ export const NavIcon = styled(NavLink)`
   }
 
   @media (max-width: ${Breakpoints.medium}px) {
+    &:first-child {
+      border-top: 2px solid ${colors.lightBorder};
+    }
     box-sizing: border-box;
     justify-content: flex-start;
     flex-direction: row;
     height: 54px;
     margin: 0;
     padding: 0 32px;
+    border-bottom: 2px solid ${colors.lightBorder};
 
     div {
       left: 0;
