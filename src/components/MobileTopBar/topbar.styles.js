@@ -4,6 +4,7 @@ import Breakpoints from '../../styling/variables/Breakpoints';
 
 export const TopBarContainer = styled.nav`
   display: none;
+  box-sizing: border-box;
 
   @media (max-width: ${Breakpoints.medium}px) {
     display: flex;
