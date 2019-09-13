@@ -2,6 +2,18 @@ import React from 'react';
 import SVG from '../SVG';
 
 const StyledAvatar = styled(SVG)`
+  #linear-gradient {
+    --color-stop-1: #fff;
+    --color-stop-2: #fff;
+  }
+  #linear-gradient-2 {
+    --color-stop-1: #fff;
+    --color-stop-2: #fff;
+  }
+  #linear-gradient-3 {
+    --color-stop-1: #fff;
+    --color-stop-2: #fff;
+  }
   .cls-1 {
     fill: url(#linear-gradient);
   }
@@ -50,8 +62,8 @@ export default function DefaultAvatar(props) {
           x2="43.2"
           y2="59.16"
           gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="var(--color-stop-3)" />
-          <stop offset="1" stopColor="var(--color-stop-4)" />
+          <stop offset="0" stopColor="var(--color-stop-1)" />
+          <stop offset="1" stopColor="var(--color-stop-2)" />
         </linearGradient>
         <linearGradient
           id="linear-gradient-3"
@@ -60,8 +72,8 @@ export default function DefaultAvatar(props) {
           x2="42.91"
           y2="44.47"
           gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor="var(--color-stop-5)" />
-          <stop offset="1" stopColor="var(--color-stop-6)" />
+          <stop offset="0" stopColor="var(--color-stop-1)" />
+          <stop offset="1" stopColor="var(--color-stop-2)" />
         </linearGradient>
       </defs>
       <g>
