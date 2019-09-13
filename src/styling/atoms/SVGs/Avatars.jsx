@@ -1,9 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
+import chroma from 'chroma-js';
 
 const StyledAvatar = styled.svg`
   ${props => (props.svgHeight ? `height: ${props.svgHeight};` : null)}
   ${props => (props.svgWidth ? `width: ${props.svgWidth};` : null)}
-  
+
   #linear-gradient {
     --color-stop-1: #fff;
     --color-stop-2: #fff;
