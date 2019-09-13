@@ -13,4 +13,7 @@ export const ButtonContainer = styled.button`
 `;
 
 export const Slice = styled.div`
+  width: 100%;
+  height: 0.2rem;
+  background-color: ${UIColors.light};
 `;
