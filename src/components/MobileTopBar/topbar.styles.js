@@ -24,3 +24,7 @@ export const TopBarContainer = styled.nav`
     margin: 0 auto;
   }
 `;
+
+export const ItemContainer = styled.div`
+
+`;
