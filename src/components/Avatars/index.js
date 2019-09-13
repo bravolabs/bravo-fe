@@ -6,7 +6,7 @@ const Avatar = props => {
   const [imgFailed, setImgFailed] = useState(false);
 
   return imgFailed ? (
-    <DefaultAvatar />
+    <DefaultAvatar {...props} />
   ) : (
     <img src={`${avatar}?d=404`} alt={userId} onError={e => setImgFailed(true)} />
   );
