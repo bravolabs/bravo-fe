@@ -12,19 +12,25 @@ export const TopBarContainer = styled.nav`
     top: 0;
     left: 0;
     width: 100vw;
+    max-width: 100vw;
     height: 4.8rem;
     background-color: ${UIColors.brand};
     z-index: 99;
     padding: 0 16px;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  > svg {
-    margin: 0 auto;
   }
 `;
 
 export const ItemContainer = styled.div`
-
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  > svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 `;
