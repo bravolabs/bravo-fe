@@ -9,11 +9,12 @@ import logoutIcon from '../../assets/logout-icon.svg';
 import NavItem from './NavItem';
 import MobileAvatar from './MobileAvatar';
 import UIColors from '../../styling/variables/UIColors';
+import { toggleSideMenu } from '../../actions/ui';
 
 const SideNav = props => {
-  const { slack } = props;
+  const { slack, ui } = props;
   return (
-    <SideNavContainer>
+    <SideNavContainer className={ui.sideNavActive && 'open'}>
       <Link to="/">
         <Logo fillColor={UIColors.light} svgWidth="48px" svgHeight="48px" />
       </Link>
@@ -35,6 +36,7 @@ const SideNav = props => {
 export default connect(
   state => ({
     slack: state.slack,
+    ui: state.ui,
   }),
   null
 )(SideNav);
