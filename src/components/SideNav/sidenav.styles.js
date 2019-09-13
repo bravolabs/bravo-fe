@@ -97,6 +97,10 @@ export const NavIcon = styled(NavLink)`
     }
   }
 
+  > h3 {
+    display: none;
+  }
+
   @media (max-width: ${Breakpoints.medium}px) {
     &:first-child {
       border-top: 2px solid ${colors.lightBorder};
@@ -120,6 +124,10 @@ export const NavIcon = styled(NavLink)`
       height: 28px;
       background-color: none;
       box-shadow: none;
+    }
+
+    > h3 {
+      display: initial;
     }
   }
 `;
