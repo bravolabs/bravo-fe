@@ -18,4 +18,8 @@ export const TopBarContainer = styled.nav`
     justify-content: space-between;
     align-items: center;
   }
+
+  > svg {
+    margin: 0 auto;
+  }
 `;
