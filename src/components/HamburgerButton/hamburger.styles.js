@@ -5,15 +5,15 @@ export const ButtonContainer = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   border: none;
-  background-color: none;
+  background: none;
+  padding: 0;
   width: 2.4rem;
   height: 1.6rem;
 `;
 
 export const Slice = styled.div`
-  width: 100%;
   height: 0.2rem;
   background-color: ${UIColors.light};
 `;
