@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import colors from '../../styling/variables/UIColors';
+import Breakpoints from '../../styling/variables/Breakpoints';
 
 export const SideNavContainer = styled.div`
   background-color: ${colors.brand};
