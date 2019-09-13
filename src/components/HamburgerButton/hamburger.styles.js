@@ -11,3 +11,6 @@ export const ButtonContainer = styled.button`
   width: 2.4rem;
   height: 1.6rem;
 `;
+
+export const Slice = styled.div`
+`;
