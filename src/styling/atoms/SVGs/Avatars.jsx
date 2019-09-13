@@ -3,8 +3,16 @@ import styled from 'styled-components';
 import chroma from 'chroma-js';
 
 const calculateColors = (base, index) => {
-  
-}
+  switch (index) {
+    case 1:
+      return base;
+    case 2:
+      return chroma(base)
+        .set('hsl.h', '+30')
+        .set('hsl.l', '*1.1')
+        .hex();
+  }
+};
 
 const StyledAvatar = styled.svg`
   ${props => (props.svgHeight ? `height: ${props.svgHeight};` : null)}
