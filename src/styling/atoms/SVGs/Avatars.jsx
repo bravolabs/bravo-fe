@@ -1,41 +1,40 @@
 import React from 'react';
 import SVG from '../SVG';
 
+const StyledAvatar = styled(SVG)`
+  .cls-1 {
+    fill: url(#linear-gradient);
+  }
+
+  .cls-2 {
+    opacity: 0.84;
+  }
+
+  .cls-3 {
+    fill: #fff;
+  }
+
+  .cls-4 {
+    opacity: 0.37;
+    fill: url(#linear-gradient-2);
+  }
+
+  .cls-5 {
+    opacity: 0.81;
+    fill: url(#linear-gradient-3);
+  }
+
+  .cls-6 {
+    opacity: 0.12;
+  }
+`;
+
 export default function DefaultAvatar(props) {
   return (
-    <SVG xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.63 84.83" {...props}></SVG>
+    <StyledAvatar xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.63 84.83" {...props}></SVG>
       <defs>
-        <style>
-          .cls-1 {
-            fill: url(#linear-gradient);
-          }
-
-          .cls-2 {
-            opacity: 0.84;
-          }
-
-          .cls-3 {
-            fill: #fff;
-          }
-
-          .cls-4 {
-            opacity: 0.37;
-            fill: url(#linear-gradient-2);
-          }
-
-          .cls-5 {
-            opacity: 0.81;
-            fill: url(#linear-gradient-3);
-          }
-
-          .cls-6 {
-            opacity: 0.12;
-          }
-        </style>
         <linearGradient id="linear-gradient" x1="20.24" y1="5.91" x2="62.39" y2="78.92" gradientUnits="userSpaceOnUse">
-          <stop offset="0" stop-color="#ff7562" />
-          <stop offset="0.08" stop-color="#ff7e67" />
-          <stop offset="0.71" stop-color="#ffbf88" />
+          <stop offset="0" stop-color="#ff7e67" />
           <stop offset="1" stop-color="#ffd895" />
         </linearGradient>
         <linearGradient id="linear-gradient-2" x1="43.2" y1="68.44" x2="43.2" y2="59.16" gradientUnits="userSpaceOnUse">
@@ -66,6 +65,6 @@ export default function DefaultAvatar(props) {
             d="M57.78,44.47c0,.31-.1.63-.18,1l-1.55.42-6.5,1.87c-1.15.27-2.33.54-3.55.79-.94.2-1.87.37-2.77.54l-1.61.16c-1.28.1-2.5.14-3.65.13.74-.06,1.39-.12,1.91-.18s1.31-.16,2-.26l.3-.05.51-.08c.67-.11,1.33-.23,2-.37a55.57,55.57,0,0,0,6.11-1.61c.52-.17,1-.34,1.52-.52l1.46-.55,1.32-.54.66-.28a4.29,4.29,0,0,1,.5-.19,5.36,5.36,0,0,1,.54-.14,4.85,4.85,0,0,1,.55-.09A3.71,3.71,0,0,1,57.78,44.47Z" />
         </g>
       </g>
-    </SVG>
+    </StyledAvatar>
   )
 }
