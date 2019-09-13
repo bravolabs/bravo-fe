@@ -14,5 +14,8 @@ export const TopBarContainer = styled.nav`
     height: 4.8rem;
     background-color: ${UIColors.brand};
     z-index: 99;
+    padding: 0 16px;
+    justify-content: space-between;
+    align-items: center;
   }
 `;
