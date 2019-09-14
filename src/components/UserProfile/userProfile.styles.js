@@ -22,6 +22,9 @@ export const ShoutoutsButton = styled.div`
   line-height: 29px;
   color: ${colors.brand};
   border-bottom: 4px solid ${colors.brand};
+  &:last-of-type {
+    left: 310px;
+  }
 `;
 
 export const ProfileBody = styled.div`

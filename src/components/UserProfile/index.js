@@ -21,7 +21,8 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
           alt={user && user.name}
           name={user && user.name}
         />
-        <ShoutoutsButton>Shoutouts</ShoutoutsButton>
+        <ShoutoutsButton>Given</ShoutoutsButton>
+        <ShoutoutsButton>Received</ShoutoutsButton>
       </ProfileHeader>
       <ProfileBody>
         {fetching && <Loader />}
