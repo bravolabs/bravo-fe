@@ -19,7 +19,15 @@ export const Title = styled(PageTitle)`
   font-weight: 300;
   line-height: 4.8rem;
   color: #36464f;
-  margin-bottom: 4rem;
+  margin-bottom: 3.2rem;
+`;
+
+export const SubTitle = styled(PageTitle)`
+  font-weight: 300;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  color: #36464f;
+  margin-bottom: 3.2rem;
 `;
 
 export const CardContainer = styled.div`
