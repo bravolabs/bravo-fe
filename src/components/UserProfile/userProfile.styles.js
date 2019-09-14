@@ -27,6 +27,12 @@ export const ShoutoutsButton = styled.div`
   }
 `;
 
+export const Emoji = styled.img`
+  width: 20px;
+  height: 20px;
+  margin: auto 5px;
+`;
+
 export const ProfileBody = styled.div`
   margin-top: 40px;
   max-width: 900px;
