@@ -20,6 +20,21 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
     active: 'given',
     shoutouts: initShoutouts,
   });
+
+  const handleClick = action => {
+    const filtered =
+      shoutouts &&
+      (action === 'given'
+        ? shoutouts.filter(item => item.giverName.toLowerCase() === user.name.toLowerCase())
+        : shoutouts.filter(item => item.receiverName.toLowerCase() === user.name.toLowerCase()));
+
+    setState(prevState => ({
+      ...prevState,
+      active: action,
+      shoutouts: filtered,
+    }));
+  };
+
   return (
     <>
       <ProfileHeader>
@@ -29,11 +44,15 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
           alt={user && user.name}
           name={user && user.name}
         />
-        <ShoutoutsButton active={state.active === 'given' ? true : false}>
+        <ShoutoutsButton
+          active={state.active === 'given' ? true : false}
+          onClick={() => handleClick('given')}>
           <Emoji src={confetti} alt="given" />
           Given
         </ShoutoutsButton>
-        <ShoutoutsButton active={state.active === 'received' ? true : false}>
+        <ShoutoutsButton
+          active={state.active === 'received' ? true : false}
+          onClick={() => handleClick('received')}>
           <Emoji src={confetti} alt="received" />
           Received
         </ShoutoutsButton>
