@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import moment from 'moment';
 
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
@@ -13,6 +13,13 @@ import confetti from '../../assets/confetti.png';
 const shoutoutMargin = '20px auto 15px 200px';
 
 const UserProfile = ({ user, shoutouts, fetching, message }) => {
+  const initShoutouts =
+    shoutouts && shoutouts.filter(item => item.giverName.toLowerCase() === user.name.toLowerCase());
+
+  const [state, setState] = useState({
+    active: 'given',
+    shoutouts: initShoutouts,
+  });
   return (
     <>
       <ProfileHeader>
@@ -33,8 +40,8 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
       </ProfileHeader>
       <ProfileBody>
         {fetching && <Loader />}
-        {shoutouts &&
-          shoutouts.map(shoutout => (
+        {state.shoutouts &&
+          state.shoutouts.map(shoutout => (
             <ShoutoutCard
               id={shoutout.id}
               key={shoutout.id}
