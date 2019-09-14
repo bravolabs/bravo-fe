@@ -19,7 +19,7 @@ const Shoutouts = ({ shoutouts, fetching, message, getProfileShoutouts }) => {
 
   return (
     <ShoutoutsContainer>
-      <Title>Shoutouts</Title>
+      <Title>Shoutouts Feed</Title>
       <CardContainer>
         {fetching && <Loader />}
         {shoutouts &&
