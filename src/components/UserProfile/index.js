@@ -3,11 +3,12 @@ import moment from 'moment';
 
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
 import User from '../../components/User';
-import { ProfileHeader, ProfileBody, ShoutoutsButton } from './userProfile.styles';
+import { ProfileHeader, ProfileBody, ShoutoutsButton, Emoji } from './userProfile.styles';
 import Loader from '../Loader';
 import DisplayCard from '../Cards/DisplayCard';
 import bravoParty from '../../assets/bravo-party.svg';
 import placeholder from '../../assets/placeholder.png';
+import confetti from '../../assets/confetti.png';
 
 const shoutoutMargin = '20px auto 15px 200px';
 
@@ -21,8 +22,14 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
           alt={user && user.name}
           name={user && user.name}
         />
-        <ShoutoutsButton>Given</ShoutoutsButton>
-        <ShoutoutsButton>Received</ShoutoutsButton>
+        <ShoutoutsButton>
+          <Emoji src={confetti} alt="given" />
+          Given
+        </ShoutoutsButton>
+        <ShoutoutsButton>
+          <Emoji src={confetti} alt="given" />
+          Received
+        </ShoutoutsButton>
       </ProfileHeader>
       <ProfileBody>
         {fetching && <Loader />}

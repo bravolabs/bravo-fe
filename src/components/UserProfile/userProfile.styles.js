@@ -25,6 +25,7 @@ export const ShoutoutsButton = styled.div`
   &:last-of-type {
     left: 310px;
   }
+  cursor: pointer;
 `;
 
 export const Emoji = styled.img`
