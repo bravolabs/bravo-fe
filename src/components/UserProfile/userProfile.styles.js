@@ -21,7 +21,7 @@ export const ShoutoutsButton = styled.div`
   font-size: 24px;
   line-height: 29px;
   color: ${colors.brand};
-  border-bottom: 4px solid ${colors.brand};
+  border-bottom: ${props => (props.active ? `4px solid ${colors.brand}` : 'none')};
   &:last-of-type {
     left: 310px;
   }

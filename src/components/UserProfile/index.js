@@ -29,12 +29,12 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
           alt={user && user.name}
           name={user && user.name}
         />
-        <ShoutoutsButton>
+        <ShoutoutsButton active={state.active === 'given' ? true : false}>
           <Emoji src={confetti} alt="given" />
           Given
         </ShoutoutsButton>
-        <ShoutoutsButton>
-          <Emoji src={confetti} alt="given" />
+        <ShoutoutsButton active={state.active === 'received' ? true : false}>
+          <Emoji src={confetti} alt="received" />
           Received
         </ShoutoutsButton>
       </ProfileHeader>
