@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
-import { ShoutoutsContainer, Title, CardContainer } from './shoutouts.styles';
+import { ShoutoutsContainer, Title, CardContainer, SubTitle } from './shoutouts.styles';
 import { getProfileShoutouts } from '../../actions/shoutouts';
 import Loader from '../Loader';
 import ShoutoutCard from '../ShoutoutCard/ShoutoutCard';
@@ -20,6 +20,7 @@ const Shoutouts = ({ shoutouts, fetching, message, getProfileShoutouts }) => {
   return (
     <ShoutoutsContainer>
       <Title>Shoutouts Feed</Title>
+      <SubTitle>Catch up on the most recent shoutouts.</SubTitle>
       <CardContainer>
         {fetching && <Loader />}
         {shoutouts &&
