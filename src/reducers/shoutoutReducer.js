@@ -41,6 +41,16 @@ export default (state = initialState, action) => {
         userShoutouts: action.payload,
         error: null,
       };
+    case types.SET_SHOUTOUTS_FEED:
+      return {
+        ...state,
+        singleShoutout: null,
+        fetching: false,
+        profileShoutouts: null,
+        userShoutouts: null,
+        shoutoutsFeed: action.payload,
+        error: null,
+      };
     case types.FETCHING_SHOUTOUT:
       return {
         ...state,
