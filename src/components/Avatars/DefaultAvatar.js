@@ -2,10 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import color from 'color';
 
-const calculateColors = (base, index) => {
-  let Color = color(base)
-    .saturationl(100)
-    .lightness(65);
+const calculateColors = (Color, index) => {
   switch (index) {
     case 1:
       return Color;
@@ -95,9 +92,18 @@ const StyledAvatar = styled.svg`
   }
 `;
 
+const generateBaseColor = seed => {
+  return (seed * 16807) % 360;
+};
+
 export default function DefaultAvatar(props) {
-  let { Color } = props;
-  if (!Color) Color = '#4265ED';
+  let { seed } = props;
+  seed = Number(seed);
+  if (!seed) seed = 4;
+  const hue = generateBaseColor(seed);
+  debugger;
+  let Color = color({ h: hue, s: 100, l: 65 }).hex();
+
   return (
     <StyledAvatar
       xmlns="http://www.w3.org/2000/svg"
