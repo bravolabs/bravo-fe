@@ -15,21 +15,42 @@ const calculateColors = (base, index) => {
         .rotate(20)
         .hex();
     case 3:
-      return Color;
+      return color(Color)
+        .darken(0.7)
+        .hex();
     case 4:
       return color(Color)
-        .lighten(0.1)
+        .darken(0.9)
         .hex();
     case 5:
       return color(Color)
-        .darken(0.05)
+        .darken(0.35)
         .hex();
     case 6:
       return color(Color)
+        .lighten(0.8)
+        .hex();
+    case 7:
+      return color(Color)
         .darken(0.1)
+        .desaturate(0.2)
+        .hex();
+    case 8:
+      return color(Color)
+        .darken(0.3)
+        .desaturate(0.3)
+        .hex();
+    case 9:
+      return color(Color)
+        .darken(0.9)
+        .hex();
+    case 10:
+      return color(Color)
+        .lighten(0.1)
+        .desaturate(0.3)
         .hex();
     default:
-      return Color;
+      return color(Color).hex();
   }
 };
 
@@ -69,7 +90,8 @@ const StyledAvatar = styled.svg`
   }
 
   .cls-7 {
-    opacity: 0.12;
+    opacity: 0.5;
+    fill: ${props => calculateColors(props.Color, 10)};
   }
 `;
 
