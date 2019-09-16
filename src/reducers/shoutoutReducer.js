@@ -4,6 +4,7 @@ const initialState = {
   singleShoutout: null,
   profileShoutouts: null,
   userShoutouts: null,
+  shoutoutsFeed: null,
   fetching: false,
   error: null,
 };
@@ -17,6 +18,7 @@ export default (state = initialState, action) => {
         fetching: false,
         profileShoutouts: null,
         userShoutouts: null,
+        shoutoutsFeed: null,
         error: null,
       };
     case types.SET_PROFILE_SHOUTOUTS:
@@ -26,6 +28,7 @@ export default (state = initialState, action) => {
         fetching: false,
         profileShoutouts: action.payload,
         userShoutouts: null,
+        shoutoutsFeed: null,
         error: null,
       };
     case types.SET_USER_SHOUTOUTS:
@@ -34,6 +37,7 @@ export default (state = initialState, action) => {
         singleShoutout: null,
         fetching: false,
         profileShoutouts: null,
+        shoutoutsFeed: null,
         userShoutouts: action.payload,
         error: null,
       };
@@ -44,6 +48,7 @@ export default (state = initialState, action) => {
         singleShoutout: null,
         profileShoutouts: null,
         userShoutouts: null,
+        shoutoutsFeed: null,
         fetching: true,
       };
     case types.SHOUTOUT_ERROR:
@@ -53,6 +58,7 @@ export default (state = initialState, action) => {
         singleShoutout: null,
         profileShoutouts: null,
         userShoutouts: null,
+        shoutoutsFeed: null,
         fetching: false,
       };
     default:
