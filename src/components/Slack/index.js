@@ -42,10 +42,11 @@ const Slack = ({ history, location, appInstall, signInWithSlack, slack }) => {
   const { code, state } = qs.parse(location.search);
 
   useEffect(() => {
-    if (state === 'addAppToSlack') {
+    switch (state) {
+      case 'addAppToSlack':
       appInstall(code, redirectURI);
-    }
-    if (state === 'resumeSignIn') {
+        break;
+      case 'resumeSignIn':
       signInWithSlack(code, redirectURI).then(res => {
         if (res) {
           // Redirect back to original target route and clean up
@@ -53,6 +54,9 @@ const Slack = ({ history, location, appInstall, signInWithSlack, slack }) => {
           localStorage.removeItem('target-route');
         }
       });
+        break;
+      default:
+        history.push('/');
     }
   }, [code, state, redirectURI, appInstall, signInWithSlack, history, goToLocation]);
 
