@@ -3,29 +3,33 @@ import styled from 'styled-components';
 import color from 'color';
 
 const calculateColors = (base, index) => {
+  let Color = color(base)
+  .saturationl(100)
+  .lightness(65);
   switch (index) {
     case 1:
-      return base;
+      return Color;
     case 2:
-      return color(base)
+      return color(Color)
         .lighten(0.2)
+        .rotate(20)
         .hex();
     case 3:
-      return base;
+      return Color;
     case 4:
-      return color(base)
-        .lighten(0.4)
+      return color(Color)
+        .lighten(0.1)
         .hex();
     case 5:
-      return color(base)
-        .darken(0.1)
+      return color(Color)
+        .darken(0.05)
         .hex();
     case 6:
-      return color(base)
-        .darken(0.2)
+      return color(Color)
+        .darken(0.1)
         .hex();
     default:
-      return base;
+      return Color;
   }
 };
 
