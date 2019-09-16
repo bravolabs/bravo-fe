@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import { Card } from '../../styling/atoms/Card';
 import { BodyText } from '../../styling/atoms/Fonts';
+import User from '../User';
+
+export const ShoutoutUser = styled(User)`
+
+`;
 
 export const ShoutoutCardContainer = styled(Card)`
   position: relative;

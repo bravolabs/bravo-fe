@@ -329,7 +329,7 @@ const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: ${Colors.light};
-    height: 100%;
+    height: 100vh;
   }
   #root {
     background: #F9FBFD;
