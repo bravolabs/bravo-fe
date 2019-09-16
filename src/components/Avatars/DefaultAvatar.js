@@ -42,7 +42,7 @@ const StyledAvatar = styled.svg`
   }
 
   .cls-2 {
-    fill: #281412;
+    fill: ${props => calculateColors(props.Color, 9)};
   }
 
   .cls-2,
