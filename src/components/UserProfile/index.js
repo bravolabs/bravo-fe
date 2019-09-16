@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
@@ -34,6 +34,23 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
       shoutouts: filtered,
     }));
   };
+
+  const { active } = state;
+  const name = user && user.name;
+
+  useEffect(() => {
+    const filtered =
+      shoutouts &&
+      (active === 'given'
+        ? shoutouts.filter(item => item.giverName.toLowerCase() === name.toLowerCase())
+        : shoutouts.filter(item => item.receiverName.toLowerCase() === name.toLowerCase()));
+
+    setState(prevState => ({
+      ...prevState,
+      active: active,
+      shoutouts: filtered,
+    }));
+  }, [shoutouts, active, name]);
 
   return (
     <>
