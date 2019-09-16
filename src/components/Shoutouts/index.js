@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
 import { ShoutoutsContainer, Title, CardContainer, SubTitle } from './shoutouts.styles';
-import { getProfileShoutouts } from '../../actions/shoutouts';
+import { getShoutoutsFeed } from '../../actions/shoutouts';
 import Loader from '../Loader';
 import ShoutoutCard from '../ShoutoutCard/ShoutoutCard';
 import DisplayCard from '../Cards/DisplayCard';
@@ -10,12 +10,10 @@ import bravoParty from '../../assets/bravo-party.svg';
 
 const shoutoutMargin = '20px auto 15px 200px';
 
-const Shoutouts = ({ shoutouts, fetching, message, getProfileShoutouts }) => {
+const Shoutouts = ({ shoutouts, fetching, message, getShoutoutsFeed }) => {
   useEffect(() => {
-    if (!shoutouts) {
-      getProfileShoutouts();
-    }
-  }, [shoutouts, getProfileShoutouts]);
+    getShoutoutsFeed();
+  }, [getShoutoutsFeed]);
 
   return (
     <ShoutoutsContainer>
@@ -51,5 +49,5 @@ export default connect(
     fetching: state.shoutouts.fetching,
     message: state.shoutouts.error,
   }),
-  { getProfileShoutouts }
+  { getShoutoutsFeed }
 )(Shoutouts);
