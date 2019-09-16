@@ -27,7 +27,7 @@ export const AddToSlack = () => {
         state=addAppToSlack`}>
       <StyledBaseButton padding="none">
         <LogoContainer>
-          <img src={slackLogo} />
+          <img src={slackLogo} alt="Add to slack" />
         </LogoContainer>
         <ButtonText>
           Add Bravo to <span>Slack</span>
