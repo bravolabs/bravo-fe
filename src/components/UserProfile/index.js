@@ -22,16 +22,9 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
   });
 
   const handleClick = action => {
-    const filtered =
-      shoutouts &&
-      (action === 'given'
-        ? shoutouts.filter(item => item.giverName.toLowerCase() === user.name.toLowerCase())
-        : shoutouts.filter(item => item.receiverName.toLowerCase() === user.name.toLowerCase()));
-
     setState(prevState => ({
       ...prevState,
       active: action,
-      shoutouts: filtered,
     }));
   };
 
