@@ -2,52 +2,52 @@ import React from 'react';
 import styled from 'styled-components';
 import color from 'color';
 
-const calculateColors = (Color, index) => {
+const calculateColors = (base, index) => {
   switch (index) {
     case 1:
-      return Color;
+      return base;
     case 2:
-      return color(Color)
+      return color(base)
         .lighten(0.2)
         .rotate(20)
         .hex();
     case 3:
-      return color(Color)
+      return color(base)
         .darken(0.7)
         .hex();
     case 4:
-      return color(Color)
+      return color(base)
         .darken(0.9)
         .hex();
     case 5:
-      return color(Color)
+      return color(base)
         .darken(0.35)
         .hex();
     case 6:
-      return color(Color)
+      return color(base)
         .lighten(0.8)
         .hex();
     case 7:
-      return color(Color)
+      return color(base)
         .darken(0.1)
         .desaturate(0.2)
         .hex();
     case 8:
-      return color(Color)
+      return color(base)
         .darken(0.3)
         .desaturate(0.3)
         .hex();
     case 9:
-      return color(Color)
+      return color(base)
         .darken(0.9)
         .hex();
     case 10:
-      return color(Color)
+      return color(base)
         .lighten(0.1)
         .desaturate(0.3)
         .hex();
     default:
-      return color(Color).hex();
+      return color(base).hex();
   }
 };
 
@@ -97,11 +97,10 @@ const generateBaseColor = seed => {
 };
 
 export default function DefaultAvatar(props) {
-  let { seed } = props;
-  seed = Number(seed);
-  if (!seed) seed = 4;
-  const hue = generateBaseColor(seed);
-  debugger;
+  let { ColorSeed } = props;
+  ColorSeed = Number(ColorSeed);
+  if (!ColorSeed) ColorSeed = 4;
+  const hue = generateBaseColor(ColorSeed);
   let Color = color({ h: hue, s: 100, l: 65 }).hex();
 
   return (
@@ -118,8 +117,8 @@ export default function DefaultAvatar(props) {
           x2="62.39"
           y2="78.92"
           gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor={calculateColors(props.Color, 1)} />
-          <stop offset="1" stopColor={calculateColors(props.Color, 2)} />
+          <stop offset="0" stopColor={calculateColors(Color, 1)} />
+          <stop offset="1" stopColor={calculateColors(Color, 2)} />
         </linearGradient>
         <linearGradient
           id={`${Color.replace('#', '')}-linear-gradient-2`}
@@ -128,8 +127,8 @@ export default function DefaultAvatar(props) {
           x2="16.47"
           y2="13.41"
           gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor={calculateColors(props.Color, 3)} />
-          <stop offset="0.26" stopColor={calculateColors(props.Color, 4)} />
+          <stop offset="0" stopColor={calculateColors(Color, 3)} />
+          <stop offset="0.26" stopColor={calculateColors(Color, 4)} />
         </linearGradient>
         <linearGradient
           id={`${Color.replace('#', '')}-linear-gradient-3`}
@@ -138,8 +137,8 @@ export default function DefaultAvatar(props) {
           x2="42.91"
           y2="44.47"
           gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor={calculateColors(props.Color, 5)} />
-          <stop offset="1" stopColor={calculateColors(props.Color, 6)} />
+          <stop offset="0" stopColor={calculateColors(Color, 5)} />
+          <stop offset="1" stopColor={calculateColors(Color, 6)} />
         </linearGradient>
         <radialGradient
           id={`${Color.replace('#', '')}-radial-gradient`}
@@ -147,8 +146,8 @@ export default function DefaultAvatar(props) {
           cy="70.24"
           r="20.17"
           gradientUnits="userSpaceOnUse">
-          <stop offset="0" stopColor={calculateColors(props.Color, 7)} />
-          <stop offset="1" stopColor={calculateColors(props.Color, 8)} />
+          <stop offset="0" stopColor={calculateColors(Color, 7)} />
+          <stop offset="1" stopColor={calculateColors(Color, 8)} />
         </radialGradient>
       </defs>
       <g>

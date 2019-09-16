@@ -6,7 +6,7 @@ const Avatar = props => {
   const [imgFailed, setImgFailed] = useState(false);
 
   return imgFailed ? (
-    <DefaultAvatar className="avatar default-avatar" seed={6} />
+    <DefaultAvatar className="avatar default-avatar" ColorSeed={userId} />
   ) : (
     <img
       className="avatar user-avatar"
