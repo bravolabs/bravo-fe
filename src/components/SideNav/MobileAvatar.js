@@ -4,11 +4,11 @@ import { ExtraInfo, ComponentTitle } from '../../styling/atoms/Fonts';
 import { MobileAvatarContainer } from './sidenav.styles';
 import Avatar from '../Avatars';
 
-const MobileAvatar = ({ src, alt, name, link }) => {
+const MobileAvatar = ({ avatar, userId, name, link }) => {
   return (
     <Link to={link}>
       <MobileAvatarContainer>
-        <Avatar src={src} userId={alt} />
+        <Avatar avatar={avatar} userId={userId} />
         <ComponentTitle>{name}</ComponentTitle>
         <ExtraInfo>View Profile</ExtraInfo>
       </MobileAvatarContainer>
