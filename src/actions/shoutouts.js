@@ -52,3 +52,20 @@ export const getProfileShoutouts = (userId = null) => async dispatch => {
     dispatch({ type: types.SHOUTOUT_ERROR, payload: error.message });
   }
 };
+
+export const getShoutoutsFeed = () => async dispatch => {
+  dispatch({ type: types.FETCHING_SHOUTOUT });
+  try {
+    const { data } = await axiosWithAuth().get(
+      `/api/organizations/${localstorage.get().org_id}/shoutouts`
+    );
+
+    dispatch({ type: types.SET_SHOUTOUTS_FEED, payload: data.data || data });
+  } catch (error) {
+    if (error.response) {
+      dispatch({ type: types.SHOUTOUT_ERROR, payload: error.response.data.message });
+      return;
+    }
+    dispatch({ type: types.SHOUTOUT_ERROR, payload: error.message });
+  }
+};
