@@ -4,6 +4,10 @@ import { PageTitle, BodyText } from '../../styling/atoms/Fonts';
 export const Container = styled.div`
   margin: auto;
   max-width: 850px;
+
+  @media (max-width: 980px) {
+    padding: 0 10px;
+  }
 `;
 
 export const Main = styled.div`
