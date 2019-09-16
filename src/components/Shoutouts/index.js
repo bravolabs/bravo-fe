@@ -47,7 +47,7 @@ const Shoutouts = ({ shoutouts, fetching, message, getProfileShoutouts }) => {
 
 export default connect(
   state => ({
-    shoutouts: state.shoutouts.profileShoutouts,
+    shoutouts: state.shoutouts.shoutoutsFeed,
     fetching: state.shoutouts.fetching,
     message: state.shoutouts.error,
   }),
