@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import qs from 'query-string';
 
@@ -8,6 +7,7 @@ import bravoParty from '../../assets/bravo-party.svg';
 import Loader from '../Loader';
 import DisplayCard from '../Cards/DisplayCard';
 import SideNav from '../SideNav';
+import { SlackContainer } from './slack.styles';
 
 const DisplayResponse = ({ success, error, history }) => {
   const [count, updateCount] = useState(5);
@@ -33,59 +33,50 @@ const DisplayResponse = ({ success, error, history }) => {
     />
   );
 };
+
 const Slack = ({ history, location, appInstall, signInWithSlack, slack }) => {
+  const redirectURI = `${document.location.origin}/slack`;
   // Get the original target route the user was trying to access if it exists
   const targetRoute = localStorage.getItem('target-route');
   const goToLocation = targetRoute ? targetRoute : '/profile';
-  const redirectURI = `${document.location.origin}/slack`;
   // get code and state('addAppToSlack' or 'resumeSignIn') from slack on URL
   const { code, state } = qs.parse(location.search);
 
   useEffect(() => {
     switch (state) {
       case 'addAppToSlack':
-      appInstall(code, redirectURI);
+        appInstall(code, redirectURI);
         break;
       case 'resumeSignIn':
-      signInWithSlack(code, redirectURI).then(res => {
-        if (res) {
-          // Redirect back to original target route and clean up
-          history.push(goToLocation);
-          localStorage.removeItem('target-route');
-        }
-      });
+        signInWithSlack(code, redirectURI).then(res => {
+          if (res) {
+            // Redirect back to original target route and clean up
+            history.push(goToLocation);
+            localStorage.removeItem('target-route');
+          }
+        });
         break;
       default:
         history.push('/');
     }
   }, [code, state, redirectURI, appInstall, signInWithSlack, history, goToLocation]);
 
-  return state ? (
-    <React.Fragment>
+  return (
+    <SlackContainer>
       <SideNav />
-      {slack.isLoading && (
+      {slack.isLoading ? (
         <DisplayCard
           header={<Loader />}
           text={
             state === 'addAppToSlack'
               ? 'Installing Bravo in Slack Workspace...'
-              : 'When the work is done, say bravo...'
+              : 'When the job is done, say bravo...'
           }
         />
+      ) : (
+        <DisplayResponse success={slack.installSuccess} error={slack.error} history={history} />
       )}
-      {slack.installSuccess && (
-        <DisplayCard
-          header={<img src={bravoParty} alt="bravo party" />}
-          text="You have successfully installed bravo slack app"
-        />
-      )}
-      {slack.error && (
-        <DisplayCard header={<img src={bravoParty} alt="bravo party" />} text={slack.error} />
-      )}
-      }
-    </React.Fragment>
-  ) : (
-    <Redirect to="/" />
+    </SlackContainer>
   );
 };
 
