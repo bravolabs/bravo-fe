@@ -1,11 +1,7 @@
 import styled from 'styled-components';
 import { Card } from '../../styling/atoms/Card';
 import { BodyText } from '../../styling/atoms/Fonts';
-import User from '../User';
-
-export const ShoutoutUser = styled(User)`
-
-`;
+import Breakpoints from '../../styling/variables/Breakpoints';
 
 export const ShoutoutCardContainer = styled(Card)`
   position: relative;
@@ -71,6 +67,14 @@ export const AvatarsContainer = styled.div`
   display: flex;
   width: 100%;
   height: 4rem;
+
+  @media (max-width: ${Breakpoints.medium}px) {
+    .user {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  }
 `;
 
 export const Emoji = styled.img`
