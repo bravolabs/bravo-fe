@@ -4,16 +4,31 @@ import { cleanup, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { renderWithRedux } from '../../../utils/testHelpers';
 import SideNav from '../index';
+import Logo from '../../../styling/atoms/SVGs/Logo';
+import UIColors from '../../../styling/variables/UIColors';
 
 afterEach(cleanup);
 describe('Side Nav Component', () => {
   it('Should Have Bravo Logo', () => {
-    const { getAllByRole, getByAltText } = renderWithRedux(<SideNav />);
+    const reducer = {
+      slack: {
+        installSuccess: true,
+        user: {
+          avatar: 'useravatar.jpg',
+        },
+      },
+      ui: {
+        sideNavActive: false,
+      },
+    };
+    const store = createStore(() => reducer);
+    const { getAllByRole } = renderWithRedux(<SideNav />, {
+      store,
+    });
     const links = getAllByRole('link');
-    const logo = getByAltText('Bravo');
     expect(links[0]).toHaveAttribute('href', '/');
-    expect(links[0]).toContainElement(logo);
-    expect(logo).toHaveAttribute('src', 'bravo-white.svg');
+    expect(links[0].firstChild).toHaveAttribute('xmlns', 'http://www.w3.org/2000/svg');
+    //expect(logo).toHaveAttribute('xmlns', 'http://www.w3.org/2000/svg');
   });
 
   it('Should have avatar when user is not authenticated but installed app', () => {
@@ -23,6 +38,9 @@ describe('Side Nav Component', () => {
         user: {
           avatar: 'useravatar.jpg',
         },
+      },
+      ui: {
+        sideNavActive: false,
       },
     };
     const store = createStore(() => reducer);
@@ -37,6 +55,9 @@ describe('Side Nav Component', () => {
     const reducer = {
       slack: {
         isLoggedIn: true,
+      },
+      ui: {
+        sideNavActive: false,
       },
     };
     const store = createStore(() => reducer);
