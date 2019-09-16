@@ -9,6 +9,30 @@ import Loader from '../Loader';
 import DisplayCard from '../Cards/DisplayCard';
 import SideNav from '../SideNav';
 
+const DisplayResponse = ({ success, error, history }) => {
+  const [count, updateCount] = useState(5);
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      updateCount(count - 1);
+    }, 1000);
+    if (count === 0) {
+      history.push('/');
+    }
+    return () => {
+      window.clearInterval(interval);
+    };
+  }, [count, history]);
+
+  return (
+    <DisplayCard
+      header={<img src={bravoParty} alt="bravo party" />}
+      text={success ? 'You have successfully installed bravo slack app' : error}
+      error={error}
+      subText={(success || error) && `You will be redirected in ${count}s`}
+    />
+  );
+};
 const Slack = ({ history, location, appInstall, signInWithSlack, slack }) => {
   // Get the original target route the user was trying to access if it exists
   const targetRoute = localStorage.getItem('target-route');
