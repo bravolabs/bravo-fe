@@ -108,6 +108,7 @@ export default function DefaultAvatar(props) {
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 82.63 84.83"
+      className={props.className}
       Color={Color}>
       <defs>
         <linearGradient
