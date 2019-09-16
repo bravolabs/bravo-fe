@@ -4,8 +4,8 @@ import color from 'color';
 
 const calculateColors = (base, index) => {
   let Color = color(base)
-  .saturationl(100)
-  .lightness(65);
+    .saturationl(100)
+    .lightness(65);
   switch (index) {
     case 1:
       return Color;
@@ -42,24 +42,33 @@ const StyledAvatar = styled.svg`
   }
 
   .cls-2 {
-    fill: #000;
+    fill: #281412;
+  }
+
+  .cls-2,
+  .cls-3 {
+    opacity: 0.84;
   }
 
   .cls-3 {
-    fill: #fff;
-  }
-
-  .cls-4 {
-    opacity: 0.37;
     fill: url(#${props => props.Color.replace('#', '')}-linear-gradient-2);
   }
 
+  .cls-4 {
+    fill: #fff;
+  }
+
   .cls-5 {
-    opacity: 0.81;
+    opacity: 0.37;
     fill: url(#${props => props.Color.replace('#', '')}-linear-gradient-3);
   }
 
   .cls-6 {
+    opacity: 0.81;
+    fill: url(#${props => props.Color.replace('#', '')}-radial-gradient);
+  }
+
+  .cls-7 {
     opacity: 0.12;
   }
 `;
