@@ -95,13 +95,13 @@ export default function DefaultAvatar(props) {
         </linearGradient>
         <linearGradient
           id={`${Color.replace('#', '')}-linear-gradient-2`}
-          x1="43.2"
-          y1="68.44"
-          x2="43.2"
-          y2="59.16"
+          x1="21.84"
+          y1="41.88"
+          x2="16.47"
+          y2="13.41"
           gradientUnits="userSpaceOnUse">
           <stop offset="0" stopColor={calculateColors(props.Color, 3)} />
-          <stop offset="1" stopColor={calculateColors(props.Color, 4)} />
+          <stop offset="0.26" stopColor={calculateColors(props.Color, 4)} />
         </linearGradient>
         <linearGradient
           id={`${Color.replace('#', '')}-linear-gradient-3`}
@@ -113,6 +113,15 @@ export default function DefaultAvatar(props) {
           <stop offset="0" stopColor={calculateColors(props.Color, 5)} />
           <stop offset="1" stopColor={calculateColors(props.Color, 6)} />
         </linearGradient>
+        <radialGradient
+          id={`${Color.replace('#', '')}-radial-gradient`}
+          cx="43.12"
+          cy="70.24"
+          r="20.17"
+          gradientUnits="userSpaceOnUse">
+          <stop offset="0" stopColor={calculateColors(props.Color, 7)} />
+          <stop offset="1" stopColor={calculateColors(props.Color, 8)} />
+        </radialGradient>
       </defs>
       <g>
         <ellipse className="cls-1" cx="41.32" cy="42.42" rx="41.32" ry="42.42" />
