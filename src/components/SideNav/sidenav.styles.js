@@ -100,11 +100,12 @@ export const NavIcon = styled(NavLink)`
 
     img {
       width: 100%;
-    }
+    }         
   }
 
-  > h3 {
-    display: none;
+  > span {
+    font-size: 1.2rem;
+    color: ${colors.light};
   }
 
   @media (max-width: ${Breakpoints.medium}px) {
