@@ -100,8 +100,8 @@ export default function DefaultAvatar(props) {
   let { ColorSeed } = props;
   if (typeof ColorSeed === 'string') {
     let code = 0;
-    for (let i = 0; i < str.length; i++) {
-      code += str.charCodeAt(i);
+    for (let i = 0; i < ColorSeed.length; i++) {
+      code += ColorSeed.charCodeAt(i);
     }
     ColorSeed = code;
   }
