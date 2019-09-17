@@ -74,6 +74,8 @@ export const AvatarsContainer = styled.div`
   height: 4rem;
 
   @media (max-width: ${Breakpoints.medium}px) {
+    position: relative;
+    height: initial;
     justify-content: space-between;
     .user {
       flex-direction: column;
@@ -87,6 +89,13 @@ export const Emoji = styled.img`
   width: 20px;
   height: 20px;
   margin: auto 24px;
+
+  @media (max-width: ${Breakpoints.medium}px) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 `;
 
 export const Time = styled.div`
@@ -115,7 +124,7 @@ export const Time = styled.div`
 `;
 
 export const ShoutoutText = styled(BodyText)`
-  margin-top: 1.5rem;
+  margin-top: 1.6rem;
   width: 100%;
   height: 8rem;
   line-height: 2.2rem;
