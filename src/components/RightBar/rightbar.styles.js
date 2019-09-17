@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { Card } from '../../styling/atoms/Card';
 import colors from '../../styling/variables/UIColors';
-import Breakpoints from '../../styling/variables/Breakpoints';
 
 export const RightBarContainer = styled.div`
   position: fixed;
@@ -13,14 +12,13 @@ export const RightBarContainer = styled.div`
   width: 400px;
   height: 100vh;
   padding: 140px 30px 0px 30px;
-  background: #f9fbfd;
 
   section {
     display: flex;
     flex-direction: column;
   }
 
-  @media (max-width: ${Breakpoints.medium}px) {
+  @media (max-width: 1200px) {
     display: none;
   }
 `;
