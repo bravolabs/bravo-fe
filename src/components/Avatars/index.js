@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import DefaultAvatar from './DefaultAvatar';
 
 const Avatar = props => {
-  const { avatar, userId, name } = props;
+  const { avatar, seed, name } = props;
   const [imgFailed, setImgFailed] = useState(false);
 
   return imgFailed ? (
-    <DefaultAvatar className="avatar default-avatar" ColorSeed={userId} />
+    <DefaultAvatar className="avatar default-avatar" ColorSeed={seed} />
   ) : (
     <img
       className="avatar user-avatar"
