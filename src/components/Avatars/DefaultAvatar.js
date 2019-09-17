@@ -98,6 +98,13 @@ const generateBaseColor = seed => {
 
 export default function DefaultAvatar(props) {
   let { ColorSeed } = props;
+  if (typeof ColorSeed === 'string') {
+    let code = 0;
+    for (let i = 0; i < str.length; i++) {
+      code += str.charCodeAt(i);
+    }
+    ColorSeed = code;
+  }
   ColorSeed = Number(ColorSeed);
   if (!ColorSeed) ColorSeed = 4;
   const hue = generateBaseColor(ColorSeed);
