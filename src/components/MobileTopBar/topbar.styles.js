@@ -7,7 +7,7 @@ export const TopBarContainer = styled.nav`
   box-sizing: border-box;
   position: relative;
   top: 0;
-  left: 0;~
+  left: 0;
 
   @media (max-width: ${Breakpoints.medium}px) {
     display: flex;
@@ -36,7 +36,7 @@ export const ItemContainer = styled.div`
   }
 
   &.active {
-    > svg > g{
+    > svg {
       fill: ${UIColors.brand};
     }
   }
