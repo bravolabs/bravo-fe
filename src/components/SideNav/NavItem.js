@@ -8,7 +8,7 @@ const NavItem = ({ icon, link, label }) => {
       <i>
         <img src={icon} alt={link} />
       </i>
-      {label && <ComponentTitle>{label}</ComponentTitle>}
+      {label && <span>{label}</span>}
     </NavIcon>
   );
 };
