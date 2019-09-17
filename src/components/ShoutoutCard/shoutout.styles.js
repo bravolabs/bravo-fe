@@ -16,6 +16,10 @@ export const ShoutoutCardContainer = styled(Card)`
   background-color: white;
   border-radius: 8px;
   cursor: pointer;
+
+  @media (max-width: ${Breakpoints.medium}px) {
+    padding: 24px;
+  }
 `;
 
 export const ViewContainer = styled.div`
@@ -101,6 +105,7 @@ export const Time = styled.div`
   @media (max-width: ${Breakpoints.medium}px) {
     &.mobile-time {
       display: initial;
+      float: right;
     }
     &.time {
       display: none;
