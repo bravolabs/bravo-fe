@@ -93,6 +93,7 @@ export const AvatarsContainer = styled.div`
         text-align: center;
         height: auto;
         margin: 0;
+        font-weight: 600;
       }
     }
   }
