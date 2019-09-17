@@ -84,9 +84,13 @@ export const AvatarsContainer = styled.div`
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
+      max-width: 40%;
       > img {
         margin: 0;
         margin-bottom: 8px;
+      }
+      > h3 {
+        text-align: center;
       }
     }
   }
