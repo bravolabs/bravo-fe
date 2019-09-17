@@ -47,9 +47,10 @@ const ShoutoutCard = props => {
         <User img={giverAvatar || placeholder} name={praiseGiver} />
         <Emoji src={confetti} />
         <User img={receiverAvatar || placeholder} name={praiseTaker} />
-        <Time>{time}</Time>
+        <Time className="time">{time}</Time>
       </AvatarsContainer>
       <ShoutoutText>{praiseText}</ShoutoutText>
+      <Time className="mobile-time">{time}</Time>
       {id && (
         <ViewContainer id={`view-${id}`}>
           <ViewButton>

@@ -69,6 +69,8 @@ export const AvatarsContainer = styled.div`
   height: 4rem;
 
   @media (max-width: ${Breakpoints.medium}px) {
+    justify-content: space-between;
+
     .user {
       flex-direction: column;
       justify-content: flex-start;
