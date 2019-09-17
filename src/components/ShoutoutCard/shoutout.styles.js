@@ -70,7 +70,6 @@ export const AvatarsContainer = styled.div`
 
   @media (max-width: ${Breakpoints.medium}px) {
     justify-content: space-between;
-
     .user {
       flex-direction: column;
       justify-content: flex-start;
@@ -94,6 +93,19 @@ export const Time = styled.div`
   font-size: 1.4rem;
   line-height: 1.6rem;
   color: rgba(0, 0, 0, 0.652);
+
+  &.mobile-time {
+    display: none;
+  }
+
+  @media (max-width: ${Breakpoints.medium}px) {
+    &.mobile-time {
+      display: initial;
+    }
+    &.time {
+      display: none;
+    }
+  }
 `;
 
 export const ShoutoutText = styled(BodyText)`
