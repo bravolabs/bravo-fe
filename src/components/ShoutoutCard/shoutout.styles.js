@@ -19,6 +19,7 @@ export const ShoutoutCardContainer = styled(Card)`
 
   @media (max-width: ${Breakpoints.medium}px) {
     padding: 24px;
+    min-height: initial;
   }
 `;
 
@@ -118,4 +119,9 @@ export const ShoutoutText = styled(BodyText)`
   width: 100%;
   height: 8rem;
   line-height: 2.2rem;
+
+  @media (max-width: ${Breakpoints.medium}px) {
+    height: auto;
+    margin-bottom: 2.4rem;
+  }
 `;
