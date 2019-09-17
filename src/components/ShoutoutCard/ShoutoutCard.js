@@ -44,9 +44,9 @@ const ShoutoutCard = props => {
       onBlur={removeViewAction}
       onMouseLeave={removeViewAction}>
       <AvatarsContainer>
-        <User img={giverAvatar || placeholder} name={praiseGiver} />
+        <User avatar={giverAvatar || placeholder} name={praiseGiver} />
         <Emoji src={confetti} />
-        <User img={receiverAvatar || placeholder} name={praiseTaker} />
+        <User avatar={receiverAvatar || placeholder} name={praiseTaker} />
         <Time>{time}</Time>
       </AvatarsContainer>
       <ShoutoutText>{praiseText}</ShoutoutText>
