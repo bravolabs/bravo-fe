@@ -18,8 +18,11 @@ export const ShoutoutCardContainer = styled(Card)`
   cursor: pointer;
 
   @media (max-width: ${Breakpoints.medium}px) {
+    width: auto;
     padding: 24px;
     min-height: initial;
+    margin-left: 16px;
+    margin-right: 16px;
   }
 `;
 
