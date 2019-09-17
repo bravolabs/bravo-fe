@@ -1,20 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import bravoWhite from '../../assets/bravo-white.svg';
+import Logo from '../../styling/atoms/SVGs/Logo';
 import { SideNavContainer } from './sidenav.styles';
 import Avatar from './Avatar';
 import NavItems from './NavItems';
 import logoutIcon from '../../assets/logout.png';
 import NavItem from './NavItem';
+import MobileAvatar from './MobileAvatar';
+import UIColors from '../../styling/variables/UIColors';
+import { toggleSideMenu } from '../../actions/ui';
 
 const SideNav = props => {
-  const { slack } = props;
+  const { slack, ui } = props;
   return (
-    <SideNavContainer>
+    <SideNavContainer className={ui.sideNavActive && 'open'}>
       <Link to="/">
-        <img src={bravoWhite} alt="Bravo" />
+        <Logo fillColor={UIColors.light} svgWidth="48px" svgHeight="48px" />
       </Link>
+      {slack.user && (
+        <MobileAvatar
+          link="/profile"
+          name={slack.user.name}
+          src={slack.user.avatar}
+          alt={slack.user.name}
+        />
+      )}
       {slack.isLoggedIn && <NavItems />}
       {slack.installSuccess && <Avatar src={slack.user.avatar} alt="user-avatar" />}
       {slack.isLoggedIn && <NavItem icon={logoutIcon} label="Logout" link="/logout" />}
@@ -25,6 +36,7 @@ const SideNav = props => {
 export default connect(
   state => ({
     slack: state.slack,
+    ui: state.ui,
   }),
   null
 )(SideNav);

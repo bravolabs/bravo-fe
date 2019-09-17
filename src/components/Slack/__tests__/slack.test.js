@@ -17,6 +17,9 @@ describe('Add to Slack Component', () => {
       slack: {
         isLoading: true,
       },
+      ui: {
+        sideNavActive: false,
+      },
     };
     const store = createStore(() => reducer);
     const { container, getByText } = renderWithRedux(
@@ -42,6 +45,9 @@ describe('Add to Slack Component', () => {
         },
         error: '',
       },
+      ui: {
+        sideNavActive: false,
+      },
     };
     const store = createStore(() => reducer);
     const { container, getByText, getByAltText } = renderWithRedux(
@@ -63,6 +69,9 @@ describe('Add to Slack Component', () => {
         isLoading: false,
         user: null,
         error: 'Invalid_Code',
+      },
+      ui: {
+        sideNavActive: false,
       },
     };
     const store = createStore(() => reducer);

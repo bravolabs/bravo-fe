@@ -9,9 +9,9 @@ import shoutoutIcon from '../../assets/confetti.png';
 const NavItems = () => {
   return (
     <NavItemsContainer>
-      <NavItem icon={homeIcon} link="/profile" label="Profile" />
+      <NavItem icon={homeIcon} link="/profile" label="Home" />
       <NavItem icon={shoutoutIcon} link="/shoutouts" label="Shoutouts" />
-      <NavItem icon={leaderboardIcon} link="/leaderboard" label="Board" />
+      <NavItem icon={leaderboardIcon} link="/leaderboard" label="Leaderboard" />
       <NavItem icon={teamIcon} link="/team" label="Team" />
     </NavItemsContainer>
   );

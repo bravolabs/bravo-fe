@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import colors from '../../styling/variables/UIColors';
+import Breakpoints from '../../styling/variables/Breakpoints';
+import ShapeStyles from '../../styling/variables/ShapeStyles';
+import FontSizes from '../../styling/variables/FontSizes';
+import FontColors from '../../styling/variables/FontColors';
 
 export const SideNavContainer = styled.div`
   background-color: ${colors.brand};
@@ -15,10 +19,28 @@ export const SideNavContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px 0;
-  z-index: 999;
+  z-index: 400;
   button {
     background: none;
     padding: 0;
+  }
+
+  @media (max-width: ${Breakpoints.medium}px) {
+    max-width: 304px;
+    width: 100%;
+    background-color: ${colors.white};
+    justify-content: flex-start;
+    align-items: stretch;
+    transition: transform 200ms ease-in-out;
+    transform: translateX(-100%);
+
+    &.open {
+      transform: translateX(0%);
+    }
+
+    > a > svg {
+      display: none;
+    }
   }
 `;
 
@@ -83,10 +105,45 @@ export const NavIcon = styled(NavLink)`
     }
   }
 
-  span {
-    margin-top: 8px;
+  > span {
     font-size: 1.4rem;
-    color: white;
+    color: ${colors.light};
+    font-weight: 400;
+    margin-top: 8px;
+  }
+
+  @media (max-width: ${Breakpoints.medium}px) {
+    &:first-child {
+      border-top: 2px solid ${colors.lightBorder};
+    }
+    box-sizing: border-box;
+    justify-content: flex-start;
+    flex-direction: row;
+    height: 54px;
+    margin: 0;
+    padding: 0 32px;
+    border-bottom: 2px solid ${colors.lightBorder};
+
+    div {
+      left: 0;
+      background-color: ${colors.brand};
+      border-radius: 0;
+    }
+
+    i {
+      padding: 0;
+      margin-right: 16px;
+      width: 28px;
+      height: 28px;
+      background-color: none;
+      box-shadow: none;
+    }
+
+    > span {
+      font-size: ${FontSizes.Medium};
+      color: ${FontColors.Dark};
+      margin: none;
+    }
   }
 `;
 
@@ -97,5 +154,30 @@ export const AvatarContainer = styled.div`
   img {
     border-radius: 50%;
     width: 100%;
+  }
+`;
+
+export const MobileAvatarContainer = styled.header`
+  display: none;
+  margin-top: 40px;
+  margin-bottom: 42px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  > img {
+    border-radius: 50%;
+    width: 80%;
+    max-width: 142px;
+    margin-bottom: 16px;
+    box-shadow: ${ShapeStyles.elevation.hover};
+  }
+
+  > h3 {
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: ${Breakpoints.medium}px) {
+    display: flex;
   }
 `;
