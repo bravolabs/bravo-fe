@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavIcon } from './sidenav.styles';
-import { ComponentTitle } from '../../styling/atoms/Fonts';
 
 const NavItem = ({ icon, link, label }) => {
   return (
