@@ -92,6 +92,7 @@ export const AvatarsContainer = styled.div`
       > h3 {
         text-align: center;
         height: auto;
+        margin: 0;
       }
     }
   }
