@@ -102,12 +102,13 @@ export const NavIcon = styled(NavLink)`
 
     img {
       width: 100%;
-    }         
+    }
   }
 
   > span {
     font-size: 1.2rem;
     color: ${colors.light};
+    font-weight: 400;
   }
 
   @media (max-width: ${Breakpoints.medium}px) {
@@ -138,7 +139,8 @@ export const NavIcon = styled(NavLink)`
     }
 
     > span {
-      display: initial;
+      font-size: ${FontSizes.Medium};
+      color: ${FontColors.Dark};
     }
   }
 `;
