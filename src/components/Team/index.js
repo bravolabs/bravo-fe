@@ -10,12 +10,9 @@ import bravoParty from '../../assets/bravo-party.svg';
 import localstorage from '../../utils/localstorage';
 
 const Team = ({ team, fetchTeamInfo }) => {
-  const teamMembers = team && team.members;
   useEffect(() => {
-    if (!teamMembers) {
-      fetchTeamInfo();
-    }
-  }, [teamMembers, fetchTeamInfo]);
+    fetchTeamInfo();
+  }, [fetchTeamInfo]);
   const members =
     (team.members && team.members.filter(member => member.id !== localstorage.get().id)) || null;
   return (
