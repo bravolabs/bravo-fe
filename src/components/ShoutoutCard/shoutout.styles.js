@@ -91,6 +91,7 @@ export const AvatarsContainer = styled.div`
       }
       > h3 {
         text-align: center;
+        height: auto;
       }
     }
   }
@@ -102,6 +103,7 @@ export const Emoji = styled.img`
   margin: auto 24px;
 
   @media (max-width: ${Breakpoints.medium}px) {
+    margin: 0;
     position: absolute;
     left: 50%;
     top: 50%;
