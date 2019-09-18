@@ -19,6 +19,25 @@ export const ProfileNavigation = styled.nav`
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
+
+  @media (max-width: ${Breakpoints.small}px) {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    left: 0%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > * {
+      flex: 0 0 auto;
+    }
+  }
 `;
 
 export const ShoutoutsButton = styled.div`
