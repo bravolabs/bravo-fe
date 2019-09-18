@@ -8,8 +8,10 @@ import Slack from '../index';
 afterEach(cleanup);
 describe('Add to Slack Component', () => {
   it('Should not render if state is not provided', () => {
-    const { container } = renderWithRedux(<Slack location={{ search: '' }} />);
-    expect(container.children.length).toBe(0);
+    const { container } = renderWithRedux(
+      <Slack location={{ search: '' }} history={{ push: () => null }} />
+    );
+    expect(container.children.length).toBe(1);
   });
 
   it('Should render Loading screen', () => {
@@ -23,15 +25,15 @@ describe('Add to Slack Component', () => {
     };
     const store = createStore(() => reducer);
     const { container, getByText } = renderWithRedux(
-      <Slack location={{ search: 'state=test' }} />,
+      <Slack location={{ search: 'state=test' }} history={{ push: () => null }} />,
       {
         store,
       }
     );
 
     const loadScreen = container.firstChild;
-    getByText('When the work is done, say bravo...');
-    expect(container.children.length).toBe(2);
+    getByText('When the job is done, say bravo...');
+    expect(container.children.length).toBe(1);
     expect(loadScreen).toBeVisible();
   });
 
@@ -51,7 +53,7 @@ describe('Add to Slack Component', () => {
     };
     const store = createStore(() => reducer);
     const { container, getByText, getByAltText } = renderWithRedux(
-      <Slack location={{ search: 'state=test' }} />,
+      <Slack location={{ search: 'state=test' }} history={{ push: () => null }} />,
       {
         store,
       }
@@ -59,7 +61,7 @@ describe('Add to Slack Component', () => {
     const successScreen = container.firstChild;
     getByAltText('bravo party');
     getByText('You have successfully installed bravo slack app');
-    expect(container.children.length).toBe(2);
+    expect(container.children.length).toBe(1);
     expect(successScreen).toBeVisible();
   });
 
@@ -76,7 +78,7 @@ describe('Add to Slack Component', () => {
     };
     const store = createStore(() => reducer);
     const { container, getByText, getByAltText } = renderWithRedux(
-      <Slack location={{ search: 'state=test' }} />,
+      <Slack location={{ search: 'state=test' }} history={{ push: () => null }} />,
       {
         store,
       }
@@ -84,7 +86,7 @@ describe('Add to Slack Component', () => {
     const errorScreen = container.firstChild;
     getByAltText('bravo party');
     getByText('Invalid_Code');
-    expect(container.children.length).toBe(2);
+    expect(container.children.length).toBe(1);
     expect(errorScreen).toBeVisible();
   });
 });

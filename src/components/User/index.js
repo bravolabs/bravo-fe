@@ -3,7 +3,7 @@ import { ShoutoutUserAvatar, Username, UserContainer } from './user.styles';
 
 const User = ({ avatar, name, size }) => {
   return (
-    <UserContainer size={size ? size : null}>
+    <UserContainer className="user" size={size ? size : null}>
       <ShoutoutUserAvatar avatar={avatar} name={name} seed={name} size={size ? size : null} />
       <Username fontWeight="500" size={size ? size : null}>
         {name}
