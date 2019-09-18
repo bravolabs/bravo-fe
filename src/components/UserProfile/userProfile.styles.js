@@ -15,7 +15,7 @@ export const ProfileHeader = styled.div`
 export const ProfileNavigation = styled.nav`
   position: absolute;
   bottom: 0;
-  width: 100%;
+  width: auto;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
