@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ModalContainer = styled.div`
   width: 500px;
-  height: 450px;
+  height: 400px;
   display: flex;
   flex-direction: column;
 `;
