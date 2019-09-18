@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getProfileShoutouts } from '../../actions/shoutouts';
+import { fetchTeamInfo } from '../../actions/team';
 
 import UserProfile from '../../components/UserProfile';
 
@@ -10,6 +11,7 @@ const UserProfileView = ({
   userShoutouts,
   members,
   getProfileShoutouts,
+  fetchTeamInfo,
   match,
   fetching,
   message,
@@ -17,6 +19,12 @@ const UserProfileView = ({
   const userId = match.params.id || null;
   const userInfo =
     userId && members ? members.filter(member => member.id === parseInt(userId, 10)) : null;
+
+  useEffect(() => {
+    if (userId && !members) {
+      fetchTeamInfo();
+    }
+  }, [fetchTeamInfo, members, userId]);
 
   useEffect(() => {
     if (userId) {
@@ -27,7 +35,7 @@ const UserProfileView = ({
   }, [userId, getProfileShoutouts]);
   return (
     <UserProfile
-      user={(userInfo && userInfo[0]) || user}
+      user={(userInfo && userInfo[0]) || (!userId && user)}
       shoutouts={userShoutouts || shoutouts}
       fetching={fetching}
       message={message}
@@ -44,5 +52,5 @@ export default connect(
     message: state.shoutouts.error,
     members: state.team.members,
   }),
-  { getProfileShoutouts }
+  { getProfileShoutouts, fetchTeamInfo }
 )(UserProfileView);

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import moment from 'moment';
-import { ShoutoutsContainer, Title, CardContainer } from './shoutouts.styles';
-import { getProfileShoutouts } from '../../actions/shoutouts';
+import { ShoutoutsContainer, Title, CardContainer, SubTitle } from './shoutouts.styles';
+import { getShoutoutsFeed } from '../../actions/shoutouts';
 import Loader from '../Loader';
 import ShoutoutCard from '../ShoutoutCard/ShoutoutCard';
 import DisplayCard from '../Cards/DisplayCard';
@@ -10,16 +10,15 @@ import bravoParty from '../../assets/bravo-party.svg';
 
 const shoutoutMargin = '20px auto 15px 200px';
 
-const Shoutouts = ({ shoutouts, fetching, message, getProfileShoutouts }) => {
+const Shoutouts = ({ shoutouts, fetching, message, getShoutoutsFeed }) => {
   useEffect(() => {
-    if (!shoutouts) {
-      getProfileShoutouts();
-    }
-  }, [shoutouts, getProfileShoutouts]);
+    getShoutoutsFeed();
+  }, [getShoutoutsFeed]);
 
   return (
     <ShoutoutsContainer>
-      <Title>Shoutouts</Title>
+      <Title>Shoutouts Feed</Title>
+      <SubTitle>Catch up on the most recent shoutouts.</SubTitle>
       <CardContainer>
         {fetching && <Loader />}
         {shoutouts &&
@@ -46,9 +45,9 @@ const Shoutouts = ({ shoutouts, fetching, message, getProfileShoutouts }) => {
 
 export default connect(
   state => ({
-    shoutouts: state.shoutouts.profileShoutouts,
+    shoutouts: state.shoutouts.shoutoutsFeed,
     fetching: state.shoutouts.fetching,
     message: state.shoutouts.error,
   }),
-  { getProfileShoutouts }
+  { getShoutoutsFeed }
 )(Shoutouts);

@@ -330,10 +330,6 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     background-color: ${Colors.light};
     height: 100%;
-
-    @media(max-width: 980px) {
-      padding: 0 10px;
-    }
   }
   #root {
     background: #F9FBFD;

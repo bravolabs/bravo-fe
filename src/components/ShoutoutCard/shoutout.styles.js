@@ -77,7 +77,7 @@ export const Emoji = styled.img`
 export const Time = styled.div`
   margin: auto;
   margin-right: 0;
-  width: 80px;
+  width: 100px;
   height: 2rem;
   font-weight: 300;
   font-size: 1.4rem;
