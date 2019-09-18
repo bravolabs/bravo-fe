@@ -8,7 +8,7 @@ const MobileAvatar = ({ avatar, userId, name, link }) => {
   return (
     <Link to={link}>
       <MobileAvatarContainer>
-        <Avatar avatar={avatar} userId={userId} />
+        <Avatar avatar={avatar} seed={name} />
         <ComponentTitle>{name}</ComponentTitle>
         <ExtraInfo>View Profile</ExtraInfo>
       </MobileAvatarContainer>
