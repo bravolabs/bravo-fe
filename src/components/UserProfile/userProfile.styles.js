@@ -5,6 +5,9 @@ import ShapeStyles from '../../styling/variables/ShapeStyles';
 
 export const ProfileHeader = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
   position: relative;
   max-width: 900px;
   width: 100%;
@@ -14,8 +17,6 @@ export const ProfileHeader = styled.div`
 `;
 
 export const ProfileNavigation = styled.nav`
-  position: absolute;
-  bottom: 0;
   width: auto;
   display: flex;
   justify-content: flex-start;
