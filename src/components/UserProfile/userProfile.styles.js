@@ -18,6 +18,23 @@ export const ProfileHeader = styled.div`
   @media (max-width: ${Breakpoints.medium}px) {
     height: 24rem;
   }
+
+  @media (max-width: ${Breakpoints.small}px) {
+    justify-content: center;
+    padding-left: 0;
+    align-items: center;
+
+    .user {
+      flex-direction: column;
+      margin: 0;
+      align-items: center;
+
+      > *:first-child {
+        margin: 0;
+        margin-bottom: 8px;
+      }
+    }
+  }
 `;
 
 export const ProfileNavigation = styled.nav`
