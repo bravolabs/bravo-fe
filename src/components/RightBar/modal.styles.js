@@ -23,5 +23,5 @@ export const TextContainer = styled.div`
   width: 100%;
   background-color: lightgray;
   padding: 20px;
-  line-height: 2;
+  line-height: 1.7;
 `;
