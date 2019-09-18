@@ -22,19 +22,15 @@ export const ProfileNavigation = styled.nav`
 `;
 
 export const ShoutoutsButton = styled.div`
-  position: absolute;
   text-align: center;
   align-items: center;
-  bottom: 0px;
   width: 180px;
   height: 4rem;
   font-size: 24px;
   line-height: 29px;
+  margin-right: 120px;
   color: ${colors.brand};
   border-bottom: ${props => (props.active ? `4px solid ${colors.brand}` : 'none')};
-  &:last-of-type {
-    left: 310px;
-  }
   cursor: pointer;
 `;
 
