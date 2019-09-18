@@ -58,7 +58,7 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
         ...prevState,
         navSticky: true,
       }));
-    } else if (state.navSticky) {
+    } else {
       setState(prevState => ({
         ...prevState,
         navSticky: false,
@@ -82,7 +82,7 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
           alt={user && user.name}
           name={user && user.name}
         />
-        <ProfileNavigation ref={navRef}>
+        <ProfileNavigation ref={navRef} className={state.navSticky && 'sticky'}>
           <ShoutoutsButton
             active={state.active === 'given' ? true : false}
             onClick={() => handleClick('given')}>
