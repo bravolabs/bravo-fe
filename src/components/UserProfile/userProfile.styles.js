@@ -16,6 +16,9 @@ export const ProfileNavigation = styled.nav`
   position: absolute;
   bottom: 0;
   width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
 `;
 
 export const ShoutoutsButton = styled.div`
