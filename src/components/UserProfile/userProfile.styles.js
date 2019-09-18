@@ -46,6 +46,8 @@ export const ProfileNavigation = styled.nav`
   align-items: flex-end;
 
   @media (max-width: ${Breakpoints.small}px) {
+    position: sticky;
+    top: 0;
     width: 100vw;
     height: 6.2rem;
     background-color: ${colors.white};
@@ -60,13 +62,6 @@ export const ProfileNavigation = styled.nav`
 
     > * {
       flex: 0 0 auto;
-    }
-
-    &.sticky {
-      position: fixed;
-      left: 0;
-      top: 0;
-      z-index: 100;
     }
   }
 `;

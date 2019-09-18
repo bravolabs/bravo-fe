@@ -13,7 +13,6 @@ export const MainContentContainer = styled.div`
 
   @media (max-width: ${Breakpoints.medium}px) {
     max-width: 100vw;
-    overflow-x: hidden;
     padding: 0;
     left: 0;
     right: 0;
