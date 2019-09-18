@@ -25,6 +25,7 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
   const [state, setState] = useState({
     active: 'given',
     shoutouts: initShoutouts,
+    navSticky: false,
   });
 
   const handleClick = action => {
@@ -51,6 +52,8 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
     }));
   }, [shoutouts, active, name]);
 
+  const navigationRef = React.createRef();
+
   return (
     <>
       <ProfileHeader>
@@ -60,7 +63,7 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
           alt={user && user.name}
           name={user && user.name}
         />
-        <ProfileNavigation>
+        <ProfileNavigation ref={navigationRef}>
           <ShoutoutsButton
             active={state.active === 'given' ? true : false}
             onClick={() => handleClick('given')}>
