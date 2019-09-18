@@ -26,7 +26,7 @@ export const ProfileNavigation = styled.nav`
     bottom: 0;
     width: 100vw;
     left: 0%;
-    padding-top: 16px;
+    height: 6.2rem;
     background-color: ${colors.white};
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -55,6 +55,15 @@ export const ShoutoutsButton = styled.div`
   color: ${colors.brand};
   border-bottom: ${props => (props.active ? `4px solid ${colors.brand}` : 'none')};
   cursor: pointer;
+
+  @media (max-width: ${Breakpoints.small}px) {
+    margin-right: 80px;
+    border-bottom: none;
+    border-top: ${props => (props.active ? `4px solid ${colors.brand}` : 'none')};
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export const Emoji = styled.img`
