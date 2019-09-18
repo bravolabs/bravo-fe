@@ -13,6 +13,9 @@ export const ProfileHeader = styled.div`
 `;
 
 export const ProfileNavigation = styled.nav`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 `;
 
 export const ShoutoutsButton = styled.div`
