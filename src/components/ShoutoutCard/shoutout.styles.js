@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Card } from '../../styling/atoms/Card';
 import { BodyText } from '../../styling/atoms/Fonts';
+import Breakpoints from '../../styling/variables/Breakpoints';
 
 export const ShoutoutCardContainer = styled(Card)`
   position: relative;
@@ -15,6 +16,14 @@ export const ShoutoutCardContainer = styled(Card)`
   background-color: white;
   border-radius: 8px;
   cursor: pointer;
+
+  @media (max-width: ${Breakpoints.medium}px) {
+    width: auto;
+    padding: 24px;
+    min-height: initial;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
 `;
 
 export const ViewContainer = styled.div`
@@ -66,12 +75,42 @@ export const AvatarsContainer = styled.div`
   display: flex;
   width: 100%;
   height: 4rem;
+
+  @media (max-width: ${Breakpoints.medium}px) {
+    position: relative;
+    height: initial;
+    justify-content: space-between;
+    .user {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      max-width: 40%;
+      > img {
+        margin: 0;
+        margin-bottom: 8px;
+      }
+      > h3 {
+        text-align: center;
+        height: auto;
+        margin: 0;
+        font-weight: 600;
+      }
+    }
+  }
 `;
 
 export const Emoji = styled.img`
   width: 20px;
   height: 20px;
   margin: auto 24px;
+
+  @media (max-width: ${Breakpoints.medium}px) {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 `;
 
 export const Time = styled.div`
@@ -83,11 +122,31 @@ export const Time = styled.div`
   font-size: 1.4rem;
   line-height: 1.6rem;
   color: rgba(0, 0, 0, 0.652);
+
+  &.mobile-time {
+    display: none;
+  }
+
+  @media (max-width: ${Breakpoints.medium}px) {
+    &.mobile-time {
+      display: initial;
+      float: right;
+      width: auto;
+    }
+    &.time {
+      display: none;
+    }
+  }
 `;
 
 export const ShoutoutText = styled(BodyText)`
-  margin-top: 1.5rem;
+  margin-top: 1.6rem;
   width: 100%;
   height: 8rem;
   line-height: 2.2rem;
+
+  @media (max-width: ${Breakpoints.medium}px) {
+    height: auto;
+    margin-bottom: 2.4rem;
+  }
 `;
