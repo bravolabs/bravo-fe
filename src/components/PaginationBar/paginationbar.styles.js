@@ -25,4 +25,7 @@ export const Container = styled.div`
     font-weight: 300;
     color: #4265ed;
   }
+  button {
+    width: 35%;
+  }
 `;
