@@ -3,7 +3,13 @@ import moment from 'moment';
 
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
 import User from '../../components/User';
-import { ProfileHeader, ProfileBody, ShoutoutsButton, Emoji } from './userProfile.styles';
+import {
+  ProfileHeader,
+  ProfileNavigation,
+  ProfileBody,
+  ShoutoutsButton,
+  Emoji,
+} from './userProfile.styles';
 import Loader from '../Loader';
 import DisplayCard from '../Cards/DisplayCard';
 import bravoParty from '../../assets/bravo-party.svg';
@@ -54,18 +60,20 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
           alt={user && user.name}
           name={user && user.name}
         />
-        <ShoutoutsButton
-          active={state.active === 'given' ? true : false}
-          onClick={() => handleClick('given')}>
-          <Emoji src={confetti} alt="given" />
-          Given
-        </ShoutoutsButton>
-        <ShoutoutsButton
-          active={state.active === 'received' ? true : false}
-          onClick={() => handleClick('received')}>
-          <Emoji src={confetti} alt="received" />
-          Received
-        </ShoutoutsButton>
+        <ProfileNavigation>
+          <ShoutoutsButton
+            active={state.active === 'given' ? true : false}
+            onClick={() => handleClick('given')}>
+            <Emoji src={confetti} alt="given" />
+            Given
+          </ShoutoutsButton>
+          <ShoutoutsButton
+            active={state.active === 'received' ? true : false}
+            onClick={() => handleClick('received')}>
+            <Emoji src={confetti} alt="received" />
+            Received
+          </ShoutoutsButton>
+        </ProfileNavigation>
       </ProfileHeader>
       <ProfileBody>
         {fetching && <Loader />}
