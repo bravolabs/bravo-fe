@@ -53,7 +53,7 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
   }, [shoutouts, active, name]);
 
   const handleScroll = e => {
-    if (window.pageYOffset >= navRef.current.scrollTop) {
+    if (window.pageYOffset >= navRef.current.offsetTop + navRef.current.offsetHeight) {
       setState(prevState => ({
         ...prevState,
         navSticky: true,
