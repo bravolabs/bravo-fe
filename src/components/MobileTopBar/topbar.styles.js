@@ -36,7 +36,7 @@ export const ItemContainer = styled.div`
   }
 
   &.active {
-    > svg > g{
+    > svg {
       fill: ${UIColors.brand};
     }
   }

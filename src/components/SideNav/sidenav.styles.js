@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom';
 import colors from '../../styling/variables/UIColors';
 import Breakpoints from '../../styling/variables/Breakpoints';
 import ShapeStyles from '../../styling/variables/ShapeStyles';
+import FontSizes from '../../styling/variables/FontSizes';
+import FontColors from '../../styling/variables/FontColors';
 
 export const SideNavContainer = styled.div`
   background-color: ${colors.brand};
@@ -103,8 +105,11 @@ export const NavIcon = styled(NavLink)`
     }
   }
 
-  > h3 {
-    display: none;
+  > span {
+    font-size: 1.4rem;
+    color: ${colors.light};
+    font-weight: 400;
+    margin-top: 8px;
   }
 
   @media (max-width: ${Breakpoints.medium}px) {
@@ -134,8 +139,10 @@ export const NavIcon = styled(NavLink)`
       box-shadow: none;
     }
 
-    > h3 {
-      display: initial;
+    > span {
+      font-size: ${FontSizes.Medium};
+      color: ${FontColors.Dark};
+      margin: none;
     }
   }
 `;

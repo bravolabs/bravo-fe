@@ -12,12 +12,6 @@ export const fetchTeamInfo = () => async dispatch => {
       `/api/organizations/${localstorage.get().org_id}/users`
     );
     dispatch({ type: TEAM_FETCH_SUCCESS, payload: data.data || data });
-    const localStore = localstorage.get();
-    const newStore = {
-      ...localStore,
-      members: data.data || data,
-    };
-    localstorage.set(newStore);
   } catch (error) {
     if (error.response) {
       dispatch({ type: TEAM_FETCH_FAIL, payload: error.response.data.message });
