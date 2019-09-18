@@ -4,6 +4,7 @@ import moment from 'moment';
 import { ShoutoutsContainer, Title, CardContainer, SubTitle } from './shoutouts.styles';
 import { getShoutoutsFeed } from '../../actions/shoutouts';
 import Loader from '../Loader';
+import PaginationBar from '../PaginationBar';
 import ShoutoutCard from '../ShoutoutCard/ShoutoutCard';
 import DisplayCard from '../Cards/DisplayCard';
 import bravoParty from '../../assets/bravo-party.svg';
@@ -19,6 +20,7 @@ const Shoutouts = ({ shoutouts, fetching, message, getShoutoutsFeed }) => {
     <ShoutoutsContainer>
       <Title>Shoutouts Feed</Title>
       <SubTitle>Catch up on the most recent shoutouts.</SubTitle>
+      {shoutouts && <PaginationBar fnPrevious={() => null} fnNext={() => null} currentPage="1" />}
       <CardContainer>
         {fetching && <Loader />}
         {shoutouts &&
@@ -39,6 +41,7 @@ const Shoutouts = ({ shoutouts, fetching, message, getShoutoutsFeed }) => {
           <DisplayCard header={<img src={bravoParty} alt="bravo party" />} text={message} />
         )}
       </CardContainer>
+      {shoutouts && <PaginationBar fnPrevious={() => null} fnNext={() => null} currentPage="1" />}
     </ShoutoutsContainer>
   );
 };
