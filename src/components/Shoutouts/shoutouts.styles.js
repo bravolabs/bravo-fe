@@ -25,6 +25,11 @@ export const Title = styled(PageTitle)`
   line-height: 4.8rem;
   color: #36464f;
   margin-bottom: 2rem;
+
+  @media (max-width: ${Breakpoints.medium}px) {
+    font-size: 4rem;
+    font-weight: 300;
+  }
 `;
 
 export const SubTitle = styled(PageTitle)`
