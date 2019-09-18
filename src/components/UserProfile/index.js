@@ -54,6 +54,20 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
 
   const navigationRef = React.createRef();
 
+  const handleScroll = e => {
+    if (window.pageYOffset >= navigationRef.current.offsetTop) {
+      setState(prevState => ({
+        ...prevState,
+        navSticky: true,
+      }));
+    } else if (state.navSticky) {
+      setState(prevState => ({
+        ...prevState,
+        navSticky: false,
+      }));
+    }
+  };
+
   return (
     <>
       <ProfileHeader>
