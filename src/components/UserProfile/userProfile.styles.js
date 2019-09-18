@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import colors from '../../styling/variables/UIColors';
 import Breakpoints from '../../styling/variables/Breakpoints';
+import ShapeStyles from '../../styling/variables/ShapeStyles';
 
 export const ProfileHeader = styled.div`
   display: flex;
@@ -25,10 +26,12 @@ export const ProfileNavigation = styled.nav`
     bottom: 0;
     width: 100vw;
     left: 0%;
+    background-color: ${colors.white};
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
+    box-shadow: ${ShapeStyles.elevation.regularReverse};
 
     &::-webkit-scrollbar {
       display: none;
