@@ -9,7 +9,6 @@ const Avatar = props => {
     <DefaultAvatar className={`avatar default-avatar ${props.className}`} ColorSeed={seed} />
   ) : (
     <img
-      className="avatar user-avatar"
       className={`avatar user-avatar ${props.className}`}
       src={`${avatar}?d=404`}
       alt={name}
