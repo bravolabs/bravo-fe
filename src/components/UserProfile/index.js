@@ -21,11 +21,10 @@ const shoutoutMargin = '20px auto 15px 200px';
 const UserProfile = ({ user, shoutouts, fetching, message }) => {
   const initShoutouts =
     shoutouts && shoutouts.filter(item => item.giverName.toLowerCase() === user.name.toLowerCase());
-  const [ navRef, setNavRef ] = useState(React.createRef());
+
   const [state, setState] = useState({
     active: 'given',
     shoutouts: initShoutouts,
-    navSticky: false,
   });
 
   const handleClick = action => {
@@ -52,27 +51,6 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
     }));
   }, [shoutouts, active, name]);
 
-  const handleScroll = e => {
-    if (window.pageYOffset >= navRef.current.offsetTop + navRef.current.offsetHeight) {
-      setState(prevState => ({
-        ...prevState,
-        navSticky: true,
-      }));
-    } else {
-      setState(prevState => ({
-        ...prevState,
-        navSticky: false,
-      }));
-    }
-  };
-
-  // OnMount and OnUnmount
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-
   return (
     <>
       <ProfileHeader>
@@ -82,7 +60,7 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
           alt={user && user.name}
           name={user && user.name}
         />
-        <ProfileNavigation ref={navRef} className={state.navSticky && 'sticky'}>
+        <ProfileNavigation>
           <ShoutoutsButton
             active={state.active === 'given' ? true : false}
             onClick={() => handleClick('given')}>
