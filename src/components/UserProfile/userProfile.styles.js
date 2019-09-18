@@ -13,7 +13,6 @@ export const ProfileHeader = styled.div`
   width: 100%;
   height: 30vh;
   padding-left: 50px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
   background-color: ${colors.white};
 
   @media (max-width: ${Breakpoints.medium}px) {
@@ -43,9 +42,11 @@ export const ProfileNavigation = styled.nav`
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
+  box-shadow: ${ShapeStyles.elevation.regular};
 
   @media (max-width: ${Breakpoints.small}px) {
     position: sticky;
+    z-index: 100;
     top: 0;
     width: 100vw;
     height: 6.2rem;
