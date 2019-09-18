@@ -158,12 +158,12 @@ export const AvatarContainer = styled.div`
 `;
 
 export const MobileAvatarContainer = styled.header`
-  display: none;
-  margin-top: 40px;
-  margin-bottom: 42px;
+  visibility: hidden;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  width: 0;
+  height: 0;
 
   > .avatar {
     border-radius: 50%;
@@ -178,6 +178,10 @@ export const MobileAvatarContainer = styled.header`
   }
 
   @media (max-width: ${Breakpoints.medium}px) {
+    margin-top: 40px;
+    margin-bottom: 42px;
+    width: initial;
+    height: initial;
     display: flex;
   }
 `;
