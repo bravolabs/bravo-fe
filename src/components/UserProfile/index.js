@@ -60,21 +60,21 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
           alt={user && user.name}
           name={user && user.name}
         />
-        <ProfileNavigation>
-          <ShoutoutsButton
-            active={state.active === 'given' ? true : false}
-            onClick={() => handleClick('given')}>
-            <Emoji src={confetti} alt="given" />
-            Given
-          </ShoutoutsButton>
-          <ShoutoutsButton
-            active={state.active === 'received' ? true : false}
-            onClick={() => handleClick('received')}>
-            <Emoji src={confetti} alt="received" />
-            Received
-          </ShoutoutsButton>
-        </ProfileNavigation>
       </ProfileHeader>
+      <ProfileNavigation>
+        <ShoutoutsButton
+          active={state.active === 'given' ? true : false}
+          onClick={() => handleClick('given')}>
+          <Emoji src={confetti} alt="given" />
+          Given
+        </ShoutoutsButton>
+        <ShoutoutsButton
+          active={state.active === 'received' ? true : false}
+          onClick={() => handleClick('received')}>
+          <Emoji src={confetti} alt="received" />
+          Received
+        </ShoutoutsButton>
+      </ProfileNavigation>
       <ProfileBody>
         {fetching && <Loader />}
         {state.shoutouts &&
