@@ -26,6 +26,7 @@ export const ProfileHeader = styled.div`
     align-items: center;
 
     .user {
+      margin-top: 16px;
       flex-direction: column;
       margin: 0;
       align-items: center;
@@ -45,17 +46,13 @@ export const ProfileNavigation = styled.nav`
   align-items: flex-end;
 
   @media (max-width: ${Breakpoints.small}px) {
-    position: fixed;
-    bottom: 0;
     width: 100vw;
-    left: 0%;
     height: 6.2rem;
     background-color: ${colors.white};
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
-    box-shadow: ${ShapeStyles.elevation.regularReverse};
 
     &::-webkit-scrollbar {
       display: none;
@@ -81,8 +78,6 @@ export const ShoutoutsButton = styled.div`
 
   @media (max-width: ${Breakpoints.small}px) {
     margin-right: 80px;
-    border-bottom: none;
-    border-top: ${props => (props.active ? `4px solid ${colors.brand}` : 'none')};
     height: 100%;
     display: flex;
     justify-content: center;
