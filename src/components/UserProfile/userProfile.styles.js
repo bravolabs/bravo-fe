@@ -12,6 +12,9 @@ export const ProfileHeader = styled.div`
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
 `;
 
+export const ProfileNavigation = styled.nav`
+`;
+
 export const ShoutoutsButton = styled.div`
   position: absolute;
   text-align: center;
