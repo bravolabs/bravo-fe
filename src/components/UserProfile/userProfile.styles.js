@@ -14,6 +14,10 @@ export const ProfileHeader = styled.div`
   height: 30vh;
   padding-left: 50px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+
+  @media (max-width: ${Breakpoints.medium}px) {
+    height: 24rem;
+  }
 `;
 
 export const ProfileNavigation = styled.nav`
