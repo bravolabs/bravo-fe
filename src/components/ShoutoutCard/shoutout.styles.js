@@ -131,6 +131,7 @@ export const Time = styled.div`
     &.mobile-time {
       display: initial;
       float: right;
+      width: auto;
     }
     &.time {
       display: none;
