@@ -68,6 +68,13 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
     }
   };
 
+  // OnMount and OnUnmount
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+
   return (
     <>
       <ProfileHeader>
@@ -77,7 +84,7 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
           alt={user && user.name}
           name={user && user.name}
         />
-        <ProfileNavigation ref={navigationRef}>
+        <ProfileNavigation innerRef={navigationRef}>
           <ShoutoutsButton
             active={state.active === 'given' ? true : false}
             onClick={() => handleClick('given')}>
