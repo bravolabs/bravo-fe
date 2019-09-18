@@ -11,8 +11,9 @@ export const ProfileHeader = styled.div`
   position: relative;
   max-width: 900px;
   width: 100%;
-  height: 30vh;
+  padding-bottom: 32px;
   padding-left: 50px;
+  box-shadow: ${ShapeStyles.elevation.regular};
   background-color: ${colors.white};
 
   @media (max-width: ${Breakpoints.medium}px) {
@@ -38,19 +39,21 @@ export const ProfileHeader = styled.div`
 `;
 
 export const ProfileNavigation = styled.nav`
-  width: auto;
+  z-index: 100;
+  padding-left: 50px;
+  max-width: 900px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
+  background-color: ${colors.white};
   box-shadow: ${ShapeStyles.elevation.regular};
 
   @media (max-width: ${Breakpoints.small}px) {
+    padding-left: 0;
     position: sticky;
-    z-index: 100;
     top: 0;
     width: 100vw;
     height: 6.2rem;
-    background-color: ${colors.white};
     flex-wrap: nowrap;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
