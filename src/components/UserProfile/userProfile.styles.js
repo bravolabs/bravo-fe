@@ -26,6 +26,7 @@ export const ProfileNavigation = styled.nav`
     bottom: 0;
     width: 100vw;
     left: 0%;
+    padding-top: 16px;
     background-color: ${colors.white};
     flex-wrap: nowrap;
     overflow-x: auto;
