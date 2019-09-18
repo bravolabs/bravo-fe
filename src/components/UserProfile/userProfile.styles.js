@@ -21,14 +21,14 @@ export const ProfileHeader = styled.div`
   }
 
   @media (max-width: ${Breakpoints.small}px) {
-    justify-content: center;
     padding-left: 0;
     align-items: center;
+    height: 28rem;
 
     .user {
-      margin-top: 16px;
       flex-direction: column;
       margin: 0;
+      margin-top: 16px;
       align-items: center;
 
       > *:first-child {
