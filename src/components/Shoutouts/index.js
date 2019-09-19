@@ -12,9 +12,10 @@ import bravoParty from '../../assets/bravo-party.svg';
 const shoutoutMargin = '20px auto 15px 200px';
 
 const Shoutouts = ({ shoutouts, fetching, message, getShoutoutsFeed, previous, next }) => {
+  const currentPage = (previous && previous + 1) || (next && next - 1) || 1;
   useEffect(() => {
-    getShoutoutsFeed();
-  }, [getShoutoutsFeed]);
+    getShoutoutsFeed(currentPage);
+  }, [getShoutoutsFeed, currentPage]);
 
   return (
     <ShoutoutsContainer>
