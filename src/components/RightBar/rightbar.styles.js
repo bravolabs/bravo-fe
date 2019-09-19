@@ -52,6 +52,7 @@ export const TextContent = styled.div`
   border-radius: 0px 0px 8px 8px;
 
   p {
+    margin-top: 10px;
     line-height: 1.8;
   }
 `;
