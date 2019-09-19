@@ -11,7 +11,7 @@ import bravoParty from '../../assets/bravo-party.svg';
 
 const shoutoutMargin = '20px auto 15px 200px';
 
-const Shoutouts = ({ shoutouts, fetching, message, getShoutoutsFeed }) => {
+const Shoutouts = ({ shoutouts, fetching, message, getShoutoutsFeed, previous, next }) => {
   useEffect(() => {
     getShoutoutsFeed();
   }, [getShoutoutsFeed]);
@@ -48,7 +48,9 @@ const Shoutouts = ({ shoutouts, fetching, message, getShoutoutsFeed }) => {
 
 export default connect(
   state => ({
-    shoutouts: state.shoutouts.shoutoutsFeed,
+    shoutouts: state.shoutouts.shoutoutsFeed.data,
+    previous: state.shoutouts.shoutoutsFeed.previousPage,
+    next: state.shoutouts.shoutoutsFeed.nextPage,
     fetching: state.shoutouts.fetching,
     message: state.shoutouts.error,
   }),
