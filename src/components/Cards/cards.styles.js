@@ -150,6 +150,10 @@ export const MemberCardValue = styled.p`
   line-height: 19px;
 `;
 
+export const LeaderboardValue = styled(MemberCardValue)`
+
+`;
+
 export const ViewProfile = styled(BaseButton)`
   display: none;
   position: absolute;
