@@ -1,6 +1,6 @@
 import React from 'react';
 import { RightBarContainer, RightBarCard, TextContent } from './rightbar.styles';
-import getStarted from '../../assets/get-started.svg';
+import getStarted from '../../assets/get-started1.png';
 import ShapeStyles from '../../styling/variables/ShapeStyles';
 import { BodyText } from '../../styling/atoms/Fonts';
 import MiniRightCard from './MiniRightCard';
@@ -31,11 +31,14 @@ const RightBar = () => (
     <RightBarCard shadow={ShapeStyles.elevation.normal}>
       <header>
         <img src={getStarted} alt="get started" />
+        <p>Let's Get started</p>
       </header>
       <TextContent>
-        <p>1. Connect Slack</p>
-        <p>2. Receive Shoutout</p>
-        <p>3. View Shoutout</p>
+        <p>
+          1. Type <span>/bravo</span> in slack
+        </p>
+        <p>2. Send a Shout out</p>
+        <p>3. Review your shoutouts</p>
       </TextContent>
     </RightBarCard>
 
