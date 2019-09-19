@@ -30,6 +30,7 @@ export const RightBarCard = styled(Card)`
   width: 292px;
   min-height: 50px;
   margin-bottom: 50px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.06);
 
   header {
     background-color: ${colors.brand};
