@@ -151,7 +151,8 @@ export const MemberCardValue = styled.p`
 `;
 
 export const LeaderboardValue = styled(MemberCardValue)`
-
+  display: flex;
+  align-items: center;
 `;
 
 export const ViewProfile = styled(BaseButton)`
