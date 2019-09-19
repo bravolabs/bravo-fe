@@ -19,6 +19,7 @@ export const Container = styled.div`
     align-items: center;
     box-sizing: border-box;
     height: 5rem;
+    border-radius: 2.5rem;
     border: none;
     outline: none;
     font-size: 2rem;
