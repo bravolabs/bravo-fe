@@ -21,7 +21,14 @@ const Shoutouts = ({ shoutouts, fetching, message, getShoutoutsFeed, previous, n
     <ShoutoutsContainer>
       <Title>Shoutouts Feed</Title>
       <SubTitle>Catch up on the most recent shoutouts.</SubTitle>
-      {shoutouts && <PaginationBar fnPrevious={() => null} fnNext={() => null} currentPage="1" />}
+      {shoutouts && (
+        <PaginationBar
+          moveToPage={getShoutoutsFeed}
+          previous={previous}
+          next={next}
+          current={currentPage}
+        />
+      )}
       <CardContainer>
         {fetching && <Loader />}
         {shoutouts &&
@@ -42,7 +49,14 @@ const Shoutouts = ({ shoutouts, fetching, message, getShoutoutsFeed, previous, n
           <DisplayCard header={<img src={bravoParty} alt="bravo party" />} text={message} />
         )}
       </CardContainer>
-      {shoutouts && <PaginationBar fnPrevious={() => null} fnNext={() => null} currentPage="1" />}
+      {shoutouts && (
+        <PaginationBar
+          moveToPage={getShoutoutsFeed}
+          previous={previous}
+          next={next}
+          current={currentPage}
+        />
+      )}
     </ShoutoutsContainer>
   );
 };
