@@ -86,6 +86,7 @@ export const MediumCard = styled(Card)`
     font-size: 20px;
     font-weight: 50;
     stroke-width: 1.3;
+    color: #9e9696;
   }
 
   &:hover {
