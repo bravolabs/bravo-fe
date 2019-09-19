@@ -4,6 +4,7 @@ import ShapeStyles from '../../styling/variables/ShapeStyles';
 import { MediumCard } from './rightbar.styles';
 import { ModalContainer, Imagecontainer, TextContainer } from './modal.styles';
 import { ComponentTitle, BodyText } from '../../styling/atoms/Fonts';
+import checked from '../../assets/checked.svg';
 
 Modal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.6)';
 const customStyles = {
@@ -26,7 +27,7 @@ const MiniRightCard = ({ image, text, title }) => {
   return (
     <>
       <MediumCard onClick={toggleModal} shadow={ShapeStyles.elevation.normal}>
-        <input type="checkbox" checked readOnly />
+        <img src={checked} alt="checked" />
         <p>{title}</p>
       </MediumCard>
       <Modal
