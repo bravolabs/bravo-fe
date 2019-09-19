@@ -6,6 +6,7 @@ export const ModalContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 export const Imagecontainer = styled.div`
   width: 100%;
   height: 60%;
