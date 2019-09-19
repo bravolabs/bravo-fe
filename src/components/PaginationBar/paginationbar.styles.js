@@ -28,6 +28,9 @@ export const Container = styled.div`
   }
   button {
     width: 35%;
+    &:disabled {
+      color: #e0e0e0;
+    }
   }
   span {
     width: 20%;
