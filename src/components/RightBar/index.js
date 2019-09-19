@@ -12,17 +12,17 @@ const descriptions = [
   {
     image: group,
     title: 'What is Bravo?',
-    text: `Never let the acknowledgement of your good work get lost in the shuffle again.`,
+    text: `Bravo let's you give public shoutouts to your collegues for their hard work and keeps track of your own.`,
   },
   {
     image: shoutout,
-    title: 'What are shoutouts?',
-    text: `Shoutouts are acknowledgements you send to or receive from a collegue  `,
+    title: 'What are bravos?',
+    text: `Bravos are points users get when they are acknowledged for good work. You can see how many bravos each of your teammates have in your team board.`,
   },
   {
     image: howto,
-    title: 'How do I get more Bravos?',
-    text: `Anyone in your organization or slack workspace can give you a Bravo.`,
+    title: 'How do I get bravos?',
+    text: `You currently get 10b for every shoutout someone gives to you. You also get bravos when someone comments (2b) or reacts (1b) to that shoutout.`,
   },
 ];
 
