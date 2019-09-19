@@ -36,6 +36,7 @@ export const RightBarCard = styled(Card)`
   header {
     background-color: #6884f1;
     border-radius: 8px 8px 0 0;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.06);
 
     img {
       border-radius: 8px 8px 0 0;
