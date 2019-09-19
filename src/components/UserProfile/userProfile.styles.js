@@ -17,12 +17,12 @@ export const ProfileHeader = styled.div`
   background-color: ${colors.white};
 
   @media (max-width: ${Breakpoints.medium}px) {
-    height: 24rem;
+    height: initial;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 
   @media (max-width: ${Breakpoints.small}px) {
-    height: initial;
-    padding: 16px 0;
     padding-left: 0;
     align-items: center;
 
