@@ -2,6 +2,7 @@ import React from 'react';
 import { MemberCardContainer, MemberCardValue, Position } from './cards.styles';
 import User from '../User';
 import placeholder from '../../assets/placeholder.png';
+import BravoDollar from '../../assets/bravo-dollar.svg';
 
 const MemberCard = ({ id, name, avatar, wallet, index }) => (
   <MemberCardContainer>
