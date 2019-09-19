@@ -18,6 +18,12 @@ export const RightBarContainer = styled.div`
   section {
     display: flex;
     flex-direction: column;
+
+    .learn {
+      color: #000000;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
   }
 
   @media (max-width: ${Breakpoints.medium}px) {
@@ -29,10 +35,11 @@ export const RightBarCard = styled(Card)`
   padding: 0px;
   width: 292px;
   min-height: 70px;
-  height: 280px;
-  margin-bottom: 50px;
+  height: 240px;
+  margin-bottom: 80px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.06);
   border-radius: 0px 0px 10px 10px;
+  background: #ffffff;
 
   header {
     background-color: #6884f1;
@@ -46,14 +53,16 @@ export const RightBarCard = styled(Card)`
 `;
 
 export const TextContent = styled.div`
-  height: 100px;
+  height: 150px;
   padding: 10px;
   background: #ffffff;
-  border-radius: 0px 0px 8px 8px;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.06);
 
   p {
     margin-top: 10px;
     line-height: 1.8;
+    margin-bottom: 0;
   }
 `;
 
@@ -69,6 +78,11 @@ export const MediumCard = styled(Card)`
   border-radius: 9.631px;
   box-shadow: 0px 2.8893px 9.631px rgba(0, 0, 0, 0.06);
 
+  img {
+    width: 20px;
+    margin-right: 10px;
+  }
+
   input {
     margin-right: 9px;
     background: transparent;
@@ -80,5 +94,9 @@ export const MediumCard = styled(Card)`
     background-color: #6884f1;
     color: #ffffff;
     font-weight: bold;
+
+    img {
+      fill: #fff;
+    }
   }
 `;
