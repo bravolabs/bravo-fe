@@ -2,10 +2,10 @@ import React from 'react';
 import { SectionContainer, Title } from './commentsection.styles';
 import CommentCard from '../Cards/CommentCard';
 
-const CommentSection = ({ comments }) => {
+const CommentSection = ({ comments, noComments }) => {
   return (
     <SectionContainer>
-      <Title>Comments</Title>
+      <Title>{noComments ? 'No comments for this shoutout' : 'Comments'}</Title>
       {comments &&
         comments.map(comment => (
           <CommentCard
