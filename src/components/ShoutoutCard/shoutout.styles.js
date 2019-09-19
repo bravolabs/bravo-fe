@@ -6,6 +6,7 @@ import colors from '../../styling/variables/UIColors';
 
 export const ShoutoutCardContainer = styled(Card)`
   width: 100%;
+  height: 175px;
   min-height: 200px;
   border-radius: 8px;
   box-shadow: 0px 1.87781px 6.25935px rgba(0, 0, 0, 0.06);
