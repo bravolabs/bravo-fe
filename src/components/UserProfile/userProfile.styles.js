@@ -39,7 +39,7 @@ export const ProfileHeader = styled.div`
 `;
 
 export const ProfileNavigation = styled.nav`
-  z-index: 2;
+  z-index: 0;
   padding-left: 50px;
   max-width: 900px;
   display: flex;
@@ -49,6 +49,7 @@ export const ProfileNavigation = styled.nav`
   box-shadow: ${ShapeStyles.elevation.regular};
 
   @media (max-width: ${Breakpoints.small}px) {
+    z-index: 2;
     padding-left: 0;
     position: sticky;
     top: 0;
