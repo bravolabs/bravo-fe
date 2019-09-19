@@ -28,4 +28,8 @@ export const TextContainer = styled.div`
   p {
     color: #ffffff;
   }
+  h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
 `;
