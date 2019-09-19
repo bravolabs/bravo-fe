@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { ShoutoutUserAvatar, UserContainer, Username } from './user.styles';
 
 const User = ({ id, avatar, name, size }) => {
