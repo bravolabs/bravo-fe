@@ -3,6 +3,7 @@ import Breakpoints from '../../styling/variables/Breakpoints';
 
 export const MainContentContainer = styled.div`
   margin-left: 90px;
+  max-width: 820px;
   display: flex;
   flex-direction: column;
   padding: 32px 12px 0 38px;
