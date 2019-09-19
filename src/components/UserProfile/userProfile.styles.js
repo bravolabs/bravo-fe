@@ -9,11 +9,11 @@ export const ProfileHeader = styled.div`
   background-color: white;
   border-radius: 8px;
   box-shadow: 0px 1.87781px 6.25935px rgba(0, 0, 0, 0.06);
+  margin-top: 32px;
 
   section {
-    padding-left: 40px;
+    padding: 32px 0 0 40px;
     height: 100px;
-    margin-top: 30px;
   }
 
   nav {

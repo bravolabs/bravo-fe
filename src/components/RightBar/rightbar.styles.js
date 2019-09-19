@@ -3,22 +3,19 @@ import { Card } from '../../styling/atoms/Card';
 import colors from '../../styling/variables/UIColors';
 
 export const RightBarContainer = styled.div`
-  position: fixed;
-  top: 0px;
-  right: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 400px;
+  justify-content: center;
+  width: 350px;
   height: 100vh;
-  padding: 140px 30px 0px 30px;
 
   section {
     display: flex;
     flex-direction: column;
   }
 
-  @media (max-width: 1380px) {
+  @media (max-width: 700px) {
     display: none;
   }
 `;
