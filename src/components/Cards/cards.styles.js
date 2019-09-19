@@ -153,6 +153,10 @@ export const MemberCardValue = styled.p`
 export const LeaderboardValue = styled(MemberCardValue)`
   display: flex;
   align-items: center;
+  height: 100%;
+  img {
+    height: 50%;
+  }
 `;
 
 export const ViewProfile = styled(BaseButton)`
