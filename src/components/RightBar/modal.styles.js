@@ -21,7 +21,7 @@ export const Imagecontainer = styled.div`
 export const TextContainer = styled.div`
   height: 40%;
   width: 100%;
-  background-color: lightgray;
+  background-color: #6884f1;
   padding: 20px;
   line-height: 1.7;
 `;
