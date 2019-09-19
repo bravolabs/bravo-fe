@@ -77,6 +77,8 @@ export const MediumCard = styled(Card)`
 
   &:hover {
     cursor: pointer;
-    background-color: lightgray;
+    background-color: #6884f1;
+    color: #ffffff;
+    font-weight: bold;
   }
 `;
