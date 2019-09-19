@@ -11,8 +11,8 @@ const MemberCard = ({ id, name, avatar, wallet, index }) => (
     </Position>
     <User avatar={avatar || placeholder} alt={name} name={name} />
     <LeaderboardValue>
-      <img src={BravoDollar} alt="bravos" />
       {wallet}
+      <img src={BravoDollar} alt="bravos" />
     </LeaderboardValue>
   </MemberCardContainer>
 );
