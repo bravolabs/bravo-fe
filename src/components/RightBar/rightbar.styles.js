@@ -78,15 +78,14 @@ export const MediumCard = styled(Card)`
   border-radius: 9.631px;
   box-shadow: 0px 2.8893px 9.631px rgba(0, 0, 0, 0.06);
 
-  img {
-    width: 20px;
-    margin-right: 10px;
+  p {
+    margin-left: 10px;
   }
 
-  input {
-    margin-right: 9px;
-    background: transparent;
-    border: 0;
+  .check {
+    font-size: 20px;
+    font-weight: 50;
+    stroke-width: 1.3;
   }
 
   &:hover {
@@ -95,8 +94,8 @@ export const MediumCard = styled(Card)`
     color: #ffffff;
     font-weight: bold;
 
-    img {
-      fill: #fff;
+    .check {
+      stroke-width: 2;
     }
   }
 `;
