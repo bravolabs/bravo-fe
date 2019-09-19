@@ -16,7 +16,7 @@ export const RightBarContainer = styled.div`
     flex-direction: column;
   }
 
-  @media (max-width: ${Breakpoints.large}px) {
+  @media (max-width: 995px) {
     display: none;
   }
 `;
