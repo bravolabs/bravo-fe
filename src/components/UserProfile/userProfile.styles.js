@@ -2,41 +2,48 @@ import styled from 'styled-components';
 import colors from '../../styling/variables/UIColors';
 
 export const ProfileHeader = styled.div`
-  display: flex;
   position: relative;
-  max-width: 900px;
   width: 100%;
-  height: 30vh;
-  padding-left: 50px;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  height: 200px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 1.87781px 6.25935px rgba(0, 0, 0, 0.06);
+
+  section {
+    padding-left: 40px;
+    height: 100px;
+    margin-top: 30px;
+  }
+
+  nav {
+    position: absolute;
+    display: flex;
+    bottom: 0px;
+    width: 100%;
+    justify-content: space-around;
+  }
 `;
 
 export const ShoutoutsButton = styled.div`
-  position: absolute;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  bottom: 0px;
-  width: 180px;
-  height: 4rem;
-  font-size: 24px;
-  line-height: 29px;
+  width: 35%;
+  font-size: 2.2rem;
   color: ${colors.brand};
+  padding-bottom: 5px;
   border-bottom: ${props => (props.active ? `4px solid ${colors.brand}` : 'none')};
-  &:last-of-type {
-    left: 310px;
-  }
   cursor: pointer;
 `;
 
 export const Emoji = styled.img`
   width: 20px;
   height: 20px;
-  margin: auto 5px;
+  margin-right: 8px;
 `;
 
 export const ProfileBody = styled.div`
-  margin-top: 40px;
-  max-width: 900px;
+  margin-top: 20px;
   width: 100%;
   height: max-content;
 `;
