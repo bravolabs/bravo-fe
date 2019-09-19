@@ -60,9 +60,16 @@ export const TextContent = styled.div`
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.06);
 
   p {
-    margin-top: 10px;
+    margin-top: 5px;
     line-height: 1.8;
-    margin-bottom: 0;
+    margin-bottom: 5px;
+
+    span {
+      color: red;
+      font-size: 15px;
+      font-weight: 300;
+      background: #f9fbfd;
+    }
   }
 `;
 
