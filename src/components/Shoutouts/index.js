@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import moment from 'moment';
 import { ShoutoutsContainer, Title, CardContainer, SubTitle } from './shoutouts.styles';
 import { getShoutoutsFeed } from '../../actions/shoutouts';
@@ -23,17 +24,20 @@ const Shoutouts = ({ shoutouts, fetching, message, getShoutoutsFeed }) => {
         {fetching && <Loader />}
         {shoutouts &&
           shoutouts.map(shoutout => (
-            <ShoutoutCard
-              id={shoutout.id}
-              margin={shoutoutMargin}
-              praiseGiver={shoutout.giverName}
-              giverAvatar={shoutout.giverAvatar}
-              praiseTaker={shoutout.receiverName}
-              receiverAvatar={shoutout.receiverAvatar}
-              praiseText={shoutout.message}
-              time={moment(shoutout.created_at).fromNow()}
-              key={shoutout.id}
-            />
+            <Link to={`/shoutouts/${shoutout.id}`}>
+              <ShoutoutCard
+                id={shoutout.id}
+                margin={shoutoutMargin}
+                praiseGiver={shoutout.giverName}
+                giverAvatar={shoutout.giverAvatar}
+                praiseTaker={shoutout.receiverName}
+                receiverAvatar={shoutout.receiverAvatar}
+                praiseText={shoutout.message}
+                time={moment(shoutout.created_at).fromNow()}
+                key={shoutout.id}
+                hover
+              />
+            </Link>
           ))}
         {message && (
           <DisplayCard header={<img src={bravoParty} alt="bravo party" />} text={message} />
