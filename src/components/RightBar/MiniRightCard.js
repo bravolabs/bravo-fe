@@ -4,7 +4,8 @@ import ShapeStyles from '../../styling/variables/ShapeStyles';
 import { MediumCard } from './rightbar.styles';
 import { ModalContainer, Imagecontainer, TextContainer } from './modal.styles';
 import { ComponentTitle, BodyText } from '../../styling/atoms/Fonts';
-import checked from '../../assets/checked.svg';
+
+import { FiCheckSquare } from 'react-icons/fi';
 
 Modal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.6)';
 const customStyles = {
@@ -27,7 +28,7 @@ const MiniRightCard = ({ image, text, title }) => {
   return (
     <>
       <MediumCard onClick={toggleModal} shadow={ShapeStyles.elevation.normal}>
-        <img src={checked} alt="checked" />
+        <FiCheckSquare className="check" />
         <p>{title}</p>
       </MediumCard>
       <Modal
