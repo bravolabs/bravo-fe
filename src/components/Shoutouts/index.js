@@ -24,7 +24,7 @@ const Shoutouts = ({ shoutouts, fetching, message, getShoutoutsFeed }) => {
         {fetching && <Loader />}
         {shoutouts &&
           shoutouts.map(shoutout => (
-            <Link to={`/shoutouts/${shoutout.id}`}>
+            <Link key={shoutout.id} to={`/shoutouts/${shoutout.id}`}>
               <ShoutoutCard
                 id={shoutout.id}
                 margin={shoutoutMargin}
@@ -34,7 +34,6 @@ const Shoutouts = ({ shoutouts, fetching, message, getShoutoutsFeed }) => {
                 receiverAvatar={shoutout.receiverAvatar}
                 praiseText={shoutout.message}
                 time={moment(shoutout.created_at).fromNow()}
-                key={shoutout.id}
                 hover
               />
             </Link>
