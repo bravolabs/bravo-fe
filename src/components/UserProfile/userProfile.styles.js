@@ -39,7 +39,7 @@ export const ProfileHeader = styled.div`
 `;
 
 export const ProfileNavigation = styled.nav`
-  z-index: 100;
+  z-index: 2;
   padding-left: 50px;
   max-width: 900px;
   display: flex;
