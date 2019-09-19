@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import colors from '../../styling/variables/UIColors';
+import Breakpoints from '../../styling/variables/Breakpoints';
 
 export const ProfileHeader = styled.div`
   position: relative;
@@ -34,6 +35,12 @@ export const ShoutoutsButton = styled.div`
   padding-bottom: 5px;
   border-bottom: ${props => (props.active ? `4px solid ${colors.brand}` : 'none')};
   cursor: pointer;
+
+  @media (max-width: ${Breakpoints.small}px) {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export const Emoji = styled.img`

@@ -18,7 +18,7 @@ export const RightBarContainer = styled.div`
     flex-direction: column;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1380px) {
     display: none;
   }
 `;
