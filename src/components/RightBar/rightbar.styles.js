@@ -65,6 +65,7 @@ export const MediumCard = styled(Card)`
   transition: 0.3s ease-in-out;
   background: #ffffff;
   border-radius: 9.631px;
+  box-shadow: 0px 2.8893px 9.631px rgba(0, 0, 0, 0.06);
 
   input {
     margin-right: 9px;
