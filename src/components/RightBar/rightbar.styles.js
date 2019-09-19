@@ -34,7 +34,7 @@ export const RightBarCard = styled(Card)`
   border-radius: 0px 0px 10px 10px;
 
   header {
-    background-color: ${colors.brand};
+    background-color: #6884f1;
     border-radius: 8px 8px 0 0;
 
     img {
