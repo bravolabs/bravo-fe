@@ -3,7 +3,13 @@ import moment from 'moment';
 
 import ShoutoutCard from '../../components/ShoutoutCard/ShoutoutCard';
 import User from '../../components/User';
-import { ProfileHeader, ProfileBody, ShoutoutsButton, Emoji } from './userProfile.styles';
+import {
+  ProfileHeader,
+  ProfileNavigation,
+  ProfileBody,
+  ShoutoutsButton,
+  Emoji,
+} from './userProfile.styles';
 import Loader from '../Loader';
 import DisplayCard from '../Cards/DisplayCard';
 import bravoParty from '../../assets/bravo-party.svg';
@@ -54,6 +60,8 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
           alt={user && user.name}
           name={user && user.name}
         />
+      </ProfileHeader>
+      <ProfileNavigation>
         <ShoutoutsButton
           active={state.active === 'given' ? true : false}
           onClick={() => handleClick('given')}>
@@ -66,7 +74,7 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
           <Emoji src={confetti} alt="received" />
           Received
         </ShoutoutsButton>
-      </ProfileHeader>
+      </ProfileNavigation>
       <ProfileBody>
         {fetching && <Loader />}
         {state.shoutouts &&
