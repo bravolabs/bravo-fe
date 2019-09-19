@@ -155,7 +155,8 @@ export const LeaderboardValue = styled(MemberCardValue)`
   align-items: center;
   height: 100%;
   img {
-    height: 50%;
+    margin-left: 1em;
+    height: 40%;
   }
 `;
 
