@@ -23,6 +23,7 @@ export const RightBarContainer = styled.div`
       color: #000000;
       font-weight: 300;
       margin-bottom: 20px;
+      padding-left: 3px;
     }
   }
 
@@ -35,25 +36,38 @@ export const RightBarCard = styled(Card)`
   padding: 0px;
   width: 292px;
   min-height: 70px;
-  height: 240px;
+  height: 260px;
   margin-bottom: 80px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.06);
-  border-radius: 0px 0px 10px 10px;
+  border-radius: 8px 8px 10px 10px;
   background: #ffffff;
 
   header {
-    background-color: #6884f1;
+    position: relative;
     border-radius: 8px 8px 0 0;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.06);
-
+    text-align: center;
+    color: white;
     img {
       border-radius: 8px 8px 0 0;
+      width: 100%;
+    }
+
+    p {
+      color: white;
+      position: absolute;
+      height: 22px;
+      left: 70px;
+      top: 66%;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 22px;
     }
   }
 `;
 
 export const TextContent = styled.div`
-  height: 150px;
+  height: 130px;
   padding: 10px;
   background: #ffffff;
   border-radius: 0px 0px 10px 10px;
