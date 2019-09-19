@@ -22,8 +22,8 @@ const SideNav = props => {
         <MobileAvatar
           link="/profile"
           name={slack.user.name}
-          src={slack.user.avatar}
-          alt={slack.user.name}
+          avatar={slack.user.avatar}
+          userId={slack.user.id}
         />
       )}
       {slack.isLoggedIn && <NavItems />}
