@@ -331,8 +331,13 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${Colors.light};
     height: 100vh;
   }
+
   #root {
     background: #F9FBFD;
+  }
+
+  a {
+    text-decoration: none;
   }
 `;
 
