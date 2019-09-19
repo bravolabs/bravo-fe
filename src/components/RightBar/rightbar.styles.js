@@ -28,7 +28,8 @@ export const RightBarContainer = styled.div`
 export const RightBarCard = styled(Card)`
   padding: 0px;
   width: 292px;
-  min-height: 50px;
+  min-height: 70px;
+  height: 280px;
   margin-bottom: 50px;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.06);
   border-radius: 0px 0px 10px 10px;
