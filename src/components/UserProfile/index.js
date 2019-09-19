@@ -56,7 +56,7 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
       <ProfileHeader>
         <User
           size="user-profile"
-          img={user ? user.avatar : placeholder}
+          avatar={user ? user.avatar : placeholder}
           alt={user && user.name}
           name={user && user.name}
         />

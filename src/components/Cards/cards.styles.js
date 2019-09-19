@@ -53,8 +53,7 @@ export const StyledCard = styled(Card)`
 `;
 
 export const DisplayCardContainer = styled(Card)`
-  margin: 0;
-  margin-top: 182px;
+  margin: auto auto;
   max-width: 800px;
   width: 80%;
   height: 200px;
@@ -62,10 +61,16 @@ export const DisplayCardContainer = styled(Card)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-top: 8px solid ${colors.brand};
+  padding: 10px;
+  ${props =>
+    props.error ? 'border-top: 8px solid #EB5757};' : `border-top: 8px solid ${colors.brand};`}
 
   section {
     margin: 15px 0;
+  }
+
+  span {
+    align-self: flex-end;
   }
 `;
 

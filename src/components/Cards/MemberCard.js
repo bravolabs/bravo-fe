@@ -6,7 +6,7 @@ import placeholder from '../../assets/placeholder.png';
 
 const MemberCard = ({ id, name, avatar }) => (
   <MemberCardContainer>
-    <User img={avatar || placeholder} alt={name} name={name} />
+    <User avatar={avatar || placeholder} name={name} />
     <MemberCardAction>
       <Link to={`/members/${id}`}>View Profile</Link>
     </MemberCardAction>

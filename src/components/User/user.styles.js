@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 import { ComponentTitle } from '../../styling/atoms/Fonts';
+import Avatar from '../Avatars';
 
 export const UserContainer = styled.div`
   display: flex;
   margin: ${props => (props.size === 'user-profile' ? '10px auto auto 0' : 'none')};
 `;
 
-export const ShoutoutUserAvatar = styled.img`
+export const ShoutoutUserAvatar = styled(Avatar)`
   margin: ${props => (props.size === 'user-profile' ? 'auto 20px auto 0' : 'auto 12px auto 0')};
   width: ${props => (props.size === 'user-profile' ? '140px' : '32px')};
   height: ${props => (props.size === 'user-profile' ? '140px' : '32px')};

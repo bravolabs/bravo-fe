@@ -8,9 +8,11 @@ const MemberCard = ({ id, name, avatar, wallet, index }) => (
     <Position>
       <p>{index + 1}.</p>
     </Position>
-    <User img={avatar || placeholder} alt={name} name={name} />
+    <User avatar={avatar || placeholder} alt={name} name={name} />
     <MemberCardValue>
-      <span>🎈</span>
+      <span role="img" aria-label="ballon">
+        🎈
+      </span>
       {wallet}
     </MemberCardValue>
   </MemberCardContainer>
