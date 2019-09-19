@@ -90,9 +90,7 @@ export const MediumCard = styled(Card)`
 
   &:hover {
     cursor: pointer;
-    background-color: #6884f1;
-    color: #ffffff;
-    font-weight: bold;
+    box-shadow: 0px 3.75561px 12.5187px rgba(0, 0, 0, 0.12);
 
     .check {
       stroke-width: 2;
