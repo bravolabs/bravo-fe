@@ -75,11 +75,10 @@ const UserProfile = ({ user, shoutouts, fetching, message }) => {
       <ProfileBody>
         {fetching && <Loader />}
         {state.shoutouts &&
-          state.shoutouts.map(shoutout => (
-            <Link to={`/shoutouts/${shoutout.id}`}>
+          state.shoutouts.map((shoutout, index) => (
+            <Link key={`${shoutout.id}-${index}`} to={`/shoutouts/${shoutout.id}`}>
               <ShoutoutCard
                 id={shoutout.id}
-                key={shoutout.id}
                 margin={shoutoutMargin}
                 praiseGiver={shoutout.giverName}
                 giverAvatar={shoutout.giverAvatar}
