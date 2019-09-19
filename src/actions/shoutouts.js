@@ -53,14 +53,14 @@ export const getProfileShoutouts = (userId = null) => async dispatch => {
   }
 };
 
-export const getShoutoutsFeed = () => async dispatch => {
+export const getShoutoutsFeed = (page = 1) => async dispatch => {
   dispatch({ type: types.FETCHING_SHOUTOUT });
   try {
     const { data } = await axiosWithAuth().get(
-      `/api/organizations/${localstorage.get().org_id}/shoutouts`
+      `/api/organizations/${localstorage.get().org_id}/shoutouts?page=${page}`
     );
 
-    dispatch({ type: types.SET_SHOUTOUTS_FEED, payload: data.data || data });
+    dispatch({ type: types.SET_SHOUTOUTS_FEED, payload: data });
   } catch (error) {
     if (error.response) {
       dispatch({ type: types.SHOUTOUT_ERROR, payload: error.response.data.message });
