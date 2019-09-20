@@ -178,6 +178,7 @@ export const MobileAvatarContainer = styled.header`
   }
 
   @media (max-width: ${Breakpoints.medium}px) {
+    visibility: initial;
     margin-top: 40px;
     margin-bottom: 42px;
     width: initial;
