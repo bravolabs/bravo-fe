@@ -14,7 +14,9 @@ export const LeaderBoardContainer = styled.div`
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 
-  @media (max-width: ${Breakpoints.medium}px) {}
+  @media (max-width: ${Breakpoints.medium}px) {
+    padding: 0 16px;
+  }
 `;
 
 export const Title = styled(PageTitle)`
