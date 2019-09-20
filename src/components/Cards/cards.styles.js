@@ -161,7 +161,7 @@ export const LeaderboardValue = styled(MemberCardValue)`
 `;
 
 export const LeaderboardCardContainer = styled(MemberCardContainer)`
-  
+  padding-right: 48px;
 `;
 
 export const ViewProfile = styled(BaseButton)`
