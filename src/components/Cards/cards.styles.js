@@ -3,6 +3,7 @@ import { Card } from '../../styling/atoms/Card';
 import { BaseButton } from '../../styling/atoms/Buttons';
 import colors from '../../styling/variables/UIColors';
 import { BodyText } from '../../styling/atoms/Fonts';
+import Breakpoints from '../../styling/variables/Breakpoints';
 
 export const CardsContainer = styled.div`
   display: flex;
