@@ -29,4 +29,9 @@ export const Title = styled(PageTitle)`
   line-height: 4.8rem;
   color: #36464f;
   margin-bottom: 4rem;
+
+  @media (max-width: ${Breakpoints.small}px) {
+    margin-bottom: 2.4rem;
+    font-weight: 400;
+  }
 `;
