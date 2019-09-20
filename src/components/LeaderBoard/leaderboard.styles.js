@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { PageTitle } from '../../styling/atoms/Fonts';
+import Breakpoints from '../../styling/variables/Breakpoints';
 
 export const LeaderBoardContainer = styled.div`
   display: flex;
@@ -12,6 +13,8 @@ export const LeaderBoardContainer = styled.div`
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+
+  @media (max-width: ${Breakpoints.medium}px) {}
 `;
 
 export const Title = styled(PageTitle)`
