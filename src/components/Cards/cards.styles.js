@@ -160,6 +160,10 @@ export const LeaderboardValue = styled(MemberCardValue)`
   }
 `;
 
+export const LeaderboardCardContainer = styled(MemberCardContainer)`
+  
+`;
+
 export const ViewProfile = styled(BaseButton)`
   display: none;
   position: absolute;
