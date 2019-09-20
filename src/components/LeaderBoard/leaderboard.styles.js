@@ -17,6 +17,10 @@ export const LeaderBoardContainer = styled.div`
   @media (max-width: ${Breakpoints.medium}px) {
     padding: 0 16px;
   }
+
+  @media (max-width: ${Breakpoints.small}px) {
+    align-items: center;
+  }
 `;
 
 export const Title = styled(PageTitle)`
