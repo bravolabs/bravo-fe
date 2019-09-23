@@ -7,3 +7,16 @@ export const SearchWrapper = styled.div`
     width: 220px;
     height: 35px;
 `;
+
+export const TextWrapper = styled.div`
+    display: flex;
+    input {
+        display: flex;
+        align-items: center;
+        border: none;
+        font-size: 14px;
+        padding: 10px;
+        background: transparent;
+        color: #c4c4c4
+    }
+`;
