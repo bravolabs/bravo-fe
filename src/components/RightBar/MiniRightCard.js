@@ -5,6 +5,8 @@ import { MediumCard } from './rightbar.styles';
 import { ModalContainer, Imagecontainer, TextContainer } from './modal.styles';
 import { ComponentTitle, BodyText } from '../../styling/atoms/Fonts';
 
+import { FiCheckSquare } from 'react-icons/fi';
+
 Modal.defaultStyles.overlay.backgroundColor = 'rgba(0, 0, 0, 0.6)';
 const customStyles = {
   content: {
@@ -16,6 +18,7 @@ const customStyles = {
     transform: 'translate(-50%, -50%)',
     padding: 0,
     borderRadius: '8px',
+    border: 'none',
   },
 };
 
@@ -25,7 +28,7 @@ const MiniRightCard = ({ image, text, title }) => {
   return (
     <>
       <MediumCard onClick={toggleModal} shadow={ShapeStyles.elevation.normal}>
-        <input type="checkbox" checked readOnly />
+        <FiCheckSquare className="check" />
         <p>{title}</p>
       </MediumCard>
       <Modal

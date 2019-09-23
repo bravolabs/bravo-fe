@@ -21,3 +21,12 @@ export const Title = styled(PageTitle)`
   color: #36464f;
   margin-bottom: 4rem;
 `;
+
+export const CardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  max-width: 900px;
+  width: 100%;
+`;
+
