@@ -10,9 +10,13 @@ export const SearchWrapper = styled.div`
 
 export const TextWrapper = styled.div`
     display: flex;
+    .icon {
+        margin-top: 10px;
+        font-size: 18px;
+        margin-left: 10px;
+    }
     input {
         display: flex;
-        align-items: center;
         border: none;
         font-size: 14px;
         padding: 10px;
