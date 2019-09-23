@@ -1,12 +1,13 @@
 import React from 'react';
-import { SearchWrapper } from './search.styles';
+import { SearchWrapper, TextWrapper } from './search.styles';
 
 const Search = () => {
     return (
         <React.Fragment>
             <SearchWrapper>
-                
-                <p>Search</p>
+                <TextWrapper>
+                    <input placeholder="Search"/>
+                </TextWrapper>
             </SearchWrapper>
         </React.Fragment>
     )
