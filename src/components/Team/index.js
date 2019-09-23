@@ -9,6 +9,8 @@ import DisplayCard from '../Cards/DisplayCard';
 import bravoParty from '../../assets/bravo-party.svg';
 import localstorage from '../../utils/localstorage';
 
+import Search from '../Search';
+
 const Team = ({ team, fetchTeamInfo }) => {
   useEffect(() => {
     fetchTeamInfo();
@@ -18,12 +20,14 @@ const Team = ({ team, fetchTeamInfo }) => {
   return (
     <React.Fragment>
       <TeamContainer>
-        <Title>Team</Title>
+        <div className="headers">
+          <Title>Team</Title>
+          <Search />
+        </div>
         <CardContainer>
           {team.isFetchingTeam && <Loader /> }
           {members && (
             <div>
-
               <TeamHead>
                 <HeadText marginLeft={true}>Name</HeadText>
                 <HeadText>Actions</HeadText>
