@@ -8,4 +8,5 @@ export const Card = styled.div`
     `${props.paddingY ? props.paddingY : '36px'} ${props.paddingX ? props.paddingX : '24px'}`};
   border-radius: ${props => (props.radius ? props.radius : '4px')};
   ${props => (props.shadow ? `box-shadow: ${props.shadow};` : null)};
+  background: ${props => (props.background ? props.background : 'white')};
 `;
