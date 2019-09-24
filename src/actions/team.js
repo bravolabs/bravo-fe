@@ -23,3 +23,9 @@ export const fetchTeamInfo = () => async dispatch => {
     dispatch({ type: TEAM_FETCH_FAIL, payload: error.message });
   }
 };
+
+export const searchTeam = (searchItem, searchList) => dispatch => {
+  dispatch({ type: TEAM_SEARCHING });
+  console.log(searchItem);
+  console.log(searchList);
+};
