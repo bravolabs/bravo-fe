@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import { SearchWrapper, TextWrapper } from './search.styles';
 import { IoMdSearch } from 'react-icons/io';
+import { searchTeam } from '../../actions/team';
 import Fuse from 'fuse.js';
 
-const Search = ({ searchArray }) => {
-  console.log(searchArray);
+const Search = ({ searchArray, searchTeam }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(searchTerm);
-    setSearchTerm('');
+    searchTeam(searchTerm, searchArray);
   };
   return (
     <React.Fragment>
@@ -30,4 +30,7 @@ const Search = ({ searchArray }) => {
   );
 };
 
-export default Search;
+export default connect(
+  null,
+  { searchTeam }
+)(Search);
