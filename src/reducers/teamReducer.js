@@ -1,4 +1,11 @@
-import { FETCHING_TEAM, TEAM_FETCH_SUCCESS, TEAM_FETCH_FAIL, TEAM_SEARCH } from '../actions/team';
+import {
+  FETCHING_TEAM,
+  TEAM_FETCH_SUCCESS,
+  TEAM_FETCH_FAIL,
+  TEAM_SEARCHING,
+  TEAM_SEARCH_ERROR,
+  TEAM_SEARCH_SUCCESS,
+} from '../actions/team';
 
 const initialState = {
   isFetchingTeam: false,
@@ -31,10 +38,25 @@ export default (state = initialState, action) => {
         errorMessage: action.payload,
         searchItems: [],
       };
-    case TEAM_SEARCH:
+    case TEAM_SEARCHING:
       return {
         ...state,
-        i
+        isFetchingTeam: true,
+        errorMessage: '',
+        searchItems: [],
+      };
+    case TEAM_SEARCH_SUCCESS:
+      return {
+        ...state,
+        isFetchingTeam: false,
+        searchItems: action.payload,
+      };
+    case TEAM_SEARCH_ERROR:
+      return {
+        ...state,
+        isFetchingTeam: false,
+        searchItems: [],
+        errorMessage: action.message,
       }
     default:
       return state;
