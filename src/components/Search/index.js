@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { SearchWrapper, TextWrapper } from './search.styles';
 import { IoMdSearch } from 'react-icons/io';
-import { searchTeam } from '../../actions/team';
+import { searchTeam } from '../../actions/search';
 import Fuse from 'fuse.js';
 
 const Search = ({ searchArray, searchTeam }) => {

@@ -1,11 +1,6 @@
-import {
-  FETCHING_TEAM,
-  TEAM_FETCH_SUCCESS,
-  TEAM_FETCH_FAIL,
-  TEAM_SEARCHING,
-  TEAM_SEARCH_ERROR,
-  TEAM_SEARCH_SUCCESS,
-} from '../actions/team';
+import { FETCHING_TEAM, TEAM_FETCH_SUCCESS, TEAM_FETCH_FAIL } from '../actions/team';
+
+import { TEAM_SEARCHING, TEAM_SEARCH_ERROR, TEAM_SEARCH_SUCCESS } from '../actions/search';
 
 const initialState = {
   isFetchingTeam: false,
@@ -58,7 +53,7 @@ export default (state = initialState, action) => {
         isFetchingTeam: false,
         searchItems: [],
         errorMessage: action.message,
-      }
+      };
     default:
       return state;
   }
