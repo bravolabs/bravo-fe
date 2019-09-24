@@ -4,6 +4,9 @@ import localstorage from '../utils/localstorage';
 export const FETCHING_TEAM = 'FETCHING_TEAM';
 export const TEAM_FETCH_SUCCESS = 'TEAM_FETCH_SUCCESS';
 export const TEAM_FETCH_FAIL = 'TEAM_FETCH_FAIL';
+export const TEAM_SEARCHING = 'TEAM_SEARCHING';
+export const TEAM_SEARCH_SUCCESS = 'TEAM_SEARCH_SUCCESS';
+export const TEAM_SEARCH_ERROR = 'TEAM_SEARCH_ERROR';
 
 export const fetchTeamInfo = () => async dispatch => {
   dispatch({ type: FETCHING_TEAM });
