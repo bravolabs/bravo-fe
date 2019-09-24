@@ -22,10 +22,10 @@ const Team = ({ team, fetchTeamInfo }) => {
       <TeamContainer>
         <div className="headers">
           <Title>Team</Title>
-          <Search />
+          <Search searchArray={members} />
         </div>
         <CardContainer>
-          {team.isFetchingTeam && <Loader /> }
+          {team.isFetchingTeam && <Loader />}
           {members && (
             <div>
               <TeamHead>
@@ -36,7 +36,10 @@ const Team = ({ team, fetchTeamInfo }) => {
             </div>
           )}
           {team.errorMessage && (
-            <DisplayCard header={<img src={bravoParty} alt="bravo party" />} text={team.errorMessage} />
+            <DisplayCard
+              header={<img src={bravoParty} alt="bravo party" />}
+              text={team.errorMessage}
+            />
           )}
         </CardContainer>
       </TeamContainer>
