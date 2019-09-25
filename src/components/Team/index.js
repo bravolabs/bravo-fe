@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { TeamContainer, Title, TeamHead, HeadText } from './team.styles';
+import { TeamContainer, Title, TeamHead, HeadText, CardContainer } from './team.styles';
 import MemberCards from '../Cards/MemberCards';
 import { fetchTeamInfo } from '../../actions/team';
 
@@ -11,28 +11,31 @@ import localstorage from '../../utils/localstorage';
 
 const Team = ({ team, fetchTeamInfo }) => {
   useEffect(() => {
-    if (team && !team.members) {
-      fetchTeamInfo();
-    }
-  }, []);
+    fetchTeamInfo();
+  }, [fetchTeamInfo]);
   const members =
     (team.members && team.members.filter(member => member.id !== localstorage.get().id)) || null;
   return (
     <React.Fragment>
-      {team.isFetchingTeam && <DisplayCard header={<Loader />} text="Loading your Team..." />}
-      {members && (
-        <TeamContainer>
-          <Title>Team</Title>
-          <TeamHead>
-            <HeadText marginLeft={true}>Name</HeadText>
-            <HeadText>Actions</HeadText>
-          </TeamHead>
-          <MemberCards members={members} />
-        </TeamContainer>
-      )}
-      {team.errorMessage && (
-        <DisplayCard header={<img src={bravoParty} alt="bravo party" />} text={team.errorMessage} />
-      )}
+      <TeamContainer>
+        <Title>Team</Title>
+        <CardContainer>
+          {team.isFetchingTeam && <Loader /> }
+          {members && (
+            <div>
+
+              <TeamHead>
+                <HeadText marginLeft={true}>Name</HeadText>
+                <HeadText>Actions</HeadText>
+              </TeamHead>
+              <MemberCards members={members} />
+            </div>
+          )}
+          {team.errorMessage && (
+            <DisplayCard header={<img src={bravoParty} alt="bravo party" />} text={team.errorMessage} />
+          )}
+        </CardContainer>
+      </TeamContainer>
     </React.Fragment>
   );
 };

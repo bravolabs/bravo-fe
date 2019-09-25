@@ -4,6 +4,11 @@ const initialState = {
   singleShoutout: null,
   profileShoutouts: null,
   userShoutouts: null,
+  shoutoutsFeed: {
+    data: null,
+    previousPage: null,
+    nextPage: null,
+  },
   fetching: false,
   error: null,
 };
@@ -35,6 +40,16 @@ export default (state = initialState, action) => {
         fetching: false,
         profileShoutouts: null,
         userShoutouts: action.payload,
+        error: null,
+      };
+    case types.SET_SHOUTOUTS_FEED:
+      return {
+        ...state,
+        singleShoutout: null,
+        fetching: false,
+        profileShoutouts: null,
+        userShoutouts: null,
+        shoutoutsFeed: action.payload,
         error: null,
       };
     case types.FETCHING_SHOUTOUT:

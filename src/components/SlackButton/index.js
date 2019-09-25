@@ -1,15 +1,6 @@
 import React from 'react';
-
-import {
-  LogoContainer,
-  SlackLogo,
-  ButtonText,
-  Arrow,
-  ButtonLink,
-  StyledBaseButton,
-} from './slack-btn.styles';
-import slackLogo from '../../assets/slack-logo.png';
-import arrow from '../../assets/arrow.png';
+import { LogoContainer, ButtonText, ButtonLink, StyledBaseButton } from './slack-btn.styles';
+import slackLogo from '../../assets/slack-logo.svg';
 
 const clientId = process.env.REACT_APP_CLIENT_ID;
 const redirectURI = `${document.location.origin}/slack`;
@@ -29,18 +20,18 @@ export const AddToSlack = () => {
         im:history,users:read,
         reactions:write,
         reactions:read,
+        channels:history,
         channels:read
         users.profile:read&
         redirect_uri=${redirectURI}&
         state=addAppToSlack`}>
       <StyledBaseButton padding="none">
         <LogoContainer>
-          <SlackLogo src={slackLogo} />
+          <img src={slackLogo} alt="Add to slack" />
         </LogoContainer>
         <ButtonText>
-          Join with <span>Slack</span>
+          Add Bravo to <span>Slack</span>
         </ButtonText>
-        <Arrow src={arrow} />
       </StyledBaseButton>
     </ButtonLink>
   );

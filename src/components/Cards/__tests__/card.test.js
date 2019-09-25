@@ -1,13 +1,12 @@
 import React from 'react';
-import * as rtl from '@testing-library/react';
-
+import { cleanup, render } from '@testing-library/react';
 import HomeCard from '../HomeCard';
-import clapIcon from '../../../assets/clap-icon.png';
+import clapIcon from '../../../assets/clap-icon.svg';
 
-afterEach(rtl.cleanup);
+afterEach(cleanup);
 describe('Cards Component', () => {
   it('Should render all cards on home', () => {
-    const { getByText } = rtl.render(
+    const { getByText } = render(
       <HomeCard
         icon={clapIcon}
         title="bravo slack bot"

@@ -8,7 +8,7 @@ export const TeamContainer = styled.div`
   width: 100%;
   padding: 0;
   margin: 0;
-  margin-top: 6rem;
+  margin-top: 2.5rem;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -16,9 +16,9 @@ export const TeamContainer = styled.div`
 
 export const Title = styled(PageTitle)`
   font-size: 3.2rem;
-  font-weight: 600;
+  font-weight: 300;
   line-height: 3.8rem;
-  color: #000;
+  color: #36464f;
   margin-bottom: 4rem;
 `;
 
@@ -44,4 +44,12 @@ export const HeadText = styled.span`
   font-weight: 600;
   font-size: 1.8rem;
   line-height: 2.2rem;
+`;
+
+export const CardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  max-width: 900px;
+  width: 100%;
 `;
