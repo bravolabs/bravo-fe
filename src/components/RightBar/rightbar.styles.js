@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Card } from '../../styling/atoms/Card';
-import colors from '../../styling/variables/UIColors';
 
 export const RightBarContainer = styled.div`
   display: flex;
