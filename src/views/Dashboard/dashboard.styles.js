@@ -4,7 +4,7 @@ import Breakpoints from '../../styling/variables/Breakpoints';
 export const MainContent = styled.div`
   display: flex;
   margin-left: 90px;
-  padding: 0 32px;
+  padding: 32px 32px 0 32px;
   height: 100vh;
 
   & > section {
