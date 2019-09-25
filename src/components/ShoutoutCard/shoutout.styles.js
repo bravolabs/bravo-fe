@@ -21,11 +21,10 @@ export const ShoutoutCardContainer = styled(Card)`
   }`}
 
   @media (max-width: ${Breakpoints.medium}px) {
-    width: auto;
+    width: 100%;
     padding: 24px;
     min-height: initial;
-    margin-left: 16px;
-    margin-right: 16px;
+    margin: 0
   }
 `;
 
