@@ -150,6 +150,17 @@ export const MemberCardValue = styled.p`
   line-height: 19px;
 `;
 
+export const LeaderboardValue = styled(MemberCardValue)`
+  display: flex;
+  align-items: center;
+  height: 100%;
+  img {
+    margin-left: 1em;
+    height: 50%;
+    max-height: 2.4rem;
+  }
+`;
+
 export const ViewProfile = styled(BaseButton)`
   display: none;
   position: absolute;
