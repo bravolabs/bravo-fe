@@ -45,3 +45,11 @@ export const HeadText = styled.span`
   font-size: 1.8rem;
   line-height: 2.2rem;
 `;
+
+export const CardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  max-width: 900px;
+  width: 100%;
+`;
