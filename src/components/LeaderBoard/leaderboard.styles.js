@@ -8,7 +8,6 @@ export const LeaderBoardContainer = styled.div`
   width: 100%;
   padding: 0;
   margin: 0;
-  margin-top: 2.5rem;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
