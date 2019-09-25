@@ -22,7 +22,15 @@ export const Imagecontainer = styled.div`
 export const TextContainer = styled.div`
   height: 40%;
   width: 100%;
-  background-color: lightgray;
+  background-color: #4264ed;
   padding: 20px;
   line-height: 1.7;
+  h3,
+  p {
+    color: #ffffff;
+  }
+  h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
 `;

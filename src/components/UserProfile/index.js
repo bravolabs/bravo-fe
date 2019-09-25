@@ -15,7 +15,9 @@ const shoutoutMargin = '20px auto 15px 200px';
 
 const UserProfile = ({ user, shoutouts, fetching, message }) => {
   const initShoutouts =
-    shoutouts && shoutouts.filter(item => item.giverName.toLowerCase() === user.name.toLowerCase());
+    shoutouts &&
+    user &&
+    shoutouts.filter(item => item.giverName.toLowerCase() === user.name.toLowerCase());
 
   const [state, setState] = useState({
     active: 'given',
