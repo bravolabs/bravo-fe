@@ -17,11 +17,6 @@
 
 Healthy office cultures often acknowledge good work from their coworkers and peers. Award your peers with acknowledgements that act like coins/points in Slack when they do awesome things - and never let the acknowledgement of their good work get lost in the shuffle again.
 ### Key Features
--    users can send public shoutouts to their teammates for their good work in Slack
--    users can see all the shoutouts for given teammate in Slack
--    for every shoutout, comment or reaction to shoutout users get bravos
--    users can see how many bravos they have in their wallet in Slack
--    users can see their Slack workspace leaderboard in Slack
 -    users can see their and their teammates' profiles in the webapp
 -    users can view single shoutout with comments and reactions in the webapp
 -    users can see feed of all shoutouts in the webapp
