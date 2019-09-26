@@ -12,6 +12,10 @@ export const Container = styled.div`
   background-color: white;
   margin-bottom: 20px;
 
+  &.disabled {
+    display: none;
+  }
+
   button,
   span {
     display: flex;
