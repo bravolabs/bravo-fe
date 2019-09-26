@@ -29,6 +29,7 @@ export const Container = styled.div`
     font-size: 2rem;
     font-weight: 300;
     color: #4265ed;
+    text-decoration: none;
   }
   button {
     width: 35%;
