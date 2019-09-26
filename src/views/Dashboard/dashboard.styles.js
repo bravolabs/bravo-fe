@@ -12,6 +12,10 @@ export const MainContent = styled.div`
     width: 950px;
     overflow: auto;
     padding-right: 25px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   @media (max-width: ${Breakpoints.medium}px) {
