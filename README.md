@@ -28,9 +28,6 @@ Healthy office cultures often acknowledge good work from their coworkers and pee
 -    _Slack API Auth_
 -    _Styled-Components_
 #### Front end deployed to `Netlify`
-#### [Back end](https://github.com/bravolabs/bravo-be) built using:
--    _NodeJS (Express)_
--    _PostgreSQL_
 # APIs
 We use [Slack API](https://api.slack.com/) for both authentication and our Slack bot.
 # Environment Variables
