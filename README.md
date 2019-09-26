@@ -15,13 +15,13 @@
 [Product Canvas](https://www.notion.so/Acknowledge-Coworkers-in-Slack-96c60f39816b477d9b81fe5d97a992ee) <br>
 [UX Design files](https://www.figma.com/file/SbSjn8oAUtdWY1slSJeP9u/Bravo) <br>
 
-Healthy office cultures often acknowledge good work from their coworkers and peers. Award your peers with acknowledgements that act like coins/points in Slack when they do awesome things - and never let the acknowledgement of their good work get lost in the shuffle again.
+Healthy office cultures often acknowledge good work from their coworkers and peers. Award your peers with acknowledgments that act like coins/points in Slack when they do awesome things - and never let the acknowledgment of their good work get lost in the shuffle again.
 ### Key Features
--    users can see their and their teammates' profiles in the webapp
--    users can view single shoutout with comments and reactions in the webapp
--    users can see feed of all shoutouts in the webapp
--    users can see who is in their team (Slack workspace) in the webapp
--    users can see their Slack workspace leaderboard in the webapp
+-    users can see their and their teammates' profiles in the web app
+-    users can view single shoutout with comments and reactions in the web app
+-    users can see feed of all shoutouts in the web app
+-    users can see who is in their team (Slack workspace) in the web app
+-    users can see their Slack workspace leaderboard in the web app
 ## Tech Stack
 #### Front end built using:
 -    _React_
@@ -31,7 +31,7 @@ Healthy office cultures often acknowledge good work from their coworkers and pee
 # APIs
 We use [Slack API](https://api.slack.com/) for both authentication and our Slack bot.
 # Environment Variables
-In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
+For the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
 
     REACT_APP_API_HOST = link to your API host
     REACT_APP_CLIENT_ID = your Slack app's client ID, can be found in you app's settings --> basic information
@@ -135,7 +135,7 @@ Example:
 
 ## Workflow
 
-- **Create new `feature-branch` from `develop` branch that describes your work.**
+- **Create a new `feature-branch` from `develop` branch that describes your work.**
 
   ```bash
     git checkout -b project-setup
