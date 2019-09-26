@@ -1,4 +1,4 @@
-# Bravo
+# Bravo Frontend
  You can find the deployed project at https://saybravo.io
 ## Team
 |                                       [Samar Vir](https://github.com/samarv)                                        |                                       [Aaron Thompson](https://github.com/AaronJThompson)                                        |                                       [James Eneh](https://github.com/erozonachi)                                        |                                       [Borja Soler](https://github.com/borjasolerr)                                        |                                       [Johnson Ogwuru](https://github.com/ogwurujohnson)                                        |
