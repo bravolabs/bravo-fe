@@ -375,8 +375,6 @@ Example:
 
 * **Review approval should have been submitted before merging**
 
-### Attribution
-These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426).
 
 ## Documentation
 See [Backend Documentation](https://github.com/bravolabs/bravo-be/blob/develop/README.md) for details on the backend of our project.
@@ -384,3 +382,6 @@ See [Backend Documentation](https://github.com/bravolabs/bravo-be/blob/develop/R
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+### Attribution
+These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426).
