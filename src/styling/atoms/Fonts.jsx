@@ -23,7 +23,7 @@ export const ComponentTitle = styled.h3`
 export const BodyText = styled.p`
   font-size: ${FontSizes.Medium};
   color: ${props => (props.color ? props.color : FontColors.Medium)};
-  font-weight: ${props => (props.fontWeight ? props.fontWeight : '400')};
+  font-weight: 500;
 `;
 
 export const UIItem = styled.span`

@@ -1,89 +1,41 @@
 import styled from 'styled-components';
 import colors from '../../styling/variables/UIColors';
 import Breakpoints from '../../styling/variables/Breakpoints';
-import ShapeStyles from '../../styling/variables/ShapeStyles';
 
 export const ProfileHeader = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
   position: relative;
-  max-width: 900px;
   width: 100%;
-  padding-bottom: 32px;
-  padding-left: 50px;
-  box-shadow: ${ShapeStyles.elevation.regular};
-  background-color: ${colors.white};
+  height: 200px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 1.87781px 6.25935px rgba(0, 0, 0, 0.06);
 
-  @media (max-width: ${Breakpoints.medium}px) {
-    height: initial;
-    padding-top: 16px;
-    padding-bottom: 16px;
+  section {
+    padding: 32px 0 0 40px;
+    height: 100px;
   }
 
-  @media (max-width: ${Breakpoints.small}px) {
-    padding-left: 0;
-    align-items: center;
-
-    .user {
-      flex-direction: column;
-      margin: 0;
-      align-items: center;
-
-      > *:first-child {
-        margin: 0;
-      }
-    }
-  }
-`;
-
-export const ProfileNavigation = styled.nav`
-  z-index: 0;
-  padding-left: 50px;
-  max-width: 900px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-  background-color: ${colors.white};
-  box-shadow: ${ShapeStyles.elevation.regular};
-
-  @media (max-width: ${Breakpoints.small}px) {
-    z-index: 2;
-    padding-left: 0;
-    position: sticky;
-    top: 0;
-    width: 100vw;
-    height: 6.2rem;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    > * {
-      flex: 0 0 auto;
-    }
+  nav {
+    position: absolute;
+    display: flex;
+    bottom: 0px;
+    width: 100%;
+    justify-content: space-around;
   }
 `;
 
 export const ShoutoutsButton = styled.div`
-  text-align: center;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  width: 180px;
-  height: 4rem;
-  font-size: 24px;
-  line-height: 29px;
-  margin-right: 120px;
+  width: 35%;
+  font-size: 2.2rem;
   color: ${colors.brand};
+  padding-bottom: 5px;
   border-bottom: ${props => (props.active ? `4px solid ${colors.brand}` : 'none')};
   cursor: pointer;
 
   @media (max-width: ${Breakpoints.small}px) {
-    margin-right: 80px;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -93,12 +45,11 @@ export const ShoutoutsButton = styled.div`
 export const Emoji = styled.img`
   width: 20px;
   height: 20px;
-  margin: auto 5px;
+  margin-right: 8px;
 `;
 
 export const ProfileBody = styled.div`
-  margin-top: 40px;
-  max-width: 900px;
+  margin-top: 20px;
   width: 100%;
   height: max-content;
 `;

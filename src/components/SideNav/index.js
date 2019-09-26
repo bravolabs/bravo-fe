@@ -9,7 +9,6 @@ import logoutIcon from '../../assets/logout.png';
 import NavItem from './NavItem';
 import MobileAvatar from './MobileAvatar';
 import UIColors from '../../styling/variables/UIColors';
-import { toggleSideMenu } from '../../actions/ui';
 
 const SideNav = props => {
   const { slack, ui } = props;

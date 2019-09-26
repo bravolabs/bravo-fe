@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { AvatarContainer } from './sidenav.styles';
 
 const Avatar = ({ src, alt }) => {
