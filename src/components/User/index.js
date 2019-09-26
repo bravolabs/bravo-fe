@@ -1,13 +1,11 @@
 import React from 'react';
-import { ShoutoutUserAvatar, Username, UserContainer } from './user.styles';
+import { ShoutoutUserAvatar, UserContainer, Username } from './user.styles';
 
-const User = ({ avatar, name, size }) => {
+const User = ({ id, avatar, name, size }) => {
   return (
-    <UserContainer className="user" size={size ? size : null}>
-      <ShoutoutUserAvatar avatar={avatar} name={name} seed={name} size={size ? size : null} />
-      <Username fontWeight="500" size={size ? size : null}>
-        {name}
-      </Username>
+    <UserContainer className="user" size={size}>
+      <ShoutoutUserAvatar avatar={avatar} name={name} seed={name} size={size} />
+      <Username size={size}>{name}</Username>
     </UserContainer>
   );
 };

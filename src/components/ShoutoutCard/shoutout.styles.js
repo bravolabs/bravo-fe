@@ -2,72 +2,29 @@ import styled from 'styled-components';
 import { Card } from '../../styling/atoms/Card';
 import { BodyText } from '../../styling/atoms/Fonts';
 import Breakpoints from '../../styling/variables/Breakpoints';
+import colors from '../../styling/variables/UIColors';
 
 export const ShoutoutCardContainer = styled(Card)`
-  position: relative;
-  max-width: 900px;
   width: 100%;
+  height: 175px;
   min-height: 200px;
-  padding: 40px;
-  margin-bottom: 3.2rem;
-  border: 1px solid #f1f2f6;
-  box-sizing: border-box;
-  box-shadow: 0px 2px 2px #f2f3f7;
-  background-color: white;
   border-radius: 8px;
-  cursor: pointer;
+  box-shadow: 0px 1.87781px 6.25935px rgba(0, 0, 0, 0.06);
+  transition: 0.5s ease-in-out;
+  margin-bottom: 20px;
+
+  ${props =>
+    props.hover &&
+    `&:hover {
+    box-shadow: 0px 3.75561px 12.5187px rgba(0, 0, 0, 0.12);
+    border: 1px solid ${colors.brand};
+  }`}
 
   @media (max-width: ${Breakpoints.medium}px) {
-    width: auto;
+    width: 100%;
     padding: 24px;
     min-height: initial;
-    margin-left: 16px;
-    margin-right: 16px;
-  }
-`;
-
-export const ViewContainer = styled.div`
-  display: none;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  border-radius: inherit;
-  z-index: 99;
-  background: rgba(255, 255, 255, 0.8);
-`;
-
-export const ViewButton = styled.button`
-  background: #ffffff;
-  color: #4265ed;
-  border: 1px solid #4265ed;
-  outline: none;
-  padding: 5px;
-  box-sizing: border-box;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 19px;
-  &:hover {
-    background: #4265ed;
-    color: #ffffff;
-  }
-  a {
-    color: inherit;
-    text-decoration: none;
-    &:link {
-      color: inherit;
-    }
-    &:visited {
-      color: inherit;
-    }
-    &:active {
-      color: inherit;
-    }
+    margin: 0
   }
 `;
 
@@ -116,11 +73,8 @@ export const Emoji = styled.img`
 export const Time = styled.div`
   margin: auto;
   margin-right: 0;
-  width: 100px;
-  height: 2rem;
   font-weight: 300;
   font-size: 1.4rem;
-  line-height: 1.6rem;
   color: rgba(0, 0, 0, 0.652);
 
   &.mobile-time {

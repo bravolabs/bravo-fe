@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { PageTitle } from '../../styling/atoms/Fonts';
+import Breakpoints from '../../styling/variables/Breakpoints';
 
 export const TeamContainer = styled.div`
   display: flex;
@@ -7,11 +8,15 @@ export const TeamContainer = styled.div`
   max-width: 900px;
   width: 100%;
   padding: 0;
-  margin: 0;
-  margin-top: 2.5rem;
+  margin: 22px 0 0 0;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+
+  @media (max-width: ${Breakpoints.medium}px) {
+    align-items: center;
+    margin: 0;
+  }
 `;
 
 export const Title = styled(PageTitle)`
