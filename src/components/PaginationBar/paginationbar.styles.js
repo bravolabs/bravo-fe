@@ -34,7 +34,5 @@ export const Container = styled.div`
   }
   span {
     width: 20%;
-    border-left: 2px solid #4265ed;
-    border-right: 2px solid #4265ed;
   }
 `;
