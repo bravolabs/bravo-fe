@@ -91,6 +91,24 @@ Launches the test runner in the interactive watch mode.
 Builds the app for production to the `build` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
+### Linting fix
+
+    $ npm lint:fix
+
+Fixes linting automatically.
+
+### Coverage reporting
+
+    $ npm coverage
+
+Reports coverage with disabled test-watching.
+
+### Eject hidden modules
+
+    $ npm eject
+
+Ejects hidden modules into `package.json`.
+
 ## Structure and Naming
 
 ```
