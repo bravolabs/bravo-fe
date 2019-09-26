@@ -6,7 +6,7 @@ export const Container = styled.div`
   align-items: center;
   width: 300px;
   height: 60px;
-  border-radius: 30px;
+  border-radius: 8px;
   box-sizing: border-box;
   box-shadow: 0px 2px 2px #f2f3f7;
   background-color: white;
@@ -19,7 +19,7 @@ export const Container = styled.div`
     align-items: center;
     box-sizing: border-box;
     height: 5rem;
-    border-radius: 2.5rem;
+    background: none;
     border: none;
     outline: none;
     font-size: 2rem;
