@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from './paginationbar.styles';
 
 const PaginationBar = ({ moveToPage, current, previous, next }) => (
-  <Container>
+  <Container className={next || previous ? '' : 'disabled'}>
     <button
       disabled={previous ? false : true}
       onClick={() => (previous ? moveToPage(previous) : null)}>
