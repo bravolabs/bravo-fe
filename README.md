@@ -38,10 +38,6 @@ In order for the app to function correctly, the user must set up their own envir
     REACT_APP_CLIENT_SECRET = your Slack app's client secret, can be found in you app's settings --> basic information
 
 
-# Frontend
-
-Healthy office cultures often acknowledge good work from their coworkers and peers. Award your peers with acknowledgements that act like coins/points in Slack when they do awesome things - and never let the acknowledgement of their good work get lost in the shuffle again.
-
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
