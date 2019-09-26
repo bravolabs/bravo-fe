@@ -12,6 +12,11 @@ export const TeamContainer = styled.div`
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+
+  .headers {
+    display: flex;
+    justify-content: space-between;
+  }
 `;
 
 export const Title = styled(PageTitle)`
