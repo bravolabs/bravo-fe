@@ -8,13 +8,14 @@ export const ShoutoutsContainer = styled.div`
   max-width: 900px;
   width: 100%;
   padding: 0;
-  margin: 0;
+  margin: 22px 0 0 0;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 
   @media (max-width: ${Breakpoints.medium}px) {
     align-items: center;
+    margin: 0;
   }
 `;
 
