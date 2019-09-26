@@ -1,4 +1,52 @@
-# Bravo Frontend
+# Bravo
+ You can find the deployed project at https://saybravo.io
+## Team
+|                                       [Samar Vir](https://github.com/samarv)                                        |                                       [Aaron Thompson](https://github.com/AaronJThompson)                                        |                                       [James Eneh](https://github.com/erozonachi)                                        |                                       [Borja Soler](https://github.com/borjasolerr)                                        |                                       [Johnson Ogwuru](https://github.com/ogwurujohnson)                                        |
+| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
+|                      [<img src="https://i.imgur.com/Kaz7vzu.png" width = "200" />](https://github.com/samarv)                       |                      [<img src="https://i.imgur.com/yBwp24U.png" width = "200" />](https://github.com/AaronJThompson)                       |                      [<img src="https://avatars0.githubusercontent.com/u/35371532?s=400&v=4" width = "200" />](https://github.com/erozonachi)                       |                      [<img src="https://avatars3.githubusercontent.com/u/39691848?s=400&v=4" width = "200" />](https://github.com/borjasolerr)                       |                      [<img src="https://avatars1.githubusercontent.com/u/14821816?s=400&v=4" width = "200" />](https://github.com/ogwurujohnson)                       |
+|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/samarv)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/AaronJThompson)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/erozonachi)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/borjasolerr)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/ogwurujohnson)             |
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
+|                                       [__Maxime Salomon__](https://github.com/maximesalomon)                                        |                                       [__Noble Obioma__](https://github.com/nobioma1)                                        |                                       [__Petar Vlaisavljevic__](https://github.com/ropeks)                                        |
+|                      [<img src="https://avatars1.githubusercontent.com/u/2175908?s=400&v=4" width = "200" />](https://github.com/maximesalomon)                       |                      [<img src="https://avatars1.githubusercontent.com/u/30900531?s=400&v=4" width = "200" />](https://github.com/nobioma1)                       |                      [<img src="https://i.imgur.com/yh9RqTh.png" width = "200" />](https://github.com/ropeks)                       |
+|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/maximesalomon)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/nobioma1)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/ropeks)            |
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
+## Project Overview
+[Trello Board](https://trello.com/b/RmnRC4ez/labs) <br>
+[Product Canvas](https://www.notion.so/Acknowledge-Coworkers-in-Slack-96c60f39816b477d9b81fe5d97a992ee) <br>
+[UX Design files](https://www.figma.com/file/SbSjn8oAUtdWY1slSJeP9u/Bravo) <br>
+
+Healthy office cultures often acknowledge good work from their coworkers and peers. Award your peers with acknowledgements that act like coins/points in Slack when they do awesome things - and never let the acknowledgement of their good work get lost in the shuffle again.
+### Key Features
+-    users can send public shoutouts to their teammates for their good work in Slack
+-    users can see all the shoutouts for given teammate in Slack
+-    for every shoutout, comment or reaction to shoutout users get bravos
+-    users can see how many bravos they have in their wallet in Slack
+-    users can see their Slack workspace leaderboard in Slack
+-    users can see their and their teammates' profiles in the webapp
+-    users can view single shoutout with comments and reactions in the webapp
+-    users can see feed of all shoutouts in the webapp
+-    users can see who is in their team (Slack workspace) in the webapp
+-    users can see their Slack workspace leaderboard in the webapp
+## Tech Stack
+#### Front end built using:
+-    _React_
+-    _Slack API Auth_
+-    _Styled-Components_
+#### Front end deployed to `Netlify`
+#### [Back end](https://github.com/bravolabs/bravo-be) built using:
+-    _NodeJS (Express)_
+-    _PostgreSQL_
+# APIs
+We use [Slack API](https://api.slack.com/) for both authentication and our Slack bot.
+# Environment Variables
+In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
+
+    REACT_APP_API_HOST = link to your API host
+    REACT_APP_CLIENT_ID = your Slack app's client ID, can be found in you app's settings --> basic information
+    REACT_APP_CLIENT_SECRET = your Slack app's client secret, can be found in you app's settings --> basic information
+
+
+# Frontend
 
 Healthy office cultures often acknowledge good work from their coworkers and peers. Award your peers with acknowledgements that act like coins/points in Slack when they do awesome things - and never let the acknowledgement of their good work get lost in the shuffle again.
 
@@ -320,6 +368,12 @@ Example:
 * **All CI status checks should be green**
 
 * **Review approval should have been submitted before merging**
+
+### Attribution
+These contribution guidelines have been adapted from [this good-Contributing.md-template](https://gist.github.com/PurpleBooth/b24679402957c63ec426).
+
+## Documentation
+See [Backend Documentation](https://github.com/bravolabs/bravo-be/blob/develop/README.md) for details on the backend of our project.
 
 ## License
 
