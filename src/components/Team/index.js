@@ -11,12 +11,15 @@ import localstorage from '../../utils/localstorage';
 
 import Search from '../Search';
 
-const Team = ({ team, fetchTeamInfo }) => {
+const Team = ({ team, fetchTeamInfo, searchItems }) => {
   useEffect(() => {
     fetchTeamInfo();
   }, [fetchTeamInfo]);
   const members =
-    (team.members && team.members.filter(member => member.id !== localstorage.get().id)) || null;
+    searchItems.length !== 0
+      ? searchItems
+      : (team.members && team.members.filter(member => member.id !== localstorage.get().id)) ||
+        null;
   return (
     <React.Fragment>
       <TeamContainer>
@@ -48,6 +51,6 @@ const Team = ({ team, fetchTeamInfo }) => {
 };
 
 export default connect(
-  state => ({ team: state.team }),
+  state => ({ team: state.team, searchItems: state.team.searchItems }),
   { fetchTeamInfo }
 )(Team);

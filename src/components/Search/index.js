@@ -3,14 +3,18 @@ import { connect } from 'react-redux';
 import { SearchWrapper, TextWrapper } from './search.styles';
 import { IoMdSearch } from 'react-icons/io';
 import { searchTeam } from '../../actions/search';
-import Fuse from 'fuse.js';
 
 const Search = ({ searchArray, searchTeam }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    searchTeam(searchTerm, searchArray);
+  const handleSubmit = async value => {
+    await setSearchTerm(value);
+    if (value !== '') {
+      await searchTeam(value, searchArray);
+    } else {
+      console.log(searchArray);
+      searchTeam(null, searchArray);
+    }
   };
   return (
     <React.Fragment>
@@ -21,7 +25,10 @@ const Search = ({ searchArray, searchTeam }) => {
             <input
               placeholder="Search"
               value={searchTerm}
-              onChange={e => setSearchTerm(e.target.value)}
+              onChange={e => {
+                e.preventDefault();
+                handleSubmit(e.target.value);
+              }}
             />
           </form>
         </TextWrapper>

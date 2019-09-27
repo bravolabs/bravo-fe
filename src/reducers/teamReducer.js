@@ -38,7 +38,6 @@ export default (state = initialState, action) => {
         ...state,
         isFetchingTeam: true,
         errorMessage: '',
-        members: null,
         searchItems: [],
       };
     case TEAM_SEARCH_SUCCESS:
